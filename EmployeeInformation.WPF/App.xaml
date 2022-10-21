@@ -11,6 +11,10 @@
             <Setter Property="FontSize" Value="16"/>
         </Style>
 
+        <Style x:Key="Centering" TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#547aff"/>
@@ -311,7 +315,6 @@
             <Setter Property="AutoGenerateColumns" Value="False" />
             <Setter Property="HeadersVisibility" Value="Column" />
             <Setter Property="Margin" Value="0 10 0 0" />
-            <Setter Property="Grid.Row" Value="5" />
             <Setter Property="SelectionMode" Value="Single" />
             <Setter Property="SelectionUnit" Value="FullRow" />
             <Setter Property="CanUserAddRows" Value="False" />
@@ -320,7 +323,7 @@
             <Setter Property="CanUserResizeRows" Value="False" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="GridLinesVisibility" Value="None" />
-            <Setter Property="ColumnWidth" Value="*" />
+            <Setter Property="ColumnWidth" Value="auto" />
 
 
 
@@ -329,7 +332,8 @@
 
 
 
-            <Setter Property="Template">
+
+                <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGrid}">
                         <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
@@ -383,7 +387,7 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Margin" Value="15,0"/>
+            <Setter Property="Margin" Value="10 0 0 0"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGridCell}">
@@ -397,7 +401,7 @@
         </Style>
 
         <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
-            <Setter Property="Width" Value="8"/>
+            <Setter Property="Width" Value="5"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Cursor" Value="SizeWE"/>
             <Setter Property="Template">
@@ -413,7 +417,8 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#69717d"/>
-            <Setter Property="Margin" Value="18,0,15,10"/>
+            <Setter Property="FontSize" Value="4"/>
+            <Setter Property="Margin" Value="15 0 12 8"/>
 
             <Setter Property="Template">
                 <Setter.Value>

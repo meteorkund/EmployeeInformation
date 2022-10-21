@@ -3,38 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EmployeeInformation.WPF.Views" xmlns:component="clr-namespace:EmployeeInformation.WPF.Components"
+             xmlns:local="clr-namespace:EmployeeInformation.WPF.Views" xmlns:component="clr-namespace:EmployeeInformation.WPF.Components" xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*" MinWidth="710"/>
-            <ColumnDefinition Width="*" MinWidth="780"/>
-        </Grid.ColumnDefinitions>
 
-        <component:LeftMenu Grid.Row="1"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <component:LeftMenu Grid.Row="1"
                             Grid.Column="0"
                             Grid.RowSpan="3"
                             DataContext="{Binding LeftMenuViewModel}"/>
 
-        <component:TopMenu Grid.Row="1"
+            <component:TopMenu Grid.Row="1"
                            Grid.Column="1"
                            Margin="20 10 0 0"
                            DataContext="{Binding TopMenuViewModel}"/>
 
-        <component:EmployeeListing Grid.Row="2"
+            <component:EmployeeListing Grid.Row="2"
                                    Grid.Column="1"
                                    DataContext="{Binding EmployeeListingViewModel}"/>
 
-        <component:EmployeeDetails Grid.Row="2"
+            <component:EmployeeDetails Grid.Row="2"
                                    Grid.Column="2"
                                    DataContext="{Binding EmployeeDetailsViewModel}"/>
 
-    </Grid>
+        </Grid>
 </UserControl>

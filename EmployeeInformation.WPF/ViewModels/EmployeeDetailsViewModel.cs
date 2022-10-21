@@ -30,7 +30,7 @@ namespace EmployeeInformation.WPF.ViewModels
         public string IstenCikisDisplay => (string.IsNullOrEmpty(SelectedEmployee?.IstenCikis) ? "-" : SelectedEmployee?.IstenCikis);
         public string MaasDisplay => SelectedEmployee?.Maas;
         public string CepTelDisplay => SelectedEmployee?.CepTel;
-        public string CalismaSuresiDisplay => SelectedEmployee?.CalismaSuresi;
+        public string CalismaSuresiDisplay => ($"{days} gün, {months} ay, {years} yıl.");
         public string BaslamaTarihiDisplay => SelectedEmployee?.BaslamaTarihi;
         public string AdresDisplay => SelectedEmployee?.Adres;
         public string EkBilgiDisplay => SelectedEmployee?.EkBilgi;
@@ -47,7 +47,42 @@ namespace EmployeeInformation.WPF.ViewModels
             _selectedEmployeeStore = selectedCustomerStore;
 
             _selectedEmployeeStore.SelectedEmployeeChanged += SelectedEmployeeStore_SelectedEmployeeChanged;
+        }
 
+
+        int years, months, days;
+        public void DateTimeCalculate()
+        {
+            if (BaslamaTarihiDisplay is not null)
+            {
+                string date = BaslamaTarihiDisplay;
+                string year = date.Substring(6, 4);
+                string month = date.Substring(3, 2);
+                string day = date.Substring(0, 2);
+
+                int x_year = Int32.Parse(year);
+                int x_month = Int32.Parse(month);
+                int x_day = Int32.Parse(day);
+
+                DateTime dt2 = DateTime.Now;
+                DateTime dt1 = new DateTime(x_year, x_month, x_day);
+
+                years = 0;
+                while (dt1.AddYears(1) < dt2)
+                {
+                    years++;
+                    dt1 = dt1.AddYears(1);
+                }
+
+                months = 0;
+                while (dt1.AddMonths(1) < dt2)
+                {
+                    months++;
+                    dt1 = dt1.AddMonths(1);
+                }
+
+                days = (int)Math.Floor(dt2.Subtract(dt1).TotalDays);
+            }
         }
 
         protected override void Dispose()
@@ -58,6 +93,8 @@ namespace EmployeeInformation.WPF.ViewModels
 
         private void SelectedEmployeeStore_SelectedEmployeeChanged()
         {
+            DateTimeCalculate();
+
             OnPropertyChanged(nameof(HasSelectedEmployee));
             OnPropertyChanged(nameof(FotografDisplay));
             OnPropertyChanged(nameof(Isim));

@@ -4,16 +4,91 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             xmlns:local="clr-namespace:EmployeeInformation.WPF.Components"
+             xmlns:local="clr-namespace:EmployeeInformation.WPF.Components" 
+             xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="25 25 0 25">
-        <Border
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLoading}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+
+            <custom:LoadingSpinner Diameter="75" 
+                                   IsLoading="True"/>
+
+            <TextBlock
+                Margin="0 10 0 0"
+                VerticalAlignment="Center"
+                Text="Personeller yükleniyor..."
+                FontSize="24"
+                FontWeight="SemiBold"
+                TextAlignment="Center"/>
+        </StackPanel>
+
+
+        <Grid 
+            Margin="25 25 0 25">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLoading}" Value="False">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding HasErrorMessage}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <TextBlock                    
+                    Margin="0 10 0 0"
+                    VerticalAlignment="Center"
+                    Text="{Binding ErrorMessage}"
+                    FontSize="24"
+                    FontWeight="SemiBold"
+                    Foreground="Red"
+                   TextAlignment="Center"/>
+            </Grid>
+
+
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding HasErrorMessage}" Value="False">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <Border
             BorderBrush="Gray" 
             BorderThickness="1"
             CornerRadius="5"
             SnapsToDevicePixels="True">
-            <DataGrid
+                    <DataGrid
                 Style="{DynamicResource DataGridStyle1}"
                 CellStyle="{DynamicResource DataGridCellStyle1}"
                 ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
@@ -21,77 +96,101 @@
                 ItemsSource="{Binding EmployeeListingItemViewModels}"
                 SelectedItem="{Binding SelectedEmployeeListingItemViewModel}"
                 AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="DURUM" IsReadOnly="True" Width="auto">
-                        <DataGridTextColumn.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Durum}" Value="True">
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="VerticalAlignment" Value="Center"/>
-                                        <Setter Property="Height" Value="20"/>
-                                        <Setter Property="Width" Value="20"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate>
-                                                    <Border CornerRadius="10"
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="True" Width="auto" ElementStyle="{StaticResource Centering}">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Durum}" Value="True">
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                <Setter Property="Height" Value="15"/>
+                                                <Setter Property="Width" Value="15"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Border CornerRadius="10"
                                                             Background="Green"/>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Durum}" Value="False">
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="VerticalAlignment" Value="Center"/>
-                                        <Setter Property="Height" Value="20"/>
-                                        <Setter Property="Width" Value="20"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate>
-                                                    <Border CornerRadius="10"
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Durum}" Value="False">
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                <Setter Property="Height" Value="15"/>
+                                                <Setter Property="Width" Value="15"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Border CornerRadius="10"
                                                             Background="Red"/>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGridTextColumn.CellStyle>
-                    </DataGridTextColumn>
-                    
-                        <DataGridTextColumn Header="ADI" IsReadOnly="True" Width="auto" Binding="{Binding Isim}" />
-                    <DataGridTextColumn Header="SOYADI" IsReadOnly="True" Width="auto" Binding="{Binding Soyisim}" />
-                    <DataGridTextColumn Header="DEPARTMAN" IsReadOnly="True" Width="auto" Binding="{Binding Departman}" />
-                    <DataGridTextColumn Header="GÖREVİ" IsReadOnly="True" Width="*" Binding="{Binding Gorev}" />
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTemplateColumn Header="Seçenekler"
-                                            IsReadOnly="True"
-                                            Width="AUTO">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                            <DataGridTextColumn Header="Dosya No" IsReadOnly="True" Binding="{Binding Id}" ElementStyle="{StaticResource Centering}" />
 
-                                    <Button Style="{StaticResource gridEditButton}"
+                            <DataGridTextColumn Header="ADI" IsReadOnly="True" Binding="{Binding Isim}" />
+                            <DataGridTextColumn Header="SOYADI" IsReadOnly="True" Binding="{Binding Soyisim}" />
+                            <DataGridTextColumn Header="DEPARTMAN" IsReadOnly="True"  Binding="{Binding Departman}" />
+                            <DataGridTextColumn Header="GÖREVİ" Width="*" IsReadOnly="True" Binding="{Binding Gorev}" />
+
+                            <DataGridTemplateColumn Header="Seçenekler"
+                                            IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                            <Button 
+                                            Style="{StaticResource gridEditButton}"
                                             Command="{Binding EditCommand}">
-                                        <Icon:PackIconMaterial Kind="PencilOutline"
-                                                               Style="{StaticResource gridButtonIcon}"/>
+                                                <Icon:PackIconMaterial
+                                                Kind="PencilOutline"                                                               
+                                                Style="{StaticResource gridButtonIcon}"/>
 
-                                    </Button>
-                                    <Button Style="{StaticResource gridRemoveButton}"
+                                            </Button>
+
+                                            <Button 
+                                            Style="{StaticResource gridRemoveButton}"
                                             Command="{Binding DeleteCommand}"
                                             Margin="5 0 0 0">
-                                        <Icon:PackIconMaterial Kind="DeleteOutline"
-                                                                   Style="{StaticResource gridButtonIcon}"/>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
+                                                <Button.Content>
+                                                    <WrapPanel>
+                                                        <Icon:PackIconMaterial 
+                                                        Kind="DeleteOutline"
+                                                        Style="{StaticResource gridButtonIcon}"/>
+                                                        <custom:LoadingSpinner
+                                                        Diameter="14"
+                                                        IsLoading="{Binding IsDeleting}"
+                                                        Thickness="2"
+                                                        Margin="7 0 0 0"/>
+                                                    </WrapPanel>
+                                                </Button.Content>
 
-                    </DataGridTemplateColumn>
+
+                                            </Button>
 
 
-                </DataGrid.Columns>
-            </DataGrid>
-        </Border>
+
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
+
 </UserControl>

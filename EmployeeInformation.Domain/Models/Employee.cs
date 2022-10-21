@@ -9,8 +9,9 @@ namespace EmployeeInformation.Domain.Models
 {
     public class Employee : BaseEntity
     {
-        public Employee(string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi)
+        public Employee(int id, string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi)
         {
+            Id = id;
             Fotograf = fotograf;
             Isim = isim;
             Soyisim = soyisim;
@@ -32,27 +33,28 @@ namespace EmployeeInformation.Domain.Models
             EkBilgi = ekBilgi;
         }
 
-        public string Fotograf { get; set; }
-        public string Isim { get; set; }
-        public string Soyisim { get; set; }
+        public int Id { get; }
+        public string Fotograf { get;  }
+        public string Isim { get;  }
+        public string Soyisim { get; }
         public bool Durum { get; set; }
-        public string TCKimlik { get; set; }
-        public string DogumTarihi { get; set; }
-        public string MedeniDurum { get; set; }
-        public string EgitimDurumu { get; set; }
-        public string Askerlik { get; set; }
-        public string Departman { get; set; }
-        public string Gorev { get; set; }
-        public string IseGiris { get; set; }
-        public string IstenCikis { get; set; }
-        public string Maas { get; set; }
-        public string CepTel { get; set; }
-        public string CalismaSuresi { get; set; }
-        public string BaslamaTarihi { get; set; }
-        public string Adres { get; set; }
-        public string EkBilgi { get; set; }
+        public string TCKimlik { get;  }
+        public string DogumTarihi { get;  }
+        public string MedeniDurum { get;  }
+        public string EgitimDurumu { get; }
+        public string Askerlik { get;  }
+        public string Departman { get;  }
+        public string Gorev { get;  }
+        public string IseGiris { get;  }
+        public string IstenCikis { get; }
+        public string Maas { get; }
+        public string CepTel { get; }
+        public string CalismaSuresi { get; }
+        public string BaslamaTarihi { get; }
+        public string Adres { get; }
+        public string EkBilgi { get; }
 
-        public Izin2018 izin2018 { get; set; }
+        public Izin2018 izin2018 { get; }
         //public izin2019 Izin2019 { get; set; }
         //public izin2020 Izin2020 { get; set; }
         //public izin2021 Izin2021 { get; set; }

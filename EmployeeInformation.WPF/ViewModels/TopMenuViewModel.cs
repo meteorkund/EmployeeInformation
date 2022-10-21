@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmployeeInformation.WPF.Commands;
+using EmployeeInformation.WPF.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +11,11 @@ namespace EmployeeInformation.WPF.ViewModels
 {
     public class TopMenuViewModel : ViewModelBase
     {
-        public ICommand AddCustomersCommand { get; }
+        public ICommand AddEmployeeCommand { get; }
 
+        public TopMenuViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
+        {
+            AddEmployeeCommand = new OpenAddEmployeeCommand(employeeStore, modalNavigationStore);
+        }
     }
 }

@@ -3,13 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EmployeeInformation.WPF" xmlns:views="clr-namespace:EmployeeInformation.WPF.Views" 
-        xmlns:components="clr-namespace:EmployeeInformation.WPF.Components"
+        xmlns:local="clr-namespace:EmployeeInformation.WPF" 
+        xmlns:views="clr-namespace:EmployeeInformation.WPF.Views" 
+        xmlns:vms="clr-namespace:EmployeeInformation.WPF.ViewModels" 
+        xmlns:components="clr-namespace:EmployeeInformation.WPF.Components" 
+        xmlns:custom="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
-        Title="MainWindow">
+        WindowState="Maximized"
+        Title="Personel Bilgi">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vms:AddEmployeeViewModel}">
+            <views:AddEmployeeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vms:EditEmployeeViewModel}">
+            <views:AddEmployeeView/>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
-        <!--<views:EmployeesView/>-->
-        <components:EmployeeDetailsForm/>
+
+        <custom:Modal Panel.ZIndex="1" IsOpen="{Binding IsModalOpen}">
+            <ContentControl Content="{Binding CurrentModalViewModel}"/>
+        </custom:Modal>
+        
+        <views:EmployeesView DataContext="{Binding EmployeesViewModel}"/>
     </Grid>
 </Window>

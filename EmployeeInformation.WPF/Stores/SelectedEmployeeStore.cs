@@ -9,7 +9,22 @@ namespace EmployeeInformation.WPF.Stores
 {
     public class SelectedEmployeeStore
     {
+
+        readonly EmployeeStore _employeeStore;
         private Employee _selectedEmployee;
+
+        public SelectedEmployeeStore(EmployeeStore employeeStore)
+        {
+            _employeeStore = employeeStore;
+
+            _employeeStore.EmployeeUpdated += EmployeeStore_EmployeeUpdated;
+        }
+
+        private void EmployeeStore_EmployeeUpdated(Employee employee)
+        {
+            if (employee.Id == SelectedEmployee?.Id)
+                SelectedEmployee = employee;
+        }
 
         public Employee SelectedEmployee
         {
@@ -21,5 +36,8 @@ namespace EmployeeInformation.WPF.Stores
             }
         }
         public event Action SelectedEmployeeChanged;
+
+
+
     }
 }

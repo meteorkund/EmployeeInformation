@@ -1,4 +1,6 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.WPF.Commands;
+using EmployeeInformation.WPF.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,10 @@ using System.Windows.Input;
 
 namespace EmployeeInformation.WPF.ViewModels
 {
-    public class EmployeeListingItemViewModel
+    public class EmployeeListingItemViewModel : ViewModelBase
     {
-        public Employee Employee { get; }
+        public Employee Employee { get; private set; }
+        public int Id => (int)Employee.Id;
         public string Isim => Employee.Isim;
         public string Soyisim => Employee.Soyisim;
         public bool Durum => Employee.Durum;
@@ -19,9 +22,36 @@ namespace EmployeeInformation.WPF.ViewModels
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
 
-        public EmployeeListingItemViewModel(Employee employee)
+        private bool _isDeleting;
+
+        public bool IsDeleting
+        {
+            get { return _isDeleting; }
+            set
+            {
+                _isDeleting = value;
+
+                OnPropertyChanged(nameof(IsDeleting));
+            }
+        }
+
+
+
+        public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
         {
             Employee = employee;
+            EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore);
+            DeleteCommand = new DeleteEmployeeCommand(this, employeeStore);
+        }
+
+
+        public void Update(Employee employee)
+        {
+            Employee = employee;
+            OnPropertyChanged(nameof(Isim));
+            OnPropertyChanged(nameof(Soyisim));
+            OnPropertyChanged(nameof(Departman));
+            OnPropertyChanged(nameof(Gorev));
         }
     }
 }

@@ -15,11 +15,15 @@
 
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.4.0" />
+    <PackageReference Include="LoadingSpinner.WPF" Version="1.0.0" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeInformation.Domain\EmployeeInformation.Domain.csproj" />
+    <ProjectReference Include="..\EmployeeInformation.EF\EmployeeInformation.EF.csproj" />
   </ItemGroup>
 
   <ItemGroup>
