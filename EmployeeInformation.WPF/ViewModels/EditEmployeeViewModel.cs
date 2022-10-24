@@ -13,7 +13,7 @@ namespace EmployeeInformation.WPF.ViewModels
 {
     public class EditEmployeeViewModel : ViewModelBase
     {
-        public Guid EmployeeId { get; }
+        public int EmployeeId { get; }
         public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get; }
 
         public EditEmployeeViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)

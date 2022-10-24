@@ -32,8 +32,7 @@ namespace EmployeeInformation.WPF.Commands
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                //_employeeListingViewModel.ErrorMessage = "Personeller yüklenirken bir hatayla karşılaşıldı! \n Lütfen uygulamayı yeniden başlatın.";
+                _employeeListingViewModel.ErrorMessage = "Personeller yüklenirken bir hatayla karşılaşıldı! \n Lütfen uygulamayı yeniden başlatın.";
             }
             finally
             {

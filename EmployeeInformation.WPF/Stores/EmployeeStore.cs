@@ -24,7 +24,7 @@ namespace EmployeeInformation.WPF.Stores
         public event Action EmployeesLoaded;
         public event Action<Employee> EmployeeAdded;
         public event Action<Employee> EmployeeUpdated;
-        public event Action<Guid> EmployeeDeleted;
+        public event Action<int> EmployeeDeleted;
 
 
         public EmployeeStore(IGetAllEmployeesQuery getAllEmployeesQuery, ICreateEmployeeCommand createEmployeeCommand, IUpdateEmployeeCommand updateEmployeeCommand, IDeleteEmployeeCommand deleteEmployeeCommand)
@@ -70,7 +70,7 @@ namespace EmployeeInformation.WPF.Stores
             EmployeesLoaded?.Invoke();
         }
 
-        public async Task Delete(Guid id)
+        public async Task Delete(int id)
         {
             await _deleteEmployeeCommand.Execute(id);
 

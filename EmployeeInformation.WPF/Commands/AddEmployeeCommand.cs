@@ -1,4 +1,5 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.EF;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
 using System;
@@ -14,12 +15,21 @@ namespace EmployeeInformation.WPF.Commands
         readonly ModalNavigationStore _modalNavigationStore;
         readonly EmployeeStore _employeeStore;
         readonly AddEmployeeViewModel _addEmployeeViewModel;
+        readonly EmployeesDbContextFactory _contextFactory;
 
-        public AddEmployeeCommand(AddEmployeeViewModel addEmployeeViewModel, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
+        int sonDosyaNo;
+        public AddEmployeeCommand(AddEmployeeViewModel addEmployeeViewModel, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory)
         {
             _modalNavigationStore = modalNavigationStore;
             _employeeStore = employeeStore;
             _addEmployeeViewModel = addEmployeeViewModel;
+            _contextFactory = contextFactory;
+
+            using (EmployeesDbContext context = _contextFactory.Create())
+            {
+                var sonPersonel = context.Employees.ToList().Last();
+                sonDosyaNo = sonPersonel.Id;
+            }
         }
 
         public override async Task ExecuteAsync(object parameter)
@@ -30,7 +40,7 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.IsSubmitting = true;
 
             Employee employee = new Employee(
-                Guid.NewGuid(),
+                sonDosyaNo+1,
                 formViewModel.PhotoSource,
                 formViewModel.Isim,
                 formViewModel.Soyisim,

@@ -13,6 +13,7 @@ namespace EmployeeInformation.WPF.ViewModels
     public class EmployeeListingItemViewModel : ViewModelBase
     {
         public Employee Employee { get; private set; }
+        public int DosyaNo => Employee.Id;
         public string Isim => Employee.Isim;
         public string Soyisim => Employee.Soyisim;
         public bool Durum => Employee.Durum;

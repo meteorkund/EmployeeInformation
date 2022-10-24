@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmployeeInformation.EF;
+using Microsoft.EntityFrameworkCore.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +11,10 @@ namespace EmployeeInformation.WPF.ViewModels
 {
     public class EmployeeDetailsFormViewModel : ViewModelBase
     {
+
+
+
+
         private string _isim;
 
         public string Isim
@@ -34,6 +40,19 @@ namespace EmployeeInformation.WPF.ViewModels
                 OnPropertyChanged(nameof(CanSubmit));
             }
         }
+
+        private int _dosyaNo;
+
+        public int DosyaNo
+        {
+            get { return _dosyaNo; }
+            set
+            {
+                _dosyaNo = value;
+                OnPropertyChanged(nameof(DosyaNo));
+            }
+        }
+
 
         private string _tcKimlik;
 
@@ -229,7 +248,7 @@ namespace EmployeeInformation.WPF.ViewModels
             }
         }
 
-        private string _photoSource ="/Assets/MemetAvatar.jpg";
+        private string _photoSource = "/Assets/MemetAvatar.jpg";
 
         public string PhotoSource
         {
@@ -246,7 +265,9 @@ namespace EmployeeInformation.WPF.ViewModels
         public bool IsSubmitting
         {
             get { return _isSubmitting; }
-            set { _isSubmitting = value;
+            set
+            {
+                _isSubmitting = value;
                 OnPropertyChanged(nameof(IsSubmitting));
             }
         }
@@ -274,11 +295,15 @@ namespace EmployeeInformation.WPF.ViewModels
         public ICommand CancelCommand { get; }
         public ICommand UploadPhotoCommand { get; }
 
+
         public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
         {
             SubmitCommand = submitCommand;
             CancelCommand = cancelCommand;
+
+
         }
+
 
 
 

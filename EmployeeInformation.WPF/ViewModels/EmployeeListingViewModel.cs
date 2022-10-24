@@ -121,7 +121,7 @@ namespace EmployeeInformation.WPF.ViewModels
         }
 
 
-        private void EmployeeStore_EmployeeDeleted(Guid id)
+        private void EmployeeStore_EmployeeDeleted(int id)
         {
             EmployeeListingItemViewModel itemViewModel = _employeeListingItemViewModels.FirstOrDefault(e => e.Employee?.Id == id);
 

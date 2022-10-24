@@ -8,7 +8,7 @@ namespace EmployeeInformation.EF.DTOs
 {
     public class EmployeeDTO
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string? Fotograf { get; set; }
         public string Isim { get; set; }
         public string Soyisim { get; set; }

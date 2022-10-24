@@ -26,7 +26,6 @@ namespace EmployeeInformation.EF.Commands
 
                 EmployeeDTO employeeDTOs = new EmployeeDTO()
                 {
-                    Id = employee.Id,
                     Fotograf = employee.Fotograf,
                     Isim = employee.Isim,
                     Soyisim = employee.Soyisim,

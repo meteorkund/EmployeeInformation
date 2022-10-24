@@ -1,4 +1,5 @@
-﻿using EmployeeInformation.WPF.Commands;
+﻿using EmployeeInformation.EF;
+using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Stores;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ namespace EmployeeInformation.WPF.ViewModels
     {
         public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get;  }
 
-        public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
+        public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory)
         {
-            ICommand submitCommand = new AddEmployeeCommand(this, employeeStore, modalNavigationStore) ;
+            ICommand submitCommand = new AddEmployeeCommand(this, employeeStore, modalNavigationStore, contextFactory) ;
             ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
             EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand);
         }

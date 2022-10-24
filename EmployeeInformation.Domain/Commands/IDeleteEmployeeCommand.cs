@@ -8,6 +8,6 @@ namespace EmployeeInformation.Domain.Commands
 {
     public interface IDeleteEmployeeCommand
     {
-        Task Execute(Guid id);
+        Task Execute(int id);
     }
 }
