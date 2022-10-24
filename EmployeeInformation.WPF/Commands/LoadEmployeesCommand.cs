@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EmployeeInformation.WPF.Commands
 {
     public class LoadEmployeesCommand : CommandBase
     {
-        private readonly EmployeeListingViewModel _employeeListingViewModel;
+        readonly EmployeeListingViewModel _employeeListingViewModel;
         readonly EmployeeStore _employeeStore;
 
 
@@ -29,9 +30,10 @@ namespace EmployeeInformation.WPF.Commands
                 await _employeeStore.Load();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                _employeeListingViewModel.ErrorMessage = "Personeller yüklenirken bir hatayla karşılaşıldı! \n Lütfen uygulamayı yeniden başlatın.";
+                MessageBox.Show(ex.ToString());
+                //_employeeListingViewModel.ErrorMessage = "Personeller yüklenirken bir hatayla karşılaşıldı! \n Lütfen uygulamayı yeniden başlatın.";
             }
             finally
             {

@@ -30,7 +30,7 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.IsSubmitting = true;
 
             Employee employee = new Employee(
-                79,
+                Guid.NewGuid(),
                 formViewModel.PhotoSource,
                 formViewModel.Isim,
                 formViewModel.Soyisim,

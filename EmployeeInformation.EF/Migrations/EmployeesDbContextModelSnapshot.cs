@@ -24,11 +24,9 @@ namespace EmployeeInformation.EF.Migrations
 
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.EmployeeDTO", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Adres")
                         .HasColumnType("nvarchar(max)");
@@ -44,9 +42,6 @@ namespace EmployeeInformation.EF.Migrations
 
                     b.Property<string>("CepTel")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Departman")
                         .HasColumnType("nvarchar(max)");
@@ -64,7 +59,6 @@ namespace EmployeeInformation.EF.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fotograf")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gorev")
@@ -92,9 +86,6 @@ namespace EmployeeInformation.EF.Migrations
 
                     b.Property<string>("TCKimlik")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

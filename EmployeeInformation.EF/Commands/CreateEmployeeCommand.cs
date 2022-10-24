@@ -22,11 +22,11 @@ namespace EmployeeInformation.EF.Commands
         public async Task Execute(Employee employee)
         {
             using (EmployeesDbContext context = _contextFactory.Create())
-            {
-                throw new Exception();
+            {                
 
                 EmployeeDTO employeeDTOs = new EmployeeDTO()
                 {
+                    Id = employee.Id,
                     Fotograf = employee.Fotograf,
                     Isim = employee.Isim,
                     Soyisim = employee.Soyisim,

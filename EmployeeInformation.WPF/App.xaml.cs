@@ -1,18 +1,13 @@
 ﻿using EmployeeInformation.Domain.Commands;
-using EmployeeInformation.Domain.Models;
 using EmployeeInformation.Domain.Queries;
-using EmployeeInformation.EF;
 using EmployeeInformation.EF.Commands;
 using EmployeeInformation.EF.Queries;
+using EmployeeInformation.WPF.HostBuilders;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace EmployeeInformation.WPF
@@ -22,49 +17,52 @@ namespace EmployeeInformation.WPF
     /// </summary>
     public partial class App : Application
     {
-        readonly SelectedEmployeeStore _selectedEmployeeStore;
-        readonly ModalNavigationStore _modalNavigationStore;
-        readonly EmployeeStore _employeeStore;
-
-        readonly EmployeesDbContextFactory _employeesDbContextFactory;
-
-        readonly IGetAllEmployeesQuery _getAllEmployeesQuery;
-        readonly ICreateEmployeeCommand _createEmployeeCommand;
-        readonly IUpdateEmployeeCommand _updateEmployeeCommand;
-        readonly IDeleteEmployeeCommand _deleteEmployeeCommand;
-
+        readonly IHost _host;
 
         public App()
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=EmployeeInformationDB;Trusted_Connection=True;";
+            _host = Host.CreateDefaultBuilder()
+               .AddDbContext()
+               .ConfigureServices((context, services) =>
+               {
 
-            _modalNavigationStore = new ModalNavigationStore();
+                   services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
+                   services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
+                   services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
+                   services.AddSingleton<IDeleteEmployeeCommand, DeleteEmployeeCommand>();
 
-            _employeesDbContextFactory = new EmployeesDbContextFactory(
-                new DbContextOptionsBuilder().UseSqlServer(connectionString).Options);
+                   services.AddSingleton<ModalNavigationStore>();
+                   services.AddSingleton<EmployeeStore>();
+                   services.AddSingleton<SelectedEmployeeStore>();
 
-            _getAllEmployeesQuery = new GetAllEmployeesQuery(_employeesDbContextFactory);
-            _createEmployeeCommand = new CreateEmployeeCommand(_employeesDbContextFactory);
-            _updateEmployeeCommand = new UpdateEmployeeCommand(_employeesDbContextFactory);
-            _deleteEmployeeCommand = new DeleteEmployeeCommand(_employeesDbContextFactory);
-            _employeeStore = new EmployeeStore(_getAllEmployeesQuery,_createEmployeeCommand,_updateEmployeeCommand,_deleteEmployeeCommand);
-            _selectedEmployeeStore = new SelectedEmployeeStore(_employeeStore);
+                   services.AddTransient<EmployeesViewModel>();
+                   services.AddSingleton<MainViewModel>();
+
+                   services.AddSingleton<MainWindow>((services) => new MainWindow
+                   {
+                       DataContext = services.GetRequiredService<MainViewModel>()
+                   });
+               })
+               .Build();
         }
+
+
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            EmployeesViewModel employeesViewModel = new EmployeesViewModel(
-                _employeeStore,
-                _selectedEmployeeStore, 
-                _modalNavigationStore
-                );
+            _host.Start();
 
-            MainWindow = new MainWindow()
-            {
-                DataContext = new MainViewModel(_modalNavigationStore, employeesViewModel)
-            };
+            MainWindow = _host.Services.GetRequiredService<MainWindow>();
             MainWindow.Show();
             base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            _host.StopAsync();
+            _host.Dispose();
+
+            base.OnExit(e);
         }
     }
 }

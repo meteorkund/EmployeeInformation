@@ -17,7 +17,7 @@ namespace EmployeeInformation.EF.Commands
         {
             _contextFactory = contextFactory;
         }
-        public async Task Execute(int id)
+        public async Task Execute(Guid id)
         {
             using (EmployeesDbContext context = _contextFactory.Create())
             {

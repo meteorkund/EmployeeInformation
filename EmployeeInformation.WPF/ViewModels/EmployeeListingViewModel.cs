@@ -114,14 +114,14 @@ namespace EmployeeInformation.WPF.ViewModels
 
         private void EmployeeStore_EmployeeUpdated(Employee employee)
         {
-            EmployeeListingItemViewModel employeeViewModel = _employeeListingItemViewModels.FirstOrDefault(e => e.Employee.Id == e.Id);
+            EmployeeListingItemViewModel employeeViewModel = _employeeListingItemViewModels.FirstOrDefault(e => e.Employee.Id == employee.Id);
 
             if (employeeViewModel != null)
                 employeeViewModel.Update(employee);
         }
 
 
-        private void EmployeeStore_EmployeeDeleted(int id)
+        private void EmployeeStore_EmployeeDeleted(Guid id)
         {
             EmployeeListingItemViewModel itemViewModel = _employeeListingItemViewModels.FirstOrDefault(e => e.Employee?.Id == id);
 
