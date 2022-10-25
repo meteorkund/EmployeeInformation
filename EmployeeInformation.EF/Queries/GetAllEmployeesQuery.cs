@@ -23,8 +23,8 @@ namespace EmployeeInformation.EF.Queries
         {
             using (EmployeesDbContext context = _contextFactory.Create())
             {
-                IEnumerable<EmployeeDTO> employeeDTOs = await context.Employees.ToListAsync();
-                return employeeDTOs.Select(e => new Employee(      
+                IEnumerable<EmployeeDTO> employeeDTOs = await context.Employees.Include(v => v.Vacation2018DTO).ToListAsync();
+                return employeeDTOs.Select(e => new Employee(
                     e.Id,
                     e.Fotograf,
                     e.Isim,
@@ -44,7 +44,20 @@ namespace EmployeeInformation.EF.Queries
                     e.CalismaSuresi,
                     e.BaslamaTarihi,
                     e.Adres,
-                    e.EkBilgi
+                    e.EkBilgi,                   
+                    
+                    new Vacation2018
+                    {
+                        Id = e.Id,
+                        Ocak2018_c1 = (int)e.Vacation2018DTO.Ocak2018_c1,
+                        Ocak2018_c2 = (int)e.Vacation2018DTO.Ocak2018_c2,
+                        Ocak2018_c3 = (int)e.Vacation2018DTO.Ocak2018_c3,
+                        Ocak2018_c4 = (int)e.Vacation2018DTO.Ocak2018_c4,
+                        Ocak2018_c5 = (int)e.Vacation2018DTO.Ocak2018_c5,
+                        Ocak2018_c6 = (int)e.Vacation2018DTO.Ocak2018_c6,
+
+                    }
+
                     ));
             }
         }

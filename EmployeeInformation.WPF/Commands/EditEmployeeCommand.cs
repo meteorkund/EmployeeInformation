@@ -49,7 +49,8 @@ namespace EmployeeInformation.WPF.Commands
                 formViewModel.CalismaSuresi,
                 formViewModel.BaslamaTarihi,
                 formViewModel.EvAdresi,
-                formViewModel.EkBilgi
+                formViewModel.EkBilgi,
+                new Vacation2018 { Id = _editEmployeeViewModel.EmployeeId }
                 );
 
             try

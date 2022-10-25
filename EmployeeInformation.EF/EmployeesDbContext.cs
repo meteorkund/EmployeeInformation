@@ -16,6 +16,7 @@ namespace EmployeeInformation.EF
         }
 
         public DbSet<EmployeeDTO> Employees { get; set; }
+        public DbSet<Vacation2018DTO> Vacations { get; set; }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -23,7 +24,7 @@ namespace EmployeeInformation.EF
             //ChangeTracker : Entityler üzerinden yapılan değişiklerin ya da yeni eklenen verinin yakalanmasını sağlayan propertydir. Update operasyonlarında Track edilen verileri yakalayıp elde etmemizi sağlar.
 
             var datas = ChangeTracker
-                 .Entries<BaseEntity>();
+                 .Entries<BaseDTO>();
 
             foreach (var data in datas)
             {
@@ -36,6 +37,17 @@ namespace EmployeeInformation.EF
             }
 
             return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Vacation2018DTO>()
+                .HasKey(c => c.Id);
+
+            modelBuilder.Entity<EmployeeDTO>()
+                .HasOne(c => c.Vacation2018DTO)
+                .WithOne(c => c.EmployeeDTO)
+                .HasForeignKey<Vacation2018DTO>(c => c.Id);
         }
     }
 }

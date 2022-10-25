@@ -45,6 +45,15 @@ namespace EmployeeInformation.EF.Commands
                     BaslamaTarihi = employee.BaslamaTarihi,
                     Adres = employee.Adres,
                     EkBilgi = employee.EkBilgi,
+                    Vacation2018DTO= new Vacation2018DTO()
+                    {
+                        Ocak2018_c1=0  ,
+                        Ocak2018_c2=0  ,
+                        Ocak2018_c3=0  ,
+                        Ocak2018_c4=0  ,
+                        Ocak2018_c5=0  ,
+                        Ocak2018_c6=0  ,
+                    }
                 };
 
                 context.Employees.Add(employeeDTOs);

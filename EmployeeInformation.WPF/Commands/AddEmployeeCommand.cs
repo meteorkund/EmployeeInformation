@@ -40,7 +40,7 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.IsSubmitting = true;
 
             Employee employee = new Employee(
-                sonDosyaNo+1,
+                sonDosyaNo + 1,
                 formViewModel.PhotoSource,
                 formViewModel.Isim,
                 formViewModel.Soyisim,
@@ -59,8 +59,10 @@ namespace EmployeeInformation.WPF.Commands
                 formViewModel.CalismaSuresi,
                 formViewModel.BaslamaTarihi,
                 formViewModel.EvAdresi,
-                formViewModel.EkBilgi
+                formViewModel.EkBilgi,
+                new Vacation2018 {Id =sonDosyaNo+1,}                
                 );
+
 
             try
             {

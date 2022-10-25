@@ -34,12 +34,12 @@ namespace EmployeeInformation.WPF.ViewModels
         public string BaslamaTarihiDisplay => SelectedEmployee?.BaslamaTarihi;
         public string AdresDisplay => SelectedEmployee?.Adres;
         public string EkBilgiDisplay => SelectedEmployee?.EkBilgi;
-        public int Ocak2018_c1_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c1);
-        public int Ocak2018_c2_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c2);
-        public int Ocak2018_c3_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c3);
-        public int Ocak2018_c4_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c4);
-        public int Ocak2018_c5_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c5);
-        public int Ocak2018_c6_Display => (int)(SelectedEmployee?.izin2018.Ocak2018_c6);
+        public int Ocak2018_c1_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c1);
+        public int Ocak2018_c2_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c2);
+        public int Ocak2018_c3_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c3);
+        public int Ocak2018_c4_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c4);
+        public int Ocak2018_c5_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c5);
+        public int Ocak2018_c6_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c6);
 
 
         public EmployeeDetailsViewModel(SelectedEmployeeStore selectedCustomerStore)

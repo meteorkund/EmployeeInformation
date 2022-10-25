@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeInformation.EF.DTOs
 {
-    public class EmployeeDTO
+    public class EmployeeDTO :BaseDTO
     {
         public int Id { get; set; }
         public string? Fotograf { get; set; }
@@ -28,6 +28,8 @@ namespace EmployeeInformation.EF.DTOs
         public string? BaslamaTarihi { get; set; }
         public string? Adres { get; set; }
         public string? EkBilgi { get; set; }
+
+        public Vacation2018DTO Vacation2018DTO { get; set; }
 
     }
 }
