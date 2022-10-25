@@ -24,6 +24,8 @@ namespace EmployeeInformation.WPF.ViewModels
             ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
             EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand)
             {
+                IsAdding = false,
+
                 Durum = employee.Durum,
                 Isim = employee.Isim,
                 Soyisim = employee.Soyisim,

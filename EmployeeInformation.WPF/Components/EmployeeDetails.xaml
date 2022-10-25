@@ -48,8 +48,8 @@
                     </Grid.Style>
                     <TabControl >
 
-                        <TabItem Header="KİŞİSEL BİLGİLER">
-                            <Grid Grid.IsSharedSizeScope="True" Margin="10 10 10 0">
+                        <TabItem Header="KİŞİSEL BİLGİLER" Style="{StaticResource tabItemStyle}">
+                            <Grid Grid.IsSharedSizeScope="True" Margin="5 5 5 0">
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
@@ -100,8 +100,8 @@
                                         </Border.Style>
                                     </Border>
 
-                                    <TextBlock FontSize="24"
-                               Grid.Column="1">
+                                    <TextBlock Style="{StaticResource textBlockHeaderMember}"
+                                                Grid.Column="1">
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{}{0} {1}">
                                                 <Binding Path="Isim"/>
@@ -142,7 +142,7 @@
                                 FontWeight="Bold"
                                 Text="DEPARTMAN"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding DepartmanDisplay}"/>
@@ -159,10 +159,10 @@
                                 FontWeight="Bold"
                                 Text="GÖREVİ"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
-                                        MaxWidth="180"
+                                        MaxWidth="150"
                                 Text="{Binding GorevDisplay}"
                                     TextWrapping="WrapWithOverflow"/>
                                 </Grid>
@@ -178,7 +178,7 @@
                                 FontWeight="Bold"
                                 Text="MAAŞ"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding MaasDisplay}"/>
@@ -195,7 +195,7 @@
                                 FontWeight="Bold"
                                 Text="CEP TELEFONU"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding CepTelDisplay}"/>
@@ -212,7 +212,7 @@
                         FontWeight="Bold"
                         Text="İŞTEN ÇIKIŞ"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding IstenCikisDisplay}"/>
@@ -230,9 +230,9 @@
                             Text="ŞİRKET SAHİBİ İLE TOPLAM ÇALIŞMA"
                             TextWrapping="WrapWithOverflow"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
-                        Margin="20 0 0 0"
+                        Margin="20 10 0 0"
                         Text="{Binding CalismaSuresiDisplay}"/>
                                 </Grid>
 
@@ -253,7 +253,7 @@
                         FontWeight="Bold"
                         Text="TC KİMLİK NO"/>
 
-                                    <TextBlock
+                                    <TextBlock  Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding KimlikDisplay}"/>
@@ -270,7 +270,7 @@
                         FontWeight="Bold"
                         Text="DOĞUM TARİHİ"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding DogumTarihiDisplay}"/>
@@ -287,7 +287,7 @@
                         FontWeight="Bold"
                         Text="MEDENİ HAL"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding MedeniDurumDisplay}"/>
@@ -304,7 +304,7 @@
                         FontWeight="Bold"
                         Text="EĞİTİM DURUMU"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding EgitimDurumuDisplay}"/>
@@ -321,7 +321,7 @@
                         FontWeight="Bold"
                         Text="ASKERLİK DURUMU"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding AskerlikDisplay}"/>
@@ -338,7 +338,7 @@
                         FontWeight="Bold"
                         Text="İŞE GİRİŞ"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding IseGirisDisplay}"/>
@@ -357,9 +357,9 @@
                             TextWrapping="WrapWithOverflow"
                             MaxWidth="150"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                             Grid.Column="1"
-                            Margin="20 0 0 0"
+                            Margin="20 10 0 0"
                             Text="{Binding BaslamaTarihiDisplay}"/>
                                 </Grid>
 
@@ -383,7 +383,7 @@
                                     <TextBlock
                         Grid.Column="1"
                         Margin="20 0 0 0"
-                        Text="{Binding AdresDisplay}"
+                        Text="{Binding AdresDisplay}" Style="{StaticResource dataBox}"
                         MaxWidth="450"
                         TextAlignment="Justify"
                         TextWrapping="WrapWithOverflow"/>
@@ -400,7 +400,7 @@
                         FontWeight="Bold"
                         Text="EK BİLGİLER"/>
 
-                                    <TextBlock
+                                    <TextBlock Style="{StaticResource dataBox}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding EkBilgiDisplay}"
@@ -414,29 +414,29 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="İZİNLER / GÖREVLER">
+                        <TabItem Header="İZİNLER / GÖREVLER" Style="{StaticResource tabItemStyle}">
                             <TabControl>
-                                <TabItem Header="İZİN 2018" >
+                                <TabItem Header="İZİN 2018" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2018 DataContext="{Binding EmployeeVacation2018VM}"/>
                                 </TabItem>
 
-                                <TabItem Header="İZİN 2019" >
+                                <TabItem Header="İZİN 2019" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2019 DataContext="{Binding EmployeeVacation2019VM}"/>
                                 </TabItem>
 
-                                <TabItem Header="İZİN 2020" >
+                                <TabItem Header="İZİN 2020" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2020 DataContext="{Binding EmployeeVacation2020VM}"/>
                                 </TabItem>
 
-                                <TabItem Header="İZİN 2021" >
+                                <TabItem Header="İZİN 2021" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2021 DataContext="{Binding EmployeeVacation2021VM}"/>
                                 </TabItem>
 
-                                <TabItem Header="İZİN 2022" >
+                                <TabItem Header="İZİN 2022" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2022 DataContext="{Binding EmployeeVacation2022VM}"/>
                                 </TabItem>
 
-                                <TabItem Header="İZİN 2023" >
+                                <TabItem Header="İZİN 2023" Style="{StaticResource tabItemStyle2}">
                                     <local:EmployeeVacation2023 DataContext="{Binding EmployeeVacation2023VM}"/>
                                 </TabItem>
 
@@ -446,11 +446,11 @@
 
 
                             </TabControl>
-                            
+
                         </TabItem>
-                        
-                        
-                        
+
+
+
                     </TabControl>
                 </Grid>
 

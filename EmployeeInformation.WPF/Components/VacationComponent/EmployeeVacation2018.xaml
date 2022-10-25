@@ -8,13 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     
     <UserControl.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Style TargetType="TextBlock">
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="13"/>
-            <Setter Property="MaxLength" Value="2"/>
-            <EventSetter Event="PreviewTextInput" Handler="NumericOnly" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
 
@@ -35,7 +33,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="0 20 0 0">
@@ -71,12 +69,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="OCAK"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ocak2018_C1, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ocak2018_C2, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ocak2018_C3, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ocak2018_C4, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ocak2018_C5, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ocak2018_C6, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ocak2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ocak2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ocak2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ocak2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ocak2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ocak2018_C6_Display}" />
 
         </Grid>
 
@@ -92,12 +90,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ŞUBAT"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Subat2018_C1, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Subat2018_C2, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Subat2018_C3, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Subat2018_C4, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Subat2018_C5, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Subat2018_C6, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Subat2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Subat2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Subat2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Subat2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Subat2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Subat2018_C6_Display}" />
 
         </Grid>
 
@@ -113,12 +111,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MART"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mart2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mart2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mart2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mart2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mart2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mart2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mart2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mart2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mart2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mart2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mart2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mart2018_C6_Display}" />
 
         </Grid>
 
@@ -135,12 +133,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="NİSAN"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Nisan2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Nisan2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Nisan2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Nisan2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Nisan2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Nisan2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Nisan2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Nisan2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Nisan2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Nisan2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Nisan2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Nisan2018_C6_Display}" />
 
         </Grid>
 
@@ -157,12 +155,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MAYIS"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mayis2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mayis2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mayis2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mayis2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mayis2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mayis2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mayis2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mayis2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mayis2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mayis2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mayis2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mayis2018_C6_Display}" />
 
         </Grid>
 
@@ -179,12 +177,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="HAZİRAN"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Haziran2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Haziran2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Haziran2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Haziran2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Haziran2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Haziran2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Haziran2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Haziran2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Haziran2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Haziran2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Haziran2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Haziran2018_C6_Display}" />
 
         </Grid>
         
@@ -200,12 +198,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="TEMMUZ"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Temmuz2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Temmuz2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Temmuz2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Temmuz2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Temmuz2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Temmuz2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Temmuz2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Temmuz2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Temmuz2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Temmuz2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Temmuz2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Temmuz2018_C6_Display}" />
 
         </Grid>
         
@@ -221,12 +219,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="AĞUSTOS"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Agustos2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Agustos2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Agustos2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Agustos2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Agustos2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Agustos2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Agustos2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Agustos2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Agustos2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Agustos2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Agustos2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Agustos2018_C6_Display}" />
 
         </Grid>
         
@@ -242,12 +240,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EYLÜL"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylül2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylül2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylül2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylül2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylül2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylül2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylül2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylül2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylül2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylül2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylül2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylül2018_C6_Display}" />
 
         </Grid>
         
@@ -263,12 +261,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EKİM"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ekim2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ekim2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ekim2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ekim2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ekim2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ekim2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ekim2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ekim2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ekim2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ekim2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ekim2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ekim2018_C6_Display}" />
 
         </Grid>
         
@@ -284,12 +282,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="KASIM"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Kasim2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Kasim2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Kasim2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Kasim2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Kasim2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Kasim2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Kasim2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Kasim2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Kasim2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Kasim2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Kasim2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Kasim2018_C6_Display}" />
 
         </Grid>
         
@@ -305,12 +303,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ARALIK"/>
-            <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Aralik2018_C1_Display}" />
-            <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Aralik2018_C2_Display}" />
-            <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Aralik2018_C3_Display}" />
-            <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Aralik2018_C4_Display}" />
-            <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Aralik2018_C5_Display}" />
-            <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Aralik2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Aralik2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Aralik2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Aralik2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Aralik2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Aralik2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Aralik2018_C6_Display}" />
 
         </Grid>
 
@@ -326,30 +324,14 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="TOPLAM"/>
-            <TextBox   Grid.Column="1" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C1, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox   Grid.Column="3" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C3, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox   Grid.Column="4" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C4, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox   Grid.Column="5" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C5, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox   Grid.Column="6" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C6, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
-            <TextBox   Grid.Column="2" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding Toplam2018_C2, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+            <TextBlock   Grid.Column="1" Margin="10 0 0 0" Text="{Binding Toplam2018_C1_Display}" />
+            <TextBlock   Grid.Column="3" Margin="10 0 0 0" Text="{Binding Toplam2018_C3_Display}" />
+            <TextBlock   Grid.Column="4" Margin="10 0 0 0" Text="{Binding Toplam2018_C4_Display}" />
+            <TextBlock   Grid.Column="5" Margin="10 0 0 0" Text="{Binding Toplam2018_C5_Display}" />
+            <TextBlock   Grid.Column="6" Margin="10 0 0 0" Text="{Binding Toplam2018_C6_Display}" />
+            <TextBlock   Grid.Column="2" Margin="10 0 0 0" Text="{Binding Toplam2018_C2_Display}" />
 
-        </Grid>
-
-
-        <Grid Grid.Row="14" Margin="50 0 0 20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <WrapPanel Orientation="Horizontal">
-                <Button Content="KAYDET"
-                        Command="{Binding Submit2018Command}"/>
-
-                <TextBlock Text="Kaydedildi..." 
-                           Visibility="Visible"
-                           VerticalAlignment="Center" 
-                           Margin="10 0 0 0"/>
-            </WrapPanel>
-            
-            
-        </Grid>
-            
+        </Grid>          
 
 
 

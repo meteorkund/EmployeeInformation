@@ -22,8 +22,9 @@ namespace EmployeeInformation.WPF.Components
     {
         public EmployeeDetailsForm()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+
         private void cboTest_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             ComboBox cbo = sender as ComboBox;
@@ -37,6 +38,17 @@ namespace EmployeeInformation.WPF.Components
                     txt.CharacterCasing = CharacterCasing.Upper;
                 }
             }
+        }
+
+        private void NumericOnly(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = IsTextNumeric(e.Text);
+        }
+
+        private static bool IsTextNumeric(string str)
+        {
+            System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^0-9]");
+            return reg.IsMatch(str);
         }
     }
 }

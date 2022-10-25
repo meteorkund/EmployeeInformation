@@ -28,6 +28,8 @@ namespace EmployeeInformation.WPF.Commands
 
             formViewModel.ErrorMessage = null;
             formViewModel.IsSubmitting = true;
+            formViewModel.IsSaved = true;
+            formViewModel.SaveStatus = "PERSONEL BİLGİLERİ GÜNCELLENİYOR...";
 
             Employee employee = new Employee(
                 _editEmployeeViewModel.EmployeeId,
@@ -56,10 +58,14 @@ namespace EmployeeInformation.WPF.Commands
             try
             {
                 await _employeeStore.Update(employee);
-                _modalNavigationStore.Close();
+                await Task.Delay(3000);
+                formViewModel.IsSaved = true;
+                formViewModel.SaveStatus = "GÜNCELLEME BAŞARILI!";
+
             }
             catch (Exception)
             {
+                formViewModel.IsSaved= false;
                 formViewModel.ErrorMessage = "Personel güncelleme sırasında hata oluştu. Daha sonra tekrar deneyiniz.";
             }
             finally

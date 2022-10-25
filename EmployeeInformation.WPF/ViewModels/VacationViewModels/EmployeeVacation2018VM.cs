@@ -20,32 +20,31 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
             _selectedEmployeeStore = selectedEmployeeStore;
             _selectedEmployeeStore.SelectedEmployeeChanged += SelectedEmployeeStore_SelectedEmployeeChanged;
 
-            Submit2018Command = new EditVacationViewModel();
         }
 
         #region OCAK
-        public int Ocak2018_C1 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c1;
-        public int Ocak2018_C2 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c2;
-        public int Ocak2018_C3 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c3;
-        public int Ocak2018_C4 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c4;
-        public int Ocak2018_C5 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c5;
-        public int Ocak2018_C6 => (int)SelectedEmployee?.Vacation2018.Ocak2018_c6;
+        public int Ocak2018_C1_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c1;
+        public int Ocak2018_C2_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c2;
+        public int Ocak2018_C3_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c3;
+        public int Ocak2018_C4_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c4;
+        public int Ocak2018_C5_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c5;
+        public int Ocak2018_C6_Display => (int)SelectedEmployee?.Vacation2018.Ocak2018_c6;
         #endregion
         #region ŞUBAT
-        public int Subat2018_C1 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c1);
-        public int Subat2018_C2 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c2);
-        public int Subat2018_C3 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c3);
-        public int Subat2018_C4 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c4);
-        public int Subat2018_C5 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c5);
-        public int Subat2018_C6 => (int)(SelectedEmployee?.Vacation2018.Subat2018_c6);
+        public int Subat2018_C1_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c1);
+        public int Subat2018_C2_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c2);
+        public int Subat2018_C3_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c3);
+        public int Subat2018_C4_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c4);
+        public int Subat2018_C5_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c5);
+        public int Subat2018_C6_Display => (int)(SelectedEmployee?.Vacation2018.Subat2018_c6);
         #endregion
 
-        public int Toplam2018_C1 => Ocak2018_C1 + Subat2018_C1;
-        public int Toplam2018_C2 => Ocak2018_C2 + Subat2018_C2;
-        public int Toplam2018_C3 => Ocak2018_C3 + Subat2018_C3;
-        public int Toplam2018_C4 => Ocak2018_C4 + Subat2018_C4;
-        public int Toplam2018_C5 => Ocak2018_C5 + Subat2018_C5;
-        public int Toplam2018_C6 => Ocak2018_C6 + Subat2018_C6;
+        public int Toplam2018_C1_Display => Ocak2018_C1_Display + Subat2018_C1_Display;
+        public int Toplam2018_C2_Display => Ocak2018_C2_Display + Subat2018_C2_Display;
+        public int Toplam2018_C3_Display => Ocak2018_C3_Display + Subat2018_C3_Display;
+        public int Toplam2018_C4_Display => Ocak2018_C4_Display + Subat2018_C4_Display;
+        public int Toplam2018_C5_Display => Ocak2018_C5_Display + Subat2018_C5_Display;
+        public int Toplam2018_C6_Display => Ocak2018_C6_Display + Subat2018_C6_Display;
 
 
         public ICommand Submit2018Command { get; }
@@ -60,22 +59,22 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
 
         private void SelectedEmployeeStore_SelectedEmployeeChanged()
         {
-            OnPropertyChanged(nameof(Ocak2018_C1));
-            OnPropertyChanged(nameof(Ocak2018_C2));
-            OnPropertyChanged(nameof(Ocak2018_C3));
-            OnPropertyChanged(nameof(Ocak2018_C4));
-            OnPropertyChanged(nameof(Ocak2018_C5));
-            OnPropertyChanged(nameof(Ocak2018_C6));
+            OnPropertyChanged(nameof(Ocak2018_C1_Display));
+            OnPropertyChanged(nameof(Ocak2018_C2_Display));
+            OnPropertyChanged(nameof(Ocak2018_C3_Display));
+            OnPropertyChanged(nameof(Ocak2018_C4_Display));
+            OnPropertyChanged(nameof(Ocak2018_C5_Display));
+            OnPropertyChanged(nameof(Ocak2018_C6_Display));
 
-            OnPropertyChanged(nameof(Subat2018_C1));
-            OnPropertyChanged(nameof(Subat2018_C2));
-            OnPropertyChanged(nameof(Subat2018_C3));
-            OnPropertyChanged(nameof(Subat2018_C4));
-            OnPropertyChanged(nameof(Subat2018_C5));
-            OnPropertyChanged(nameof(Subat2018_C6));
+            OnPropertyChanged(nameof(Subat2018_C1_Display));
+            OnPropertyChanged(nameof(Subat2018_C2_Display));
+            OnPropertyChanged(nameof(Subat2018_C3_Display));
+            OnPropertyChanged(nameof(Subat2018_C4_Display));
+            OnPropertyChanged(nameof(Subat2018_C5_Display));
+            OnPropertyChanged(nameof(Subat2018_C6_Display));
 
-            OnPropertyChanged(nameof(Toplam2018_C1));
-            OnPropertyChanged(nameof(Toplam2018_C2));
+            OnPropertyChanged(nameof(Toplam2018_C1_Display));
+            OnPropertyChanged(nameof(Toplam2018_C2_Display));
 
         }
     }

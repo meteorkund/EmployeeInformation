@@ -12,9 +12,6 @@ namespace EmployeeInformation.WPF.ViewModels
     public class EmployeeDetailsFormViewModel : ViewModelBase
     {
 
-
-
-
         private string _isim;
 
         public string Isim
@@ -283,6 +280,43 @@ namespace EmployeeInformation.WPF.ViewModels
                 _errorMessage = value;
                 OnPropertyChanged(nameof(ErrorMessage));
                 OnPropertyChanged(nameof(HasErrorMessage));
+            }
+        }
+
+        private string _saveStatus;
+
+        public string SaveStatus
+        {
+            get { return _saveStatus; }
+            set
+            {
+                _saveStatus = value;
+                OnPropertyChanged(nameof(SaveStatus));
+            }
+        }
+
+
+        private bool _isSaved;
+
+        public bool IsSaved
+        {
+            get { return _isSaved; }
+            set
+            {
+                _isSaved = value;
+                OnPropertyChanged(nameof(IsSaved));
+            }
+        }
+
+        private bool _isAdding;
+
+        public bool IsAdding
+        {
+            get { return _isAdding; }
+            set
+            {
+                _isAdding = value;
+                OnPropertyChanged(nameof(IsAdding));
             }
         }
 

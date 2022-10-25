@@ -15,10 +15,36 @@
         <converter:BoolToVisibilityConverter
             x:Key="BoolToHiddenConverter" 
             TrueValue="Hidden" FalseValue="Visible"/>
-
         <converter:BoolToVisibilityConverter x:Key="BoolToVis"/>
 
+        <Style TargetType="TextBox">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="MaxLength" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <EventSetter Event="PreviewTextInput" Handler="NumericOnly"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="VacationTextBlockMonths">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="VacationTextBox">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
     </UserControl.Resources>
+
 
     <Border>
         <Border.Background>
@@ -40,165 +66,171 @@
                 </LinearGradientBrush>
             </Border.Background>
 
-            <Grid Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
 
-                </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="35"/>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="25"/>
-                </Grid.ColumnDefinitions>
 
-                <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="550" Height="100" Stroke="Black" StrokeThickness="3" HorizontalAlignment="Right"/>
+            <TabControl Grid.Row="0" Background="Transparent">
 
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5 0 0 0" Grid.Column="1" Grid.Row="1">
-                    <Button Grid.Row="0" Grid.Column="0" Content="Fotoğraf Yükle"
+                <TabItem Header="KİŞİSEL" Style="{StaticResource tabItemStyle}">
+                    <Grid Grid.IsSharedSizeScope="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="50"/>
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="550" Height="100" Stroke="Black" StrokeThickness="3" HorizontalAlignment="Right"/>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5 0 0 0" Grid.Column="1" Grid.Row="1">
+                            <Button Grid.Row="0" Grid.Column="0" Content="Fotoğraf Yükle"
                             Command="{Binding UploadPhotoCommand}"/>
-                </StackPanel>
+                        </StackPanel>
 
-                <Grid Grid.Row="1" Margin="0 0 0 40" Grid.Column="1">
+                        <Grid Grid.Row="1" Margin="0 0 0 40" Grid.Column="1">
 
-                    <Image 
+                            <Image 
                         HorizontalAlignment="Left"
                         UseLayoutRounding="True"
                         Stretch="Fill"
-                        Source="{Binding PhotoSource}"
+                        Source="{Binding PhotoSource, UpdateSourceTrigger=PropertyChanged}"
                         Width="150" Height="150"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                    <TextBlock
-                        Text="PERSONEL FORMU"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Margin="240 0 0 0"
-                        TextAlignment="Center"
-                        FontSize="30"
-                        FontFamily="Segoe UI"
-                        FontWeight="Bold"/>
-                </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                            <TextBlock  Text="PERSONEL FORMU"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="240 0 0 0"
+                                        TextAlignment="Center"
+                                        FontSize="30"
+                                        FontFamily="Segoe UI"
+                                        FontWeight="Bold"/>
+                        </Grid>
 
-                <Grid Grid.Row="3" Grid.Column="1" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="3" Grid.Column="1" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                             Grid.Column="0"
                             FontWeight="Bold"
                             Text="TC KİMLİK NO" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                             Style="{StaticResource TextBoxStyle1}"
                             KeyboardNavigation.TabIndex="2"
                             Grid.Column="1"
                             Margin="20 0 0 0"
-                            Text="{Binding TCKimlik}" VerticalAlignment="Center"/>
+                            Text="{Binding TCKimlik, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
-                </Grid>
-                <Grid Grid.Row="3" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        </Grid>
 
-                    <TextBlock
+                        <Grid Grid.Row="3" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
                                 Grid.Column="0"
                                 FontWeight="Bold"
                                 Text="DEPARTMAN" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="7"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding Departman, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="4" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="4" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                                 Grid.Column="0"
                                 FontWeight="Bold"
                                 Text="GÖREVİ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="8"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding Gorev, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="5" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="5" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                                 Grid.Column="0"
                                 FontWeight="Bold"
                                 Text="MAAŞ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="9"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding Maas, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="6" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="6" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                                 Grid.Column="0"
                                 FontWeight="Bold"
                                 Text="CEP TELEFONU" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="10"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding CepTel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="7" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="7" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                                 Grid.Column="0"
                                 FontWeight="Bold"
                                 Width="155"
@@ -207,25 +239,21 @@
                                 TextWrapping="WrapWithOverflow"
                                 TextAlignment="Justify" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="11"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding BaslamaTarihi, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
+                        <Grid Grid.Row="8" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-
-
-
-                <Grid Grid.Row="8" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock
+                            <TextBlock
                             Grid.Column="0"
                             FontWeight="Bold"
                             Width="155"
@@ -234,181 +262,181 @@
                             TextWrapping="WrapWithOverflow"
                             TextAlignment="Justify" VerticalAlignment="Center"/>
 
-                    <CheckBox
+                            <CheckBox
                             Grid.Column="1"
                             Margin="20 0 0 0"
                             VerticalAlignment="Center"
                             IsChecked="{Binding Durum}"/>
 
 
-                </Grid>
+                        </Grid>
 
 
-                <Grid Grid.Row="2" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="2" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="ADI" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="0"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding Isim, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="2" Grid.Column="2" Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="2" Grid.Column="2" Margin="0 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="labelSag"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="SOYADI" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="1"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding Soyisim, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="4" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="4" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="DOĞUM TARİHİ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="3"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding DogumTarihi, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="5" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="5" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="MEDENİ HAL" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="4"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding MedeniDurum, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="6" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="6" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="EĞİTİM DURUMU" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="5"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding EgitimDurumu, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="7" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="7" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="ASKERLİK DURUMU" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="6"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding Askerlik, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="8" Margin="0 10 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="8" Margin="0 10 0 0" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="İŞE GİRİŞ TARİHİ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding IseGiris, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="9" Margin="0 10 0 0" Grid.Column="1" Visibility="{Binding Durum, Converter={StaticResource BoolToHiddenConverter}}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*" MaxWidth="200"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="9" Margin="0 10 0 0" Grid.Column="1" Visibility="{Binding Durum, Converter={StaticResource BoolToHiddenConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="İŞTEN ÇIKIŞ TARİHİ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding IstenCikis, UpdateSourceTrigger=PropertyChanged}"/>
-                </Grid>
+                        </Grid>
 
 
-                <Separator Grid.Row="10" Margin="0 10 0 0" Width="auto" Grid.ColumnSpan="2" Background="#ff212121" Grid.Column="1"/>
+                        <Separator Grid.Row="10" Margin="0 10 0 0" Width="auto" Grid.ColumnSpan="2" Background="#ff212121" Grid.Column="1"/>
 
-                <Grid Grid.Row="11" Margin="0 10 0 0" Grid.ColumnSpan="2" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="11" Margin="0 10 0 0" Grid.ColumnSpan="2" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="EV ADRESİ" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="12"
                         Grid.Column="1"
@@ -419,20 +447,20 @@
                         Text="{Binding EvAdresi, UpdateSourceTrigger=PropertyChanged}"
                         TextAlignment="Justify"
                         TextWrapping="WrapWithOverflow" VerticalAlignment="Center"/>
-                </Grid>
+                        </Grid>
 
-                <Grid Grid.Row="12" Grid.Column="1" Margin="0 10 0 0" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="12" Grid.Column="1" Margin="0 10 0 0" Grid.ColumnSpan="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" SharedSizeGroup="label"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                            <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Text="EK BİLGİLER" VerticalAlignment="Center"/>
 
-                    <TextBox
+                            <TextBox
                         Style="{StaticResource TextBoxStyle1}"
                         KeyboardNavigation.TabIndex="13"
                         Width="400"
@@ -444,45 +472,45 @@
                         TextAlignment="Justify"
                         TextWrapping="WrapWithOverflow" VerticalAlignment="Center"/>
 
-                </Grid>
+                        </Grid>
 
 
-                <WrapPanel Grid.Row="11" 
+                        <WrapPanel Grid.Row="11" 
                            Grid.Column="2"
                            VerticalAlignment="Center" 
                            HorizontalAlignment="Right"
                            Margin="0 10 20 0">
 
-                    <Button 
+                            <Button 
                         Margin="0 0 5 0"
                         Content="KAYDET"
                         Command="{Binding SubmitCommand}"
                         IsEnabled="{Binding CanSubmit}" />
 
-                    <Button 
+                            <Button 
                         Content="ÇIKIŞ"
                         Style="{StaticResource ButtonSecondary}"
                         Command="{Binding CancelCommand}"/>
-                   
-                </WrapPanel>
 
-                <custom:LoadingSpinner Grid.Row="12" Grid.Column="2"
+                        </WrapPanel>
+
+                        <custom:LoadingSpinner Grid.Row="12" Grid.Column="2"
                                        Margin="50 0 0 0"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Thickness="2"
                                        Diameter="35" IsLoading="{Binding IsSubmitting}"/>
-                <TextBlock Grid.Row="12"
+                        <TextBlock Grid.Row="12"
                            Grid.Column="2"
                            FontWeight="SemiBold"
-                           Text="Kaydediliyor..." 
+                           Text="{Binding SaveStatus}" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Right"
                            Margin="0 0 40 0"
                            
                            Visibility="{Binding IsSubmitting, Converter={StaticResource BoolToVis}}"/>
 
-                <TextBlock Grid.Row="13"
+                        <TextBlock Grid.Row="13"
                            Grid.Column="1"
                            Grid.ColumnSpan="2"
                            FontSize="20"
@@ -493,7 +521,356 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
 
-            </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="İZİNLER / GÖREVLER" 
+                         Style="{StaticResource tabItemStyle}"
+                         Visibility="{Binding IsAdding, Converter={StaticResource BoolToHiddenConverter}}">
+
+                    <TabControl Background="Transparent">
+                        <TabItem Header="2018" Style="{StaticResource tabItemStyle2}">
+
+                            <Grid Grid.IsSharedSizeScope="True" Margin="25">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Margin="0 20 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="120" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="1" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="ÜCRETSİZ İZİN" />
+                                    <TextBlock Grid.Column="2" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="ÜCRETLİ İZİN" />
+                                    <TextBlock Grid.Column="3" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="RAPOR"/>
+                                    <TextBlock Grid.Column="4" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YILLIK İZİN" />
+                                    <TextBlock Grid.Column="5" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YURT İÇİ GÖREV" />
+                                    <TextBlock Grid.Column="6" Margin="10 0 0 0" Style="{StaticResource VacationTextBox}" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YURT DIŞI GÖREV" />
+
+
+                                </Grid>
+
+                                <Grid Grid.Row="1" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="OCAK" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ocak2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ocak2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ocak2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ocak2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ocak2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ocak2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="2" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ŞUBAT" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Subat2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Subat2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Subat2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Subat2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Subat2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Subat2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="3" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MART" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mart2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mart2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mart2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mart2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mart2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mart2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+
+                                <Grid Grid.Row="4" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="NİSAN" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Nisan2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Nisan2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Nisan2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Nisan2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Nisan2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Nisan2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+
+                                <Grid Grid.Row="5" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MAYIS" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mayis2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mayis2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mayis2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mayis2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mayis2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mayis2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+
+                                <Grid Grid.Row="6" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="HAZİRAN" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Haziran2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Haziran2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Haziran2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Haziran2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Haziran2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Haziran2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="7" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="TEMMUZ" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Temmuz2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Temmuz2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Temmuz2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Temmuz2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Temmuz2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Temmuz2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="8" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="AĞUSTOS" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Agustos2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Agustos2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Agustos2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Agustos2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Agustos2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Agustos2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="9" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EYLÜL" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylül2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylül2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylül2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylül2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylül2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylül2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="10" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EKİM" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ekim2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ekim2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ekim2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ekim2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ekim2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ekim2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="11" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="KASIM" Style="{StaticResource VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Kasim2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Kasim2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Kasim2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Kasim2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Kasim2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Kasim2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+                                <Grid Grid.Row="12" Margin="0 10 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                                        <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ARALIK" Style="{StaticResource  VacationTextBlockMonths}"/>
+                                    <TextBox Grid.Column="1" Margin="10 0 0 0" Text="{Binding Aralik2018_C1, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="2" Margin="10 0 0 0" Text="{Binding Aralik2018_C2, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="3" Margin="10 0 0 0" Text="{Binding Aralik2018_C3, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="4" Margin="10 0 0 0" Text="{Binding Aralik2018_C4, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="5" Margin="10 0 0 0" Text="{Binding Aralik2018_C5, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Column="6" Margin="10 0 0 0" Text="{Binding Aralik2018_C6, UpdateSourceTrigger=PropertyChanged}" />
+
+                                </Grid>
+
+
+
+
+                                <Grid Grid.Row="13" Margin="0 30 0 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <WrapPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <Button Margin="0 0 5 0"
+                                            Content="KAYDET"
+                                            Command="{Binding SubmitCommand}"
+                                            IsEnabled="{Binding CanSubmit}" />
+
+                                        <Button Content="ÇIKIŞ"
+                                            Style="{StaticResource ButtonSecondary}"
+                                            Command="{Binding CancelCommand}"/>
+
+                                    </WrapPanel>
+
+                                    <custom:LoadingSpinner
+                                       Grid.Column="0"
+                                        Margin="7 0 0 0"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Thickness="2"
+                                       Diameter="35" 
+                                       IsLoading="{Binding IsSubmitting}"/>
+
+                                    <TextBlock Text="{Binding SaveStatus}" 
+                                               Style="{StaticResource VacationTextBox}"
+                                               Margin="5 0 0 0"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Visibility="{Binding IsSaved, Converter={StaticResource BoolToVis}}"/>
+
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </TabItem>
+            </TabControl>
 
         </Border>
     </Border>

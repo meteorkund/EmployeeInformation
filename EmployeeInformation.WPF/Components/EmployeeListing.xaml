@@ -96,7 +96,7 @@
                 ItemsSource="{Binding EmployeeListingItemViewModels}"
                 SelectedItem="{Binding SelectedEmployeeListingItemViewModel}"
                 AutoGenerateColumns="False">
-                        <DataGrid.Columns>
+                        <DataGrid.Columns>                            
                             <DataGridTextColumn IsReadOnly="True" Width="auto" ElementStyle="{StaticResource Centering}">
                                 <DataGridTextColumn.CellStyle>
                                     <Style TargetType="DataGridCell">
@@ -137,7 +137,6 @@
                             <DataGridTextColumn Header="NO" IsReadOnly="True" Binding="{Binding DosyaNo}" ElementStyle="{StaticResource Centering}" />
 
                             <DataGridTextColumn Header="ADI" IsReadOnly="True" Binding="{Binding Isim}" />
-                            <DataGridTextColumn Header="SOYADI" IsReadOnly="True" Binding="{Binding Soyisim}" />
                             <DataGridTextColumn Header="DEPARTMAN" IsReadOnly="True"  Binding="{Binding Departman}" />
                             <DataGridTextColumn Header="GÖREVİ" Width="*" IsReadOnly="True" Binding="{Binding Gorev}" />
 
