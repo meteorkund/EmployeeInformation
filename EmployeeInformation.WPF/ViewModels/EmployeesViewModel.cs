@@ -14,6 +14,7 @@ namespace EmployeeInformation.WPF.ViewModels
     {
         public EmployeeListingViewModel EmployeeListingViewModel { get; }
         public EmployeeDetailsViewModel EmployeeDetailsViewModel { get; }
+
         readonly EmployeesDbContextFactory _contextFactory;
 
 

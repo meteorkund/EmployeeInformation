@@ -44,8 +44,8 @@ namespace EmployeeInformation.EF.Queries
                     e.CalismaSuresi,
                     e.BaslamaTarihi,
                     e.Adres,
-                    e.EkBilgi,                   
-                    
+                    e.EkBilgi,
+
                     new Vacation2018
                     {
                         Id = e.Id,
@@ -56,9 +56,15 @@ namespace EmployeeInformation.EF.Queries
                         Ocak2018_c5 = (int)e.Vacation2018DTO.Ocak2018_c5,
                         Ocak2018_c6 = (int)e.Vacation2018DTO.Ocak2018_c6,
 
-                    }
+                        Subat2018_c1 = (int)e.Vacation2018DTO.Subat2018_c1,
+                        Subat2018_c2 = (int)e.Vacation2018DTO.Subat2018_c2,
+                        Subat2018_c3 = (int)e.Vacation2018DTO.Subat2018_c3,
+                        Subat2018_c4 = (int)e.Vacation2018DTO.Subat2018_c4,
+                        Subat2018_c5 = (int)e.Vacation2018DTO.Subat2018_c5,
+                        Subat2018_c6 = (int)e.Vacation2018DTO.Subat2018_c6,
 
-                    ));
+
+                    }));
             }
         }
     }

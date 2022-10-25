@@ -134,7 +134,7 @@
                                 </DataGridTextColumn.CellStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Dosya No" IsReadOnly="True" Binding="{Binding DosyaNo}" ElementStyle="{StaticResource Centering}" />
+                            <DataGridTextColumn Header="NO" IsReadOnly="True" Binding="{Binding DosyaNo}" ElementStyle="{StaticResource Centering}" />
 
                             <DataGridTextColumn Header="ADI" IsReadOnly="True" Binding="{Binding Isim}" />
                             <DataGridTextColumn Header="SOYADI" IsReadOnly="True" Binding="{Binding Soyisim}" />

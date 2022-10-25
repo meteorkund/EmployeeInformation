@@ -1,5 +1,7 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.WPF.Components;
 using EmployeeInformation.WPF.Stores;
+using EmployeeInformation.WPF.ViewModels.VacationViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,9 @@ namespace EmployeeInformation.WPF.ViewModels
     public class EmployeeDetailsViewModel : ViewModelBase
     {
         readonly SelectedEmployeeStore _selectedEmployeeStore;
-        private Employee SelectedEmployee => _selectedEmployeeStore.SelectedEmployee;
+        public Employee SelectedEmployee => _selectedEmployeeStore.SelectedEmployee;
+
+        public EmployeeVacation2018VM EmployeeVacation2018VM { get; }
 
 
         public bool HasSelectedEmployee => SelectedEmployee != null;
@@ -34,19 +38,16 @@ namespace EmployeeInformation.WPF.ViewModels
         public string BaslamaTarihiDisplay => SelectedEmployee?.BaslamaTarihi;
         public string AdresDisplay => SelectedEmployee?.Adres;
         public string EkBilgiDisplay => SelectedEmployee?.EkBilgi;
-        public int Ocak2018_c1_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c1);
-        public int Ocak2018_c2_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c2);
-        public int Ocak2018_c3_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c3);
-        public int Ocak2018_c4_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c4);
-        public int Ocak2018_c5_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c5);
-        public int Ocak2018_c6_Display => (int)(SelectedEmployee?.Vacation2018?.Ocak2018_c6);
 
 
-        public EmployeeDetailsViewModel(SelectedEmployeeStore selectedCustomerStore)
+        public EmployeeDetailsViewModel(SelectedEmployeeStore selectedEmployeeStore)
         {
-            _selectedEmployeeStore = selectedCustomerStore;
+            _selectedEmployeeStore = selectedEmployeeStore;
 
             _selectedEmployeeStore.SelectedEmployeeChanged += SelectedEmployeeStore_SelectedEmployeeChanged;
+
+            EmployeeVacation2018VM = new EmployeeVacation2018VM(selectedEmployeeStore);
+
         }
 
 
@@ -115,12 +116,7 @@ namespace EmployeeInformation.WPF.ViewModels
             OnPropertyChanged(nameof(BaslamaTarihiDisplay));
             OnPropertyChanged(nameof(AdresDisplay));
             OnPropertyChanged(nameof(EkBilgiDisplay));
-            OnPropertyChanged(nameof(Ocak2018_c1_Display));
-            OnPropertyChanged(nameof(Ocak2018_c2_Display));
-            OnPropertyChanged(nameof(Ocak2018_c3_Display));
-            OnPropertyChanged(nameof(Ocak2018_c4_Display));
-            OnPropertyChanged(nameof(Ocak2018_c5_Display));
-            OnPropertyChanged(nameof(Ocak2018_c6_Display));
+
         }
     }
 }
