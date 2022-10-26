@@ -9,7 +9,7 @@ namespace EmployeeInformation.Domain.Models
 {
     public class Employee : BaseEntity
     {
-        public Employee(int id, string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi, Vacation2018 vacation2018 )
+        public Employee(int id, string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi, DateTime createdDate, Vacation2018 vacation2018 )
         {
             Id = id;
             Fotograf = fotograf;
@@ -32,6 +32,7 @@ namespace EmployeeInformation.Domain.Models
             Adres = adres;
             EkBilgi = ekBilgi;
             Vacation2018 = vacation2018;
+            CreatedDate = createdDate;
         }
 
         public int Id { get; }

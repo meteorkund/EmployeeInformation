@@ -44,6 +44,101 @@ namespace EmployeeInformation.EF.Commands
                     BaslamaTarihi = employee.BaslamaTarihi,
                     Adres = employee.Adres,
                     EkBilgi = employee.EkBilgi,
+                    CreatedDate = employee.CreatedDate,
+                    UpdatedDate = DateTime.Now,
+
+                    Vacation2018DTO = new Vacation2018DTO
+                    {
+                        Id = employee.Id,
+                        Ocak2018_C1 = employee.Vacation2018.Ocak2018_C1,
+                        Ocak2018_C2 = employee.Vacation2018.Ocak2018_C2,
+                        Ocak2018_C3 = employee.Vacation2018.Ocak2018_C3,
+                        Ocak2018_C4 = employee.Vacation2018.Ocak2018_C4,
+                        Ocak2018_C5 = employee.Vacation2018.Ocak2018_C5,
+                        Ocak2018_C6 = employee.Vacation2018.Ocak2018_C6,
+
+                        Subat2018_C1 = employee.Vacation2018.Subat2018_C1,
+                        Subat2018_C2 = employee.Vacation2018.Subat2018_C2,
+                        Subat2018_C3 = employee.Vacation2018.Subat2018_C3,
+                        Subat2018_C4 = employee.Vacation2018.Subat2018_C4,
+                        Subat2018_C5 = employee.Vacation2018.Subat2018_C5,
+                        Subat2018_C6 = employee.Vacation2018.Subat2018_C6,
+
+                        Mart2018_C1 = employee.Vacation2018.Mart2018_C1,
+                        Mart2018_C2 = employee.Vacation2018.Mart2018_C2,
+                        Mart2018_C3 = employee.Vacation2018.Mart2018_C3,
+                        Mart2018_C4 = employee.Vacation2018.Mart2018_C4,
+                        Mart2018_C5 = employee.Vacation2018.Mart2018_C5,
+                        Mart2018_C6 = employee.Vacation2018.Mart2018_C6,
+
+                        Nisan2018_C1 = employee.Vacation2018.Nisan2018_C1,
+                        Nisan2018_C2 = employee.Vacation2018.Nisan2018_C2,
+                        Nisan2018_C3 = employee.Vacation2018.Nisan2018_C3,
+                        Nisan2018_C4 = employee.Vacation2018.Nisan2018_C4,
+                        Nisan2018_C5 = employee.Vacation2018.Nisan2018_C5,
+                        Nisan2018_C6 = employee.Vacation2018.Nisan2018_C6,
+
+                        Mayis2018_C1 = employee.Vacation2018.Mayis2018_C1,
+                        Mayis2018_C2 = employee.Vacation2018.Mayis2018_C2,
+                        Mayis2018_C3 = employee.Vacation2018.Mayis2018_C3,
+                        Mayis2018_C4 = employee.Vacation2018.Mayis2018_C4,
+                        Mayis2018_C5 = employee.Vacation2018.Mayis2018_C5,
+                        Mayis2018_C6 = employee.Vacation2018.Mayis2018_C6,
+
+                        Haziran2018_C1 = employee.Vacation2018.Haziran2018_C1,
+                        Haziran2018_C2 = employee.Vacation2018.Haziran2018_C2,
+                        Haziran2018_C3 = employee.Vacation2018.Haziran2018_C3,
+                        Haziran2018_C4 = employee.Vacation2018.Haziran2018_C4,
+                        Haziran2018_C5 = employee.Vacation2018.Haziran2018_C5,
+                        Haziran2018_C6 = employee.Vacation2018.Haziran2018_C6,
+
+                        Temmuz2018_C1 = employee.Vacation2018.Temmuz2018_C1,
+                        Temmuz2018_C2 = employee.Vacation2018.Temmuz2018_C2,
+                        Temmuz2018_C3 = employee.Vacation2018.Temmuz2018_C3,
+                        Temmuz2018_C4 = employee.Vacation2018.Temmuz2018_C4,
+                        Temmuz2018_C5 = employee.Vacation2018.Temmuz2018_C5,
+                        Temmuz2018_C6 = employee.Vacation2018.Temmuz2018_C6,
+
+                        Agustos2018_C1 = employee.Vacation2018.Agustos2018_C1,
+                        Agustos2018_C2 = employee.Vacation2018.Agustos2018_C2,
+                        Agustos2018_C3 = employee.Vacation2018.Agustos2018_C3,
+                        Agustos2018_C4 = employee.Vacation2018.Agustos2018_C4,
+                        Agustos2018_C5 = employee.Vacation2018.Agustos2018_C5,
+                        Agustos2018_C6 = employee.Vacation2018.Agustos2018_C6,
+
+                        Eylul2018_C1 = employee.Vacation2018.Eylul2018_C1,
+                        Eylul2018_C2 = employee.Vacation2018.Eylul2018_C2,
+                        Eylul2018_C3 = employee.Vacation2018.Eylul2018_C3,
+                        Eylul2018_C4 = employee.Vacation2018.Eylul2018_C4,
+                        Eylul2018_C5 = employee.Vacation2018.Eylul2018_C5,
+                        Eylul2018_C6 = employee.Vacation2018.Eylul2018_C6,
+
+                        Ekim2018_C1 = employee.Vacation2018.Ekim2018_C1,
+                        Ekim2018_C2 = employee.Vacation2018.Ekim2018_C2,
+                        Ekim2018_C3 = employee.Vacation2018.Ekim2018_C3,
+                        Ekim2018_C4 = employee.Vacation2018.Ekim2018_C4,
+                        Ekim2018_C5 = employee.Vacation2018.Ekim2018_C5,
+                        Ekim2018_C6 = employee.Vacation2018.Ekim2018_C6,
+
+                        Kasim2018_C1 = employee.Vacation2018.Kasim2018_C1,
+                        Kasim2018_C2 = employee.Vacation2018.Kasim2018_C2,
+                        Kasim2018_C3 = employee.Vacation2018.Kasim2018_C3,
+                        Kasim2018_C4 = employee.Vacation2018.Kasim2018_C4,
+                        Kasim2018_C5 = employee.Vacation2018.Kasim2018_C5,
+                        Kasim2018_C6 = employee.Vacation2018.Kasim2018_C6,
+
+                        Aralik2018_C1 = employee.Vacation2018.Aralik2018_C1,
+                        Aralik2018_C2 = employee.Vacation2018.Aralik2018_C2,
+                        Aralik2018_C3 = employee.Vacation2018.Aralik2018_C3,
+                        Aralik2018_C4 = employee.Vacation2018.Aralik2018_C4,
+                        Aralik2018_C5 = employee.Vacation2018.Aralik2018_C5,
+                        Aralik2018_C6 = employee.Vacation2018.Aralik2018_C6,
+
+                        CreatedDate= employee.CreatedDate,
+                        UpdatedDate = DateTime.Now
+                    }
+
+                    
                 };
 
                 context.Employees.Update(employeeDTOs);

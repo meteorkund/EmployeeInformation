@@ -45,15 +45,98 @@ namespace EmployeeInformation.EF.Commands
                     BaslamaTarihi = employee.BaslamaTarihi,
                     Adres = employee.Adres,
                     EkBilgi = employee.EkBilgi,
-                    Vacation2018DTO= new Vacation2018DTO()
+                    CreatedDate = DateTime.Now,
+
+
+                    Vacation2018DTO = new Vacation2018DTO()
                     {
-                        Ocak2018_c1=0  ,
-                        Ocak2018_c2=0  ,
-                        Ocak2018_c3=0  ,
-                        Ocak2018_c4=0  ,
-                        Ocak2018_c5=0  ,
-                        Ocak2018_c6=0  ,
+                        Ocak2018_C1=0,
+                        Ocak2018_C2=0,
+                        Ocak2018_C3=0,
+                        Ocak2018_C4=0,
+                        Ocak2018_C5=0,
+                        Ocak2018_C6=0,
+
+                        Subat2018_C1 = 0,
+                        Subat2018_C2 = 0,
+                        Subat2018_C3 = 0,
+                        Subat2018_C4 = 0,
+                        Subat2018_C5 = 0,
+                        Subat2018_C6 = 0,
+
+                        Mart2018_C1 = 0,
+                        Mart2018_C2 = 0,
+                        Mart2018_C3 = 0,
+                        Mart2018_C4 = 0,
+                        Mart2018_C5 = 0,
+                        Mart2018_C6 = 0,
+
+                        Nisan2018_C1 = 0,
+                        Nisan2018_C2 = 0,
+                        Nisan2018_C3 = 0,
+                        Nisan2018_C4 = 0,
+                        Nisan2018_C5 = 0,
+                        Nisan2018_C6 = 0,
+
+                        Mayis2018_C1 = 0,
+                        Mayis2018_C2 = 0,
+                        Mayis2018_C3 = 0,
+                        Mayis2018_C4 = 0,
+                        Mayis2018_C5 = 0,
+                        Mayis2018_C6 = 0,
+
+                        Haziran2018_C1 = 0,
+                        Haziran2018_C2 = 0,
+                        Haziran2018_C3 = 0,
+                        Haziran2018_C4 = 0,
+                        Haziran2018_C5 = 0,
+                        Haziran2018_C6 = 0,
+
+                        Temmuz2018_C1 = 0,
+                        Temmuz2018_C2 = 0,
+                        Temmuz2018_C3 = 0,
+                        Temmuz2018_C4 = 0,
+                        Temmuz2018_C5 = 0,
+                        Temmuz2018_C6 = 0,
+
+                        Agustos2018_C1 = 0,
+                        Agustos2018_C2 = 0,
+                        Agustos2018_C3 = 0,
+                        Agustos2018_C4 = 0,
+                        Agustos2018_C5 = 0,
+                        Agustos2018_C6 = 0,
+
+                        Eylul2018_C1 = 0,
+                        Eylul2018_C2 = 0,
+                        Eylul2018_C3 = 0,
+                        Eylul2018_C4 = 0,
+                        Eylul2018_C5 = 0,
+                        Eylul2018_C6 = 0,
+
+                        Ekim2018_C1 = 0,
+                        Ekim2018_C2 = 0,
+                        Ekim2018_C3 = 0,
+                        Ekim2018_C4 = 0,
+                        Ekim2018_C5 = 0,
+                        Ekim2018_C6 = 0,
+
+                        Kasim2018_C1 = 0,
+                        Kasim2018_C2 = 0,
+                        Kasim2018_C3 = 0,
+                        Kasim2018_C4 = 0,
+                        Kasim2018_C5 = 0,
+                        Kasim2018_C6 = 0,
+
+                        Aralik2018_C1 = 0,
+                        Aralik2018_C2 = 0,
+                        Aralik2018_C3 = 0,
+                        Aralik2018_C4 = 0,
+                        Aralik2018_C5 = 0,
+                        Aralik2018_C6 = 0,
+
+                        CreatedDate=DateTime.Now
                     }
+
                 };
 
                 context.Employees.Add(employeeDTOs);

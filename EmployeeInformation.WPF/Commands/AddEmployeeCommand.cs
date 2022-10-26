@@ -60,6 +60,7 @@ namespace EmployeeInformation.WPF.Commands
                 formViewModel.BaslamaTarihi,
                 formViewModel.EvAdresi,
                 formViewModel.EkBilgi,
+                DateTime.Now,
                 new Vacation2018 {Id =sonDosyaNo+1,}                
                 );
 

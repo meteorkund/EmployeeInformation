@@ -240,12 +240,12 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EYLÜL"/>
-            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylül2018_C1_Display}" />
-            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylül2018_C2_Display}" />
-            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylül2018_C3_Display}" />
-            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylül2018_C4_Display}" />
-            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylül2018_C5_Display}" />
-            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylül2018_C6_Display}" />
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylul2018_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylul2018_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylul2018_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylul2018_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylul2018_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylul2018_C6_Display}" />
 
         </Grid>
         
