@@ -67,12 +67,10 @@ namespace EmployeeInformation.WPF.Commands
                 );
 
             string dateTime = DateTime.Now.ToString("G");
-            string day = dateTime.Substring(0, 2);
-            string month = dateTime.Substring(3, 2);
-            string year = dateTime.Substring(6, 4);
-            string hour = dateTime.Substring(11, 2);
-            string minute = dateTime.Substring(14, 2);
-            string second = dateTime.Substring(17, 2);
+            string dateTimeFile = dateTime
+                .Replace(".", string.Empty)
+                .Replace(":", string.Empty)
+                .Replace(" ", "-");
 
             string secilenDosya = formViewModel.PhotoSource;
 
@@ -80,9 +78,9 @@ namespace EmployeeInformation.WPF.Commands
 
             string fileName = System.IO.Path.GetFileName(secilenDosya);
 
-            string[] splittedName = formViewModel.Isim.Split(' ');
+            string splittedName = formViewModel.Isim.Replace(" ", string.Empty);
 
-            string newFileName = $"{splittedName[0]}-{formViewModel.Soyisim}-{day}{month}{year}-{hour}{minute}{second}{fileExtension}";
+            string newFileName = $"{splittedName}-{dateTimeFile}{fileExtension}";
             string sourceFile = secilenDosya;
             string targetPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelFoto"; //TODO KONUM DEĞİŞTİR MASTER'A AL.
             string destFile = System.IO.Path.Combine(targetPath, newFileName);

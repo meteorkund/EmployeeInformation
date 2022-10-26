@@ -15,7 +15,12 @@
         <converter:BoolToVisibilityConverter
             x:Key="BoolToHiddenConverter" 
             TrueValue="Hidden" FalseValue="Visible"/>
+
         <converter:BoolToVisibilityConverter x:Key="BoolToVis"/>
+
+        <converter:StringToPhoneConverter x:Key="StringToPhoneConverter"/>
+
+        <converter:StringToDateConverter x:Key="StringToDateConverter"/>
 
         <Style TargetType="TextBox">
             <Setter Property="FontWeight" Value="Bold"/>
@@ -144,6 +149,7 @@
                             <TextBox
                             Style="{StaticResource TextBoxStyle1}"
                             KeyboardNavigation.TabIndex="2"
+                                MaxLength="11"
                             Grid.Column="1"
                             Margin="20 0 0 0"
                             Text="{Binding TCKimlik, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
@@ -221,10 +227,12 @@
 
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="10"
+                                KeyboardNavigation.TabIndex="10"
+                                MaxLength="14"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
-                                Text="{Binding CepTel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                                Text="{Binding CepTel, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToPhoneConverter}}"
+                                VerticalAlignment="Center"/>
                         </Grid>
 
                         <Grid Grid.Row="7" Grid.Column="2" Margin="0 10 0 0">
@@ -244,10 +252,12 @@
 
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="11"
+                                KeyboardNavigation.TabIndex="11"
+                                MaxLength="10"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
-                                Text="{Binding BaslamaTarihi, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                                Text="{Binding BaslamaTarihi, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToDateConverter}}"
+                                VerticalAlignment="Center"/>
                         </Grid>
 
                         <Grid Grid.Row="8" Grid.Column="2" Margin="0 10 0 0">
@@ -325,11 +335,13 @@
                         Text="DOĞUM TARİHİ" VerticalAlignment="Center"/>
 
                             <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="3"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding DogumTarihi, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                                Style="{StaticResource TextBoxStyle1}"
+                                KeyboardNavigation.TabIndex="3"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                MaxLength="10"
+                                Text="{Binding DogumTarihi, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToDateConverter}}"
+                                VerticalAlignment="Center"/>
                         </Grid>
 
                         <Grid Grid.Row="5" Margin="0 10 0 0" Grid.Column="1">
@@ -401,10 +413,12 @@
                         Text="İŞE GİRİŞ TARİHİ" VerticalAlignment="Center"/>
 
                             <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding IseGiris, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                                Style="{StaticResource TextBoxStyle1}"
+                                MaxLength="10"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                Text="{Binding IseGiris, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToDateConverter}}"
+                                VerticalAlignment="Center"/>
                         </Grid>
 
                         <Grid Grid.Row="9" Margin="0 10 0 0" Grid.Column="1" Visibility="{Binding Durum, Converter={StaticResource BoolToHiddenConverter}}">
@@ -419,10 +433,11 @@
                         Text="İŞTEN ÇIKIŞ TARİHİ" VerticalAlignment="Center"/>
 
                             <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding IstenCikis, UpdateSourceTrigger=PropertyChanged}"/>
+                                Style="{StaticResource TextBoxStyle1}"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                MaxLength="10"
+                                Text="{Binding IstenCikis, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToDateConverter}}"/>
                         </Grid>
 
 
@@ -541,7 +556,7 @@
                 <TabItem Header="İZİNLER / GÖREVLER" 
                          Style="{StaticResource tabItemStyle}"
                          Visibility="{Binding IsAdding, Converter={StaticResource BoolToHiddenConverter}}">
-                    
+
 
                     <TabControl Background="Transparent">
                         <TabItem Header="2018" Style="{StaticResource tabItemStyle2}">
