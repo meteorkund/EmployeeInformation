@@ -29,7 +29,7 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.ErrorMessage = null;
             formViewModel.IsSubmitting = true;
             formViewModel.IsSaved = true;
-            formViewModel.SaveStatus = "PERSONEL BİLGİLERİ GÜNCELLENİYOR...";
+            formViewModel.SaveStatus = "GÜNCELLENİYOR...";
 
             Employee employee = new Employee(
                 _editEmployeeViewModel.EmployeeId,
@@ -142,6 +142,7 @@ namespace EmployeeInformation.WPF.Commands
 
             try
             {
+                await Task.Delay(3000);
                 await _employeeStore.Update(employee);
                 formViewModel.IsSaved = true;
                 formViewModel.SaveStatus = "GÜNCELLEME BAŞARILI!";

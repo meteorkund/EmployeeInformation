@@ -27,7 +27,7 @@ namespace EmployeeInformation.WPF.ViewModels
                 IsAdding = false,
 
                 CreatedDate = employee.CreatedDate,
-
+                PhotoSource = employee.Fotograf,
                 Durum = employee.Durum,
                 Isim = employee.Isim,
                 Soyisim = employee.Soyisim,

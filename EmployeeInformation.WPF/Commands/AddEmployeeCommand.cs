@@ -4,9 +4,11 @@ using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EmployeeInformation.WPF.Commands
 {
@@ -61,13 +63,51 @@ namespace EmployeeInformation.WPF.Commands
                 formViewModel.EvAdresi,
                 formViewModel.EkBilgi,
                 DateTime.Now,
-                new Vacation2018 {Id =sonDosyaNo+1,}                
+                new Vacation2018 { Id = sonDosyaNo + 1, }
                 );
 
+            string dateTime = DateTime.Now.ToString("G");
+            string day = dateTime.Substring(0, 2);
+            string month = dateTime.Substring(3, 2);
+            string year = dateTime.Substring(6, 4);
+            string hour = dateTime.Substring(11, 2);
+            string minute = dateTime.Substring(14, 2);
+            string second = dateTime.Substring(17, 2);
+
+            string secilenDosya = formViewModel.PhotoSource;
+
+            string fileExtension = System.IO.Path.GetExtension(secilenDosya);
+
+            string fileName = System.IO.Path.GetFileName(secilenDosya);
+
+            string[] splittedName = formViewModel.Isim.Split(' ');
+
+            string newFileName = $"{splittedName[0]}-{formViewModel.Soyisim}-{day}{month}{year}-{hour}{minute}{second}{fileExtension}";
+            string sourceFile = secilenDosya;
+            string targetPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelFoto"; //TODO KONUM DEĞİŞTİR MASTER'A AL.
+            string destFile = System.IO.Path.Combine(targetPath, newFileName);
 
             try
             {
                 await _employeeStore.Add(employee);
+
+                if (secilenDosya != "/Assets/MemetAvatar.jpg")
+                {
+                    try
+                    {
+                        if (!Directory.Exists(targetPath))
+                            Directory.CreateDirectory(targetPath);
+
+                        File.Copy(sourceFile, destFile, true);
+
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Fotoğraf yüklenirken bir hatayla karşılaşıldı", "Yükleme Hatası!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }           
+
                 _modalNavigationStore.Close();
 
             }

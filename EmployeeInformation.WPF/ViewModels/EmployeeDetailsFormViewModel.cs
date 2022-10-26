@@ -1,11 +1,17 @@
 ﻿using EmployeeInformation.EF;
+using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace EmployeeInformation.WPF.ViewModels
 {
@@ -250,7 +256,6 @@ namespace EmployeeInformation.WPF.ViewModels
         }
 
         private string _photoSource = "/Assets/MemetAvatar.jpg";
-
         public string PhotoSource
         {
             get { return _photoSource; }
@@ -323,6 +328,9 @@ namespace EmployeeInformation.WPF.ViewModels
                 OnPropertyChanged(nameof(IsAdding));
             }
         }
+
+         
+
 
         #endregion
 
@@ -1136,15 +1144,32 @@ namespace EmployeeInformation.WPF.ViewModels
 
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
-        public ICommand UploadPhotoCommand { get; }
+
+        public static RelayCommand UploadPhotoCommand { get; set; }
 
 
         public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
         {
             SubmitCommand = submitCommand;
             CancelCommand = cancelCommand;
+            RegisterCommands();
+        }
 
+        private void RegisterCommands()
+        {
+            UploadPhotoCommand = new RelayCommand(ExecuteOpenFileDialog);
+        }
 
+        private void ExecuteOpenFileDialog()
+        {
+            var dialog = new OpenFileDialog();
+
+            dialog.Filter = "Choose Image(*.JPG;*.PNG;*.bmp);*.BMP|*.jpg;*.png;*.bmp";
+
+            if (dialog.ShowDialog() == true)
+            {
+                PhotoSource = dialog.FileName; 
+            }
         }
 
 
@@ -1152,3 +1177,5 @@ namespace EmployeeInformation.WPF.ViewModels
 
     }
 }
+
+
