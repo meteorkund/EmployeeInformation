@@ -21,9 +21,10 @@ namespace EmployeeInformation.WPF.Converters
                 .Replace(")", string.Empty)
                 .Replace(" ", string.Empty)
                 .Replace("-", string.Empty)
+                .Replace("/", string.Empty)
                 .Replace(".", string.Empty);
 
-            return Regex.Replace(date, @"(\d{2})(\d{2})(\d{3})", "$1/$2/$3");
+            return Regex.Replace(date, @"(\d{2})(\d{2})(\d{1})", "$1/$2/$3");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

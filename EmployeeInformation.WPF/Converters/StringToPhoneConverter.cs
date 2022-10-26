@@ -24,7 +24,7 @@ namespace EmployeeInformation.WPF.Converters
                 .Replace(".", string.Empty)
                 .TrimStart('0');
 
-            return Regex.Replace(phoneNumber, @"(\d{3})(\d{3})(\d{3})", "($1)-$2-$3");
+            return Regex.Replace(phoneNumber, @"(\d{3})(\d{3})(\d{1})", "($1)-$2-$3");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

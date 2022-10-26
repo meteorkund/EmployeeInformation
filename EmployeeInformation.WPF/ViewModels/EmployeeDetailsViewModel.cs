@@ -2,11 +2,16 @@
 using EmployeeInformation.WPF.Components;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels.VacationViewModels;
+using GalaSoft.MvvmLight.Command;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EmployeeInformation.WPF.ViewModels
 {
@@ -39,6 +44,7 @@ namespace EmployeeInformation.WPF.ViewModels
         public string AdresDisplay => SelectedEmployee?.Adres;
         public string EkBilgiDisplay => SelectedEmployee?.EkBilgi;
 
+        public RelayCommand OpenWappCommand { get; set; }
 
         public EmployeeDetailsViewModel(SelectedEmployeeStore selectedEmployeeStore)
         {
@@ -46,8 +52,84 @@ namespace EmployeeInformation.WPF.ViewModels
 
             _selectedEmployeeStore.SelectedEmployeeChanged += SelectedEmployeeStore_SelectedEmployeeChanged;
 
+            RegisterCommands();
+
+
             EmployeeVacation2018VM = new EmployeeVacation2018VM(selectedEmployeeStore);
 
+        }
+
+
+        private void RegisterCommands()
+        {
+            OpenWappCommand = new RelayCommand(ExecuteOpenWappWeb);
+        }
+
+        private void ExecuteOpenWappWeb()
+        {
+            string whatsAppTel = CepTelDisplay;
+
+
+            if (CepTelDisplay == null)
+                MessageBox.Show("Kayıtlı telefon numarası bulunamadı!", "HATA", MessageBoxButton.OK, MessageBoxImage.Error);
+
+
+            else
+            {
+                try
+                {
+                    string replacedWhatsAppTel = whatsAppTel.Replace("(", string.Empty)
+                                                     .Replace(")", string.Empty)
+                                                     .Replace("-", string.Empty);
+
+                    if (replacedWhatsAppTel.Length == 10)
+                    {
+                        string wappURL = $"https://wa.me/+90{replacedWhatsAppTel}";
+                        OpenURL(wappURL);
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Hatalı telefon numarası!", "HATA", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                }
+                catch
+                {
+                    MessageBox.Show("BEklenmeyen bir hatayla karşılaşıldı!", "HATA", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+
+
+
+        }
+
+        private void OpenURL(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch
+            {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url);
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
 

@@ -103,6 +103,63 @@
 
         </Style>
 
+        <Style TargetType="Button" x:Key="wAppButton">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#FF3AA90A"/>
+            <Setter Property="Padding" Value="20 8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                                Margin="{TemplateBinding Margin}"
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="15">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                                        Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                        To="#FF3E5D36" 
+                                        Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                                        Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                        To="#FF3AA90A" 
+                                        Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+
+                </Trigger>
+
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.7"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+
         <Style 
                 x:Key="ButtonSecondary" 
                 BasedOn="{StaticResource {x:Type Button}}"
@@ -139,6 +196,7 @@
             </Style.Triggers>
 
         </Style>
+            
         <Style x:Key="menuButton" TargetType="Button">
 
             <Setter Property="Background" Value="Transparent"/>
