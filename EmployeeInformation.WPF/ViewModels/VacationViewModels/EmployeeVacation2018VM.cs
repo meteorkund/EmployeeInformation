@@ -130,6 +130,7 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
         public int Aralik2018_C6_Display => (int)(SelectedEmployee?.Vacation2018.Aralik2018_C6);
         #endregion
 
+        #region TOPLAM
         public int Toplam2018_C1_Display => Ocak2018_C1_Display + Subat2018_C1_Display + Mart2018_C1_Display + Nisan2018_C1_Display + Mayis2018_C1_Display + Haziran2018_C1_Display + Temmuz2018_C1_Display + Agustos2018_C1_Display +Eylul2018_C1_Display + Ekim2018_C1_Display + Kasim2018_C1_Display + Aralik2018_C1_Display;
         public int Toplam2018_C2_Display => Ocak2018_C2_Display + Subat2018_C2_Display + Mart2018_C2_Display + Nisan2018_C2_Display + Mayis2018_C2_Display + Haziran2018_C2_Display + Temmuz2018_C2_Display + Agustos2018_C2_Display +Eylul2018_C2_Display + Ekim2018_C2_Display + Kasim2018_C2_Display + Aralik2018_C2_Display;
         public int Toplam2018_C3_Display => Ocak2018_C3_Display + Subat2018_C3_Display + Mart2018_C3_Display + Nisan2018_C3_Display + Mayis2018_C3_Display + Haziran2018_C3_Display + Temmuz2018_C3_Display + Agustos2018_C3_Display +Eylul2018_C3_Display + Ekim2018_C3_Display + Kasim2018_C3_Display + Aralik2018_C3_Display;
@@ -137,9 +138,7 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
         public int Toplam2018_C5_Display => Ocak2018_C5_Display + Subat2018_C5_Display + Mart2018_C5_Display + Nisan2018_C5_Display + Mayis2018_C5_Display + Haziran2018_C5_Display + Temmuz2018_C5_Display + Agustos2018_C5_Display +Eylul2018_C5_Display + Ekim2018_C5_Display + Kasim2018_C5_Display + Aralik2018_C5_Display;
         public int Toplam2018_C6_Display => Ocak2018_C6_Display + Subat2018_C6_Display + Mart2018_C6_Display + Nisan2018_C6_Display + Mayis2018_C6_Display + Haziran2018_C6_Display + Temmuz2018_C6_Display + Agustos2018_C6_Display +Eylul2018_C6_Display + Ekim2018_C6_Display + Kasim2018_C6_Display + Aralik2018_C6_Display;
 
-
-
-        public ICommand Submit2018Command { get; }
+        #endregion
 
 
         protected override void Dispose()
@@ -243,5 +242,6 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
             OnPropertyChanged(nameof(Toplam2018_C6_Display));
 
         }
+
     }
 }

@@ -9,7 +9,13 @@ namespace EmployeeInformation.Domain.Models
 {
     public class Employee : BaseEntity
     {
-        public Employee(int id, string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi, DateTime createdDate, Vacation2018 vacation2018 )
+        public Employee(int id, string fotograf, string isim, string soyisim, bool durum, string tcKimlik, string dogumTarihi, string medeniDurum, string egitimDurumu, string askerlik, string departman, string gorev, string iseGiris, string istenCikis, string maas, string cepTel, string calismaSuresi, string baslamaTarihi, string adres, string ekBilgi, DateTime createdDate, 
+          Vacation2018 vacation2018, 
+          Vacation2019 vacation2019,
+          Vacation2020 vacation2020,
+          Vacation2021 vacation2021,
+          Vacation2022 vacation2022,
+          Vacation2023 vacation2023)
         {
             Id = id;
             Fotograf = fotograf;
@@ -32,6 +38,11 @@ namespace EmployeeInformation.Domain.Models
             Adres = adres;
             EkBilgi = ekBilgi;
             Vacation2018 = vacation2018;
+            Vacation2019 = vacation2019;
+            Vacation2020 = vacation2020;
+            Vacation2021 = vacation2021;
+            Vacation2022 = vacation2022;
+            Vacation2023 = vacation2023;
             CreatedDate = createdDate;
         }
 
@@ -57,11 +68,11 @@ namespace EmployeeInformation.Domain.Models
         public string EkBilgi { get; }
 
         public Vacation2018 Vacation2018 { get; }
-        //public izin2019 Izin2019 { get; set; }
-        //public izin2020 Izin2020 { get; set; }
-        //public izin2021 Izin2021 { get; set; }
-        //public izin2022 Izin2022 { get; set; }
-        //public izin2023 Izin2023 { get; set; }
-        //public izin2024 Izin2024 { get; set; }
+        public Vacation2019 Vacation2019 { get; }
+        public Vacation2020 Vacation2020 { get; }
+        public Vacation2021 Vacation2021 { get; }
+        public Vacation2022 Vacation2022 { get; }
+        public Vacation2023 Vacation2023 { get; }
+
     }
 }

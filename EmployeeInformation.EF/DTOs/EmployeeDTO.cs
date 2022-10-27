@@ -30,6 +30,11 @@ namespace EmployeeInformation.EF.DTOs
         public string? EkBilgi { get; set; }
 
         public Vacation2018DTO Vacation2018DTO { get; set; }
+        public Vacation2019DTO Vacation2019DTO { get; set; }
+        public Vacation2020DTO Vacation2020DTO { get; set; }
+        public Vacation2021DTO Vacation2021DTO { get; set; }
+        public Vacation2022DTO Vacation2022DTO { get; set; }
+        public Vacation2023DTO Vacation2023DTO { get; set; }
 
     }
 }

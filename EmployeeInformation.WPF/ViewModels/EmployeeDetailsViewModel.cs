@@ -21,6 +21,11 @@ namespace EmployeeInformation.WPF.ViewModels
         public Employee SelectedEmployee => _selectedEmployeeStore.SelectedEmployee;
 
         public EmployeeVacation2018VM EmployeeVacation2018VM { get; }
+        public EmployeeVacation2019VM EmployeeVacation2019VM { get; }
+        public EmployeeVacation2020VM EmployeeVacation2020VM { get; }
+        public EmployeeVacation2021VM EmployeeVacation2021VM { get; }
+        public EmployeeVacation2022VM EmployeeVacation2022VM { get; }
+        public EmployeeVacation2023VM EmployeeVacation2023VM { get; }
 
 
         public bool HasSelectedEmployee => SelectedEmployee != null;
@@ -56,6 +61,11 @@ namespace EmployeeInformation.WPF.ViewModels
 
 
             EmployeeVacation2018VM = new EmployeeVacation2018VM(selectedEmployeeStore);
+            EmployeeVacation2019VM = new EmployeeVacation2019VM(selectedEmployeeStore);
+            EmployeeVacation2020VM = new EmployeeVacation2020VM(selectedEmployeeStore);
+            EmployeeVacation2021VM = new EmployeeVacation2021VM(selectedEmployeeStore);
+            EmployeeVacation2022VM = new EmployeeVacation2022VM(selectedEmployeeStore);
+            EmployeeVacation2023VM = new EmployeeVacation2023VM(selectedEmployeeStore);
 
         }
 

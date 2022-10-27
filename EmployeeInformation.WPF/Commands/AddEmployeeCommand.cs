@@ -63,7 +63,12 @@ namespace EmployeeInformation.WPF.Commands
                 formViewModel.EvAdresi,
                 formViewModel.EkBilgi,
                 DateTime.Now,
-                new Vacation2018 { Id = sonDosyaNo + 1, }
+                new Vacation2018 { Id = sonDosyaNo + 1, },
+                new Vacation2019 { Id = sonDosyaNo + 1, },
+                new Vacation2020 { Id = sonDosyaNo + 1, },
+                new Vacation2021 { Id = sonDosyaNo + 1, },
+                new Vacation2022 { Id = sonDosyaNo + 1, },
+                new Vacation2023 { Id = sonDosyaNo + 1, }
                 );
 
             string dateTime = DateTime.Now.ToString("G");

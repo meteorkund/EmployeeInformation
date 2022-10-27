@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.EF.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,3 +13,4 @@ namespace EmployeeInformation.EF.Queries
 
     }
 }
+

@@ -6,7 +6,334 @@
              xmlns:local="clr-namespace:EmployeeInformation.WPF.Components.VacationComponent"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid Grid.IsSharedSizeScope="True" Margin="0 0 10 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="120" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="ÜCRETSİZ İZİN" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="ÜCRETLİ İZİN" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="RAPOR"/>
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YILLIK İZİN" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YURT İÇİ GÖREV" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" HorizontalAlignment="Center" FontFamily="=Segoe UI" FontSize="12" Text="YURT DIŞI GÖREV" />
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="OCAK"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ocak2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ocak2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ocak2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ocak2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ocak2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ocak2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ŞUBAT"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Subat2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Subat2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Subat2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Subat2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Subat2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Subat2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MART"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mart2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mart2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mart2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mart2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mart2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mart2020_C6_Display}" />
+
+        </Grid>
+
+
+        <Grid Grid.Row="4" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="NİSAN"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Nisan2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Nisan2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Nisan2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Nisan2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Nisan2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Nisan2020_C6_Display}" />
+
+        </Grid>
+
+
+        <Grid Grid.Row="5" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="MAYIS"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Mayis2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Mayis2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Mayis2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Mayis2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Mayis2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Mayis2020_C6_Display}" />
+
+        </Grid>
+
+
+        <Grid Grid.Row="6" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="HAZİRAN"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Haziran2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Haziran2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Haziran2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Haziran2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Haziran2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Haziran2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="7" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="TEMMUZ"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Temmuz2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Temmuz2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Temmuz2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Temmuz2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Temmuz2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Temmuz2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="8" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="AĞUSTOS"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Agustos2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Agustos2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Agustos2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Agustos2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Agustos2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Agustos2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="9" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EYLÜL"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Eylul2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Eylul2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Eylul2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Eylul2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Eylul2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Eylul2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="10" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="EKİM"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Ekim2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Ekim2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Ekim2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Ekim2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Ekim2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Ekim2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="11" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="KASIM"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Kasim2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Kasim2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Kasim2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Kasim2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Kasim2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Kasim2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="12" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="ARALIK"/>
+            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Aralik2020_C1_Display}" />
+            <TextBlock Grid.Column="2" Margin="10 0 0 0" Text="{Binding Aralik2020_C2_Display}" />
+            <TextBlock Grid.Column="3" Margin="10 0 0 0" Text="{Binding Aralik2020_C3_Display}" />
+            <TextBlock Grid.Column="4" Margin="10 0 0 0" Text="{Binding Aralik2020_C4_Display}" />
+            <TextBlock Grid.Column="5" Margin="10 0 0 0" Text="{Binding Aralik2020_C5_Display}" />
+            <TextBlock Grid.Column="6" Margin="10 0 0 0" Text="{Binding Aralik2020_C6_Display}" />
+
+        </Grid>
+
+        <Grid Grid.Row="13" Margin="0 40 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelAy"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretsiz"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelUcretli"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelRapor"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYillik"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtici"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="labelYurtdisi"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="10 0 0 0" Text="TOPLAM"/>
+            <TextBlock   Grid.Column="1" Margin="10 0 0 0" Text="{Binding Toplam2020_C1_Display}" />
+            <TextBlock   Grid.Column="3" Margin="10 0 0 0" Text="{Binding Toplam2020_C3_Display}" />
+            <TextBlock   Grid.Column="4" Margin="10 0 0 0" Text="{Binding Toplam2020_C4_Display}" />
+            <TextBlock   Grid.Column="5" Margin="10 0 0 0" Text="{Binding Toplam2020_C5_Display}" />
+            <TextBlock   Grid.Column="6" Margin="10 0 0 0" Text="{Binding Toplam2020_C6_Display}" />
+            <TextBlock   Grid.Column="2" Margin="10 0 0 0" Text="{Binding Toplam2020_C2_Display}" />
+
+        </Grid>
+
+
+
     </Grid>
+
 </UserControl>

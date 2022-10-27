@@ -22,9 +22,6 @@ namespace EmployeeInformation.WPF.ViewModels
 
         #region KİŞİSEL BİLGİLER
 
-
-
-
         private string _isim;
         public string Isim
         {
@@ -1138,7 +1135,3974 @@ namespace EmployeeInformation.WPF.ViewModels
 
         #region IZIN 2019
 
+
+        private int _ocak2019_C1;
+        public int Ocak2019_C1
+        {
+            get { return _ocak2019_C1; }
+            set
+            {
+                _ocak2019_C1 = value;
+                OnPropertyChanged(nameof(Ocak2019_C1));
+            }
+        }
+
+        private int _ocak2019_C2;
+        public int Ocak2019_C2
+        {
+            get { return _ocak2019_C2; }
+            set
+            {
+                _ocak2019_C2 = value;
+                OnPropertyChanged(nameof(Ocak2019_C2));
+            }
+        }
+
+        private int _ocak2019_C3;
+        public int Ocak2019_C3
+        {
+            get { return _ocak2019_C3; }
+            set
+            {
+                _ocak2019_C3 = value;
+                OnPropertyChanged(nameof(Ocak2019_C3));
+            }
+        }
+
+        private int _ocak2019_C4;
+        public int Ocak2019_C4
+        {
+            get { return _ocak2019_C4; }
+            set
+            {
+                _ocak2019_C4 = value;
+                OnPropertyChanged(nameof(Ocak2019_C4));
+            }
+        }
+
+        private int _ocak2019_C5;
+        public int Ocak2019_C5
+        {
+            get { return _ocak2019_C5; }
+            set
+            {
+                _ocak2019_C5 = value;
+                OnPropertyChanged(nameof(Ocak2019_C5));
+            }
+        }
+
+        private int _ocak2019_C6;
+        public int Ocak2019_C6
+        {
+            get { return _ocak2019_C6; }
+            set
+            {
+                _ocak2019_C6 = value;
+                OnPropertyChanged(nameof(Ocak2019_C6));
+            }
+        }
+
+        private int _subat2019_C1;
+        public int Subat2019_C1
+        {
+            get { return _subat2019_C1; }
+            set
+            {
+                _subat2019_C1 = value;
+                OnPropertyChanged(nameof(Subat2019_C1));
+            }
+        }
+
+        private int _subat2019_C2;
+        public int Subat2019_C2
+        {
+            get { return _subat2019_C2; }
+            set
+            {
+                _subat2019_C2 = value;
+                OnPropertyChanged(nameof(Subat2019_C2));
+            }
+        }
+
+        private int _subat2019_C3;
+        public int Subat2019_C3
+        {
+            get { return _subat2019_C3; }
+            set
+            {
+                _subat2019_C3 = value;
+                OnPropertyChanged(nameof(Subat2019_C3));
+            }
+        }
+
+        private int _subat2019_C4;
+        public int Subat2019_C4
+        {
+            get { return _subat2019_C4; }
+            set
+            {
+                _subat2019_C4 = value;
+                OnPropertyChanged(nameof(Subat2019_C4));
+            }
+        }
+
+        private int _subat2019_C5;
+        public int Subat2019_C5
+        {
+            get { return _subat2019_C5; }
+            set
+            {
+                _subat2019_C5 = value;
+                OnPropertyChanged(nameof(Subat2019_C5));
+            }
+        }
+
+        private int _subat2019_C6;
+        public int Subat2019_C6
+        {
+            get { return _subat2019_C6; }
+            set
+            {
+                _subat2019_C6 = value;
+                OnPropertyChanged(nameof(Subat2019_C6));
+            }
+        }
+
+        private int _mart2019_C1;
+        public int Mart2019_C1
+        {
+            get { return _mart2019_C1; }
+            set
+            {
+                _mart2019_C1 = value;
+                OnPropertyChanged(nameof(Mart2019_C1));
+            }
+        }
+
+        private int _mart2019_C2;
+        public int Mart2019_C2
+        {
+            get { return _mart2019_C2; }
+            set
+            {
+                _mart2019_C2 = value;
+                OnPropertyChanged(nameof(Mart2019_C2));
+            }
+        }
+
+        private int _mart2019_C3;
+        public int Mart2019_C3
+        {
+            get { return _mart2019_C3; }
+            set
+            {
+                _mart2019_C3 = value;
+                OnPropertyChanged(nameof(Mart2019_C3));
+            }
+        }
+
+        private int _mart2019_C4;
+        public int Mart2019_C4
+        {
+            get { return _mart2019_C4; }
+            set
+            {
+                _mart2019_C4 = value;
+                OnPropertyChanged(nameof(Mart2019_C4));
+            }
+        }
+
+        private int _mart2019_C5;
+        public int Mart2019_C5
+        {
+            get { return _mart2019_C5; }
+            set
+            {
+                _mart2019_C5 = value;
+                OnPropertyChanged(nameof(Mart2019_C5));
+            }
+        }
+
+        private int _mart2019_C6;
+        public int Mart2019_C6
+        {
+            get { return _mart2019_C6; }
+            set
+            {
+                _mart2019_C6 = value;
+                OnPropertyChanged(nameof(Mart2019_C6));
+            }
+        }
+        private int _nisan2019_C1;
+        public int Nisan2019_C1
+        {
+            get { return _nisan2019_C1; }
+            set
+            {
+                _nisan2019_C1 = value;
+                OnPropertyChanged(nameof(Nisan2019_C1));
+            }
+        }
+
+        private int _nisan2019_C2;
+        public int Nisan2019_C2
+        {
+            get { return _nisan2019_C2; }
+            set
+            {
+                _nisan2019_C2 = value;
+                OnPropertyChanged(nameof(Nisan2019_C2));
+            }
+        }
+
+        private int _nisan2019_C3;
+        public int Nisan2019_C3
+        {
+            get { return _nisan2019_C3; }
+            set
+            {
+                _nisan2019_C3 = value;
+                OnPropertyChanged(nameof(Nisan2019_C3));
+            }
+        }
+
+        private int _nisan2019_C4;
+        public int Nisan2019_C4
+        {
+            get { return _nisan2019_C4; }
+            set
+            {
+                _nisan2019_C4 = value;
+                OnPropertyChanged(nameof(Nisan2019_C4));
+            }
+        }
+
+        private int _nisan2019_C5;
+        public int Nisan2019_C5
+        {
+            get { return _nisan2019_C5; }
+            set
+            {
+                _nisan2019_C5 = value;
+                OnPropertyChanged(nameof(Nisan2019_C5));
+            }
+        }
+
+        private int _nisan2019_C6;
+        public int Nisan2019_C6
+        {
+            get { return _nisan2019_C6; }
+            set
+            {
+                _nisan2019_C6 = value;
+                OnPropertyChanged(nameof(Nisan2019_C6));
+            }
+        }
+
+        private int _mayis2019_C1;
+        public int Mayis2019_C1
+        {
+            get { return _mayis2019_C1; }
+            set
+            {
+                _mayis2019_C1 = value;
+                OnPropertyChanged(nameof(Mayis2019_C1));
+            }
+        }
+
+        private int _mayis2019_C2;
+        public int Mayis2019_C2
+        {
+            get { return _mayis2019_C2; }
+            set
+            {
+                _mayis2019_C2 = value;
+                OnPropertyChanged(nameof(Mayis2019_C2));
+            }
+        }
+
+        private int _mayis2019_C3;
+        public int Mayis2019_C3
+        {
+            get { return _mayis2019_C3; }
+            set
+            {
+                _mayis2019_C3 = value;
+                OnPropertyChanged(nameof(Mayis2019_C3));
+            }
+        }
+
+        private int _mayis2019_C4;
+        public int Mayis2019_C4
+        {
+            get { return _mayis2019_C4; }
+            set
+            {
+                _mayis2019_C4 = value;
+                OnPropertyChanged(nameof(Mayis2019_C4));
+            }
+        }
+
+        private int _mayis2019_C5;
+        public int Mayis2019_C5
+        {
+            get { return _mayis2019_C5; }
+            set
+            {
+                _mayis2019_C5 = value;
+                OnPropertyChanged(nameof(Mayis2019_C5));
+            }
+        }
+
+        private int _mayis2019_C6;
+        public int Mayis2019_C6
+        {
+            get { return _mayis2019_C6; }
+            set
+            {
+                _mayis2019_C6 = value;
+                OnPropertyChanged(nameof(Mayis2019_C6));
+            }
+        }
+
+        private int _haziran2019_C1;
+        public int Haziran2019_C1
+        {
+            get { return _haziran2019_C1; }
+            set
+            {
+                _haziran2019_C1 = value;
+                OnPropertyChanged(nameof(Haziran2019_C1));
+            }
+        }
+
+        private int _haziran2019_C2;
+        public int Haziran2019_C2
+        {
+            get { return _haziran2019_C2; }
+            set
+            {
+                _haziran2019_C2 = value;
+                OnPropertyChanged(nameof(Haziran2019_C2));
+            }
+        }
+
+        private int _haziran2019_C3;
+        public int Haziran2019_C3
+        {
+            get { return _haziran2019_C3; }
+            set
+            {
+                _haziran2019_C3 = value;
+                OnPropertyChanged(nameof(Haziran2019_C3));
+            }
+        }
+
+        private int _haziran2019_C4;
+        public int Haziran2019_C4
+        {
+            get { return _haziran2019_C4; }
+            set
+            {
+                _haziran2019_C4 = value;
+                OnPropertyChanged(nameof(Haziran2019_C4));
+            }
+        }
+
+        private int _haziran2019_C5;
+        public int Haziran2019_C5
+        {
+            get { return _haziran2019_C5; }
+            set
+            {
+                _haziran2019_C5 = value;
+                OnPropertyChanged(nameof(Haziran2019_C5));
+            }
+        }
+
+        private int _haziran2019_C6;
+        public int Haziran2019_C6
+        {
+            get { return _haziran2019_C6; }
+            set
+            {
+                _haziran2019_C6 = value;
+                OnPropertyChanged(nameof(Haziran2019_C6));
+            }
+        }
+
+        private int _temmuz2019_C1;
+        public int Temmuz2019_C1
+        {
+            get { return _temmuz2019_C1; }
+            set
+            {
+                _temmuz2019_C1 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C1));
+            }
+        }
+
+        private int _temmuz2019_C2;
+        public int Temmuz2019_C2
+        {
+            get { return _temmuz2019_C2; }
+            set
+            {
+                _temmuz2019_C2 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C2));
+            }
+        }
+
+        private int _temmuz2019_C3;
+        public int Temmuz2019_C3
+        {
+            get { return _temmuz2019_C3; }
+            set
+            {
+                _temmuz2019_C3 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C3));
+            }
+        }
+
+        private int _temmuz2019_C4;
+        public int Temmuz2019_C4
+        {
+            get { return _temmuz2019_C4; }
+            set
+            {
+                _temmuz2019_C4 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C4));
+            }
+        }
+
+        private int _temmuz2019_C5;
+        public int Temmuz2019_C5
+        {
+            get { return _temmuz2019_C5; }
+            set
+            {
+                _temmuz2019_C5 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C5));
+            }
+        }
+
+        private int _temmuz2019_C6;
+        public int Temmuz2019_C6
+        {
+            get { return _temmuz2019_C6; }
+            set
+            {
+                _temmuz2019_C6 = value;
+                OnPropertyChanged(nameof(Temmuz2019_C6));
+            }
+        }
+
+        private int _agustos2019_C1;
+        public int Agustos2019_C1
+        {
+            get { return _agustos2019_C1; }
+            set
+            {
+                _agustos2019_C1 = value;
+                OnPropertyChanged(nameof(Agustos2019_C1));
+            }
+        }
+
+        private int _agustos2019_C2;
+        public int Agustos2019_C2
+        {
+            get { return _agustos2019_C2; }
+            set
+            {
+                _agustos2019_C2 = value;
+                OnPropertyChanged(nameof(Agustos2019_C2));
+            }
+        }
+
+        private int _agustos2019_C3;
+        public int Agustos2019_C3
+        {
+            get { return _agustos2019_C3; }
+            set
+            {
+                _agustos2019_C3 = value;
+                OnPropertyChanged(nameof(Agustos2019_C3));
+            }
+        }
+
+        private int _agustos2019_C4;
+        public int Agustos2019_C4
+        {
+            get { return _agustos2019_C4; }
+            set
+            {
+                _agustos2019_C4 = value;
+                OnPropertyChanged(nameof(Agustos2019_C4));
+            }
+        }
+
+        private int _agustos2019_C5;
+        public int Agustos2019_C5
+        {
+            get { return _agustos2019_C5; }
+            set
+            {
+                _agustos2019_C5 = value;
+                OnPropertyChanged(nameof(Agustos2019_C5));
+            }
+        }
+
+        private int _agustos2019_C6;
+        public int Agustos2019_C6
+        {
+            get { return _agustos2019_C6; }
+            set
+            {
+                _agustos2019_C6 = value;
+                OnPropertyChanged(nameof(Agustos2019_C6));
+            }
+        }
+
+        private int _eylul2019_C1;
+        public int Eylul2019_C1
+        {
+            get { return _eylul2019_C1; }
+            set
+            {
+                _eylul2019_C1 = value;
+                OnPropertyChanged(nameof(Eylul2019_C1));
+            }
+        }
+
+        private int _eylul2019_C2;
+        public int Eylul2019_C2
+        {
+            get { return _eylul2019_C2; }
+            set
+            {
+                _eylul2019_C2 = value;
+                OnPropertyChanged(nameof(Eylul2019_C2));
+            }
+        }
+
+        private int _eylul2019_C3;
+        public int Eylul2019_C3
+        {
+            get { return _eylul2019_C3; }
+            set
+            {
+                _eylul2019_C3 = value;
+                OnPropertyChanged(nameof(Eylul2019_C3));
+            }
+        }
+
+        private int _eylul2019_C4;
+        public int Eylul2019_C4
+        {
+            get { return _eylul2019_C4; }
+            set
+            {
+                _eylul2019_C4 = value;
+                OnPropertyChanged(nameof(Eylul2019_C4));
+            }
+        }
+
+        private int _eylul2019_C5;
+        public int Eylul2019_C5
+        {
+            get { return _eylul2019_C5; }
+            set
+            {
+                _eylul2019_C5 = value;
+                OnPropertyChanged(nameof(Eylul2019_C5));
+            }
+        }
+
+        private int _eylul2019_C6;
+        public int Eylul2019_C6
+        {
+            get { return _eylul2019_C6; }
+            set
+            {
+                _eylul2019_C6 = value;
+                OnPropertyChanged(nameof(Eylul2019_C6));
+            }
+        }
+
+        private int _ekim2019_C1;
+        public int Ekim2019_C1
+        {
+            get { return _ekim2019_C1; }
+            set
+            {
+                _ekim2019_C1 = value;
+                OnPropertyChanged(nameof(Ekim2019_C1));
+            }
+        }
+
+        private int _ekim2019_C2;
+        public int Ekim2019_C2
+        {
+            get { return _ekim2019_C2; }
+            set
+            {
+                _ekim2019_C2 = value;
+                OnPropertyChanged(nameof(Ekim2019_C2));
+            }
+        }
+
+        private int _ekim2019_C3;
+        public int Ekim2019_C3
+        {
+            get { return _ekim2019_C3; }
+            set
+            {
+                _ekim2019_C3 = value;
+                OnPropertyChanged(nameof(Ekim2019_C3));
+            }
+        }
+
+        private int _ekim2019_C4;
+        public int Ekim2019_C4
+        {
+            get { return _ekim2019_C4; }
+            set
+            {
+                _ekim2019_C4 = value;
+                OnPropertyChanged(nameof(Ekim2019_C4));
+            }
+        }
+
+        private int _ekim2019_C5;
+        public int Ekim2019_C5
+        {
+            get { return _ekim2019_C5; }
+            set
+            {
+                _ekim2019_C5 = value;
+                OnPropertyChanged(nameof(Ekim2019_C5));
+            }
+        }
+
+        private int _ekim2019_C6;
+        public int Ekim2019_C6
+        {
+            get { return _ekim2019_C6; }
+            set
+            {
+                _ekim2019_C6 = value;
+                OnPropertyChanged(nameof(Ekim2019_C6));
+            }
+        }
+
+        private int _kasim2019_C1;
+        public int Kasim2019_C1
+        {
+            get { return _kasim2019_C1; }
+            set
+            {
+                _kasim2019_C1 = value;
+                OnPropertyChanged(nameof(Kasim2019_C1));
+            }
+        }
+
+        private int _kasim2019_C2;
+        public int Kasim2019_C2
+        {
+            get { return _kasim2019_C2; }
+            set
+            {
+                _kasim2019_C2 = value;
+                OnPropertyChanged(nameof(Kasim2019_C2));
+            }
+        }
+
+        private int _kasim2019_C3;
+        public int Kasim2019_C3
+        {
+            get { return _kasim2019_C3; }
+            set
+            {
+                _kasim2019_C3 = value;
+                OnPropertyChanged(nameof(Kasim2019_C3));
+            }
+        }
+
+        private int _kasim2019_C4;
+        public int Kasim2019_C4
+        {
+            get { return _kasim2019_C4; }
+            set
+            {
+                _kasim2019_C4 = value;
+                OnPropertyChanged(nameof(Kasim2019_C4));
+            }
+        }
+
+        private int _kasim2019_C5;
+        public int Kasim2019_C5
+        {
+            get { return _kasim2019_C5; }
+            set
+            {
+                _kasim2019_C5 = value;
+                OnPropertyChanged(nameof(Kasim2019_C5));
+            }
+        }
+
+        private int _kasim2019_C6;
+        public int Kasim2019_C6
+        {
+            get { return _kasim2019_C6; }
+            set
+            {
+                _kasim2019_C6 = value;
+                OnPropertyChanged(nameof(Kasim2019_C6));
+            }
+        }
+        private int _aralik2019_C1;
+        public int Aralik2019_C1
+        {
+            get { return _aralik2019_C1; }
+            set
+            {
+                _aralik2019_C1 = value;
+                OnPropertyChanged(nameof(Aralik2019_C1));
+            }
+        }
+
+        private int _aralik2019_C2;
+        public int Aralik2019_C2
+        {
+            get { return _aralik2019_C2; }
+            set
+            {
+                _aralik2019_C2 = value;
+                OnPropertyChanged(nameof(Aralik2019_C2));
+            }
+        }
+
+        private int _aralik2019_C3;
+        public int Aralik2019_C3
+        {
+            get { return _aralik2019_C3; }
+            set
+            {
+                _aralik2019_C3 = value;
+                OnPropertyChanged(nameof(Aralik2019_C3));
+            }
+        }
+
+        private int _aralik2019_C4;
+        public int Aralik2019_C4
+        {
+            get { return _aralik2019_C4; }
+            set
+            {
+                _aralik2019_C4 = value;
+                OnPropertyChanged(nameof(Aralik2019_C4));
+            }
+        }
+
+        private int _aralik2019_C5;
+        public int Aralik2019_C5
+        {
+            get { return _aralik2019_C5; }
+            set
+            {
+                _aralik2019_C5 = value;
+                OnPropertyChanged(nameof(Aralik2019_C5));
+            }
+        }
+
+        private int _aralik2019_C6;
+        public int Aralik2019_C6
+        {
+            get { return _aralik2019_C6; }
+            set
+            {
+                _aralik2019_C6 = value;
+                OnPropertyChanged(nameof(Aralik2019_C6));
+            }
+        }
         #endregion
+
+        #region IZIN 2020
+
+
+        private int _ocak2020_C1;
+        public int Ocak2020_C1
+        {
+            get { return _ocak2020_C1; }
+            set
+            {
+                _ocak2020_C1 = value;
+                OnPropertyChanged(nameof(Ocak2020_C1));
+            }
+        }
+
+        private int _ocak2020_C2;
+        public int Ocak2020_C2
+        {
+            get { return _ocak2020_C2; }
+            set
+            {
+                _ocak2020_C2 = value;
+                OnPropertyChanged(nameof(Ocak2020_C2));
+            }
+        }
+
+        private int _ocak2020_C3;
+        public int Ocak2020_C3
+        {
+            get { return _ocak2020_C3; }
+            set
+            {
+                _ocak2020_C3 = value;
+                OnPropertyChanged(nameof(Ocak2020_C3));
+            }
+        }
+
+        private int _ocak2020_C4;
+        public int Ocak2020_C4
+        {
+            get { return _ocak2020_C4; }
+            set
+            {
+                _ocak2020_C4 = value;
+                OnPropertyChanged(nameof(Ocak2020_C4));
+            }
+        }
+
+        private int _ocak2020_C5;
+        public int Ocak2020_C5
+        {
+            get { return _ocak2020_C5; }
+            set
+            {
+                _ocak2020_C5 = value;
+                OnPropertyChanged(nameof(Ocak2020_C5));
+            }
+        }
+
+        private int _ocak2020_C6;
+        public int Ocak2020_C6
+        {
+            get { return _ocak2020_C6; }
+            set
+            {
+                _ocak2020_C6 = value;
+                OnPropertyChanged(nameof(Ocak2020_C6));
+            }
+        }
+
+        private int _subat2020_C1;
+        public int Subat2020_C1
+        {
+            get { return _subat2020_C1; }
+            set
+            {
+                _subat2020_C1 = value;
+                OnPropertyChanged(nameof(Subat2020_C1));
+            }
+        }
+
+        private int _subat2020_C2;
+        public int Subat2020_C2
+        {
+            get { return _subat2020_C2; }
+            set
+            {
+                _subat2020_C2 = value;
+                OnPropertyChanged(nameof(Subat2020_C2));
+            }
+        }
+
+        private int _subat2020_C3;
+        public int Subat2020_C3
+        {
+            get { return _subat2020_C3; }
+            set
+            {
+                _subat2020_C3 = value;
+                OnPropertyChanged(nameof(Subat2020_C3));
+            }
+        }
+
+        private int _subat2020_C4;
+        public int Subat2020_C4
+        {
+            get { return _subat2020_C4; }
+            set
+            {
+                _subat2020_C4 = value;
+                OnPropertyChanged(nameof(Subat2020_C4));
+            }
+        }
+
+        private int _subat2020_C5;
+        public int Subat2020_C5
+        {
+            get { return _subat2020_C5; }
+            set
+            {
+                _subat2020_C5 = value;
+                OnPropertyChanged(nameof(Subat2020_C5));
+            }
+        }
+
+        private int _subat2020_C6;
+        public int Subat2020_C6
+        {
+            get { return _subat2020_C6; }
+            set
+            {
+                _subat2020_C6 = value;
+                OnPropertyChanged(nameof(Subat2020_C6));
+            }
+        }
+
+        private int _mart2020_C1;
+        public int Mart2020_C1
+        {
+            get { return _mart2020_C1; }
+            set
+            {
+                _mart2020_C1 = value;
+                OnPropertyChanged(nameof(Mart2020_C1));
+            }
+        }
+
+        private int _mart2020_C2;
+        public int Mart2020_C2
+        {
+            get { return _mart2020_C2; }
+            set
+            {
+                _mart2020_C2 = value;
+                OnPropertyChanged(nameof(Mart2020_C2));
+            }
+        }
+
+        private int _mart2020_C3;
+        public int Mart2020_C3
+        {
+            get { return _mart2020_C3; }
+            set
+            {
+                _mart2020_C3 = value;
+                OnPropertyChanged(nameof(Mart2020_C3));
+            }
+        }
+
+        private int _mart2020_C4;
+        public int Mart2020_C4
+        {
+            get { return _mart2020_C4; }
+            set
+            {
+                _mart2020_C4 = value;
+                OnPropertyChanged(nameof(Mart2020_C4));
+            }
+        }
+
+        private int _mart2020_C5;
+        public int Mart2020_C5
+        {
+            get { return _mart2020_C5; }
+            set
+            {
+                _mart2020_C5 = value;
+                OnPropertyChanged(nameof(Mart2020_C5));
+            }
+        }
+
+        private int _mart2020_C6;
+        public int Mart2020_C6
+        {
+            get { return _mart2020_C6; }
+            set
+            {
+                _mart2020_C6 = value;
+                OnPropertyChanged(nameof(Mart2020_C6));
+            }
+        }
+        private int _nisan2020_C1;
+        public int Nisan2020_C1
+        {
+            get { return _nisan2020_C1; }
+            set
+            {
+                _nisan2020_C1 = value;
+                OnPropertyChanged(nameof(Nisan2020_C1));
+            }
+        }
+
+        private int _nisan2020_C2;
+        public int Nisan2020_C2
+        {
+            get { return _nisan2020_C2; }
+            set
+            {
+                _nisan2020_C2 = value;
+                OnPropertyChanged(nameof(Nisan2020_C2));
+            }
+        }
+
+        private int _nisan2020_C3;
+        public int Nisan2020_C3
+        {
+            get { return _nisan2020_C3; }
+            set
+            {
+                _nisan2020_C3 = value;
+                OnPropertyChanged(nameof(Nisan2020_C3));
+            }
+        }
+
+        private int _nisan2020_C4;
+        public int Nisan2020_C4
+        {
+            get { return _nisan2020_C4; }
+            set
+            {
+                _nisan2020_C4 = value;
+                OnPropertyChanged(nameof(Nisan2020_C4));
+            }
+        }
+
+        private int _nisan2020_C5;
+        public int Nisan2020_C5
+        {
+            get { return _nisan2020_C5; }
+            set
+            {
+                _nisan2020_C5 = value;
+                OnPropertyChanged(nameof(Nisan2020_C5));
+            }
+        }
+
+        private int _nisan2020_C6;
+        public int Nisan2020_C6
+        {
+            get { return _nisan2020_C6; }
+            set
+            {
+                _nisan2020_C6 = value;
+                OnPropertyChanged(nameof(Nisan2020_C6));
+            }
+        }
+
+        private int _mayis2020_C1;
+        public int Mayis2020_C1
+        {
+            get { return _mayis2020_C1; }
+            set
+            {
+                _mayis2020_C1 = value;
+                OnPropertyChanged(nameof(Mayis2020_C1));
+            }
+        }
+
+        private int _mayis2020_C2;
+        public int Mayis2020_C2
+        {
+            get { return _mayis2020_C2; }
+            set
+            {
+                _mayis2020_C2 = value;
+                OnPropertyChanged(nameof(Mayis2020_C2));
+            }
+        }
+
+        private int _mayis2020_C3;
+        public int Mayis2020_C3
+        {
+            get { return _mayis2020_C3; }
+            set
+            {
+                _mayis2020_C3 = value;
+                OnPropertyChanged(nameof(Mayis2020_C3));
+            }
+        }
+
+        private int _mayis2020_C4;
+        public int Mayis2020_C4
+        {
+            get { return _mayis2020_C4; }
+            set
+            {
+                _mayis2020_C4 = value;
+                OnPropertyChanged(nameof(Mayis2020_C4));
+            }
+        }
+
+        private int _mayis2020_C5;
+        public int Mayis2020_C5
+        {
+            get { return _mayis2020_C5; }
+            set
+            {
+                _mayis2020_C5 = value;
+                OnPropertyChanged(nameof(Mayis2020_C5));
+            }
+        }
+
+        private int _mayis2020_C6;
+        public int Mayis2020_C6
+        {
+            get { return _mayis2020_C6; }
+            set
+            {
+                _mayis2020_C6 = value;
+                OnPropertyChanged(nameof(Mayis2020_C6));
+            }
+        }
+
+        private int _haziran2020_C1;
+        public int Haziran2020_C1
+        {
+            get { return _haziran2020_C1; }
+            set
+            {
+                _haziran2020_C1 = value;
+                OnPropertyChanged(nameof(Haziran2020_C1));
+            }
+        }
+
+        private int _haziran2020_C2;
+        public int Haziran2020_C2
+        {
+            get { return _haziran2020_C2; }
+            set
+            {
+                _haziran2020_C2 = value;
+                OnPropertyChanged(nameof(Haziran2020_C2));
+            }
+        }
+
+        private int _haziran2020_C3;
+        public int Haziran2020_C3
+        {
+            get { return _haziran2020_C3; }
+            set
+            {
+                _haziran2020_C3 = value;
+                OnPropertyChanged(nameof(Haziran2020_C3));
+            }
+        }
+
+        private int _haziran2020_C4;
+        public int Haziran2020_C4
+        {
+            get { return _haziran2020_C4; }
+            set
+            {
+                _haziran2020_C4 = value;
+                OnPropertyChanged(nameof(Haziran2020_C4));
+            }
+        }
+
+        private int _haziran2020_C5;
+        public int Haziran2020_C5
+        {
+            get { return _haziran2020_C5; }
+            set
+            {
+                _haziran2020_C5 = value;
+                OnPropertyChanged(nameof(Haziran2020_C5));
+            }
+        }
+
+        private int _haziran2020_C6;
+        public int Haziran2020_C6
+        {
+            get { return _haziran2020_C6; }
+            set
+            {
+                _haziran2020_C6 = value;
+                OnPropertyChanged(nameof(Haziran2020_C6));
+            }
+        }
+
+        private int _temmuz2020_C1;
+        public int Temmuz2020_C1
+        {
+            get { return _temmuz2020_C1; }
+            set
+            {
+                _temmuz2020_C1 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C1));
+            }
+        }
+
+        private int _temmuz2020_C2;
+        public int Temmuz2020_C2
+        {
+            get { return _temmuz2020_C2; }
+            set
+            {
+                _temmuz2020_C2 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C2));
+            }
+        }
+
+        private int _temmuz2020_C3;
+        public int Temmuz2020_C3
+        {
+            get { return _temmuz2020_C3; }
+            set
+            {
+                _temmuz2020_C3 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C3));
+            }
+        }
+
+        private int _temmuz2020_C4;
+        public int Temmuz2020_C4
+        {
+            get { return _temmuz2020_C4; }
+            set
+            {
+                _temmuz2020_C4 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C4));
+            }
+        }
+
+        private int _temmuz2020_C5;
+        public int Temmuz2020_C5
+        {
+            get { return _temmuz2020_C5; }
+            set
+            {
+                _temmuz2020_C5 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C5));
+            }
+        }
+
+        private int _temmuz2020_C6;
+        public int Temmuz2020_C6
+        {
+            get { return _temmuz2020_C6; }
+            set
+            {
+                _temmuz2020_C6 = value;
+                OnPropertyChanged(nameof(Temmuz2020_C6));
+            }
+        }
+
+        private int _agustos2020_C1;
+        public int Agustos2020_C1
+        {
+            get { return _agustos2020_C1; }
+            set
+            {
+                _agustos2020_C1 = value;
+                OnPropertyChanged(nameof(Agustos2020_C1));
+            }
+        }
+
+        private int _agustos2020_C2;
+        public int Agustos2020_C2
+        {
+            get { return _agustos2020_C2; }
+            set
+            {
+                _agustos2020_C2 = value;
+                OnPropertyChanged(nameof(Agustos2020_C2));
+            }
+        }
+
+        private int _agustos2020_C3;
+        public int Agustos2020_C3
+        {
+            get { return _agustos2020_C3; }
+            set
+            {
+                _agustos2020_C3 = value;
+                OnPropertyChanged(nameof(Agustos2020_C3));
+            }
+        }
+
+        private int _agustos2020_C4;
+        public int Agustos2020_C4
+        {
+            get { return _agustos2020_C4; }
+            set
+            {
+                _agustos2020_C4 = value;
+                OnPropertyChanged(nameof(Agustos2020_C4));
+            }
+        }
+
+        private int _agustos2020_C5;
+        public int Agustos2020_C5
+        {
+            get { return _agustos2020_C5; }
+            set
+            {
+                _agustos2020_C5 = value;
+                OnPropertyChanged(nameof(Agustos2020_C5));
+            }
+        }
+
+        private int _agustos2020_C6;
+        public int Agustos2020_C6
+        {
+            get { return _agustos2020_C6; }
+            set
+            {
+                _agustos2020_C6 = value;
+                OnPropertyChanged(nameof(Agustos2020_C6));
+            }
+        }
+
+        private int _eylul2020_C1;
+        public int Eylul2020_C1
+        {
+            get { return _eylul2020_C1; }
+            set
+            {
+                _eylul2020_C1 = value;
+                OnPropertyChanged(nameof(Eylul2020_C1));
+            }
+        }
+
+        private int _eylul2020_C2;
+        public int Eylul2020_C2
+        {
+            get { return _eylul2020_C2; }
+            set
+            {
+                _eylul2020_C2 = value;
+                OnPropertyChanged(nameof(Eylul2020_C2));
+            }
+        }
+
+        private int _eylul2020_C3;
+        public int Eylul2020_C3
+        {
+            get { return _eylul2020_C3; }
+            set
+            {
+                _eylul2020_C3 = value;
+                OnPropertyChanged(nameof(Eylul2020_C3));
+            }
+        }
+
+        private int _eylul2020_C4;
+        public int Eylul2020_C4
+        {
+            get { return _eylul2020_C4; }
+            set
+            {
+                _eylul2020_C4 = value;
+                OnPropertyChanged(nameof(Eylul2020_C4));
+            }
+        }
+
+        private int _eylul2020_C5;
+        public int Eylul2020_C5
+        {
+            get { return _eylul2020_C5; }
+            set
+            {
+                _eylul2020_C5 = value;
+                OnPropertyChanged(nameof(Eylul2020_C5));
+            }
+        }
+
+        private int _eylul2020_C6;
+        public int Eylul2020_C6
+        {
+            get { return _eylul2020_C6; }
+            set
+            {
+                _eylul2020_C6 = value;
+                OnPropertyChanged(nameof(Eylul2020_C6));
+            }
+        }
+
+        private int _ekim2020_C1;
+        public int Ekim2020_C1
+        {
+            get { return _ekim2020_C1; }
+            set
+            {
+                _ekim2020_C1 = value;
+                OnPropertyChanged(nameof(Ekim2020_C1));
+            }
+        }
+
+        private int _ekim2020_C2;
+        public int Ekim2020_C2
+        {
+            get { return _ekim2020_C2; }
+            set
+            {
+                _ekim2020_C2 = value;
+                OnPropertyChanged(nameof(Ekim2020_C2));
+            }
+        }
+
+        private int _ekim2020_C3;
+        public int Ekim2020_C3
+        {
+            get { return _ekim2020_C3; }
+            set
+            {
+                _ekim2020_C3 = value;
+                OnPropertyChanged(nameof(Ekim2020_C3));
+            }
+        }
+
+        private int _ekim2020_C4;
+        public int Ekim2020_C4
+        {
+            get { return _ekim2020_C4; }
+            set
+            {
+                _ekim2020_C4 = value;
+                OnPropertyChanged(nameof(Ekim2020_C4));
+            }
+        }
+
+        private int _ekim2020_C5;
+        public int Ekim2020_C5
+        {
+            get { return _ekim2020_C5; }
+            set
+            {
+                _ekim2020_C5 = value;
+                OnPropertyChanged(nameof(Ekim2020_C5));
+            }
+        }
+
+        private int _ekim2020_C6;
+        public int Ekim2020_C6
+        {
+            get { return _ekim2020_C6; }
+            set
+            {
+                _ekim2020_C6 = value;
+                OnPropertyChanged(nameof(Ekim2020_C6));
+            }
+        }
+
+        private int _kasim2020_C1;
+        public int Kasim2020_C1
+        {
+            get { return _kasim2020_C1; }
+            set
+            {
+                _kasim2020_C1 = value;
+                OnPropertyChanged(nameof(Kasim2020_C1));
+            }
+        }
+
+        private int _kasim2020_C2;
+        public int Kasim2020_C2
+        {
+            get { return _kasim2020_C2; }
+            set
+            {
+                _kasim2020_C2 = value;
+                OnPropertyChanged(nameof(Kasim2020_C2));
+            }
+        }
+
+        private int _kasim2020_C3;
+        public int Kasim2020_C3
+        {
+            get { return _kasim2020_C3; }
+            set
+            {
+                _kasim2020_C3 = value;
+                OnPropertyChanged(nameof(Kasim2020_C3));
+            }
+        }
+
+        private int _kasim2020_C4;
+        public int Kasim2020_C4
+        {
+            get { return _kasim2020_C4; }
+            set
+            {
+                _kasim2020_C4 = value;
+                OnPropertyChanged(nameof(Kasim2020_C4));
+            }
+        }
+
+        private int _kasim2020_C5;
+        public int Kasim2020_C5
+        {
+            get { return _kasim2020_C5; }
+            set
+            {
+                _kasim2020_C5 = value;
+                OnPropertyChanged(nameof(Kasim2020_C5));
+            }
+        }
+
+        private int _kasim2020_C6;
+        public int Kasim2020_C6
+        {
+            get { return _kasim2020_C6; }
+            set
+            {
+                _kasim2020_C6 = value;
+                OnPropertyChanged(nameof(Kasim2020_C6));
+            }
+        }
+        private int _aralik2020_C1;
+        public int Aralik2020_C1
+        {
+            get { return _aralik2020_C1; }
+            set
+            {
+                _aralik2020_C1 = value;
+                OnPropertyChanged(nameof(Aralik2020_C1));
+            }
+        }
+
+        private int _aralik2020_C2;
+        public int Aralik2020_C2
+        {
+            get { return _aralik2020_C2; }
+            set
+            {
+                _aralik2020_C2 = value;
+                OnPropertyChanged(nameof(Aralik2020_C2));
+            }
+        }
+
+        private int _aralik2020_C3;
+        public int Aralik2020_C3
+        {
+            get { return _aralik2020_C3; }
+            set
+            {
+                _aralik2020_C3 = value;
+                OnPropertyChanged(nameof(Aralik2020_C3));
+            }
+        }
+
+        private int _aralik2020_C4;
+        public int Aralik2020_C4
+        {
+            get { return _aralik2020_C4; }
+            set
+            {
+                _aralik2020_C4 = value;
+                OnPropertyChanged(nameof(Aralik2020_C4));
+            }
+        }
+
+        private int _aralik2020_C5;
+        public int Aralik2020_C5
+        {
+            get { return _aralik2020_C5; }
+            set
+            {
+                _aralik2020_C5 = value;
+                OnPropertyChanged(nameof(Aralik2020_C5));
+            }
+        }
+
+        private int _aralik2020_C6;
+        public int Aralik2020_C6
+        {
+            get { return _aralik2020_C6; }
+            set
+            {
+                _aralik2020_C6 = value;
+                OnPropertyChanged(nameof(Aralik2020_C6));
+            }
+        }
+        #endregion
+
+        #region IZIN 2021
+
+
+        private int _ocak2021_C1;
+        public int Ocak2021_C1
+        {
+            get { return _ocak2021_C1; }
+            set
+            {
+                _ocak2021_C1 = value;
+                OnPropertyChanged(nameof(Ocak2021_C1));
+            }
+        }
+
+        private int _ocak2021_C2;
+        public int Ocak2021_C2
+        {
+            get { return _ocak2021_C2; }
+            set
+            {
+                _ocak2021_C2 = value;
+                OnPropertyChanged(nameof(Ocak2021_C2));
+            }
+        }
+
+        private int _ocak2021_C3;
+        public int Ocak2021_C3
+        {
+            get { return _ocak2021_C3; }
+            set
+            {
+                _ocak2021_C3 = value;
+                OnPropertyChanged(nameof(Ocak2021_C3));
+            }
+        }
+
+        private int _ocak2021_C4;
+        public int Ocak2021_C4
+        {
+            get { return _ocak2021_C4; }
+            set
+            {
+                _ocak2021_C4 = value;
+                OnPropertyChanged(nameof(Ocak2021_C4));
+            }
+        }
+
+        private int _ocak2021_C5;
+        public int Ocak2021_C5
+        {
+            get { return _ocak2021_C5; }
+            set
+            {
+                _ocak2021_C5 = value;
+                OnPropertyChanged(nameof(Ocak2021_C5));
+            }
+        }
+
+        private int _ocak2021_C6;
+        public int Ocak2021_C6
+        {
+            get { return _ocak2021_C6; }
+            set
+            {
+                _ocak2021_C6 = value;
+                OnPropertyChanged(nameof(Ocak2021_C6));
+            }
+        }
+
+        private int _subat2021_C1;
+        public int Subat2021_C1
+        {
+            get { return _subat2021_C1; }
+            set
+            {
+                _subat2021_C1 = value;
+                OnPropertyChanged(nameof(Subat2021_C1));
+            }
+        }
+
+        private int _subat2021_C2;
+        public int Subat2021_C2
+        {
+            get { return _subat2021_C2; }
+            set
+            {
+                _subat2021_C2 = value;
+                OnPropertyChanged(nameof(Subat2021_C2));
+            }
+        }
+
+        private int _subat2021_C3;
+        public int Subat2021_C3
+        {
+            get { return _subat2021_C3; }
+            set
+            {
+                _subat2021_C3 = value;
+                OnPropertyChanged(nameof(Subat2021_C3));
+            }
+        }
+
+        private int _subat2021_C4;
+        public int Subat2021_C4
+        {
+            get { return _subat2021_C4; }
+            set
+            {
+                _subat2021_C4 = value;
+                OnPropertyChanged(nameof(Subat2021_C4));
+            }
+        }
+
+        private int _subat2021_C5;
+        public int Subat2021_C5
+        {
+            get { return _subat2021_C5; }
+            set
+            {
+                _subat2021_C5 = value;
+                OnPropertyChanged(nameof(Subat2021_C5));
+            }
+        }
+
+        private int _subat2021_C6;
+        public int Subat2021_C6
+        {
+            get { return _subat2021_C6; }
+            set
+            {
+                _subat2021_C6 = value;
+                OnPropertyChanged(nameof(Subat2021_C6));
+            }
+        }
+
+        private int _mart2021_C1;
+        public int Mart2021_C1
+        {
+            get { return _mart2021_C1; }
+            set
+            {
+                _mart2021_C1 = value;
+                OnPropertyChanged(nameof(Mart2021_C1));
+            }
+        }
+
+        private int _mart2021_C2;
+        public int Mart2021_C2
+        {
+            get { return _mart2021_C2; }
+            set
+            {
+                _mart2021_C2 = value;
+                OnPropertyChanged(nameof(Mart2021_C2));
+            }
+        }
+
+        private int _mart2021_C3;
+        public int Mart2021_C3
+        {
+            get { return _mart2021_C3; }
+            set
+            {
+                _mart2021_C3 = value;
+                OnPropertyChanged(nameof(Mart2021_C3));
+            }
+        }
+
+        private int _mart2021_C4;
+        public int Mart2021_C4
+        {
+            get { return _mart2021_C4; }
+            set
+            {
+                _mart2021_C4 = value;
+                OnPropertyChanged(nameof(Mart2021_C4));
+            }
+        }
+
+        private int _mart2021_C5;
+        public int Mart2021_C5
+        {
+            get { return _mart2021_C5; }
+            set
+            {
+                _mart2021_C5 = value;
+                OnPropertyChanged(nameof(Mart2021_C5));
+            }
+        }
+
+        private int _mart2021_C6;
+        public int Mart2021_C6
+        {
+            get { return _mart2021_C6; }
+            set
+            {
+                _mart2021_C6 = value;
+                OnPropertyChanged(nameof(Mart2021_C6));
+            }
+        }
+        private int _nisan2021_C1;
+        public int Nisan2021_C1
+        {
+            get { return _nisan2021_C1; }
+            set
+            {
+                _nisan2021_C1 = value;
+                OnPropertyChanged(nameof(Nisan2021_C1));
+            }
+        }
+
+        private int _nisan2021_C2;
+        public int Nisan2021_C2
+        {
+            get { return _nisan2021_C2; }
+            set
+            {
+                _nisan2021_C2 = value;
+                OnPropertyChanged(nameof(Nisan2021_C2));
+            }
+        }
+
+        private int _nisan2021_C3;
+        public int Nisan2021_C3
+        {
+            get { return _nisan2021_C3; }
+            set
+            {
+                _nisan2021_C3 = value;
+                OnPropertyChanged(nameof(Nisan2021_C3));
+            }
+        }
+
+        private int _nisan2021_C4;
+        public int Nisan2021_C4
+        {
+            get { return _nisan2021_C4; }
+            set
+            {
+                _nisan2021_C4 = value;
+                OnPropertyChanged(nameof(Nisan2021_C4));
+            }
+        }
+
+        private int _nisan2021_C5;
+        public int Nisan2021_C5
+        {
+            get { return _nisan2021_C5; }
+            set
+            {
+                _nisan2021_C5 = value;
+                OnPropertyChanged(nameof(Nisan2021_C5));
+            }
+        }
+
+        private int _nisan2021_C6;
+        public int Nisan2021_C6
+        {
+            get { return _nisan2021_C6; }
+            set
+            {
+                _nisan2021_C6 = value;
+                OnPropertyChanged(nameof(Nisan2021_C6));
+            }
+        }
+
+        private int _mayis2021_C1;
+        public int Mayis2021_C1
+        {
+            get { return _mayis2021_C1; }
+            set
+            {
+                _mayis2021_C1 = value;
+                OnPropertyChanged(nameof(Mayis2021_C1));
+            }
+        }
+
+        private int _mayis2021_C2;
+        public int Mayis2021_C2
+        {
+            get { return _mayis2021_C2; }
+            set
+            {
+                _mayis2021_C2 = value;
+                OnPropertyChanged(nameof(Mayis2021_C2));
+            }
+        }
+
+        private int _mayis2021_C3;
+        public int Mayis2021_C3
+        {
+            get { return _mayis2021_C3; }
+            set
+            {
+                _mayis2021_C3 = value;
+                OnPropertyChanged(nameof(Mayis2021_C3));
+            }
+        }
+
+        private int _mayis2021_C4;
+        public int Mayis2021_C4
+        {
+            get { return _mayis2021_C4; }
+            set
+            {
+                _mayis2021_C4 = value;
+                OnPropertyChanged(nameof(Mayis2021_C4));
+            }
+        }
+
+        private int _mayis2021_C5;
+        public int Mayis2021_C5
+        {
+            get { return _mayis2021_C5; }
+            set
+            {
+                _mayis2021_C5 = value;
+                OnPropertyChanged(nameof(Mayis2021_C5));
+            }
+        }
+
+        private int _mayis2021_C6;
+        public int Mayis2021_C6
+        {
+            get { return _mayis2021_C6; }
+            set
+            {
+                _mayis2021_C6 = value;
+                OnPropertyChanged(nameof(Mayis2021_C6));
+            }
+        }
+
+        private int _haziran2021_C1;
+        public int Haziran2021_C1
+        {
+            get { return _haziran2021_C1; }
+            set
+            {
+                _haziran2021_C1 = value;
+                OnPropertyChanged(nameof(Haziran2021_C1));
+            }
+        }
+
+        private int _haziran2021_C2;
+        public int Haziran2021_C2
+        {
+            get { return _haziran2021_C2; }
+            set
+            {
+                _haziran2021_C2 = value;
+                OnPropertyChanged(nameof(Haziran2021_C2));
+            }
+        }
+
+        private int _haziran2021_C3;
+        public int Haziran2021_C3
+        {
+            get { return _haziran2021_C3; }
+            set
+            {
+                _haziran2021_C3 = value;
+                OnPropertyChanged(nameof(Haziran2021_C3));
+            }
+        }
+
+        private int _haziran2021_C4;
+        public int Haziran2021_C4
+        {
+            get { return _haziran2021_C4; }
+            set
+            {
+                _haziran2021_C4 = value;
+                OnPropertyChanged(nameof(Haziran2021_C4));
+            }
+        }
+
+        private int _haziran2021_C5;
+        public int Haziran2021_C5
+        {
+            get { return _haziran2021_C5; }
+            set
+            {
+                _haziran2021_C5 = value;
+                OnPropertyChanged(nameof(Haziran2021_C5));
+            }
+        }
+
+        private int _haziran2021_C6;
+        public int Haziran2021_C6
+        {
+            get { return _haziran2021_C6; }
+            set
+            {
+                _haziran2021_C6 = value;
+                OnPropertyChanged(nameof(Haziran2021_C6));
+            }
+        }
+
+        private int _temmuz2021_C1;
+        public int Temmuz2021_C1
+        {
+            get { return _temmuz2021_C1; }
+            set
+            {
+                _temmuz2021_C1 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C1));
+            }
+        }
+
+        private int _temmuz2021_C2;
+        public int Temmuz2021_C2
+        {
+            get { return _temmuz2021_C2; }
+            set
+            {
+                _temmuz2021_C2 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C2));
+            }
+        }
+
+        private int _temmuz2021_C3;
+        public int Temmuz2021_C3
+        {
+            get { return _temmuz2021_C3; }
+            set
+            {
+                _temmuz2021_C3 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C3));
+            }
+        }
+
+        private int _temmuz2021_C4;
+        public int Temmuz2021_C4
+        {
+            get { return _temmuz2021_C4; }
+            set
+            {
+                _temmuz2021_C4 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C4));
+            }
+        }
+
+        private int _temmuz2021_C5;
+        public int Temmuz2021_C5
+        {
+            get { return _temmuz2021_C5; }
+            set
+            {
+                _temmuz2021_C5 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C5));
+            }
+        }
+
+        private int _temmuz2021_C6;
+        public int Temmuz2021_C6
+        {
+            get { return _temmuz2021_C6; }
+            set
+            {
+                _temmuz2021_C6 = value;
+                OnPropertyChanged(nameof(Temmuz2021_C6));
+            }
+        }
+
+        private int _agustos2021_C1;
+        public int Agustos2021_C1
+        {
+            get { return _agustos2021_C1; }
+            set
+            {
+                _agustos2021_C1 = value;
+                OnPropertyChanged(nameof(Agustos2021_C1));
+            }
+        }
+
+        private int _agustos2021_C2;
+        public int Agustos2021_C2
+        {
+            get { return _agustos2021_C2; }
+            set
+            {
+                _agustos2021_C2 = value;
+                OnPropertyChanged(nameof(Agustos2021_C2));
+            }
+        }
+
+        private int _agustos2021_C3;
+        public int Agustos2021_C3
+        {
+            get { return _agustos2021_C3; }
+            set
+            {
+                _agustos2021_C3 = value;
+                OnPropertyChanged(nameof(Agustos2021_C3));
+            }
+        }
+
+        private int _agustos2021_C4;
+        public int Agustos2021_C4
+        {
+            get { return _agustos2021_C4; }
+            set
+            {
+                _agustos2021_C4 = value;
+                OnPropertyChanged(nameof(Agustos2021_C4));
+            }
+        }
+
+        private int _agustos2021_C5;
+        public int Agustos2021_C5
+        {
+            get { return _agustos2021_C5; }
+            set
+            {
+                _agustos2021_C5 = value;
+                OnPropertyChanged(nameof(Agustos2021_C5));
+            }
+        }
+
+        private int _agustos2021_C6;
+        public int Agustos2021_C6
+        {
+            get { return _agustos2021_C6; }
+            set
+            {
+                _agustos2021_C6 = value;
+                OnPropertyChanged(nameof(Agustos2021_C6));
+            }
+        }
+
+        private int _eylul2021_C1;
+        public int Eylul2021_C1
+        {
+            get { return _eylul2021_C1; }
+            set
+            {
+                _eylul2021_C1 = value;
+                OnPropertyChanged(nameof(Eylul2021_C1));
+            }
+        }
+
+        private int _eylul2021_C2;
+        public int Eylul2021_C2
+        {
+            get { return _eylul2021_C2; }
+            set
+            {
+                _eylul2021_C2 = value;
+                OnPropertyChanged(nameof(Eylul2021_C2));
+            }
+        }
+
+        private int _eylul2021_C3;
+        public int Eylul2021_C3
+        {
+            get { return _eylul2021_C3; }
+            set
+            {
+                _eylul2021_C3 = value;
+                OnPropertyChanged(nameof(Eylul2021_C3));
+            }
+        }
+
+        private int _eylul2021_C4;
+        public int Eylul2021_C4
+        {
+            get { return _eylul2021_C4; }
+            set
+            {
+                _eylul2021_C4 = value;
+                OnPropertyChanged(nameof(Eylul2021_C4));
+            }
+        }
+
+        private int _eylul2021_C5;
+        public int Eylul2021_C5
+        {
+            get { return _eylul2021_C5; }
+            set
+            {
+                _eylul2021_C5 = value;
+                OnPropertyChanged(nameof(Eylul2021_C5));
+            }
+        }
+
+        private int _eylul2021_C6;
+        public int Eylul2021_C6
+        {
+            get { return _eylul2021_C6; }
+            set
+            {
+                _eylul2021_C6 = value;
+                OnPropertyChanged(nameof(Eylul2021_C6));
+            }
+        }
+
+        private int _ekim2021_C1;
+        public int Ekim2021_C1
+        {
+            get { return _ekim2021_C1; }
+            set
+            {
+                _ekim2021_C1 = value;
+                OnPropertyChanged(nameof(Ekim2021_C1));
+            }
+        }
+
+        private int _ekim2021_C2;
+        public int Ekim2021_C2
+        {
+            get { return _ekim2021_C2; }
+            set
+            {
+                _ekim2021_C2 = value;
+                OnPropertyChanged(nameof(Ekim2021_C2));
+            }
+        }
+
+        private int _ekim2021_C3;
+        public int Ekim2021_C3
+        {
+            get { return _ekim2021_C3; }
+            set
+            {
+                _ekim2021_C3 = value;
+                OnPropertyChanged(nameof(Ekim2021_C3));
+            }
+        }
+
+        private int _ekim2021_C4;
+        public int Ekim2021_C4
+        {
+            get { return _ekim2021_C4; }
+            set
+            {
+                _ekim2021_C4 = value;
+                OnPropertyChanged(nameof(Ekim2021_C4));
+            }
+        }
+
+        private int _ekim2021_C5;
+        public int Ekim2021_C5
+        {
+            get { return _ekim2021_C5; }
+            set
+            {
+                _ekim2021_C5 = value;
+                OnPropertyChanged(nameof(Ekim2021_C5));
+            }
+        }
+
+        private int _ekim2021_C6;
+        public int Ekim2021_C6
+        {
+            get { return _ekim2021_C6; }
+            set
+            {
+                _ekim2021_C6 = value;
+                OnPropertyChanged(nameof(Ekim2021_C6));
+            }
+        }
+
+        private int _kasim2021_C1;
+        public int Kasim2021_C1
+        {
+            get { return _kasim2021_C1; }
+            set
+            {
+                _kasim2021_C1 = value;
+                OnPropertyChanged(nameof(Kasim2021_C1));
+            }
+        }
+
+        private int _kasim2021_C2;
+        public int Kasim2021_C2
+        {
+            get { return _kasim2021_C2; }
+            set
+            {
+                _kasim2021_C2 = value;
+                OnPropertyChanged(nameof(Kasim2021_C2));
+            }
+        }
+
+        private int _kasim2021_C3;
+        public int Kasim2021_C3
+        {
+            get { return _kasim2021_C3; }
+            set
+            {
+                _kasim2021_C3 = value;
+                OnPropertyChanged(nameof(Kasim2021_C3));
+            }
+        }
+
+        private int _kasim2021_C4;
+        public int Kasim2021_C4
+        {
+            get { return _kasim2021_C4; }
+            set
+            {
+                _kasim2021_C4 = value;
+                OnPropertyChanged(nameof(Kasim2021_C4));
+            }
+        }
+
+        private int _kasim2021_C5;
+        public int Kasim2021_C5
+        {
+            get { return _kasim2021_C5; }
+            set
+            {
+                _kasim2021_C5 = value;
+                OnPropertyChanged(nameof(Kasim2021_C5));
+            }
+        }
+
+        private int _kasim2021_C6;
+        public int Kasim2021_C6
+        {
+            get { return _kasim2021_C6; }
+            set
+            {
+                _kasim2021_C6 = value;
+                OnPropertyChanged(nameof(Kasim2021_C6));
+            }
+        }
+        private int _aralik2021_C1;
+        public int Aralik2021_C1
+        {
+            get { return _aralik2021_C1; }
+            set
+            {
+                _aralik2021_C1 = value;
+                OnPropertyChanged(nameof(Aralik2021_C1));
+            }
+        }
+
+        private int _aralik2021_C2;
+        public int Aralik2021_C2
+        {
+            get { return _aralik2021_C2; }
+            set
+            {
+                _aralik2021_C2 = value;
+                OnPropertyChanged(nameof(Aralik2021_C2));
+            }
+        }
+
+        private int _aralik2021_C3;
+        public int Aralik2021_C3
+        {
+            get { return _aralik2021_C3; }
+            set
+            {
+                _aralik2021_C3 = value;
+                OnPropertyChanged(nameof(Aralik2021_C3));
+            }
+        }
+
+        private int _aralik2021_C4;
+        public int Aralik2021_C4
+        {
+            get { return _aralik2021_C4; }
+            set
+            {
+                _aralik2021_C4 = value;
+                OnPropertyChanged(nameof(Aralik2021_C4));
+            }
+        }
+
+        private int _aralik2021_C5;
+        public int Aralik2021_C5
+        {
+            get { return _aralik2021_C5; }
+            set
+            {
+                _aralik2021_C5 = value;
+                OnPropertyChanged(nameof(Aralik2021_C5));
+            }
+        }
+
+        private int _aralik2021_C6;
+        public int Aralik2021_C6
+        {
+            get { return _aralik2021_C6; }
+            set
+            {
+                _aralik2021_C6 = value;
+                OnPropertyChanged(nameof(Aralik2021_C6));
+            }
+        }
+        #endregion
+
+        #region IZIN 2022
+
+
+        private int _ocak2022_C1;
+        public int Ocak2022_C1
+        {
+            get { return _ocak2022_C1; }
+            set
+            {
+                _ocak2022_C1 = value;
+                OnPropertyChanged(nameof(Ocak2022_C1));
+            }
+        }
+
+        private int _ocak2022_C2;
+        public int Ocak2022_C2
+        {
+            get { return _ocak2022_C2; }
+            set
+            {
+                _ocak2022_C2 = value;
+                OnPropertyChanged(nameof(Ocak2022_C2));
+            }
+        }
+
+        private int _ocak2022_C3;
+        public int Ocak2022_C3
+        {
+            get { return _ocak2022_C3; }
+            set
+            {
+                _ocak2022_C3 = value;
+                OnPropertyChanged(nameof(Ocak2022_C3));
+            }
+        }
+
+        private int _ocak2022_C4;
+        public int Ocak2022_C4
+        {
+            get { return _ocak2022_C4; }
+            set
+            {
+                _ocak2022_C4 = value;
+                OnPropertyChanged(nameof(Ocak2022_C4));
+            }
+        }
+
+        private int _ocak2022_C5;
+        public int Ocak2022_C5
+        {
+            get { return _ocak2022_C5; }
+            set
+            {
+                _ocak2022_C5 = value;
+                OnPropertyChanged(nameof(Ocak2022_C5));
+            }
+        }
+
+        private int _ocak2022_C6;
+        public int Ocak2022_C6
+        {
+            get { return _ocak2022_C6; }
+            set
+            {
+                _ocak2022_C6 = value;
+                OnPropertyChanged(nameof(Ocak2022_C6));
+            }
+        }
+
+        private int _subat2022_C1;
+        public int Subat2022_C1
+        {
+            get { return _subat2022_C1; }
+            set
+            {
+                _subat2022_C1 = value;
+                OnPropertyChanged(nameof(Subat2022_C1));
+            }
+        }
+
+        private int _subat2022_C2;
+        public int Subat2022_C2
+        {
+            get { return _subat2022_C2; }
+            set
+            {
+                _subat2022_C2 = value;
+                OnPropertyChanged(nameof(Subat2022_C2));
+            }
+        }
+
+        private int _subat2022_C3;
+        public int Subat2022_C3
+        {
+            get { return _subat2022_C3; }
+            set
+            {
+                _subat2022_C3 = value;
+                OnPropertyChanged(nameof(Subat2022_C3));
+            }
+        }
+
+        private int _subat2022_C4;
+        public int Subat2022_C4
+        {
+            get { return _subat2022_C4; }
+            set
+            {
+                _subat2022_C4 = value;
+                OnPropertyChanged(nameof(Subat2022_C4));
+            }
+        }
+
+        private int _subat2022_C5;
+        public int Subat2022_C5
+        {
+            get { return _subat2022_C5; }
+            set
+            {
+                _subat2022_C5 = value;
+                OnPropertyChanged(nameof(Subat2022_C5));
+            }
+        }
+
+        private int _subat2022_C6;
+        public int Subat2022_C6
+        {
+            get { return _subat2022_C6; }
+            set
+            {
+                _subat2022_C6 = value;
+                OnPropertyChanged(nameof(Subat2022_C6));
+            }
+        }
+
+        private int _mart2022_C1;
+        public int Mart2022_C1
+        {
+            get { return _mart2022_C1; }
+            set
+            {
+                _mart2022_C1 = value;
+                OnPropertyChanged(nameof(Mart2022_C1));
+            }
+        }
+
+        private int _mart2022_C2;
+        public int Mart2022_C2
+        {
+            get { return _mart2022_C2; }
+            set
+            {
+                _mart2022_C2 = value;
+                OnPropertyChanged(nameof(Mart2022_C2));
+            }
+        }
+
+        private int _mart2022_C3;
+        public int Mart2022_C3
+        {
+            get { return _mart2022_C3; }
+            set
+            {
+                _mart2022_C3 = value;
+                OnPropertyChanged(nameof(Mart2022_C3));
+            }
+        }
+
+        private int _mart2022_C4;
+        public int Mart2022_C4
+        {
+            get { return _mart2022_C4; }
+            set
+            {
+                _mart2022_C4 = value;
+                OnPropertyChanged(nameof(Mart2022_C4));
+            }
+        }
+
+        private int _mart2022_C5;
+        public int Mart2022_C5
+        {
+            get { return _mart2022_C5; }
+            set
+            {
+                _mart2022_C5 = value;
+                OnPropertyChanged(nameof(Mart2022_C5));
+            }
+        }
+
+        private int _mart2022_C6;
+        public int Mart2022_C6
+        {
+            get { return _mart2022_C6; }
+            set
+            {
+                _mart2022_C6 = value;
+                OnPropertyChanged(nameof(Mart2022_C6));
+            }
+        }
+        private int _nisan2022_C1;
+        public int Nisan2022_C1
+        {
+            get { return _nisan2022_C1; }
+            set
+            {
+                _nisan2022_C1 = value;
+                OnPropertyChanged(nameof(Nisan2022_C1));
+            }
+        }
+
+        private int _nisan2022_C2;
+        public int Nisan2022_C2
+        {
+            get { return _nisan2022_C2; }
+            set
+            {
+                _nisan2022_C2 = value;
+                OnPropertyChanged(nameof(Nisan2022_C2));
+            }
+        }
+
+        private int _nisan2022_C3;
+        public int Nisan2022_C3
+        {
+            get { return _nisan2022_C3; }
+            set
+            {
+                _nisan2022_C3 = value;
+                OnPropertyChanged(nameof(Nisan2022_C3));
+            }
+        }
+
+        private int _nisan2022_C4;
+        public int Nisan2022_C4
+        {
+            get { return _nisan2022_C4; }
+            set
+            {
+                _nisan2022_C4 = value;
+                OnPropertyChanged(nameof(Nisan2022_C4));
+            }
+        }
+
+        private int _nisan2022_C5;
+        public int Nisan2022_C5
+        {
+            get { return _nisan2022_C5; }
+            set
+            {
+                _nisan2022_C5 = value;
+                OnPropertyChanged(nameof(Nisan2022_C5));
+            }
+        }
+
+        private int _nisan2022_C6;
+        public int Nisan2022_C6
+        {
+            get { return _nisan2022_C6; }
+            set
+            {
+                _nisan2022_C6 = value;
+                OnPropertyChanged(nameof(Nisan2022_C6));
+            }
+        }
+
+        private int _mayis2022_C1;
+        public int Mayis2022_C1
+        {
+            get { return _mayis2022_C1; }
+            set
+            {
+                _mayis2022_C1 = value;
+                OnPropertyChanged(nameof(Mayis2022_C1));
+            }
+        }
+
+        private int _mayis2022_C2;
+        public int Mayis2022_C2
+        {
+            get { return _mayis2022_C2; }
+            set
+            {
+                _mayis2022_C2 = value;
+                OnPropertyChanged(nameof(Mayis2022_C2));
+            }
+        }
+
+        private int _mayis2022_C3;
+        public int Mayis2022_C3
+        {
+            get { return _mayis2022_C3; }
+            set
+            {
+                _mayis2022_C3 = value;
+                OnPropertyChanged(nameof(Mayis2022_C3));
+            }
+        }
+
+        private int _mayis2022_C4;
+        public int Mayis2022_C4
+        {
+            get { return _mayis2022_C4; }
+            set
+            {
+                _mayis2022_C4 = value;
+                OnPropertyChanged(nameof(Mayis2022_C4));
+            }
+        }
+
+        private int _mayis2022_C5;
+        public int Mayis2022_C5
+        {
+            get { return _mayis2022_C5; }
+            set
+            {
+                _mayis2022_C5 = value;
+                OnPropertyChanged(nameof(Mayis2022_C5));
+            }
+        }
+
+        private int _mayis2022_C6;
+        public int Mayis2022_C6
+        {
+            get { return _mayis2022_C6; }
+            set
+            {
+                _mayis2022_C6 = value;
+                OnPropertyChanged(nameof(Mayis2022_C6));
+            }
+        }
+
+        private int _haziran2022_C1;
+        public int Haziran2022_C1
+        {
+            get { return _haziran2022_C1; }
+            set
+            {
+                _haziran2022_C1 = value;
+                OnPropertyChanged(nameof(Haziran2022_C1));
+            }
+        }
+
+        private int _haziran2022_C2;
+        public int Haziran2022_C2
+        {
+            get { return _haziran2022_C2; }
+            set
+            {
+                _haziran2022_C2 = value;
+                OnPropertyChanged(nameof(Haziran2022_C2));
+            }
+        }
+
+        private int _haziran2022_C3;
+        public int Haziran2022_C3
+        {
+            get { return _haziran2022_C3; }
+            set
+            {
+                _haziran2022_C3 = value;
+                OnPropertyChanged(nameof(Haziran2022_C3));
+            }
+        }
+
+        private int _haziran2022_C4;
+        public int Haziran2022_C4
+        {
+            get { return _haziran2022_C4; }
+            set
+            {
+                _haziran2022_C4 = value;
+                OnPropertyChanged(nameof(Haziran2022_C4));
+            }
+        }
+
+        private int _haziran2022_C5;
+        public int Haziran2022_C5
+        {
+            get { return _haziran2022_C5; }
+            set
+            {
+                _haziran2022_C5 = value;
+                OnPropertyChanged(nameof(Haziran2022_C5));
+            }
+        }
+
+        private int _haziran2022_C6;
+        public int Haziran2022_C6
+        {
+            get { return _haziran2022_C6; }
+            set
+            {
+                _haziran2022_C6 = value;
+                OnPropertyChanged(nameof(Haziran2022_C6));
+            }
+        }
+
+        private int _temmuz2022_C1;
+        public int Temmuz2022_C1
+        {
+            get { return _temmuz2022_C1; }
+            set
+            {
+                _temmuz2022_C1 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C1));
+            }
+        }
+
+        private int _temmuz2022_C2;
+        public int Temmuz2022_C2
+        {
+            get { return _temmuz2022_C2; }
+            set
+            {
+                _temmuz2022_C2 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C2));
+            }
+        }
+
+        private int _temmuz2022_C3;
+        public int Temmuz2022_C3
+        {
+            get { return _temmuz2022_C3; }
+            set
+            {
+                _temmuz2022_C3 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C3));
+            }
+        }
+
+        private int _temmuz2022_C4;
+        public int Temmuz2022_C4
+        {
+            get { return _temmuz2022_C4; }
+            set
+            {
+                _temmuz2022_C4 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C4));
+            }
+        }
+
+        private int _temmuz2022_C5;
+        public int Temmuz2022_C5
+        {
+            get { return _temmuz2022_C5; }
+            set
+            {
+                _temmuz2022_C5 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C5));
+            }
+        }
+
+        private int _temmuz2022_C6;
+        public int Temmuz2022_C6
+        {
+            get { return _temmuz2022_C6; }
+            set
+            {
+                _temmuz2022_C6 = value;
+                OnPropertyChanged(nameof(Temmuz2022_C6));
+            }
+        }
+
+        private int _agustos2022_C1;
+        public int Agustos2022_C1
+        {
+            get { return _agustos2022_C1; }
+            set
+            {
+                _agustos2022_C1 = value;
+                OnPropertyChanged(nameof(Agustos2022_C1));
+            }
+        }
+
+        private int _agustos2022_C2;
+        public int Agustos2022_C2
+        {
+            get { return _agustos2022_C2; }
+            set
+            {
+                _agustos2022_C2 = value;
+                OnPropertyChanged(nameof(Agustos2022_C2));
+            }
+        }
+
+        private int _agustos2022_C3;
+        public int Agustos2022_C3
+        {
+            get { return _agustos2022_C3; }
+            set
+            {
+                _agustos2022_C3 = value;
+                OnPropertyChanged(nameof(Agustos2022_C3));
+            }
+        }
+
+        private int _agustos2022_C4;
+        public int Agustos2022_C4
+        {
+            get { return _agustos2022_C4; }
+            set
+            {
+                _agustos2022_C4 = value;
+                OnPropertyChanged(nameof(Agustos2022_C4));
+            }
+        }
+
+        private int _agustos2022_C5;
+        public int Agustos2022_C5
+        {
+            get { return _agustos2022_C5; }
+            set
+            {
+                _agustos2022_C5 = value;
+                OnPropertyChanged(nameof(Agustos2022_C5));
+            }
+        }
+
+        private int _agustos2022_C6;
+        public int Agustos2022_C6
+        {
+            get { return _agustos2022_C6; }
+            set
+            {
+                _agustos2022_C6 = value;
+                OnPropertyChanged(nameof(Agustos2022_C6));
+            }
+        }
+
+        private int _eylul2022_C1;
+        public int Eylul2022_C1
+        {
+            get { return _eylul2022_C1; }
+            set
+            {
+                _eylul2022_C1 = value;
+                OnPropertyChanged(nameof(Eylul2022_C1));
+            }
+        }
+
+        private int _eylul2022_C2;
+        public int Eylul2022_C2
+        {
+            get { return _eylul2022_C2; }
+            set
+            {
+                _eylul2022_C2 = value;
+                OnPropertyChanged(nameof(Eylul2022_C2));
+            }
+        }
+
+        private int _eylul2022_C3;
+        public int Eylul2022_C3
+        {
+            get { return _eylul2022_C3; }
+            set
+            {
+                _eylul2022_C3 = value;
+                OnPropertyChanged(nameof(Eylul2022_C3));
+            }
+        }
+
+        private int _eylul2022_C4;
+        public int Eylul2022_C4
+        {
+            get { return _eylul2022_C4; }
+            set
+            {
+                _eylul2022_C4 = value;
+                OnPropertyChanged(nameof(Eylul2022_C4));
+            }
+        }
+
+        private int _eylul2022_C5;
+        public int Eylul2022_C5
+        {
+            get { return _eylul2022_C5; }
+            set
+            {
+                _eylul2022_C5 = value;
+                OnPropertyChanged(nameof(Eylul2022_C5));
+            }
+        }
+
+        private int _eylul2022_C6;
+        public int Eylul2022_C6
+        {
+            get { return _eylul2022_C6; }
+            set
+            {
+                _eylul2022_C6 = value;
+                OnPropertyChanged(nameof(Eylul2022_C6));
+            }
+        }
+
+        private int _ekim2022_C1;
+        public int Ekim2022_C1
+        {
+            get { return _ekim2022_C1; }
+            set
+            {
+                _ekim2022_C1 = value;
+                OnPropertyChanged(nameof(Ekim2022_C1));
+            }
+        }
+
+        private int _ekim2022_C2;
+        public int Ekim2022_C2
+        {
+            get { return _ekim2022_C2; }
+            set
+            {
+                _ekim2022_C2 = value;
+                OnPropertyChanged(nameof(Ekim2022_C2));
+            }
+        }
+
+        private int _ekim2022_C3;
+        public int Ekim2022_C3
+        {
+            get { return _ekim2022_C3; }
+            set
+            {
+                _ekim2022_C3 = value;
+                OnPropertyChanged(nameof(Ekim2022_C3));
+            }
+        }
+
+        private int _ekim2022_C4;
+        public int Ekim2022_C4
+        {
+            get { return _ekim2022_C4; }
+            set
+            {
+                _ekim2022_C4 = value;
+                OnPropertyChanged(nameof(Ekim2022_C4));
+            }
+        }
+
+        private int _ekim2022_C5;
+        public int Ekim2022_C5
+        {
+            get { return _ekim2022_C5; }
+            set
+            {
+                _ekim2022_C5 = value;
+                OnPropertyChanged(nameof(Ekim2022_C5));
+            }
+        }
+
+        private int _ekim2022_C6;
+        public int Ekim2022_C6
+        {
+            get { return _ekim2022_C6; }
+            set
+            {
+                _ekim2022_C6 = value;
+                OnPropertyChanged(nameof(Ekim2022_C6));
+            }
+        }
+
+        private int _kasim2022_C1;
+        public int Kasim2022_C1
+        {
+            get { return _kasim2022_C1; }
+            set
+            {
+                _kasim2022_C1 = value;
+                OnPropertyChanged(nameof(Kasim2022_C1));
+            }
+        }
+
+        private int _kasim2022_C2;
+        public int Kasim2022_C2
+        {
+            get { return _kasim2022_C2; }
+            set
+            {
+                _kasim2022_C2 = value;
+                OnPropertyChanged(nameof(Kasim2022_C2));
+            }
+        }
+
+        private int _kasim2022_C3;
+        public int Kasim2022_C3
+        {
+            get { return _kasim2022_C3; }
+            set
+            {
+                _kasim2022_C3 = value;
+                OnPropertyChanged(nameof(Kasim2022_C3));
+            }
+        }
+
+        private int _kasim2022_C4;
+        public int Kasim2022_C4
+        {
+            get { return _kasim2022_C4; }
+            set
+            {
+                _kasim2022_C4 = value;
+                OnPropertyChanged(nameof(Kasim2022_C4));
+            }
+        }
+
+        private int _kasim2022_C5;
+        public int Kasim2022_C5
+        {
+            get { return _kasim2022_C5; }
+            set
+            {
+                _kasim2022_C5 = value;
+                OnPropertyChanged(nameof(Kasim2022_C5));
+            }
+        }
+
+        private int _kasim2022_C6;
+        public int Kasim2022_C6
+        {
+            get { return _kasim2022_C6; }
+            set
+            {
+                _kasim2022_C6 = value;
+                OnPropertyChanged(nameof(Kasim2022_C6));
+            }
+        }
+        private int _aralik2022_C1;
+        public int Aralik2022_C1
+        {
+            get { return _aralik2022_C1; }
+            set
+            {
+                _aralik2022_C1 = value;
+                OnPropertyChanged(nameof(Aralik2022_C1));
+            }
+        }
+
+        private int _aralik2022_C2;
+        public int Aralik2022_C2
+        {
+            get { return _aralik2022_C2; }
+            set
+            {
+                _aralik2022_C2 = value;
+                OnPropertyChanged(nameof(Aralik2022_C2));
+            }
+        }
+
+        private int _aralik2022_C3;
+        public int Aralik2022_C3
+        {
+            get { return _aralik2022_C3; }
+            set
+            {
+                _aralik2022_C3 = value;
+                OnPropertyChanged(nameof(Aralik2022_C3));
+            }
+        }
+
+        private int _aralik2022_C4;
+        public int Aralik2022_C4
+        {
+            get { return _aralik2022_C4; }
+            set
+            {
+                _aralik2022_C4 = value;
+                OnPropertyChanged(nameof(Aralik2022_C4));
+            }
+        }
+
+        private int _aralik2022_C5;
+        public int Aralik2022_C5
+        {
+            get { return _aralik2022_C5; }
+            set
+            {
+                _aralik2022_C5 = value;
+                OnPropertyChanged(nameof(Aralik2022_C5));
+            }
+        }
+
+        private int _aralik2022_C6;
+        public int Aralik2022_C6
+        {
+            get { return _aralik2022_C6; }
+            set
+            {
+                _aralik2022_C6 = value;
+                OnPropertyChanged(nameof(Aralik2022_C6));
+            }
+        }
+        #endregion
+
+        #region IZIN 2023
+
+
+        private int _ocak2023_C1;
+        public int Ocak2023_C1
+        {
+            get { return _ocak2023_C1; }
+            set
+            {
+                _ocak2023_C1 = value;
+                OnPropertyChanged(nameof(Ocak2023_C1));
+            }
+        }
+
+        private int _ocak2023_C2;
+        public int Ocak2023_C2
+        {
+            get { return _ocak2023_C2; }
+            set
+            {
+                _ocak2023_C2 = value;
+                OnPropertyChanged(nameof(Ocak2023_C2));
+            }
+        }
+
+        private int _ocak2023_C3;
+        public int Ocak2023_C3
+        {
+            get { return _ocak2023_C3; }
+            set
+            {
+                _ocak2023_C3 = value;
+                OnPropertyChanged(nameof(Ocak2023_C3));
+            }
+        }
+
+        private int _ocak2023_C4;
+        public int Ocak2023_C4
+        {
+            get { return _ocak2023_C4; }
+            set
+            {
+                _ocak2023_C4 = value;
+                OnPropertyChanged(nameof(Ocak2023_C4));
+            }
+        }
+
+        private int _ocak2023_C5;
+        public int Ocak2023_C5
+        {
+            get { return _ocak2023_C5; }
+            set
+            {
+                _ocak2023_C5 = value;
+                OnPropertyChanged(nameof(Ocak2023_C5));
+            }
+        }
+
+        private int _ocak2023_C6;
+        public int Ocak2023_C6
+        {
+            get { return _ocak2023_C6; }
+            set
+            {
+                _ocak2023_C6 = value;
+                OnPropertyChanged(nameof(Ocak2023_C6));
+            }
+        }
+
+        private int _subat2023_C1;
+        public int Subat2023_C1
+        {
+            get { return _subat2023_C1; }
+            set
+            {
+                _subat2023_C1 = value;
+                OnPropertyChanged(nameof(Subat2023_C1));
+            }
+        }
+
+        private int _subat2023_C2;
+        public int Subat2023_C2
+        {
+            get { return _subat2023_C2; }
+            set
+            {
+                _subat2023_C2 = value;
+                OnPropertyChanged(nameof(Subat2023_C2));
+            }
+        }
+
+        private int _subat2023_C3;
+        public int Subat2023_C3
+        {
+            get { return _subat2023_C3; }
+            set
+            {
+                _subat2023_C3 = value;
+                OnPropertyChanged(nameof(Subat2023_C3));
+            }
+        }
+
+        private int _subat2023_C4;
+        public int Subat2023_C4
+        {
+            get { return _subat2023_C4; }
+            set
+            {
+                _subat2023_C4 = value;
+                OnPropertyChanged(nameof(Subat2023_C4));
+            }
+        }
+
+        private int _subat2023_C5;
+        public int Subat2023_C5
+        {
+            get { return _subat2023_C5; }
+            set
+            {
+                _subat2023_C5 = value;
+                OnPropertyChanged(nameof(Subat2023_C5));
+            }
+        }
+
+        private int _subat2023_C6;
+        public int Subat2023_C6
+        {
+            get { return _subat2023_C6; }
+            set
+            {
+                _subat2023_C6 = value;
+                OnPropertyChanged(nameof(Subat2023_C6));
+            }
+        }
+
+        private int _mart2023_C1;
+        public int Mart2023_C1
+        {
+            get { return _mart2023_C1; }
+            set
+            {
+                _mart2023_C1 = value;
+                OnPropertyChanged(nameof(Mart2023_C1));
+            }
+        }
+
+        private int _mart2023_C2;
+        public int Mart2023_C2
+        {
+            get { return _mart2023_C2; }
+            set
+            {
+                _mart2023_C2 = value;
+                OnPropertyChanged(nameof(Mart2023_C2));
+            }
+        }
+
+        private int _mart2023_C3;
+        public int Mart2023_C3
+        {
+            get { return _mart2023_C3; }
+            set
+            {
+                _mart2023_C3 = value;
+                OnPropertyChanged(nameof(Mart2023_C3));
+            }
+        }
+
+        private int _mart2023_C4;
+        public int Mart2023_C4
+        {
+            get { return _mart2023_C4; }
+            set
+            {
+                _mart2023_C4 = value;
+                OnPropertyChanged(nameof(Mart2023_C4));
+            }
+        }
+
+        private int _mart2023_C5;
+        public int Mart2023_C5
+        {
+            get { return _mart2023_C5; }
+            set
+            {
+                _mart2023_C5 = value;
+                OnPropertyChanged(nameof(Mart2023_C5));
+            }
+        }
+
+        private int _mart2023_C6;
+        public int Mart2023_C6
+        {
+            get { return _mart2023_C6; }
+            set
+            {
+                _mart2023_C6 = value;
+                OnPropertyChanged(nameof(Mart2023_C6));
+            }
+        }
+        private int _nisan2023_C1;
+        public int Nisan2023_C1
+        {
+            get { return _nisan2023_C1; }
+            set
+            {
+                _nisan2023_C1 = value;
+                OnPropertyChanged(nameof(Nisan2023_C1));
+            }
+        }
+
+        private int _nisan2023_C2;
+        public int Nisan2023_C2
+        {
+            get { return _nisan2023_C2; }
+            set
+            {
+                _nisan2023_C2 = value;
+                OnPropertyChanged(nameof(Nisan2023_C2));
+            }
+        }
+
+        private int _nisan2023_C3;
+        public int Nisan2023_C3
+        {
+            get { return _nisan2023_C3; }
+            set
+            {
+                _nisan2023_C3 = value;
+                OnPropertyChanged(nameof(Nisan2023_C3));
+            }
+        }
+
+        private int _nisan2023_C4;
+        public int Nisan2023_C4
+        {
+            get { return _nisan2023_C4; }
+            set
+            {
+                _nisan2023_C4 = value;
+                OnPropertyChanged(nameof(Nisan2023_C4));
+            }
+        }
+
+        private int _nisan2023_C5;
+        public int Nisan2023_C5
+        {
+            get { return _nisan2023_C5; }
+            set
+            {
+                _nisan2023_C5 = value;
+                OnPropertyChanged(nameof(Nisan2023_C5));
+            }
+        }
+
+        private int _nisan2023_C6;
+        public int Nisan2023_C6
+        {
+            get { return _nisan2023_C6; }
+            set
+            {
+                _nisan2023_C6 = value;
+                OnPropertyChanged(nameof(Nisan2023_C6));
+            }
+        }
+
+        private int _mayis2023_C1;
+        public int Mayis2023_C1
+        {
+            get { return _mayis2023_C1; }
+            set
+            {
+                _mayis2023_C1 = value;
+                OnPropertyChanged(nameof(Mayis2023_C1));
+            }
+        }
+
+        private int _mayis2023_C2;
+        public int Mayis2023_C2
+        {
+            get { return _mayis2023_C2; }
+            set
+            {
+                _mayis2023_C2 = value;
+                OnPropertyChanged(nameof(Mayis2023_C2));
+            }
+        }
+
+        private int _mayis2023_C3;
+        public int Mayis2023_C3
+        {
+            get { return _mayis2023_C3; }
+            set
+            {
+                _mayis2023_C3 = value;
+                OnPropertyChanged(nameof(Mayis2023_C3));
+            }
+        }
+
+        private int _mayis2023_C4;
+        public int Mayis2023_C4
+        {
+            get { return _mayis2023_C4; }
+            set
+            {
+                _mayis2023_C4 = value;
+                OnPropertyChanged(nameof(Mayis2023_C4));
+            }
+        }
+
+        private int _mayis2023_C5;
+        public int Mayis2023_C5
+        {
+            get { return _mayis2023_C5; }
+            set
+            {
+                _mayis2023_C5 = value;
+                OnPropertyChanged(nameof(Mayis2023_C5));
+            }
+        }
+
+        private int _mayis2023_C6;
+        public int Mayis2023_C6
+        {
+            get { return _mayis2023_C6; }
+            set
+            {
+                _mayis2023_C6 = value;
+                OnPropertyChanged(nameof(Mayis2023_C6));
+            }
+        }
+
+        private int _haziran2023_C1;
+        public int Haziran2023_C1
+        {
+            get { return _haziran2023_C1; }
+            set
+            {
+                _haziran2023_C1 = value;
+                OnPropertyChanged(nameof(Haziran2023_C1));
+            }
+        }
+
+        private int _haziran2023_C2;
+        public int Haziran2023_C2
+        {
+            get { return _haziran2023_C2; }
+            set
+            {
+                _haziran2023_C2 = value;
+                OnPropertyChanged(nameof(Haziran2023_C2));
+            }
+        }
+
+        private int _haziran2023_C3;
+        public int Haziran2023_C3
+        {
+            get { return _haziran2023_C3; }
+            set
+            {
+                _haziran2023_C3 = value;
+                OnPropertyChanged(nameof(Haziran2023_C3));
+            }
+        }
+
+        private int _haziran2023_C4;
+        public int Haziran2023_C4
+        {
+            get { return _haziran2023_C4; }
+            set
+            {
+                _haziran2023_C4 = value;
+                OnPropertyChanged(nameof(Haziran2023_C4));
+            }
+        }
+
+        private int _haziran2023_C5;
+        public int Haziran2023_C5
+        {
+            get { return _haziran2023_C5; }
+            set
+            {
+                _haziran2023_C5 = value;
+                OnPropertyChanged(nameof(Haziran2023_C5));
+            }
+        }
+
+        private int _haziran2023_C6;
+        public int Haziran2023_C6
+        {
+            get { return _haziran2023_C6; }
+            set
+            {
+                _haziran2023_C6 = value;
+                OnPropertyChanged(nameof(Haziran2023_C6));
+            }
+        }
+
+        private int _temmuz2023_C1;
+        public int Temmuz2023_C1
+        {
+            get { return _temmuz2023_C1; }
+            set
+            {
+                _temmuz2023_C1 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C1));
+            }
+        }
+
+        private int _temmuz2023_C2;
+        public int Temmuz2023_C2
+        {
+            get { return _temmuz2023_C2; }
+            set
+            {
+                _temmuz2023_C2 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C2));
+            }
+        }
+
+        private int _temmuz2023_C3;
+        public int Temmuz2023_C3
+        {
+            get { return _temmuz2023_C3; }
+            set
+            {
+                _temmuz2023_C3 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C3));
+            }
+        }
+
+        private int _temmuz2023_C4;
+        public int Temmuz2023_C4
+        {
+            get { return _temmuz2023_C4; }
+            set
+            {
+                _temmuz2023_C4 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C4));
+            }
+        }
+
+        private int _temmuz2023_C5;
+        public int Temmuz2023_C5
+        {
+            get { return _temmuz2023_C5; }
+            set
+            {
+                _temmuz2023_C5 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C5));
+            }
+        }
+
+        private int _temmuz2023_C6;
+        public int Temmuz2023_C6
+        {
+            get { return _temmuz2023_C6; }
+            set
+            {
+                _temmuz2023_C6 = value;
+                OnPropertyChanged(nameof(Temmuz2023_C6));
+            }
+        }
+
+        private int _agustos2023_C1;
+        public int Agustos2023_C1
+        {
+            get { return _agustos2023_C1; }
+            set
+            {
+                _agustos2023_C1 = value;
+                OnPropertyChanged(nameof(Agustos2023_C1));
+            }
+        }
+
+        private int _agustos2023_C2;
+        public int Agustos2023_C2
+        {
+            get { return _agustos2023_C2; }
+            set
+            {
+                _agustos2023_C2 = value;
+                OnPropertyChanged(nameof(Agustos2023_C2));
+            }
+        }
+
+        private int _agustos2023_C3;
+        public int Agustos2023_C3
+        {
+            get { return _agustos2023_C3; }
+            set
+            {
+                _agustos2023_C3 = value;
+                OnPropertyChanged(nameof(Agustos2023_C3));
+            }
+        }
+
+        private int _agustos2023_C4;
+        public int Agustos2023_C4
+        {
+            get { return _agustos2023_C4; }
+            set
+            {
+                _agustos2023_C4 = value;
+                OnPropertyChanged(nameof(Agustos2023_C4));
+            }
+        }
+
+        private int _agustos2023_C5;
+        public int Agustos2023_C5
+        {
+            get { return _agustos2023_C5; }
+            set
+            {
+                _agustos2023_C5 = value;
+                OnPropertyChanged(nameof(Agustos2023_C5));
+            }
+        }
+
+        private int _agustos2023_C6;
+        public int Agustos2023_C6
+        {
+            get { return _agustos2023_C6; }
+            set
+            {
+                _agustos2023_C6 = value;
+                OnPropertyChanged(nameof(Agustos2023_C6));
+            }
+        }
+
+        private int _eylul2023_C1;
+        public int Eylul2023_C1
+        {
+            get { return _eylul2023_C1; }
+            set
+            {
+                _eylul2023_C1 = value;
+                OnPropertyChanged(nameof(Eylul2023_C1));
+            }
+        }
+
+        private int _eylul2023_C2;
+        public int Eylul2023_C2
+        {
+            get { return _eylul2023_C2; }
+            set
+            {
+                _eylul2023_C2 = value;
+                OnPropertyChanged(nameof(Eylul2023_C2));
+            }
+        }
+
+        private int _eylul2023_C3;
+        public int Eylul2023_C3
+        {
+            get { return _eylul2023_C3; }
+            set
+            {
+                _eylul2023_C3 = value;
+                OnPropertyChanged(nameof(Eylul2023_C3));
+            }
+        }
+
+        private int _eylul2023_C4;
+        public int Eylul2023_C4
+        {
+            get { return _eylul2023_C4; }
+            set
+            {
+                _eylul2023_C4 = value;
+                OnPropertyChanged(nameof(Eylul2023_C4));
+            }
+        }
+
+        private int _eylul2023_C5;
+        public int Eylul2023_C5
+        {
+            get { return _eylul2023_C5; }
+            set
+            {
+                _eylul2023_C5 = value;
+                OnPropertyChanged(nameof(Eylul2023_C5));
+            }
+        }
+
+        private int _eylul2023_C6;
+        public int Eylul2023_C6
+        {
+            get { return _eylul2023_C6; }
+            set
+            {
+                _eylul2023_C6 = value;
+                OnPropertyChanged(nameof(Eylul2023_C6));
+            }
+        }
+
+        private int _ekim2023_C1;
+        public int Ekim2023_C1
+        {
+            get { return _ekim2023_C1; }
+            set
+            {
+                _ekim2023_C1 = value;
+                OnPropertyChanged(nameof(Ekim2023_C1));
+            }
+        }
+
+        private int _ekim2023_C2;
+        public int Ekim2023_C2
+        {
+            get { return _ekim2023_C2; }
+            set
+            {
+                _ekim2023_C2 = value;
+                OnPropertyChanged(nameof(Ekim2023_C2));
+            }
+        }
+
+        private int _ekim2023_C3;
+        public int Ekim2023_C3
+        {
+            get { return _ekim2023_C3; }
+            set
+            {
+                _ekim2023_C3 = value;
+                OnPropertyChanged(nameof(Ekim2023_C3));
+            }
+        }
+
+        private int _ekim2023_C4;
+        public int Ekim2023_C4
+        {
+            get { return _ekim2023_C4; }
+            set
+            {
+                _ekim2023_C4 = value;
+                OnPropertyChanged(nameof(Ekim2023_C4));
+            }
+        }
+
+        private int _ekim2023_C5;
+        public int Ekim2023_C5
+        {
+            get { return _ekim2023_C5; }
+            set
+            {
+                _ekim2023_C5 = value;
+                OnPropertyChanged(nameof(Ekim2023_C5));
+            }
+        }
+
+        private int _ekim2023_C6;
+        public int Ekim2023_C6
+        {
+            get { return _ekim2023_C6; }
+            set
+            {
+                _ekim2023_C6 = value;
+                OnPropertyChanged(nameof(Ekim2023_C6));
+            }
+        }
+
+        private int _kasim2023_C1;
+        public int Kasim2023_C1
+        {
+            get { return _kasim2023_C1; }
+            set
+            {
+                _kasim2023_C1 = value;
+                OnPropertyChanged(nameof(Kasim2023_C1));
+            }
+        }
+
+        private int _kasim2023_C2;
+        public int Kasim2023_C2
+        {
+            get { return _kasim2023_C2; }
+            set
+            {
+                _kasim2023_C2 = value;
+                OnPropertyChanged(nameof(Kasim2023_C2));
+            }
+        }
+
+        private int _kasim2023_C3;
+        public int Kasim2023_C3
+        {
+            get { return _kasim2023_C3; }
+            set
+            {
+                _kasim2023_C3 = value;
+                OnPropertyChanged(nameof(Kasim2023_C3));
+            }
+        }
+
+        private int _kasim2023_C4;
+        public int Kasim2023_C4
+        {
+            get { return _kasim2023_C4; }
+            set
+            {
+                _kasim2023_C4 = value;
+                OnPropertyChanged(nameof(Kasim2023_C4));
+            }
+        }
+
+        private int _kasim2023_C5;
+        public int Kasim2023_C5
+        {
+            get { return _kasim2023_C5; }
+            set
+            {
+                _kasim2023_C5 = value;
+                OnPropertyChanged(nameof(Kasim2023_C5));
+            }
+        }
+
+        private int _kasim2023_C6;
+        public int Kasim2023_C6
+        {
+            get { return _kasim2023_C6; }
+            set
+            {
+                _kasim2023_C6 = value;
+                OnPropertyChanged(nameof(Kasim2023_C6));
+            }
+        }
+        private int _aralik2023_C1;
+        public int Aralik2023_C1
+        {
+            get { return _aralik2023_C1; }
+            set
+            {
+                _aralik2023_C1 = value;
+                OnPropertyChanged(nameof(Aralik2023_C1));
+            }
+        }
+
+        private int _aralik2023_C2;
+        public int Aralik2023_C2
+        {
+            get { return _aralik2023_C2; }
+            set
+            {
+                _aralik2023_C2 = value;
+                OnPropertyChanged(nameof(Aralik2023_C2));
+            }
+        }
+
+        private int _aralik2023_C3;
+        public int Aralik2023_C3
+        {
+            get { return _aralik2023_C3; }
+            set
+            {
+                _aralik2023_C3 = value;
+                OnPropertyChanged(nameof(Aralik2023_C3));
+            }
+        }
+
+        private int _aralik2023_C4;
+        public int Aralik2023_C4
+        {
+            get { return _aralik2023_C4; }
+            set
+            {
+                _aralik2023_C4 = value;
+                OnPropertyChanged(nameof(Aralik2023_C4));
+            }
+        }
+
+        private int _aralik2023_C5;
+        public int Aralik2023_C5
+        {
+            get { return _aralik2023_C5; }
+            set
+            {
+                _aralik2023_C5 = value;
+                OnPropertyChanged(nameof(Aralik2023_C5));
+            }
+        }
+
+        private int _aralik2023_C6;
+        public int Aralik2023_C6
+        {
+            get { return _aralik2023_C6; }
+            set
+            {
+                _aralik2023_C6 = value;
+                OnPropertyChanged(nameof(Aralik2023_C6));
+            }
+        }
+        #endregion
+
 
         public bool HasErrorMessage => !string.IsNullOrEmpty(ErrorMessage);
 
