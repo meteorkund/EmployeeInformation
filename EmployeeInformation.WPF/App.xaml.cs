@@ -47,29 +47,13 @@ namespace EmployeeInformation.WPF
                .Build();
         }
 
-        static Mutex mtx = null;
-        public static bool IsAppRunning(string AppName)
-        {
-            Mutex.TryOpenExisting(AppName, out mtx);
-            if (mtx == null)
-            {
-                mtx = new Mutex(true, AppName);
-                return true;
-            }
-            else
-            {
-                mtx.Close();
-                return false;
-            }
-
-        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            if (!IsAppRunning("EmployeeInformation"))
+            if (!AppControl.IsAppRunning("EmployeeInformation"))
             {
                 MessageBox.Show("UYGULAMA ZATEN ÇALIŞIYOR!","HATA",MessageBoxButton.OK,MessageBoxImage.Error);
-                return;
+                Application.Current.Shutdown();
             }
 
             _host.Start();
