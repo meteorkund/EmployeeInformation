@@ -8,6 +8,7 @@ using EmployeeInformation.WPF.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Threading;
 using System.Windows;
 
 namespace EmployeeInformation.WPF
@@ -46,10 +47,31 @@ namespace EmployeeInformation.WPF
                .Build();
         }
 
+        static Mutex mtx = null;
+        public static bool IsAppRunning(string AppName)
+        {
+            Mutex.TryOpenExisting(AppName, out mtx);
+            if (mtx == null)
+            {
+                mtx = new Mutex(true, AppName);
+                return true;
+            }
+            else
+            {
+                mtx.Close();
+                return false;
+            }
 
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            if (!IsAppRunning("EmployeeInformation"))
+            {
+                MessageBox.Show("UYGULAMA ZATEN ÇALIŞIYOR!","HATA",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+
             _host.Start();
 
             MainWindow = _host.Services.GetRequiredService<MainWindow>();
