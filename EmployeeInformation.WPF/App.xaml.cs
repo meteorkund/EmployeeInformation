@@ -52,15 +52,18 @@ namespace EmployeeInformation.WPF
         {
             if (!AppControl.IsAppRunning("EmployeeInformation"))
             {
-                MessageBox.Show("UYGULAMA ZATEN ÇALIŞIYOR!","HATA",MessageBoxButton.OK,MessageBoxImage.Error);
-                Application.Current.Shutdown();
+                MessageBox.Show("UYGULAMA ZATEN ÇALIŞIYOR!", "HATA", MessageBoxButton.OK, MessageBoxImage.Error);
+                Current.Shutdown();
             }
+            else
+            {
+                _host.Start();
 
-            _host.Start();
+                MainWindow = _host.Services.GetRequiredService<MainWindow>();
+                MainWindow.Show();
+                base.OnStartup(e);
 
-            MainWindow = _host.Services.GetRequiredService<MainWindow>();
-            MainWindow.Show();
-            base.OnStartup(e);
+            }
         }
 
         protected override void OnExit(ExitEventArgs e)

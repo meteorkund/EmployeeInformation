@@ -53,6 +53,7 @@
 
         <TextBox 
                 x:Name="textBoxSearch"
+                Text="{Binding TextToFilter, UpdateSourceTrigger=PropertyChanged}"
                 Style="{StaticResource searchTextbox}"
                 Grid.Column="2"
                 Width="300"

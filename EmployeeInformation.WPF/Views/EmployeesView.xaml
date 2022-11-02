@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EmployeeInformation.WPF.Views" xmlns:component="clr-namespace:EmployeeInformation.WPF.Components" xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
+             xmlns:local="clr-namespace:EmployeeInformation.WPF.Views" 
+             xmlns:component="clr-namespace:EmployeeInformation.WPF.Components" 
+             xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -15,7 +17,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" MinWidth="630" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
 
@@ -31,7 +33,8 @@
 
             <component:EmployeeListing Grid.Row="2"
                                    Grid.Column="1"
-                                   DataContext="{Binding EmployeeListingViewModel}"/>
+                                   DataContext="{Binding EmployeeListingViewModel}"
+                                       />
 
             <component:EmployeeDetails Grid.Row="2"
                                    Grid.Column="2"

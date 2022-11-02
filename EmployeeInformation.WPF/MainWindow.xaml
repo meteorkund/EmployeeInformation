@@ -10,7 +10,10 @@
         xmlns:custom="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="Personel Bilgi">
+        Title="Personel Bilgi"
+        MinWidth="960"
+        MinHeight="855">
+ 
 
     <Window.Resources>
         <DataTemplate DataType="{x:Type vms:AddEmployeeViewModel}">

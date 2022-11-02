@@ -20,6 +20,7 @@ namespace EmployeeInformation.WPF.Components
     /// </summary>
     public partial class LeftMenu : UserControl
     {
+
         public LeftMenu()
         {
             InitializeComponent();

@@ -93,7 +93,7 @@
                 CellStyle="{DynamicResource DataGridCellStyle1}"
                 ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
                 RowStyle="{DynamicResource DataGridRowStyle1}"
-                ItemsSource="{Binding EmployeeListingItemViewModels}"
+                ItemsSource="{Binding EmployeeCollection}"
                 SelectedItem="{Binding SelectedEmployeeListingItemViewModel}"
                 AutoGenerateColumns="False">
                         <DataGrid.Columns>                            

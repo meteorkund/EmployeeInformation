@@ -1,4 +1,5 @@
-﻿using EmployeeInformation.EF;
+﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.EF;
 using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Stores;
 using System;
@@ -26,10 +27,10 @@ namespace EmployeeInformation.WPF.ViewModels
         {
             _contextFactory = contextFactory;
 
-            EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore, modalNavigationStore);
+            EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore, modalNavigationStore, contextFactory);
             EmployeeDetailsViewModel = new EmployeeDetailsViewModel(selectedEmployeeStore);
 
-            TopMenuViewModel = new TopMenuViewModel(employeeStore, modalNavigationStore, contextFactory);
+            TopMenuViewModel = new TopMenuViewModel(EmployeeListingViewModel,employeeStore,modalNavigationStore,contextFactory);
             LeftMenuViewModel = new LeftMenuViewModel();
 
         }
