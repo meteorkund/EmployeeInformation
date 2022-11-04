@@ -1,7 +1,6 @@
 ﻿using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
 using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
-using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +10,25 @@ using System.Windows;
 
 namespace EmployeeInformation.WPF.Commands
 {
-    public class LoadDepartmentsCommand : CommandBase
+    public class LoadSectorsCommand : CommandBase
     {
-        readonly DepartmentStore _departmentStore;
-        public LoadDepartmentsCommand(DepartmentListingViewModel departmentListingViewModel, DepartmentStore departmentStore)
+
+        readonly SectorStore _sectorStore;
+
+        public LoadSectorsCommand(SectorListingViewModel sectorListingViewModel, SectorStore sectorStore)
         {
-            _departmentStore = departmentStore;
+            _sectorStore = sectorStore;
         }
 
         public override async void Execute(object? parameter)
         {
             try
             {
-                await _departmentStore.LoadDepartments();
+                await _sectorStore.LoadSectors();
             }
-            catch
+            catch 
             {
-                MessageBox.Show("DEPARTMANLAR YÜKLENİRKEN HATAYLA KARŞILAŞILDI!");
+                MessageBox.Show("SEKTÖRLER YÜKLENİRKEN HATAYLA KARŞILAŞILDI!");
             }
         }
     }

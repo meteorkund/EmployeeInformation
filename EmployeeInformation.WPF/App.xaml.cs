@@ -1,10 +1,12 @@
 ﻿using EmployeeInformation.Domain.Commands;
 using EmployeeInformation.Domain.Queries;
+using EmployeeInformation.EF;
 using EmployeeInformation.EF.Commands;
 using EmployeeInformation.EF.Queries;
 using EmployeeInformation.WPF.HostBuilders;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -29,6 +31,7 @@ namespace EmployeeInformation.WPF
 
                    services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
                    services.AddSingleton<IGetAllDepartmentsQuery, GetAllDepartmentsQuery>();
+                   services.AddSingleton<IGetAllSectorsQuery, GetAllSectorsQuery>();
 
                    services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
                    services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
@@ -37,10 +40,15 @@ namespace EmployeeInformation.WPF
                    services.AddSingleton<ModalNavigationStore>();
                    services.AddSingleton<EmployeeStore>();
                    services.AddSingleton<DepartmentStore>();
+                   services.AddSingleton<SectorStore>();
 
                    services.AddSingleton<SelectedEmployeeStore>();
 
                    services.AddTransient<EmployeesViewModel>();
+
+                   services.AddTransient<EmployeeListingViewModel>(CreateEmployeeListingViewModel);
+                   services.AddTransient<DepartmentListingViewModel>(CreateDepartmentListingViewModel);
+                   services.AddTransient<SectorListingViewModel>(CreateSectorListingViewModel);
 
                    services.AddSingleton<MainViewModel>();
 
@@ -52,6 +60,33 @@ namespace EmployeeInformation.WPF
                .Build();
         }
 
+        private SectorListingViewModel CreateSectorListingViewModel(IServiceProvider services)
+        {
+            return SectorListingViewModel.LoadSectors
+                (
+                services.GetRequiredService<SectorStore>()
+                );
+        }
+        private DepartmentListingViewModel CreateDepartmentListingViewModel(IServiceProvider services)
+        {
+            return DepartmentListingViewModel.LoadDepartments
+                (
+                services.GetRequiredService<DepartmentStore>()
+                );
+        }
+
+        private EmployeeListingViewModel CreateEmployeeListingViewModel(IServiceProvider services)
+        {
+            return EmployeeListingViewModel.LoadViewModel
+                (
+                services.GetRequiredService<EmployeeStore>(),
+                services.GetRequiredService<SelectedEmployeeStore>(),
+                services.GetRequiredService<ModalNavigationStore>(),
+                services.GetRequiredService<EmployeesDbContextFactory>(),
+                services.GetRequiredService<SectorStore>(),
+                services.GetRequiredService<DepartmentStore>()
+                );
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {

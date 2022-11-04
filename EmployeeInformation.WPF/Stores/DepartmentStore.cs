@@ -22,7 +22,6 @@ namespace EmployeeInformation.WPF.Stores
         {
             _getAllDepartments = getAllDepartments;
             _departments = new List<Department>();
-
         }
 
 

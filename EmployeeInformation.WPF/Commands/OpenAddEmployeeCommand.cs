@@ -1,12 +1,6 @@
 ﻿using EmployeeInformation.EF;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace EmployeeInformation.WPF.Commands
 {
@@ -14,20 +8,24 @@ namespace EmployeeInformation.WPF.Commands
     {
         readonly ModalNavigationStore _modalNavigationStore;
         readonly EmployeeStore _employeeStore;
+        readonly SectorStore _sectorStore;
         readonly DepartmentStore _departmentStore;
+
         readonly EmployeesDbContextFactory _contextFactory;
 
-        public OpenAddEmployeeCommand(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
+        public OpenAddEmployeeCommand(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore)
         {
             _employeeStore = employeeStore;
+            _sectorStore = sectorStore;
+            _departmentStore = departmentStore;
             _modalNavigationStore = modalNavigationStore;
             _contextFactory = contextFactory;
-            _departmentStore = departmentStore;
+
         }
 
         public override void Execute(object? parameter)
         {
-            AddEmployeeViewModel addEmployeeViewModel = new AddEmployeeViewModel(_employeeStore, _modalNavigationStore, _contextFactory, _departmentStore);
+            AddEmployeeViewModel addEmployeeViewModel = new AddEmployeeViewModel(_employeeStore, _modalNavigationStore, _contextFactory, _sectorStore, _departmentStore);
 
             _modalNavigationStore.CurrentViewModel = addEmployeeViewModel;
         }

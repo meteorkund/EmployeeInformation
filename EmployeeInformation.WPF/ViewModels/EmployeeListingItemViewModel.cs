@@ -1,57 +1,52 @@
 ﻿using EmployeeInformation.Domain.Models;
 using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace EmployeeInformation.WPF.ViewModels
+namespace EmployeeInformation.WPF.ViewModels;
+
+public class EmployeeListingItemViewModel : ViewModelBase
 {
-    public class EmployeeListingItemViewModel : ViewModelBase
+    public Employee Employee { get; private set; }
+    public int DosyaNo => Employee.Id;
+    public string Isim => Employee.Isim;
+    public string Soyisim => Employee.Soyisim;
+    public bool Durum => Employee.Durum;
+    public string Departman => Employee.Departman.DepartmentName;
+    public string Gorev => Employee.Sector.SectorName;
+
+    public ICommand EditCommand { get; }
+    public ICommand DeleteCommand { get; }
+
+    private bool _isDeleting;
+
+    public bool IsDeleting
     {
-        public Employee Employee { get; private set; }
-        public int DosyaNo => Employee.Id;
-        public string Isim => Employee.Isim;
-        public string Soyisim => Employee.Soyisim;
-        public bool Durum => Employee.Durum;
-        public string Departman => Employee.Departman.DepartmentName;
-        public string Gorev => Employee.Gorev;
-        public ICommand EditCommand { get; }
-        public ICommand DeleteCommand { get; }
-
-        private bool _isDeleting;
-
-        public bool IsDeleting
+        get { return _isDeleting; }
+        set
         {
-            get { return _isDeleting; }
-            set
-            {
-                _isDeleting = value;
+            _isDeleting = value;
 
-                OnPropertyChanged(nameof(IsDeleting));
-            }
+            OnPropertyChanged(nameof(IsDeleting));
         }
+    }
 
 
 
-        public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, DepartmentStore departmentStore)
-        {
-            Employee = employee;
-            EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore, departmentStore);
-            DeleteCommand = new DeleteEmployeeCommand(this, employeeStore);
-        }
+    public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, SectorStore sectorStore, DepartmentStore departmentStore)
+    {
+        Employee = employee;
+        EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore, sectorStore, departmentStore);
+        DeleteCommand = new DeleteEmployeeCommand(this, employeeStore);
+    }
 
 
-        public void Update(Employee employee)
-        {
-            Employee = employee;
-            OnPropertyChanged(nameof(Isim));
-            OnPropertyChanged(nameof(Soyisim));
-            OnPropertyChanged(nameof(Departman));
-            OnPropertyChanged(nameof(Gorev));
-        }
+    public void Update(Employee employee)
+    {
+        Employee = employee;
+        OnPropertyChanged(nameof(Isim));
+        OnPropertyChanged(nameof(Soyisim));
+        OnPropertyChanged(nameof(Departman));
+        OnPropertyChanged(nameof(Gorev));
     }
 }

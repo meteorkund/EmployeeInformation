@@ -27,6 +27,7 @@ namespace EmployeeInformation.EF.Queries
 
                 IEnumerable<EmployeeDTO> employeeDTOs = await context.Employees
                     .Include(d => d.DepartmentDTO)
+                    .Include(s => s.SectorDTO)
                     .Include(v => v.Vacation2018DTO)
                     .Include(v => v.Vacation2019DTO)
                     .Include(v => v.Vacation2020DTO)
@@ -61,6 +62,7 @@ namespace EmployeeInformation.EF.Queries
                     CreatedDate = e.CreatedDate,
 
                     Departman = new Department(e.DepartmentDTO.Id, e.DepartmentDTO.DepartmentName),
+                    Sector = new Sector(e.SectorDTO.Id, e.SectorDTO.SectorName),
 
                     Vacation2018 = new Vacation2018
                     {

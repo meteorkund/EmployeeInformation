@@ -34,7 +34,10 @@ namespace EmployeeInformation.EF.Commands
                     MedeniDurum = employee.MedeniDurum,
                     EgitimDurumu = employee.EgitimDurumu,
                     Askerlik = employee.Askerlik,
+
                     DepartmentDTOId = employee.Departman.Id,
+                    SectorDTOId = employee.Sector.Id,
+
                     Gorev = employee.Gorev,
                     IseGiris = employee.IseGiris,
                     IstenCikis = employee.IstenCikis,

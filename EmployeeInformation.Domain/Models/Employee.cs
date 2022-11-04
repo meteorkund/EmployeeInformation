@@ -39,6 +39,7 @@ namespace EmployeeInformation.Domain.Models
         public Vacation2023 Vacation2023 { get; set; }
 
         public Department Departman { get; set; }
+        public Sector Sector { get; set; }
 
     }
 }

@@ -1,41 +1,32 @@
-﻿using EmployeeInformation.Domain.Models;
-using EmployeeInformation.EF;
-using EmployeeInformation.WPF.Commands;
+﻿using EmployeeInformation.EF;
 using EmployeeInformation.WPF.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace EmployeeInformation.WPF.ViewModels
+namespace EmployeeInformation.WPF.ViewModels;
+
+public class EmployeesViewModel : ViewModelBase
 {
-    public class EmployeesViewModel :ViewModelBase
+    public EmployeeListingViewModel EmployeeListingViewModel { get; }
+    public EmployeeDetailsViewModel EmployeeDetailsViewModel { get; }
+    public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get; }
+
+    readonly EmployeesDbContextFactory _contextFactory;
+
+
+    public ICommand LoadEmployeesCommand { get; }
+
+    public TopMenuViewModel TopMenuViewModel { get; }
+    public LeftMenuViewModel LeftMenuViewModel { get; }
+    public EmployeesViewModel(EmployeeStore employeeStore, SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore)
     {
-        public EmployeeListingViewModel EmployeeListingViewModel { get; }
-        public EmployeeDetailsViewModel EmployeeDetailsViewModel { get; }
-        public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get; }
+        _contextFactory = contextFactory;
 
-        readonly EmployeesDbContextFactory _contextFactory;
+        EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore,modalNavigationStore,contextFactory,sectorStore,departmentStore);
+        EmployeeDetailsViewModel = new EmployeeDetailsViewModel(selectedEmployeeStore);
 
-
-        public ICommand LoadEmployeesCommand { get; }
-
-        public TopMenuViewModel TopMenuViewModel { get; }
-        public LeftMenuViewModel LeftMenuViewModel { get; }
-        public EmployeesViewModel(EmployeeStore employeeStore,SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
-        {
-            _contextFactory = contextFactory;
-
-            EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore, modalNavigationStore, contextFactory,departmentStore);
-
-            EmployeeDetailsViewModel = new EmployeeDetailsViewModel(selectedEmployeeStore);
-
-            TopMenuViewModel = new TopMenuViewModel(EmployeeListingViewModel,employeeStore,modalNavigationStore,contextFactory,departmentStore);
-            LeftMenuViewModel = new LeftMenuViewModel();
-
-        }
+        TopMenuViewModel = new TopMenuViewModel(EmployeeListingViewModel, employeeStore, modalNavigationStore, contextFactory, sectorStore, departmentStore);
+        LeftMenuViewModel = new LeftMenuViewModel();
 
     }
+
 }

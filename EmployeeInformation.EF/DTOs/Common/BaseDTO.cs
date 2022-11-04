@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeInformation.EF.DTOs
+namespace EmployeeInformation.EF.DTOs.Common
 {
     public class BaseDTO
     {
+        public int Id { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }

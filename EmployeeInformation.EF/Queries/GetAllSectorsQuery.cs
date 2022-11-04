@@ -5,23 +5,23 @@ using EmployeeInformation.EF.DTOs.Common;
 
 namespace EmployeeInformation.EF.Queries
 {
-    public class GetAllDepartmentsQuery : IGetAllDepartmentsQuery
+    public class GetAllSectorsQuery : IGetAllSectorsQuery
     {
         readonly EmployeesDbContextFactory _contextFactory;
 
-        public GetAllDepartmentsQuery(EmployeesDbContextFactory contextFactory)
+        public GetAllSectorsQuery(EmployeesDbContextFactory contextFactor)
         {
-            _contextFactory = contextFactory;
+            _contextFactory = contextFactor;
         }
 
-        public async Task<IEnumerable<Department>> GetAllDepartments()
+        public async Task<IEnumerable<Sector>> GetAllSectors()
         {
             using (EmployeesDbContext context = _contextFactory.Create())
             {
-                IEnumerable<DepartmentDTO> departmentDTOs = await context.Departments.ToListAsync();
-                return departmentDTOs.Select(d => new Department(
+                IEnumerable<SectorDTO> sectorDTOs = await context.Sectors.ToListAsync();
+                return sectorDTOs.Select(d => new Sector(
                     d.Id,
-                    d.DepartmentName
+                    d.SectorName
                     ));
             }
         }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EmployeeInformation.EF.DTOs.Common;
 
 namespace EmployeeInformation.EF.DTOs
 {
     public class Vacation2021DTO : BaseDTO
     {
-        public int Id { get; set; }
         public int Ocak2021_C1 { get; set; }
         public int Ocak2021_C2 { get; set; }
         public int Ocak2021_C3 { get; set; }

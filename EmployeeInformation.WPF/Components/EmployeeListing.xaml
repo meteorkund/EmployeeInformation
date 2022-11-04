@@ -136,10 +136,12 @@
 
                             <DataGridTextColumn Header="NO" IsReadOnly="True" Binding="{Binding DosyaNo}" ElementStyle="{StaticResource Centering}" />
 
-                            <DataGridTextColumn Header="ADI" IsReadOnly="True" Binding="{Binding Isim}" />
-                            <DataGridTextColumn Header="SOYADI" IsReadOnly="True" Binding="{Binding Soyisim}" />
-                            <DataGridTextColumn Header="DEPARTMAN" IsReadOnly="True"  Binding="{Binding Departman}" />
-                            <DataGridTextColumn Header="GÖREVİ" Width="*" IsReadOnly="True" Binding="{Binding Gorev}" />
+                            <DataGridTextColumn Header="ADI" Width="auto" IsReadOnly="True" Binding="{Binding Isim}" />
+                            <DataGridTextColumn Header="SOYADI" Width="auto" IsReadOnly="True" Binding="{Binding Soyisim}" />
+                            <DataGridTextColumn Header="DEPARTMAN" Width="auto" IsReadOnly="True"  Binding="{Binding Departman}" />
+                            <DataGridTextColumn Header="GÖREVİ" Width="*" IsReadOnly="True" Binding="{Binding Gorev}" MinWidth="150"/>
+
+
 
                             <DataGridTemplateColumn Header="Seçenekler"
                                             IsReadOnly="True">

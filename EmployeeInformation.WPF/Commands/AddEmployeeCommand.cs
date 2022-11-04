@@ -28,11 +28,17 @@ namespace EmployeeInformation.WPF.Commands
             _addEmployeeViewModel = addEmployeeViewModel;
             _contextFactory = contextFactory;
 
-            sonDosyaNo = 0;
-            using (EmployeesDbContext context = _contextFactory.Create())
+            try
             {
-                var sonPersonel = context.Employees.ToList().Last();
-                sonDosyaNo = sonPersonel.Id;
+                using (EmployeesDbContext context = _contextFactory.Create())
+                {
+                    var sonPersonel = context.Employees.ToList().Last();
+                    sonDosyaNo = sonPersonel.Id;
+                }
+            }
+            catch
+            {
+                sonDosyaNo = 0;
             }
         }
 
@@ -56,8 +62,11 @@ namespace EmployeeInformation.WPF.Commands
                 EgitimDurumu = formViewModel.EgitimDurumu,
                 Askerlik = formViewModel.Askerlik,
                 Departman = new Department(
-                    formViewModel.SelectedItem.DepartmentId,
-                    formViewModel.SelectedItem.DepartmentName),
+                    formViewModel.SelectedDepartmentItem.DepartmentId,
+                    formViewModel.SelectedDepartmentItem.DepartmentName),
+                Sector = new Sector(
+                    formViewModel.SelectedSectorItem.SectorId,
+                    formViewModel.SelectedSectorItem.SectorName),
                 Gorev = formViewModel.Gorev,
                 IseGiris = formViewModel.IseGiris,
                 IstenCikis = formViewModel.IstenCikis,
