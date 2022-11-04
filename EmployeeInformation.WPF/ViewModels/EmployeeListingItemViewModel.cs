@@ -17,7 +17,7 @@ namespace EmployeeInformation.WPF.ViewModels
         public string Isim => Employee.Isim;
         public string Soyisim => Employee.Soyisim;
         public bool Durum => Employee.Durum;
-        public string Departman => Employee.Departman;
+        public string Departman => Employee.Departman.DepartmentName;
         public string Gorev => Employee.Gorev;
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
@@ -37,10 +37,10 @@ namespace EmployeeInformation.WPF.ViewModels
 
 
 
-        public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
+        public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, DepartmentStore departmentStore)
         {
             Employee = employee;
-            EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore);
+            EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore, departmentStore);
             DeleteCommand = new DeleteEmployeeCommand(this, employeeStore);
         }
 

@@ -62,7 +62,7 @@ namespace EmployeeInformation.WPF.Stores
 
         public async Task Load()
         {
-            IEnumerable<Employee> employees = await _getAllEmployeesQuery.Execute();
+            IEnumerable<Employee> employees = await _getAllEmployeesQuery.GetAllEmployees();
 
             _employees.Clear();
             _employees.AddRange(employees);

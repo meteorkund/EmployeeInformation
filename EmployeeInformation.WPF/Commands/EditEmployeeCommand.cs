@@ -1,4 +1,5 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
 using System;
@@ -31,29 +32,33 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.IsSaved = true;
             formViewModel.SaveStatus = "GÜNCELLENİYOR...";
 
-            Employee employee = new Employee(
-                _editEmployeeViewModel.EmployeeId,
-                formViewModel.PhotoSource,
-                formViewModel.Isim,
-                formViewModel.Soyisim,
-                formViewModel.Durum,
-                formViewModel.TCKimlik,
-                formViewModel.DogumTarihi,
-                formViewModel.MedeniDurum,
-                formViewModel.EgitimDurumu,
-                formViewModel.Askerlik,
-                formViewModel.Departman,
-                formViewModel.Gorev,
-                formViewModel.IseGiris,
-                formViewModel.IstenCikis,
-                formViewModel.Maas,
-                formViewModel.CepTel,
-                formViewModel.CalismaSuresi,
-                formViewModel.BaslamaTarihi,
-                formViewModel.EvAdresi,
-                formViewModel.EkBilgi,
-                formViewModel.CreatedDate,
-                new Vacation2018
+            Employee employee = new Employee
+            {
+                Id = _editEmployeeViewModel.EmployeeId,
+                Fotograf = formViewModel.PhotoSource,
+                Isim = formViewModel.Isim,
+                Soyisim = formViewModel.Soyisim,
+                Durum = formViewModel.Durum,
+                TCKimlik = formViewModel.TCKimlik,
+                DogumTarihi = formViewModel.DogumTarihi,
+                MedeniDurum = formViewModel.MedeniDurum,
+                EgitimDurumu = formViewModel.EgitimDurumu,
+                Askerlik = formViewModel.Askerlik,
+
+                Departman = new Department (formViewModel.SelectedItem.DepartmentId, formViewModel.SelectedItem.DepartmentName),
+
+                
+                Gorev = formViewModel.Gorev,
+                IseGiris = formViewModel.IseGiris,
+                IstenCikis = formViewModel.IstenCikis,
+                Maas = formViewModel.Maas,
+                CepTel = formViewModel.CepTel,
+                CalismaSuresi = formViewModel.CalismaSuresi,
+                BaslamaTarihi = formViewModel.BaslamaTarihi,
+                Adres = formViewModel.EvAdresi,
+                EkBilgi = formViewModel.EkBilgi,
+
+                Vacation2018 = new Vacation2018
                 {
                     Ocak2018_C1 = formViewModel.Ocak2018_C1,
                     Ocak2018_C2 = formViewModel.Ocak2018_C2,
@@ -139,7 +144,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2018_C5 = formViewModel.Aralik2018_C5,
                     Aralik2018_C6 = formViewModel.Aralik2018_C6,
                 },
-                new Vacation2019
+                Vacation2019 = new Vacation2019
                 {
                     Ocak2019_C1 = formViewModel.Ocak2019_C1,
                     Ocak2019_C2 = formViewModel.Ocak2019_C2,
@@ -225,7 +230,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2019_C5 = formViewModel.Aralik2019_C5,
                     Aralik2019_C6 = formViewModel.Aralik2019_C6,
                 },
-                new Vacation2020
+                Vacation2020 = new Vacation2020
                 {
                     Ocak2020_C1 = formViewModel.Ocak2020_C1,
                     Ocak2020_C2 = formViewModel.Ocak2020_C2,
@@ -311,7 +316,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2020_C5 = formViewModel.Aralik2020_C5,
                     Aralik2020_C6 = formViewModel.Aralik2020_C6,
                 },
-                new Vacation2021
+                Vacation2021 = new Vacation2021
                 {
                     Ocak2021_C1 = formViewModel.Ocak2021_C1,
                     Ocak2021_C2 = formViewModel.Ocak2021_C2,
@@ -397,7 +402,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2021_C5 = formViewModel.Aralik2021_C5,
                     Aralik2021_C6 = formViewModel.Aralik2021_C6,
                 },
-                new Vacation2022
+                Vacation2022 = new Vacation2022
                 {
                     Ocak2022_C1 = formViewModel.Ocak2022_C1,
                     Ocak2022_C2 = formViewModel.Ocak2022_C2,
@@ -483,7 +488,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2022_C5 = formViewModel.Aralik2022_C5,
                     Aralik2022_C6 = formViewModel.Aralik2022_C6,
                 },
-                new Vacation2023
+                Vacation2023 = new Vacation2023
                 {
                     Ocak2023_C1 = formViewModel.Ocak2023_C1,
                     Ocak2023_C2 = formViewModel.Ocak2023_C2,
@@ -570,7 +575,7 @@ namespace EmployeeInformation.WPF.Commands
                     Aralik2023_C6 = formViewModel.Aralik2023_C6,
                 }
 
-                );
+            };
 
             try
             {

@@ -34,7 +34,7 @@ namespace EmployeeInformation.EF.Commands
                     MedeniDurum = employee.MedeniDurum,
                     EgitimDurumu = employee.EgitimDurumu,
                     Askerlik = employee.Askerlik,
-                    Departman = employee.Departman,
+                    DepartmentDTOId = employee.Departman.Id,
                     Gorev = employee.Gorev,
                     IseGiris = employee.IseGiris,
                     IstenCikis = employee.IstenCikis,
@@ -134,7 +134,7 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2018_C5 = employee.Vacation2018.Aralik2018_C5,
                         Aralik2018_C6 = employee.Vacation2018.Aralik2018_C6,
 
-                        CreatedDate= employee.CreatedDate,
+                        CreatedDate = employee.CreatedDate,
                         UpdatedDate = DateTime.Now
                     },
                     Vacation2019DTO = new Vacation2019DTO

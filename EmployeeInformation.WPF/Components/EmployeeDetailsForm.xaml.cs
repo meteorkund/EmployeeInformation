@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using EmployeeInformation.WPF.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace EmployeeInformation.WPF.Components
     {
         public EmployeeDetailsForm()
         {
-            InitializeComponent();            
+            InitializeComponent();       
         }
 
         private void cboTest_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -51,5 +52,6 @@ namespace EmployeeInformation.WPF.Components
             System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^0-9]");
             return reg.IsMatch(str);
         }
+
     }
 }

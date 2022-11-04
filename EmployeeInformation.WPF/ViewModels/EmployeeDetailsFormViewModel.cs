@@ -1,10 +1,16 @@
-﻿using EmployeeInformation.EF;
+﻿using EmployeeInformation.Domain.Models.Common;
+using EmployeeInformation.EF;
+using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Converters;
+using EmployeeInformation.WPF.Stores;
 using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.Win32;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.IO;
@@ -12,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -72,17 +79,6 @@ namespace EmployeeInformation.WPF.ViewModels
             }
         }
 
-        private string _departman;
-
-        public string Departman
-        {
-            get { return _departman; }
-            set
-            {
-                _departman = value;
-                OnPropertyChanged(nameof(Departman));
-            }
-        }
 
         private string _dogumTarihi;
 
@@ -95,6 +91,8 @@ namespace EmployeeInformation.WPF.ViewModels
                 OnPropertyChanged(nameof(DogumTarihi));
             }
         }
+
+
         private string _gorev;
 
         public string Gorev
@@ -328,7 +326,7 @@ namespace EmployeeInformation.WPF.ViewModels
             }
         }
 
-         
+
 
 
         #endregion
@@ -340,7 +338,9 @@ namespace EmployeeInformation.WPF.ViewModels
         public int Ocak2018_C1
         {
             get { return _ocak2018_C1; }
-            set { _ocak2018_C1 = value;
+            set
+            {
+                _ocak2018_C1 = value;
                 OnPropertyChanged(nameof(Ocak2018_C1));
             }
         }
@@ -366,7 +366,7 @@ namespace EmployeeInformation.WPF.ViewModels
                 OnPropertyChanged(nameof(Ocak2018_C3));
             }
         }
-        
+
         private int _ocak2018_C4;
         public int Ocak2018_C4
         {
@@ -382,7 +382,9 @@ namespace EmployeeInformation.WPF.ViewModels
         public int Ocak2018_C5
         {
             get { return _ocak2018_C5; }
-            set { _ocak2018_C5 = value;
+            set
+            {
+                _ocak2018_C5 = value;
                 OnPropertyChanged(nameof(Ocak2018_C5));
             }
         }
@@ -5104,6 +5106,39 @@ namespace EmployeeInformation.WPF.ViewModels
         #endregion
 
 
+        readonly DepartmentStore _departmentStore;
+
+        readonly ObservableCollection<DepartmentListingItemViewModel> _departmentListingItemViewModels;
+
+        public IEnumerable<DepartmentListingItemViewModel> DepartmentListingItemViewModels => _departmentListingItemViewModels;
+
+
+        private DepartmentListingItemViewModel _selectedItem;
+
+        public DepartmentListingItemViewModel SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                    _selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
+            }
+        }
+
+        private int _selectedIndex;
+
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set { _selectedIndex = value; }
+        }
+
+
+
+
+
+
+
         public bool HasErrorMessage => !string.IsNullOrEmpty(ErrorMessage);
 
         public bool CanSubmit => !string.IsNullOrEmpty(Isim) && !string.IsNullOrEmpty(Soyisim);
@@ -5113,12 +5148,59 @@ namespace EmployeeInformation.WPF.ViewModels
 
         public static RelayCommand UploadPhotoCommand { get; set; }
 
+        public ICommand LoadDepartmentsCommand { get; set; }
 
-        public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
+
+
+
+        public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand, DepartmentStore departmentStore)
         {
             SubmitCommand = submitCommand;
             CancelCommand = cancelCommand;
+            _departmentStore = departmentStore;
+
+
+            _departmentListingItemViewModels = new ObservableCollection<DepartmentListingItemViewModel>();
+
+
+            LoadDepartmentsCommand = new LoadDepartmentsCommand(departmentStore);
+
+            _departmentStore.DepartmentsLoaded += DepartmentStore_DepartmentsLoaded;
+
+
             RegisterCommands();
+        }
+
+
+
+        protected override void Dispose()
+        {
+            _departmentStore.DepartmentsLoaded -= DepartmentStore_DepartmentsLoaded;
+        }
+        private void DepartmentStore_DepartmentsLoaded()
+        {
+            _departmentListingItemViewModels.Clear();
+            foreach (Department department in _departmentStore.Departments)
+            {
+                AddDepartment(department);
+            }
+        }
+
+        private void AddDepartment(Department department)
+        {
+            DepartmentListingItemViewModel itemViewModel = new DepartmentListingItemViewModel(department);
+
+            _departmentListingItemViewModels.Add(itemViewModel);
+        }
+
+        public static EmployeeDetailsFormViewModel LoadDepartmentVM(ICommand submitCommand, ICommand cancelCommand, DepartmentStore departmentStore)
+        {
+
+            EmployeeDetailsFormViewModel viewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand, departmentStore);
+
+            viewModel.LoadDepartmentsCommand.Execute(null);
+
+            return viewModel;
         }
 
         private void RegisterCommands()
@@ -5134,7 +5216,7 @@ namespace EmployeeInformation.WPF.ViewModels
 
             if (dialog.ShowDialog() == true)
             {
-                PhotoSource = dialog.FileName; 
+                PhotoSource = dialog.FileName;
             }
         }
 

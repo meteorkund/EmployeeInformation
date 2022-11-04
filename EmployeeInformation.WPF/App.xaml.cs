@@ -28,15 +28,20 @@ namespace EmployeeInformation.WPF
                {
 
                    services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
+                   services.AddSingleton<IGetAllDepartmentsQuery, GetAllDepartmentsQuery>();
+
                    services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
                    services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
                    services.AddSingleton<IDeleteEmployeeCommand, DeleteEmployeeCommand>();
 
                    services.AddSingleton<ModalNavigationStore>();
                    services.AddSingleton<EmployeeStore>();
+                   services.AddSingleton<DepartmentStore>();
+
                    services.AddSingleton<SelectedEmployeeStore>();
 
                    services.AddTransient<EmployeesViewModel>();
+
                    services.AddSingleton<MainViewModel>();
 
                    services.AddSingleton<MainWindow>((services) => new MainWindow

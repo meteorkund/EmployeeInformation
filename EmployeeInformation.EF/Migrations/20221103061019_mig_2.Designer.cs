@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeInformation.EF.Migrations
 {
     [DbContext(typeof(EmployeesDbContext))]
-    [Migration("20221027075530_mig_5")]
-    partial class mig_5
+    [Migration("20221103061019_mig_2")]
+    partial class mig_2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,23 @@ namespace EmployeeInformation.EF.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("EmployeeInformation.EF.DTOs.DepartmentDTO", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
+                });
 
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.EmployeeDTO", b =>
                 {
@@ -52,6 +69,9 @@ namespace EmployeeInformation.EF.Migrations
 
                     b.Property<string>("Departman")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartmentDTOId")
+                        .HasColumnType("int");
 
                     b.Property<string>("DogumTarihi")
                         .HasColumnType("nvarchar(max)");
@@ -98,6 +118,8 @@ namespace EmployeeInformation.EF.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentDTOId");
 
                     b.ToTable("Employees");
                 });
@@ -1494,6 +1516,17 @@ namespace EmployeeInformation.EF.Migrations
                     b.ToTable("Vacations2023");
                 });
 
+            modelBuilder.Entity("EmployeeInformation.EF.DTOs.EmployeeDTO", b =>
+                {
+                    b.HasOne("EmployeeInformation.EF.DTOs.DepartmentDTO", "DepartmentDTO")
+                        .WithMany("EmployeeDTOs")
+                        .HasForeignKey("DepartmentDTOId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DepartmentDTO");
+                });
+
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.Vacation2018DTO", b =>
                 {
                     b.HasOne("EmployeeInformation.EF.DTOs.EmployeeDTO", "EmployeeDTO")
@@ -1558,6 +1591,11 @@ namespace EmployeeInformation.EF.Migrations
                         .IsRequired();
 
                     b.Navigation("EmployeeDTO");
+                });
+
+            modelBuilder.Entity("EmployeeInformation.EF.DTOs.DepartmentDTO", b =>
+                {
+                    b.Navigation("EmployeeDTOs");
                 });
 
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.EmployeeDTO", b =>

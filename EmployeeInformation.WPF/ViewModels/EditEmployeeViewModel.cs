@@ -1,4 +1,5 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Stores;
 using Microsoft.Win32;
@@ -14,15 +15,20 @@ namespace EmployeeInformation.WPF.ViewModels
     public class EditEmployeeViewModel : ViewModelBase
     {
         public int EmployeeId { get; }
+        public int DepartmentId { get; }
         public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get; }
 
-        public EditEmployeeViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore)
+        public EditEmployeeViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, DepartmentStore departmentStore)
         {
             EmployeeId = employee.Id;
+            DepartmentId = employee.Departman.Id;
 
             ICommand submitCommand = new EditEmployeeCommand(this, employeeStore, modalNavigationStore);
             ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
-            EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand)
+
+            EmployeeDetailsFormViewModel = EmployeeDetailsFormViewModel.LoadDepartmentVM(submitCommand, cancelCommand, departmentStore);
+
+            EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand, departmentStore)
             {
                 IsAdding = false,
 
@@ -32,7 +38,9 @@ namespace EmployeeInformation.WPF.ViewModels
                 Isim = employee.Isim,
                 Soyisim = employee.Soyisim,
                 TCKimlik = employee.TCKimlik,
-                Departman = employee.Departman,
+
+                SelectedIndex = employee.Departman.Id - 1,
+
                 DogumTarihi = employee.DogumTarihi,
                 Gorev = employee.Gorev,
                 MedeniDurum = employee.MedeniDurum,
@@ -45,7 +53,7 @@ namespace EmployeeInformation.WPF.ViewModels
                 IseGiris = employee.IseGiris,
                 IstenCikis = employee.IstenCikis,
                 EvAdresi = employee.Adres,
-                EkBilgi= employee.EkBilgi,
+                EkBilgi = employee.EkBilgi,
 
                 #region 2018
                 Ocak2018_C1 = employee.Vacation2018.Ocak2018_C1,

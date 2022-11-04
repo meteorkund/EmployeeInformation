@@ -15,6 +15,7 @@ namespace EmployeeInformation.WPF.ViewModels
     {
         public EmployeeListingViewModel EmployeeListingViewModel { get; }
         public EmployeeDetailsViewModel EmployeeDetailsViewModel { get; }
+        public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get; }
 
         readonly EmployeesDbContextFactory _contextFactory;
 
@@ -23,14 +24,15 @@ namespace EmployeeInformation.WPF.ViewModels
 
         public TopMenuViewModel TopMenuViewModel { get; }
         public LeftMenuViewModel LeftMenuViewModel { get; }
-        public EmployeesViewModel(EmployeeStore employeeStore,SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory)
+        public EmployeesViewModel(EmployeeStore employeeStore,SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
         {
             _contextFactory = contextFactory;
 
-            EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore, modalNavigationStore, contextFactory);
+            EmployeeListingViewModel = EmployeeListingViewModel.LoadViewModel(employeeStore,selectedEmployeeStore, modalNavigationStore, contextFactory,departmentStore);
+
             EmployeeDetailsViewModel = new EmployeeDetailsViewModel(selectedEmployeeStore);
 
-            TopMenuViewModel = new TopMenuViewModel(EmployeeListingViewModel,employeeStore,modalNavigationStore,contextFactory);
+            TopMenuViewModel = new TopMenuViewModel(EmployeeListingViewModel,employeeStore,modalNavigationStore,contextFactory,departmentStore);
             LeftMenuViewModel = new LeftMenuViewModel();
 
         }

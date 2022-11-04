@@ -1,4 +1,5 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.EF;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
@@ -27,6 +28,7 @@ namespace EmployeeInformation.WPF.Commands
             _addEmployeeViewModel = addEmployeeViewModel;
             _contextFactory = contextFactory;
 
+            sonDosyaNo = 0;
             using (EmployeesDbContext context = _contextFactory.Create())
             {
                 var sonPersonel = context.Employees.ToList().Last();
@@ -41,35 +43,38 @@ namespace EmployeeInformation.WPF.Commands
             formViewModel.ErrorMessage = null;
             formViewModel.IsSubmitting = true;
 
-            Employee employee = new Employee(
-                sonDosyaNo + 1,
-                formViewModel.PhotoSource,
-                formViewModel.Isim,
-                formViewModel.Soyisim,
-                formViewModel.Durum,
-                formViewModel.TCKimlik,
-                formViewModel.DogumTarihi,
-                formViewModel.MedeniDurum,
-                formViewModel.EgitimDurumu,
-                formViewModel.Askerlik,
-                formViewModel.Departman,
-                formViewModel.Gorev,
-                formViewModel.IseGiris,
-                formViewModel.IstenCikis,
-                formViewModel.Maas,
-                formViewModel.CepTel,
-                formViewModel.CalismaSuresi,
-                formViewModel.BaslamaTarihi,
-                formViewModel.EvAdresi,
-                formViewModel.EkBilgi,
-                DateTime.Now,
-                new Vacation2018 { Id = sonDosyaNo + 1, },
-                new Vacation2019 { Id = sonDosyaNo + 1, },
-                new Vacation2020 { Id = sonDosyaNo + 1, },
-                new Vacation2021 { Id = sonDosyaNo + 1, },
-                new Vacation2022 { Id = sonDosyaNo + 1, },
-                new Vacation2023 { Id = sonDosyaNo + 1, }
-                );
+            Employee employee = new Employee
+            {
+                Id = sonDosyaNo + 1,
+                Fotograf = formViewModel.PhotoSource,
+                Isim = formViewModel.Isim,
+                Soyisim = formViewModel.Soyisim,
+                Durum = formViewModel.Durum,
+                TCKimlik = formViewModel.TCKimlik,
+                DogumTarihi = formViewModel.DogumTarihi,
+                MedeniDurum = formViewModel.MedeniDurum,
+                EgitimDurumu = formViewModel.EgitimDurumu,
+                Askerlik = formViewModel.Askerlik,
+                Departman = new Department(
+                    formViewModel.SelectedItem.DepartmentId,
+                    formViewModel.SelectedItem.DepartmentName),
+                Gorev = formViewModel.Gorev,
+                IseGiris = formViewModel.IseGiris,
+                IstenCikis = formViewModel.IstenCikis,
+                Maas = formViewModel.Maas,
+                CepTel = formViewModel.CepTel,
+                CalismaSuresi = formViewModel.CalismaSuresi,
+                BaslamaTarihi = formViewModel.BaslamaTarihi,
+                Adres = formViewModel.EvAdresi,
+                EkBilgi = formViewModel.EkBilgi,
+
+                Vacation2018 = new Vacation2018 { Id = sonDosyaNo + 1, },
+                Vacation2019 = new Vacation2019 { Id = sonDosyaNo + 1, },
+                Vacation2020 = new Vacation2020 { Id = sonDosyaNo + 1, },
+                Vacation2021 = new Vacation2021 { Id = sonDosyaNo + 1, },
+                Vacation2022 = new Vacation2022 { Id = sonDosyaNo + 1, },
+                Vacation2023 = new Vacation2023 { Id = sonDosyaNo + 1, }
+            };
 
             string dateTime = DateTime.Now.ToString("G");
             string dateTimeFile = dateTime
@@ -109,14 +114,15 @@ namespace EmployeeInformation.WPF.Commands
                     {
                         MessageBox.Show("Fotoğraf yüklenirken bir hatayla karşılaşıldı", "Yükleme Hatası!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                }           
+                }
 
                 _modalNavigationStore.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 formViewModel.ErrorMessage = "Personel kaydedilmesi sırasında hata oluştu. Daha sonra tekrar deneyiniz.";
+                MessageBox.Show(ex.ToString());
             }
             finally
             {

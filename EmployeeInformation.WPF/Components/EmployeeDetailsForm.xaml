@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:EmployeeInformation.WPF.Components" 
              xmlns:converter="clr-namespace:EmployeeInformation.WPF.Converters" 
              xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:custom="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="950">
@@ -167,12 +168,27 @@
                                 FontWeight="Bold"
                                 Text="DEPARTMAN" VerticalAlignment="Center"/>
 
-                            <TextBox
-                                Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="7"
+                            <ComboBox 
+                                KeyboardNavigation.TabIndex="7"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
-                                Text="{Binding Departman, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                                
+                                SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedIndex="{Binding SelectedIndex}"
+                                
+                                ItemsSource="{Binding DepartmentListingItemViewModels}"
+                                
+                                DisplayMemberPath="DepartmentName">
+
+
+
+                                <!--<ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding DepartmentName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>-->
+
+                            </ComboBox>
 
                         </Grid>
 
@@ -560,7 +576,7 @@
 
                     <TabControl Background="Transparent">
                         <!--#region 2018-->
-                        
+
                         <TabItem Header="2018" Style="{StaticResource tabItemStyle2}">
 
                             <Grid Grid.IsSharedSizeScope="True" Margin="25">
@@ -900,9 +916,9 @@
                                 </Grid>
                             </Grid>
                         </TabItem>
-                        
+
                         <!--#endregion-->
-                        
+
                         <!--#region 2019-->
 
                         <TabItem Header="2019" Style="{StaticResource tabItemStyle2}">
@@ -2622,7 +2638,7 @@
                         </TabItem>
 
                         <!--#endregion-->
-                        
+
                     </TabControl>
                 </TabItem>
             </TabControl>

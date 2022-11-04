@@ -5,26 +5,155 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EmployeeInformation.EF.Migrations
 {
-    public partial class mig_5 : Migration
+    public partial class mig_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Vacations_Employees_Id",
-                table: "Vacations");
+            migrationBuilder.CreateTable(
+                name: "Departments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DepartmentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departments", x => x.Id);
+                });
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Vacations",
-                table: "Vacations");
+            migrationBuilder.CreateTable(
+                name: "Employees",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fotograf = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Isim = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Soyisim = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Durum = table.Column<bool>(type: "bit", nullable: false),
+                    TCKimlik = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DogumTarihi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MedeniDurum = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EgitimDurumu = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Askerlik = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Departman = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gorev = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IseGiris = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IstenCikis = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Maas = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CepTel = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CalismaSuresi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BaslamaTarihi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adres = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EkBilgi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DepartmentDTOId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employees", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Employees_Departments_DepartmentDTOId",
+                        column: x => x.DepartmentDTOId,
+                        principalTable: "Departments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
-            migrationBuilder.RenameTable(
-                name: "Vacations",
-                newName: "Vacations2018");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Vacations2018",
-                table: "Vacations2018",
-                column: "Id");
+            migrationBuilder.CreateTable(
+                name: "Vacations2018",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Ocak2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Subat2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Mart2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Nisan2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Mayis2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Haziran2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Temmuz2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Agustos2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Eylul2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Ekim2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Kasim2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C1 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C2 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C3 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C4 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C5 = table.Column<int>(type: "int", nullable: false),
+                    Aralik2018_C6 = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vacations2018", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vacations2018_Employees_Id",
+                        column: x => x.Id,
+                        principalTable: "Employees",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Vacations2019",
@@ -481,20 +610,16 @@ namespace EmployeeInformation.EF.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Vacations2018_Employees_Id",
-                table: "Vacations2018",
-                column: "Id",
-                principalTable: "Employees",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+            migrationBuilder.CreateIndex(
+                name: "IX_Employees_DepartmentDTOId",
+                table: "Employees",
+                column: "DepartmentDTOId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Vacations2018_Employees_Id",
-                table: "Vacations2018");
+            migrationBuilder.DropTable(
+                name: "Vacations2018");
 
             migrationBuilder.DropTable(
                 name: "Vacations2019");
@@ -511,26 +636,11 @@ namespace EmployeeInformation.EF.Migrations
             migrationBuilder.DropTable(
                 name: "Vacations2023");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Vacations2018",
-                table: "Vacations2018");
+            migrationBuilder.DropTable(
+                name: "Employees");
 
-            migrationBuilder.RenameTable(
-                name: "Vacations2018",
-                newName: "Vacations");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Vacations",
-                table: "Vacations",
-                column: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Vacations_Employees_Id",
-                table: "Vacations",
-                column: "Id",
-                principalTable: "Employees",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+            migrationBuilder.DropTable(
+                name: "Departments");
         }
     }
 }

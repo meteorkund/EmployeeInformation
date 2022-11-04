@@ -20,11 +20,11 @@ namespace EmployeeInformation.WPF.ViewModels
         public EmployeeListingViewModel EmployeeListingViewModel { get; set; }
 
 
-        public TopMenuViewModel(EmployeeListingViewModel employeeListingViewModel, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory)
+        public TopMenuViewModel(EmployeeListingViewModel employeeListingViewModel, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
         {
             _employeeListingViewModel = employeeListingViewModel;
             _contextFactory = contextFactory;
-            AddEmployeeCommand = new OpenAddEmployeeCommand(employeeStore, modalNavigationStore, contextFactory);
+            AddEmployeeCommand = new OpenAddEmployeeCommand(employeeStore, modalNavigationStore, contextFactory, departmentStore);
 
 
         }

@@ -14,18 +14,20 @@ namespace EmployeeInformation.WPF.Commands
     {
         readonly ModalNavigationStore _modalNavigationStore;
         readonly EmployeeStore _employeeStore;
+        readonly DepartmentStore _departmentStore;
         readonly EmployeesDbContextFactory _contextFactory;
 
-        public OpenAddEmployeeCommand(EmployeeStore employeeStore, ModalNavigationStore odalNavigationStore, EmployeesDbContextFactory contextFactory)
+        public OpenAddEmployeeCommand(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
         {
             _employeeStore = employeeStore;
-            _modalNavigationStore = odalNavigationStore;
-            _contextFactory = contextFactory;   
+            _modalNavigationStore = modalNavigationStore;
+            _contextFactory = contextFactory;
+            _departmentStore = departmentStore;
         }
 
         public override void Execute(object? parameter)
         {
-            AddEmployeeViewModel addEmployeeViewModel = new AddEmployeeViewModel(_employeeStore, _modalNavigationStore, _contextFactory);
+            AddEmployeeViewModel addEmployeeViewModel = new AddEmployeeViewModel(_employeeStore, _modalNavigationStore, _contextFactory, _departmentStore);
 
             _modalNavigationStore.CurrentViewModel = addEmployeeViewModel;
         }

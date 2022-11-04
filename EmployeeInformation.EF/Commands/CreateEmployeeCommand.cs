@@ -22,7 +22,7 @@ namespace EmployeeInformation.EF.Commands
         public async Task Execute(Employee employee)
         {
             using (EmployeesDbContext context = _contextFactory.Create())
-            {                
+            {
 
                 EmployeeDTO employeeDTOs = new EmployeeDTO()
                 {
@@ -35,7 +35,7 @@ namespace EmployeeInformation.EF.Commands
                     MedeniDurum = employee.MedeniDurum,
                     EgitimDurumu = employee.EgitimDurumu,
                     Askerlik = employee.Askerlik,
-                    Departman = employee.Departman,
+                    DepartmentDTOId = employee.Departman.Id,
                     Gorev = employee.Gorev,
                     IseGiris = employee.IseGiris,
                     IstenCikis = employee.IstenCikis,
@@ -44,18 +44,17 @@ namespace EmployeeInformation.EF.Commands
                     CalismaSuresi = employee.CalismaSuresi,
                     BaslamaTarihi = employee.BaslamaTarihi,
                     Adres = employee.Adres,
-                    EkBilgi = employee.EkBilgi,
-                    CreatedDate = DateTime.Now,
+                    EkBilgi = employee.EkBilgi,                   
 
 
                     Vacation2018DTO = new Vacation2018DTO()
                     {
-                        Ocak2018_C1=0,
-                        Ocak2018_C2=0,
-                        Ocak2018_C3=0,
-                        Ocak2018_C4=0,
-                        Ocak2018_C5=0,
-                        Ocak2018_C6=0,
+                        Ocak2018_C1 = 0,
+                        Ocak2018_C2 = 0,
+                        Ocak2018_C3 = 0,
+                        Ocak2018_C4 = 0,
+                        Ocak2018_C5 = 0,
+                        Ocak2018_C6 = 0,
 
                         Subat2018_C1 = 0,
                         Subat2018_C2 = 0,
@@ -134,7 +133,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2018_C5 = 0,
                         Aralik2018_C6 = 0,
 
-                        CreatedDate=DateTime.Now
                     },
                     Vacation2019DTO = new Vacation2019DTO()
                     {
@@ -222,7 +220,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2019_C5 = 0,
                         Aralik2019_C6 = 0,
 
-                        CreatedDate = DateTime.Now
                     },
                     Vacation2020DTO = new Vacation2020DTO()
                     {
@@ -310,7 +307,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2020_C5 = 0,
                         Aralik2020_C6 = 0,
 
-                        CreatedDate = DateTime.Now
                     },
                     Vacation2021DTO = new Vacation2021DTO()
                     {
@@ -398,7 +394,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2021_C5 = 0,
                         Aralik2021_C6 = 0,
 
-                        CreatedDate = DateTime.Now
                     },
                     Vacation2022DTO = new Vacation2022DTO()
                     {
@@ -486,7 +481,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2022_C5 = 0,
                         Aralik2022_C6 = 0,
 
-                        CreatedDate = DateTime.Now
                     },
                     Vacation2023DTO = new Vacation2023DTO()
                     {
@@ -573,8 +567,6 @@ namespace EmployeeInformation.EF.Commands
                         Aralik2023_C4 = 0,
                         Aralik2023_C5 = 0,
                         Aralik2023_C6 = 0,
-
-                        CreatedDate = DateTime.Now
                     }
 
                 };

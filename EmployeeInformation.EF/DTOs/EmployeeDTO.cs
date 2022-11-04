@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace EmployeeInformation.EF.DTOs
 {
-    public class EmployeeDTO :BaseDTO
+    public class EmployeeDTO : BaseDTO
     {
         public int Id { get; set; }
+        public int DepartmentDTOId { get; set; }
         public string? Fotograf { get; set; }
         public string Isim { get; set; }
         public string Soyisim { get; set; }
@@ -18,7 +19,6 @@ namespace EmployeeInformation.EF.DTOs
         public string? MedeniDurum { get; set; }
         public string? EgitimDurumu { get; set; }
         public string? Askerlik { get; set; }
-        public string? Departman { get; set; }
         public string? Gorev { get; set; }
         public string? IseGiris { get; set; }
         public string? IstenCikis { get; set; }
@@ -35,6 +35,8 @@ namespace EmployeeInformation.EF.DTOs
         public Vacation2021DTO Vacation2021DTO { get; set; }
         public Vacation2022DTO Vacation2022DTO { get; set; }
         public Vacation2023DTO Vacation2023DTO { get; set; }
+
+        public DepartmentDTO DepartmentDTO { get; set; }
 
     }
 }

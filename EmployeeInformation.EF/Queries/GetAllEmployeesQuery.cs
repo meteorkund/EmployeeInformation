@@ -1,4 +1,5 @@
 ﻿using EmployeeInformation.Domain.Models;
+using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.Domain.Queries;
 using EmployeeInformation.EF.DTOs;
 using Microsoft.EntityFrameworkCore;
@@ -19,44 +20,49 @@ namespace EmployeeInformation.EF.Queries
             _contextFactory = contextFactory;
         }
 
-        public async Task<IEnumerable<Employee>> Execute()
+        public async Task<IEnumerable<Employee>> GetAllEmployees()
         {
             using (EmployeesDbContext context = _contextFactory.Create())
             {
+
                 IEnumerable<EmployeeDTO> employeeDTOs = await context.Employees
+                    .Include(d => d.DepartmentDTO)
                     .Include(v => v.Vacation2018DTO)
                     .Include(v => v.Vacation2019DTO)
                     .Include(v => v.Vacation2020DTO)
                     .Include(v => v.Vacation2021DTO)
-                    .Include(v => v.Vacation2022DTO)  
-                    .Include(v => v.Vacation2023DTO)  
+                    .Include(v => v.Vacation2022DTO)
+                    .Include(v => v.Vacation2023DTO)
                     .ToListAsync();
 
+                employeeDTOs.Select(d => new Department(d.DepartmentDTO.Id, d.DepartmentDTO.DepartmentName));
 
-                return employeeDTOs.Select(e => new Employee(
-                    e.Id,
-                    e.Fotograf,
-                    e.Isim,
-                    e.Soyisim,
-                    e.Durum,
-                    e.TCKimlik,
-                    e.DogumTarihi,
-                    e.MedeniDurum,
-                    e.EgitimDurumu,
-                    e.Askerlik,
-                    e.Departman,
-                    e.Gorev,
-                    e.IseGiris,
-                    e.IstenCikis,
-                    e.Maas,
-                    e.CepTel,
-                    e.CalismaSuresi,
-                    e.BaslamaTarihi,
-                    e.Adres,
-                    e.EkBilgi,
-                    e.CreatedDate,
+                return employeeDTOs.Select(e => new Employee
+                {
+                    Id = e.Id,
+                    Fotograf = e.Fotograf,
+                    Isim = e.Isim,
+                    Soyisim = e.Soyisim,
+                    Durum = e.Durum,
+                    TCKimlik = e.TCKimlik,
+                    DogumTarihi = e.DogumTarihi,
+                    MedeniDurum = e.MedeniDurum,
+                    EgitimDurumu = e.EgitimDurumu,
+                    Askerlik = e.Askerlik,
+                    Gorev = e.Gorev,
+                    IseGiris = e.IseGiris,
+                    IstenCikis = e.IstenCikis,
+                    Maas = e.Maas,
+                    CepTel = e.CepTel,
+                    CalismaSuresi = e.CalismaSuresi,
+                    BaslamaTarihi = e.BaslamaTarihi,
+                    Adres = e.Adres,
+                    EkBilgi = e.EkBilgi,
+                    CreatedDate = e.CreatedDate,
 
-                    new Vacation2018
+                    Departman = new Department(e.DepartmentDTO.Id, e.DepartmentDTO.DepartmentName),
+
+                    Vacation2018 = new Vacation2018
                     {
                         Id = e.Id,
                         Ocak2018_C1 = e.Vacation2018DTO.Ocak2018_C1,
@@ -143,7 +149,7 @@ namespace EmployeeInformation.EF.Queries
                         Aralik2018_C5 = e.Vacation2018DTO.Aralik2018_C5,
                         Aralik2018_C6 = e.Vacation2018DTO.Aralik2018_C6,
                     },
-                    new Vacation2019
+                    Vacation2019 = new Vacation2019
                     {
                         Id = e.Id,
                         Ocak2019_C1 = e.Vacation2019DTO.Ocak2019_C1,
@@ -230,7 +236,7 @@ namespace EmployeeInformation.EF.Queries
                         Aralik2019_C5 = e.Vacation2019DTO.Aralik2019_C5,
                         Aralik2019_C6 = e.Vacation2019DTO.Aralik2019_C6,
                     },
-                    new Vacation2020
+                    Vacation2020 = new Vacation2020
                     {
                         Id = e.Id,
                         Ocak2020_C1 = e.Vacation2020DTO.Ocak2020_C1,
@@ -317,7 +323,7 @@ namespace EmployeeInformation.EF.Queries
                         Aralik2020_C5 = e.Vacation2020DTO.Aralik2020_C5,
                         Aralik2020_C6 = e.Vacation2020DTO.Aralik2020_C6,
                     },
-                    new Vacation2021
+                    Vacation2021 = new Vacation2021
                     {
                         Id = e.Id,
                         Ocak2021_C1 = e.Vacation2021DTO.Ocak2021_C1,
@@ -404,7 +410,7 @@ namespace EmployeeInformation.EF.Queries
                         Aralik2021_C5 = e.Vacation2021DTO.Aralik2021_C5,
                         Aralik2021_C6 = e.Vacation2021DTO.Aralik2021_C6,
                     },
-                    new Vacation2022
+                    Vacation2022 = new Vacation2022
                     {
                         Id = e.Id,
                         Ocak2022_C1 = e.Vacation2022DTO.Ocak2022_C1,
@@ -491,7 +497,7 @@ namespace EmployeeInformation.EF.Queries
                         Aralik2022_C5 = e.Vacation2022DTO.Aralik2022_C5,
                         Aralik2022_C6 = e.Vacation2022DTO.Aralik2022_C6,
                     },
-                    new Vacation2023
+                    Vacation2023 = new Vacation2023
                     {
                         Id = e.Id,
                         Ocak2023_C1 = e.Vacation2023DTO.Ocak2023_C1,
@@ -580,8 +586,9 @@ namespace EmployeeInformation.EF.Queries
                     }
 
 
-                    ));
+                });
             }
         }
+
     }
 }

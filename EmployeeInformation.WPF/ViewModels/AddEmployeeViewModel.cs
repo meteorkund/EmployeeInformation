@@ -14,13 +14,17 @@ namespace EmployeeInformation.WPF.ViewModels
     {
         public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get;  }
 
-        public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory)
+        public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, DepartmentStore departmentStore)
         {
             ICommand submitCommand = new AddEmployeeCommand(this, employeeStore, modalNavigationStore, contextFactory) ;
             ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
-            EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand)
+
+            EmployeeDetailsFormViewModel = EmployeeDetailsFormViewModel.LoadDepartmentVM(submitCommand,cancelCommand,departmentStore);
+
+            EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand, departmentStore)
             {
-                IsAdding = true
+                IsAdding = true,
+                
             };
         }
     }

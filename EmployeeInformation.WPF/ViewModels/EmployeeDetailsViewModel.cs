@@ -38,7 +38,7 @@ namespace EmployeeInformation.WPF.ViewModels
         public string MedeniDurumDisplay => SelectedEmployee?.MedeniDurum;
         public string EgitimDurumuDisplay => SelectedEmployee?.EgitimDurumu;
         public string AskerlikDisplay => SelectedEmployee?.Askerlik;
-        public string DepartmanDisplay => SelectedEmployee?.Departman;
+        public string DepartmanDisplay => SelectedEmployee?.Departman.DepartmentName;
         public string GorevDisplay => SelectedEmployee?.Gorev;
         public string IseGirisDisplay => SelectedEmployee?.IseGiris;
         public string IstenCikisDisplay => (string.IsNullOrEmpty(SelectedEmployee?.IstenCikis) ? "-" : SelectedEmployee?.IstenCikis);
