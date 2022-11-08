@@ -11,7 +11,11 @@ namespace EmployeeInformation.EF.DTOs
     {
         public int DepartmentDTOId { get; set; }
         public int SectorDTOId { get; set; }
-        
+        public int EducationDTOId { get; set; }
+        public int MilitaryServiceDTOId { get; set; }
+        public int MaritialDTOId { get; set; }
+
+
         public string? Fotograf { get; set; }
         public string Isim { get; set; }
         public string Soyisim { get; set; }
@@ -43,6 +47,9 @@ namespace EmployeeInformation.EF.DTOs
 
         public DepartmentDTO DepartmentDTO { get; set; }
         public SectorDTO SectorDTO { get; set; }
+        public EducationDTO EducationDTO { get; set; }
+        public MilitaryServiceDTO MilitaryServiceDTO { get; set; }
+        public MaritialDTO MaritialDTO { get; set; }
 
     }
 }

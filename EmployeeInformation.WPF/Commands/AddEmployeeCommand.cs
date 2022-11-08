@@ -61,12 +61,25 @@ namespace EmployeeInformation.WPF.Commands
                 MedeniDurum = formViewModel.MedeniDurum,
                 EgitimDurumu = formViewModel.EgitimDurumu,
                 Askerlik = formViewModel.Askerlik,
+
                 Departman = new Department(
                     formViewModel.SelectedDepartmentItem.DepartmentId,
                     formViewModel.SelectedDepartmentItem.DepartmentName),
+
                 Sector = new Sector(
                     formViewModel.SelectedSectorItem.SectorId,
                     formViewModel.SelectedSectorItem.SectorName),
+
+                Education = new Education(
+                    formViewModel.SelectedEducationItem.EducationId,
+                    formViewModel.SelectedEducationItem.EducationDegree),
+
+                Military = new MilitaryServiceStatus(
+                    formViewModel.SelectedMilitaryServiceItem.MilitaryServiceId,
+                    formViewModel.SelectedMilitaryServiceItem.MilitaryStatus),
+
+                Maritial = new Maritial(1, "BEKAR"),
+
                 Gorev = formViewModel.Gorev,
                 IseGiris = formViewModel.IseGiris,
                 IstenCikis = formViewModel.IstenCikis,

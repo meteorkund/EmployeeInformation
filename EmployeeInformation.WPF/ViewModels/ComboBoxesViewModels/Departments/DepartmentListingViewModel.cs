@@ -1,11 +1,12 @@
 ﻿using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.WPF.Commands;
+using EmployeeInformation.WPF.Commands.LoadCommands;
 using EmployeeInformation.WPF.Stores;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Departments;
 
 public class DepartmentListingViewModel : ViewModelBase
 {

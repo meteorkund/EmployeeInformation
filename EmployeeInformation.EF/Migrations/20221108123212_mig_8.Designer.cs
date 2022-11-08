@@ -4,6 +4,7 @@ using EmployeeInformation.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeInformation.EF.Migrations
 {
     [DbContext(typeof(EmployeesDbContext))]
-    partial class EmployeesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221108123212_mig_8")]
+    partial class mig_8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,23 +56,6 @@ namespace EmployeeInformation.EF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Educations");
-                });
-
-            modelBuilder.Entity("EmployeeInformation.EF.DTOs.Common.MaritialDTO", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("MaritialStatus")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Maritials");
                 });
 
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.Common.MilitaryServiceDTO", b =>
@@ -170,9 +155,6 @@ namespace EmployeeInformation.EF.Migrations
                     b.Property<string>("Maas")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MaritialDTOId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MedeniDurum")
                         .HasColumnType("nvarchar(max)");
 
@@ -197,8 +179,6 @@ namespace EmployeeInformation.EF.Migrations
                     b.HasIndex("DepartmentDTOId");
 
                     b.HasIndex("EducationDTOId");
-
-                    b.HasIndex("MaritialDTOId");
 
                     b.HasIndex("MilitaryServiceDTOId");
 
@@ -1613,12 +1593,6 @@ namespace EmployeeInformation.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EmployeeInformation.EF.DTOs.Common.MaritialDTO", "MaritialDTO")
-                        .WithMany("EmployeeDTOs")
-                        .HasForeignKey("MaritialDTOId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("EmployeeInformation.EF.DTOs.Common.MilitaryServiceDTO", "MilitaryServiceDTO")
                         .WithMany("EmployeeDTOs")
                         .HasForeignKey("MilitaryServiceDTOId")
@@ -1634,8 +1608,6 @@ namespace EmployeeInformation.EF.Migrations
                     b.Navigation("DepartmentDTO");
 
                     b.Navigation("EducationDTO");
-
-                    b.Navigation("MaritialDTO");
 
                     b.Navigation("MilitaryServiceDTO");
 
@@ -1714,11 +1686,6 @@ namespace EmployeeInformation.EF.Migrations
                 });
 
             modelBuilder.Entity("EmployeeInformation.EF.DTOs.Common.EducationDTO", b =>
-                {
-                    b.Navigation("EmployeeDTOs");
-                });
-
-            modelBuilder.Entity("EmployeeInformation.EF.DTOs.Common.MaritialDTO", b =>
                 {
                     b.Navigation("EmployeeDTOs");
                 });

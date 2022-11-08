@@ -1,5 +1,6 @@
 ﻿using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.WPF.Commands;
+using EmployeeInformation.WPF.Commands.LoadCommands;
 using EmployeeInformation.WPF.Stores;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Input;
 
-namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels
+namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors
 {
     public class SectorListingViewModel : ViewModelBase
     {

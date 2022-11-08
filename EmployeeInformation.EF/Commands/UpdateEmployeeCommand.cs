@@ -1,6 +1,7 @@
 ﻿using EmployeeInformation.Domain.Commands;
 using EmployeeInformation.Domain.Models;
 using EmployeeInformation.EF.DTOs;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,583 +23,562 @@ namespace EmployeeInformation.EF.Commands
             using (EmployeesDbContext context = _contextFactory.Create())
             {
 
-                EmployeeDTO employeeDTOs = new EmployeeDTO()
-                {
-                    Id = employee.Id,
-                    Fotograf = employee.Fotograf,
-                    Isim = employee.Isim,
-                    Soyisim = employee.Soyisim,
-                    Durum = employee.Durum,
-                    TCKimlik = employee.TCKimlik,
-                    DogumTarihi = employee.DogumTarihi,
-                    MedeniDurum = employee.MedeniDurum,
-                    EgitimDurumu = employee.EgitimDurumu,
-                    Askerlik = employee.Askerlik,
-
-                    DepartmentDTOId = employee.Departman.Id,
-                    SectorDTOId = employee.Sector.Id,
-
-                    Gorev = employee.Gorev,
-                    IseGiris = employee.IseGiris,
-                    IstenCikis = employee.IstenCikis,
-                    Maas = employee.Maas,
-                    CepTel = employee.CepTel,
-                    CalismaSuresi = employee.CalismaSuresi,
-                    BaslamaTarihi = employee.BaslamaTarihi,
-                    Adres = employee.Adres,
-                    EkBilgi = employee.EkBilgi,
-                    CreatedDate = employee.CreatedDate,
-                    UpdatedDate = DateTime.Now,
-
-                    Vacation2018DTO = new Vacation2018DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2018_C1 = employee.Vacation2018.Ocak2018_C1,
-                        Ocak2018_C2 = employee.Vacation2018.Ocak2018_C2,
-                        Ocak2018_C3 = employee.Vacation2018.Ocak2018_C3,
-                        Ocak2018_C4 = employee.Vacation2018.Ocak2018_C4,
-                        Ocak2018_C5 = employee.Vacation2018.Ocak2018_C5,
-                        Ocak2018_C6 = employee.Vacation2018.Ocak2018_C6,
-
-                        Subat2018_C1 = employee.Vacation2018.Subat2018_C1,
-                        Subat2018_C2 = employee.Vacation2018.Subat2018_C2,
-                        Subat2018_C3 = employee.Vacation2018.Subat2018_C3,
-                        Subat2018_C4 = employee.Vacation2018.Subat2018_C4,
-                        Subat2018_C5 = employee.Vacation2018.Subat2018_C5,
-                        Subat2018_C6 = employee.Vacation2018.Subat2018_C6,
-
-                        Mart2018_C1 = employee.Vacation2018.Mart2018_C1,
-                        Mart2018_C2 = employee.Vacation2018.Mart2018_C2,
-                        Mart2018_C3 = employee.Vacation2018.Mart2018_C3,
-                        Mart2018_C4 = employee.Vacation2018.Mart2018_C4,
-                        Mart2018_C5 = employee.Vacation2018.Mart2018_C5,
-                        Mart2018_C6 = employee.Vacation2018.Mart2018_C6,
-
-                        Nisan2018_C1 = employee.Vacation2018.Nisan2018_C1,
-                        Nisan2018_C2 = employee.Vacation2018.Nisan2018_C2,
-                        Nisan2018_C3 = employee.Vacation2018.Nisan2018_C3,
-                        Nisan2018_C4 = employee.Vacation2018.Nisan2018_C4,
-                        Nisan2018_C5 = employee.Vacation2018.Nisan2018_C5,
-                        Nisan2018_C6 = employee.Vacation2018.Nisan2018_C6,
-
-                        Mayis2018_C1 = employee.Vacation2018.Mayis2018_C1,
-                        Mayis2018_C2 = employee.Vacation2018.Mayis2018_C2,
-                        Mayis2018_C3 = employee.Vacation2018.Mayis2018_C3,
-                        Mayis2018_C4 = employee.Vacation2018.Mayis2018_C4,
-                        Mayis2018_C5 = employee.Vacation2018.Mayis2018_C5,
-                        Mayis2018_C6 = employee.Vacation2018.Mayis2018_C6,
-
-                        Haziran2018_C1 = employee.Vacation2018.Haziran2018_C1,
-                        Haziran2018_C2 = employee.Vacation2018.Haziran2018_C2,
-                        Haziran2018_C3 = employee.Vacation2018.Haziran2018_C3,
-                        Haziran2018_C4 = employee.Vacation2018.Haziran2018_C4,
-                        Haziran2018_C5 = employee.Vacation2018.Haziran2018_C5,
-                        Haziran2018_C6 = employee.Vacation2018.Haziran2018_C6,
-
-                        Temmuz2018_C1 = employee.Vacation2018.Temmuz2018_C1,
-                        Temmuz2018_C2 = employee.Vacation2018.Temmuz2018_C2,
-                        Temmuz2018_C3 = employee.Vacation2018.Temmuz2018_C3,
-                        Temmuz2018_C4 = employee.Vacation2018.Temmuz2018_C4,
-                        Temmuz2018_C5 = employee.Vacation2018.Temmuz2018_C5,
-                        Temmuz2018_C6 = employee.Vacation2018.Temmuz2018_C6,
-
-                        Agustos2018_C1 = employee.Vacation2018.Agustos2018_C1,
-                        Agustos2018_C2 = employee.Vacation2018.Agustos2018_C2,
-                        Agustos2018_C3 = employee.Vacation2018.Agustos2018_C3,
-                        Agustos2018_C4 = employee.Vacation2018.Agustos2018_C4,
-                        Agustos2018_C5 = employee.Vacation2018.Agustos2018_C5,
-                        Agustos2018_C6 = employee.Vacation2018.Agustos2018_C6,
-
-                        Eylul2018_C1 = employee.Vacation2018.Eylul2018_C1,
-                        Eylul2018_C2 = employee.Vacation2018.Eylul2018_C2,
-                        Eylul2018_C3 = employee.Vacation2018.Eylul2018_C3,
-                        Eylul2018_C4 = employee.Vacation2018.Eylul2018_C4,
-                        Eylul2018_C5 = employee.Vacation2018.Eylul2018_C5,
-                        Eylul2018_C6 = employee.Vacation2018.Eylul2018_C6,
-
-                        Ekim2018_C1 = employee.Vacation2018.Ekim2018_C1,
-                        Ekim2018_C2 = employee.Vacation2018.Ekim2018_C2,
-                        Ekim2018_C3 = employee.Vacation2018.Ekim2018_C3,
-                        Ekim2018_C4 = employee.Vacation2018.Ekim2018_C4,
-                        Ekim2018_C5 = employee.Vacation2018.Ekim2018_C5,
-                        Ekim2018_C6 = employee.Vacation2018.Ekim2018_C6,
-
-                        Kasim2018_C1 = employee.Vacation2018.Kasim2018_C1,
-                        Kasim2018_C2 = employee.Vacation2018.Kasim2018_C2,
-                        Kasim2018_C3 = employee.Vacation2018.Kasim2018_C3,
-                        Kasim2018_C4 = employee.Vacation2018.Kasim2018_C4,
-                        Kasim2018_C5 = employee.Vacation2018.Kasim2018_C5,
-                        Kasim2018_C6 = employee.Vacation2018.Kasim2018_C6,
-
-                        Aralik2018_C1 = employee.Vacation2018.Aralik2018_C1,
-                        Aralik2018_C2 = employee.Vacation2018.Aralik2018_C2,
-                        Aralik2018_C3 = employee.Vacation2018.Aralik2018_C3,
-                        Aralik2018_C4 = employee.Vacation2018.Aralik2018_C4,
-                        Aralik2018_C5 = employee.Vacation2018.Aralik2018_C5,
-                        Aralik2018_C6 = employee.Vacation2018.Aralik2018_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    },
-                    Vacation2019DTO = new Vacation2019DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2019_C1 = employee.Vacation2019.Ocak2019_C1,
-                        Ocak2019_C2 = employee.Vacation2019.Ocak2019_C2,
-                        Ocak2019_C3 = employee.Vacation2019.Ocak2019_C3,
-                        Ocak2019_C4 = employee.Vacation2019.Ocak2019_C4,
-                        Ocak2019_C5 = employee.Vacation2019.Ocak2019_C5,
-                        Ocak2019_C6 = employee.Vacation2019.Ocak2019_C6,
-
-                        Subat2019_C1 = employee.Vacation2019.Subat2019_C1,
-                        Subat2019_C2 = employee.Vacation2019.Subat2019_C2,
-                        Subat2019_C3 = employee.Vacation2019.Subat2019_C3,
-                        Subat2019_C4 = employee.Vacation2019.Subat2019_C4,
-                        Subat2019_C5 = employee.Vacation2019.Subat2019_C5,
-                        Subat2019_C6 = employee.Vacation2019.Subat2019_C6,
-
-                        Mart2019_C1 = employee.Vacation2019.Mart2019_C1,
-                        Mart2019_C2 = employee.Vacation2019.Mart2019_C2,
-                        Mart2019_C3 = employee.Vacation2019.Mart2019_C3,
-                        Mart2019_C4 = employee.Vacation2019.Mart2019_C4,
-                        Mart2019_C5 = employee.Vacation2019.Mart2019_C5,
-                        Mart2019_C6 = employee.Vacation2019.Mart2019_C6,
-
-                        Nisan2019_C1 = employee.Vacation2019.Nisan2019_C1,
-                        Nisan2019_C2 = employee.Vacation2019.Nisan2019_C2,
-                        Nisan2019_C3 = employee.Vacation2019.Nisan2019_C3,
-                        Nisan2019_C4 = employee.Vacation2019.Nisan2019_C4,
-                        Nisan2019_C5 = employee.Vacation2019.Nisan2019_C5,
-                        Nisan2019_C6 = employee.Vacation2019.Nisan2019_C6,
-
-                        Mayis2019_C1 = employee.Vacation2019.Mayis2019_C1,
-                        Mayis2019_C2 = employee.Vacation2019.Mayis2019_C2,
-                        Mayis2019_C3 = employee.Vacation2019.Mayis2019_C3,
-                        Mayis2019_C4 = employee.Vacation2019.Mayis2019_C4,
-                        Mayis2019_C5 = employee.Vacation2019.Mayis2019_C5,
-                        Mayis2019_C6 = employee.Vacation2019.Mayis2019_C6,
-
-                        Haziran2019_C1 = employee.Vacation2019.Haziran2019_C1,
-                        Haziran2019_C2 = employee.Vacation2019.Haziran2019_C2,
-                        Haziran2019_C3 = employee.Vacation2019.Haziran2019_C3,
-                        Haziran2019_C4 = employee.Vacation2019.Haziran2019_C4,
-                        Haziran2019_C5 = employee.Vacation2019.Haziran2019_C5,
-                        Haziran2019_C6 = employee.Vacation2019.Haziran2019_C6,
-
-                        Temmuz2019_C1 = employee.Vacation2019.Temmuz2019_C1,
-                        Temmuz2019_C2 = employee.Vacation2019.Temmuz2019_C2,
-                        Temmuz2019_C3 = employee.Vacation2019.Temmuz2019_C3,
-                        Temmuz2019_C4 = employee.Vacation2019.Temmuz2019_C4,
-                        Temmuz2019_C5 = employee.Vacation2019.Temmuz2019_C5,
-                        Temmuz2019_C6 = employee.Vacation2019.Temmuz2019_C6,
-
-                        Agustos2019_C1 = employee.Vacation2019.Agustos2019_C1,
-                        Agustos2019_C2 = employee.Vacation2019.Agustos2019_C2,
-                        Agustos2019_C3 = employee.Vacation2019.Agustos2019_C3,
-                        Agustos2019_C4 = employee.Vacation2019.Agustos2019_C4,
-                        Agustos2019_C5 = employee.Vacation2019.Agustos2019_C5,
-                        Agustos2019_C6 = employee.Vacation2019.Agustos2019_C6,
-
-                        Eylul2019_C1 = employee.Vacation2019.Eylul2019_C1,
-                        Eylul2019_C2 = employee.Vacation2019.Eylul2019_C2,
-                        Eylul2019_C3 = employee.Vacation2019.Eylul2019_C3,
-                        Eylul2019_C4 = employee.Vacation2019.Eylul2019_C4,
-                        Eylul2019_C5 = employee.Vacation2019.Eylul2019_C5,
-                        Eylul2019_C6 = employee.Vacation2019.Eylul2019_C6,
-
-                        Ekim2019_C1 = employee.Vacation2019.Ekim2019_C1,
-                        Ekim2019_C2 = employee.Vacation2019.Ekim2019_C2,
-                        Ekim2019_C3 = employee.Vacation2019.Ekim2019_C3,
-                        Ekim2019_C4 = employee.Vacation2019.Ekim2019_C4,
-                        Ekim2019_C5 = employee.Vacation2019.Ekim2019_C5,
-                        Ekim2019_C6 = employee.Vacation2019.Ekim2019_C6,
-
-                        Kasim2019_C1 = employee.Vacation2019.Kasim2019_C1,
-                        Kasim2019_C2 = employee.Vacation2019.Kasim2019_C2,
-                        Kasim2019_C3 = employee.Vacation2019.Kasim2019_C3,
-                        Kasim2019_C4 = employee.Vacation2019.Kasim2019_C4,
-                        Kasim2019_C5 = employee.Vacation2019.Kasim2019_C5,
-                        Kasim2019_C6 = employee.Vacation2019.Kasim2019_C6,
-
-                        Aralik2019_C1 = employee.Vacation2019.Aralik2019_C1,
-                        Aralik2019_C2 = employee.Vacation2019.Aralik2019_C2,
-                        Aralik2019_C3 = employee.Vacation2019.Aralik2019_C3,
-                        Aralik2019_C4 = employee.Vacation2019.Aralik2019_C4,
-                        Aralik2019_C5 = employee.Vacation2019.Aralik2019_C5,
-                        Aralik2019_C6 = employee.Vacation2019.Aralik2019_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    },
-                    Vacation2020DTO = new Vacation2020DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2020_C1 = employee.Vacation2020.Ocak2020_C1,
-                        Ocak2020_C2 = employee.Vacation2020.Ocak2020_C2,
-                        Ocak2020_C3 = employee.Vacation2020.Ocak2020_C3,
-                        Ocak2020_C4 = employee.Vacation2020.Ocak2020_C4,
-                        Ocak2020_C5 = employee.Vacation2020.Ocak2020_C5,
-                        Ocak2020_C6 = employee.Vacation2020.Ocak2020_C6,
-
-                        Subat2020_C1 = employee.Vacation2020.Subat2020_C1,
-                        Subat2020_C2 = employee.Vacation2020.Subat2020_C2,
-                        Subat2020_C3 = employee.Vacation2020.Subat2020_C3,
-                        Subat2020_C4 = employee.Vacation2020.Subat2020_C4,
-                        Subat2020_C5 = employee.Vacation2020.Subat2020_C5,
-                        Subat2020_C6 = employee.Vacation2020.Subat2020_C6,
-
-                        Mart2020_C1 = employee.Vacation2020.Mart2020_C1,
-                        Mart2020_C2 = employee.Vacation2020.Mart2020_C2,
-                        Mart2020_C3 = employee.Vacation2020.Mart2020_C3,
-                        Mart2020_C4 = employee.Vacation2020.Mart2020_C4,
-                        Mart2020_C5 = employee.Vacation2020.Mart2020_C5,
-                        Mart2020_C6 = employee.Vacation2020.Mart2020_C6,
-
-                        Nisan2020_C1 = employee.Vacation2020.Nisan2020_C1,
-                        Nisan2020_C2 = employee.Vacation2020.Nisan2020_C2,
-                        Nisan2020_C3 = employee.Vacation2020.Nisan2020_C3,
-                        Nisan2020_C4 = employee.Vacation2020.Nisan2020_C4,
-                        Nisan2020_C5 = employee.Vacation2020.Nisan2020_C5,
-                        Nisan2020_C6 = employee.Vacation2020.Nisan2020_C6,
-
-                        Mayis2020_C1 = employee.Vacation2020.Mayis2020_C1,
-                        Mayis2020_C2 = employee.Vacation2020.Mayis2020_C2,
-                        Mayis2020_C3 = employee.Vacation2020.Mayis2020_C3,
-                        Mayis2020_C4 = employee.Vacation2020.Mayis2020_C4,
-                        Mayis2020_C5 = employee.Vacation2020.Mayis2020_C5,
-                        Mayis2020_C6 = employee.Vacation2020.Mayis2020_C6,
-
-                        Haziran2020_C1 = employee.Vacation2020.Haziran2020_C1,
-                        Haziran2020_C2 = employee.Vacation2020.Haziran2020_C2,
-                        Haziran2020_C3 = employee.Vacation2020.Haziran2020_C3,
-                        Haziran2020_C4 = employee.Vacation2020.Haziran2020_C4,
-                        Haziran2020_C5 = employee.Vacation2020.Haziran2020_C5,
-                        Haziran2020_C6 = employee.Vacation2020.Haziran2020_C6,
-
-                        Temmuz2020_C1 = employee.Vacation2020.Temmuz2020_C1,
-                        Temmuz2020_C2 = employee.Vacation2020.Temmuz2020_C2,
-                        Temmuz2020_C3 = employee.Vacation2020.Temmuz2020_C3,
-                        Temmuz2020_C4 = employee.Vacation2020.Temmuz2020_C4,
-                        Temmuz2020_C5 = employee.Vacation2020.Temmuz2020_C5,
-                        Temmuz2020_C6 = employee.Vacation2020.Temmuz2020_C6,
-
-                        Agustos2020_C1 = employee.Vacation2020.Agustos2020_C1,
-                        Agustos2020_C2 = employee.Vacation2020.Agustos2020_C2,
-                        Agustos2020_C3 = employee.Vacation2020.Agustos2020_C3,
-                        Agustos2020_C4 = employee.Vacation2020.Agustos2020_C4,
-                        Agustos2020_C5 = employee.Vacation2020.Agustos2020_C5,
-                        Agustos2020_C6 = employee.Vacation2020.Agustos2020_C6,
-
-                        Eylul2020_C1 = employee.Vacation2020.Eylul2020_C1,
-                        Eylul2020_C2 = employee.Vacation2020.Eylul2020_C2,
-                        Eylul2020_C3 = employee.Vacation2020.Eylul2020_C3,
-                        Eylul2020_C4 = employee.Vacation2020.Eylul2020_C4,
-                        Eylul2020_C5 = employee.Vacation2020.Eylul2020_C5,
-                        Eylul2020_C6 = employee.Vacation2020.Eylul2020_C6,
-
-                        Ekim2020_C1 = employee.Vacation2020.Ekim2020_C1,
-                        Ekim2020_C2 = employee.Vacation2020.Ekim2020_C2,
-                        Ekim2020_C3 = employee.Vacation2020.Ekim2020_C3,
-                        Ekim2020_C4 = employee.Vacation2020.Ekim2020_C4,
-                        Ekim2020_C5 = employee.Vacation2020.Ekim2020_C5,
-                        Ekim2020_C6 = employee.Vacation2020.Ekim2020_C6,
-
-                        Kasim2020_C1 = employee.Vacation2020.Kasim2020_C1,
-                        Kasim2020_C2 = employee.Vacation2020.Kasim2020_C2,
-                        Kasim2020_C3 = employee.Vacation2020.Kasim2020_C3,
-                        Kasim2020_C4 = employee.Vacation2020.Kasim2020_C4,
-                        Kasim2020_C5 = employee.Vacation2020.Kasim2020_C5,
-                        Kasim2020_C6 = employee.Vacation2020.Kasim2020_C6,
-
-                        Aralik2020_C1 = employee.Vacation2020.Aralik2020_C1,
-                        Aralik2020_C2 = employee.Vacation2020.Aralik2020_C2,
-                        Aralik2020_C3 = employee.Vacation2020.Aralik2020_C3,
-                        Aralik2020_C4 = employee.Vacation2020.Aralik2020_C4,
-                        Aralik2020_C5 = employee.Vacation2020.Aralik2020_C5,
-                        Aralik2020_C6 = employee.Vacation2020.Aralik2020_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    },
-                    Vacation2021DTO = new Vacation2021DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2021_C1 = employee.Vacation2021.Ocak2021_C1,
-                        Ocak2021_C2 = employee.Vacation2021.Ocak2021_C2,
-                        Ocak2021_C3 = employee.Vacation2021.Ocak2021_C3,
-                        Ocak2021_C4 = employee.Vacation2021.Ocak2021_C4,
-                        Ocak2021_C5 = employee.Vacation2021.Ocak2021_C5,
-                        Ocak2021_C6 = employee.Vacation2021.Ocak2021_C6,
-
-                        Subat2021_C1 = employee.Vacation2021.Subat2021_C1,
-                        Subat2021_C2 = employee.Vacation2021.Subat2021_C2,
-                        Subat2021_C3 = employee.Vacation2021.Subat2021_C3,
-                        Subat2021_C4 = employee.Vacation2021.Subat2021_C4,
-                        Subat2021_C5 = employee.Vacation2021.Subat2021_C5,
-                        Subat2021_C6 = employee.Vacation2021.Subat2021_C6,
-
-                        Mart2021_C1 = employee.Vacation2021.Mart2021_C1,
-                        Mart2021_C2 = employee.Vacation2021.Mart2021_C2,
-                        Mart2021_C3 = employee.Vacation2021.Mart2021_C3,
-                        Mart2021_C4 = employee.Vacation2021.Mart2021_C4,
-                        Mart2021_C5 = employee.Vacation2021.Mart2021_C5,
-                        Mart2021_C6 = employee.Vacation2021.Mart2021_C6,
-
-                        Nisan2021_C1 = employee.Vacation2021.Nisan2021_C1,
-                        Nisan2021_C2 = employee.Vacation2021.Nisan2021_C2,
-                        Nisan2021_C3 = employee.Vacation2021.Nisan2021_C3,
-                        Nisan2021_C4 = employee.Vacation2021.Nisan2021_C4,
-                        Nisan2021_C5 = employee.Vacation2021.Nisan2021_C5,
-                        Nisan2021_C6 = employee.Vacation2021.Nisan2021_C6,
-
-                        Mayis2021_C1 = employee.Vacation2021.Mayis2021_C1,
-                        Mayis2021_C2 = employee.Vacation2021.Mayis2021_C2,
-                        Mayis2021_C3 = employee.Vacation2021.Mayis2021_C3,
-                        Mayis2021_C4 = employee.Vacation2021.Mayis2021_C4,
-                        Mayis2021_C5 = employee.Vacation2021.Mayis2021_C5,
-                        Mayis2021_C6 = employee.Vacation2021.Mayis2021_C6,
-
-                        Haziran2021_C1 = employee.Vacation2021.Haziran2021_C1,
-                        Haziran2021_C2 = employee.Vacation2021.Haziran2021_C2,
-                        Haziran2021_C3 = employee.Vacation2021.Haziran2021_C3,
-                        Haziran2021_C4 = employee.Vacation2021.Haziran2021_C4,
-                        Haziran2021_C5 = employee.Vacation2021.Haziran2021_C5,
-                        Haziran2021_C6 = employee.Vacation2021.Haziran2021_C6,
-
-                        Temmuz2021_C1 = employee.Vacation2021.Temmuz2021_C1,
-                        Temmuz2021_C2 = employee.Vacation2021.Temmuz2021_C2,
-                        Temmuz2021_C3 = employee.Vacation2021.Temmuz2021_C3,
-                        Temmuz2021_C4 = employee.Vacation2021.Temmuz2021_C4,
-                        Temmuz2021_C5 = employee.Vacation2021.Temmuz2021_C5,
-                        Temmuz2021_C6 = employee.Vacation2021.Temmuz2021_C6,
-
-                        Agustos2021_C1 = employee.Vacation2021.Agustos2021_C1,
-                        Agustos2021_C2 = employee.Vacation2021.Agustos2021_C2,
-                        Agustos2021_C3 = employee.Vacation2021.Agustos2021_C3,
-                        Agustos2021_C4 = employee.Vacation2021.Agustos2021_C4,
-                        Agustos2021_C5 = employee.Vacation2021.Agustos2021_C5,
-                        Agustos2021_C6 = employee.Vacation2021.Agustos2021_C6,
-
-                        Eylul2021_C1 = employee.Vacation2021.Eylul2021_C1,
-                        Eylul2021_C2 = employee.Vacation2021.Eylul2021_C2,
-                        Eylul2021_C3 = employee.Vacation2021.Eylul2021_C3,
-                        Eylul2021_C4 = employee.Vacation2021.Eylul2021_C4,
-                        Eylul2021_C5 = employee.Vacation2021.Eylul2021_C5,
-                        Eylul2021_C6 = employee.Vacation2021.Eylul2021_C6,
-
-                        Ekim2021_C1 = employee.Vacation2021.Ekim2021_C1,
-                        Ekim2021_C2 = employee.Vacation2021.Ekim2021_C2,
-                        Ekim2021_C3 = employee.Vacation2021.Ekim2021_C3,
-                        Ekim2021_C4 = employee.Vacation2021.Ekim2021_C4,
-                        Ekim2021_C5 = employee.Vacation2021.Ekim2021_C5,
-                        Ekim2021_C6 = employee.Vacation2021.Ekim2021_C6,
-
-                        Kasim2021_C1 = employee.Vacation2021.Kasim2021_C1,
-                        Kasim2021_C2 = employee.Vacation2021.Kasim2021_C2,
-                        Kasim2021_C3 = employee.Vacation2021.Kasim2021_C3,
-                        Kasim2021_C4 = employee.Vacation2021.Kasim2021_C4,
-                        Kasim2021_C5 = employee.Vacation2021.Kasim2021_C5,
-                        Kasim2021_C6 = employee.Vacation2021.Kasim2021_C6,
-
-                        Aralik2021_C1 = employee.Vacation2021.Aralik2021_C1,
-                        Aralik2021_C2 = employee.Vacation2021.Aralik2021_C2,
-                        Aralik2021_C3 = employee.Vacation2021.Aralik2021_C3,
-                        Aralik2021_C4 = employee.Vacation2021.Aralik2021_C4,
-                        Aralik2021_C5 = employee.Vacation2021.Aralik2021_C5,
-                        Aralik2021_C6 = employee.Vacation2021.Aralik2021_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    },
-                    Vacation2022DTO = new Vacation2022DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2022_C1 = employee.Vacation2022.Ocak2022_C1,
-                        Ocak2022_C2 = employee.Vacation2022.Ocak2022_C2,
-                        Ocak2022_C3 = employee.Vacation2022.Ocak2022_C3,
-                        Ocak2022_C4 = employee.Vacation2022.Ocak2022_C4,
-                        Ocak2022_C5 = employee.Vacation2022.Ocak2022_C5,
-                        Ocak2022_C6 = employee.Vacation2022.Ocak2022_C6,
-
-                        Subat2022_C1 = employee.Vacation2022.Subat2022_C1,
-                        Subat2022_C2 = employee.Vacation2022.Subat2022_C2,
-                        Subat2022_C3 = employee.Vacation2022.Subat2022_C3,
-                        Subat2022_C4 = employee.Vacation2022.Subat2022_C4,
-                        Subat2022_C5 = employee.Vacation2022.Subat2022_C5,
-                        Subat2022_C6 = employee.Vacation2022.Subat2022_C6,
-
-                        Mart2022_C1 = employee.Vacation2022.Mart2022_C1,
-                        Mart2022_C2 = employee.Vacation2022.Mart2022_C2,
-                        Mart2022_C3 = employee.Vacation2022.Mart2022_C3,
-                        Mart2022_C4 = employee.Vacation2022.Mart2022_C4,
-                        Mart2022_C5 = employee.Vacation2022.Mart2022_C5,
-                        Mart2022_C6 = employee.Vacation2022.Mart2022_C6,
-
-                        Nisan2022_C1 = employee.Vacation2022.Nisan2022_C1,
-                        Nisan2022_C2 = employee.Vacation2022.Nisan2022_C2,
-                        Nisan2022_C3 = employee.Vacation2022.Nisan2022_C3,
-                        Nisan2022_C4 = employee.Vacation2022.Nisan2022_C4,
-                        Nisan2022_C5 = employee.Vacation2022.Nisan2022_C5,
-                        Nisan2022_C6 = employee.Vacation2022.Nisan2022_C6,
-
-                        Mayis2022_C1 = employee.Vacation2022.Mayis2022_C1,
-                        Mayis2022_C2 = employee.Vacation2022.Mayis2022_C2,
-                        Mayis2022_C3 = employee.Vacation2022.Mayis2022_C3,
-                        Mayis2022_C4 = employee.Vacation2022.Mayis2022_C4,
-                        Mayis2022_C5 = employee.Vacation2022.Mayis2022_C5,
-                        Mayis2022_C6 = employee.Vacation2022.Mayis2022_C6,
-
-                        Haziran2022_C1 = employee.Vacation2022.Haziran2022_C1,
-                        Haziran2022_C2 = employee.Vacation2022.Haziran2022_C2,
-                        Haziran2022_C3 = employee.Vacation2022.Haziran2022_C3,
-                        Haziran2022_C4 = employee.Vacation2022.Haziran2022_C4,
-                        Haziran2022_C5 = employee.Vacation2022.Haziran2022_C5,
-                        Haziran2022_C6 = employee.Vacation2022.Haziran2022_C6,
-
-                        Temmuz2022_C1 = employee.Vacation2022.Temmuz2022_C1,
-                        Temmuz2022_C2 = employee.Vacation2022.Temmuz2022_C2,
-                        Temmuz2022_C3 = employee.Vacation2022.Temmuz2022_C3,
-                        Temmuz2022_C4 = employee.Vacation2022.Temmuz2022_C4,
-                        Temmuz2022_C5 = employee.Vacation2022.Temmuz2022_C5,
-                        Temmuz2022_C6 = employee.Vacation2022.Temmuz2022_C6,
-
-                        Agustos2022_C1 = employee.Vacation2022.Agustos2022_C1,
-                        Agustos2022_C2 = employee.Vacation2022.Agustos2022_C2,
-                        Agustos2022_C3 = employee.Vacation2022.Agustos2022_C3,
-                        Agustos2022_C4 = employee.Vacation2022.Agustos2022_C4,
-                        Agustos2022_C5 = employee.Vacation2022.Agustos2022_C5,
-                        Agustos2022_C6 = employee.Vacation2022.Agustos2022_C6,
-
-                        Eylul2022_C1 = employee.Vacation2022.Eylul2022_C1,
-                        Eylul2022_C2 = employee.Vacation2022.Eylul2022_C2,
-                        Eylul2022_C3 = employee.Vacation2022.Eylul2022_C3,
-                        Eylul2022_C4 = employee.Vacation2022.Eylul2022_C4,
-                        Eylul2022_C5 = employee.Vacation2022.Eylul2022_C5,
-                        Eylul2022_C6 = employee.Vacation2022.Eylul2022_C6,
-
-                        Ekim2022_C1 = employee.Vacation2022.Ekim2022_C1,
-                        Ekim2022_C2 = employee.Vacation2022.Ekim2022_C2,
-                        Ekim2022_C3 = employee.Vacation2022.Ekim2022_C3,
-                        Ekim2022_C4 = employee.Vacation2022.Ekim2022_C4,
-                        Ekim2022_C5 = employee.Vacation2022.Ekim2022_C5,
-                        Ekim2022_C6 = employee.Vacation2022.Ekim2022_C6,
-
-                        Kasim2022_C1 = employee.Vacation2022.Kasim2022_C1,
-                        Kasim2022_C2 = employee.Vacation2022.Kasim2022_C2,
-                        Kasim2022_C3 = employee.Vacation2022.Kasim2022_C3,
-                        Kasim2022_C4 = employee.Vacation2022.Kasim2022_C4,
-                        Kasim2022_C5 = employee.Vacation2022.Kasim2022_C5,
-                        Kasim2022_C6 = employee.Vacation2022.Kasim2022_C6,
-
-                        Aralik2022_C1 = employee.Vacation2022.Aralik2022_C1,
-                        Aralik2022_C2 = employee.Vacation2022.Aralik2022_C2,
-                        Aralik2022_C3 = employee.Vacation2022.Aralik2022_C3,
-                        Aralik2022_C4 = employee.Vacation2022.Aralik2022_C4,
-                        Aralik2022_C5 = employee.Vacation2022.Aralik2022_C5,
-                        Aralik2022_C6 = employee.Vacation2022.Aralik2022_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    },
-                    Vacation2023DTO = new Vacation2023DTO
-                    {
-                        Id = employee.Id,
-                        Ocak2023_C1 = employee.Vacation2023.Ocak2023_C1,
-                        Ocak2023_C2 = employee.Vacation2023.Ocak2023_C2,
-                        Ocak2023_C3 = employee.Vacation2023.Ocak2023_C3,
-                        Ocak2023_C4 = employee.Vacation2023.Ocak2023_C4,
-                        Ocak2023_C5 = employee.Vacation2023.Ocak2023_C5,
-                        Ocak2023_C6 = employee.Vacation2023.Ocak2023_C6,
-
-                        Subat2023_C1 = employee.Vacation2023.Subat2023_C1,
-                        Subat2023_C2 = employee.Vacation2023.Subat2023_C2,
-                        Subat2023_C3 = employee.Vacation2023.Subat2023_C3,
-                        Subat2023_C4 = employee.Vacation2023.Subat2023_C4,
-                        Subat2023_C5 = employee.Vacation2023.Subat2023_C5,
-                        Subat2023_C6 = employee.Vacation2023.Subat2023_C6,
-
-                        Mart2023_C1 = employee.Vacation2023.Mart2023_C1,
-                        Mart2023_C2 = employee.Vacation2023.Mart2023_C2,
-                        Mart2023_C3 = employee.Vacation2023.Mart2023_C3,
-                        Mart2023_C4 = employee.Vacation2023.Mart2023_C4,
-                        Mart2023_C5 = employee.Vacation2023.Mart2023_C5,
-                        Mart2023_C6 = employee.Vacation2023.Mart2023_C6,
-
-                        Nisan2023_C1 = employee.Vacation2023.Nisan2023_C1,
-                        Nisan2023_C2 = employee.Vacation2023.Nisan2023_C2,
-                        Nisan2023_C3 = employee.Vacation2023.Nisan2023_C3,
-                        Nisan2023_C4 = employee.Vacation2023.Nisan2023_C4,
-                        Nisan2023_C5 = employee.Vacation2023.Nisan2023_C5,
-                        Nisan2023_C6 = employee.Vacation2023.Nisan2023_C6,
-
-                        Mayis2023_C1 = employee.Vacation2023.Mayis2023_C1,
-                        Mayis2023_C2 = employee.Vacation2023.Mayis2023_C2,
-                        Mayis2023_C3 = employee.Vacation2023.Mayis2023_C3,
-                        Mayis2023_C4 = employee.Vacation2023.Mayis2023_C4,
-                        Mayis2023_C5 = employee.Vacation2023.Mayis2023_C5,
-                        Mayis2023_C6 = employee.Vacation2023.Mayis2023_C6,
-
-                        Haziran2023_C1 = employee.Vacation2023.Haziran2023_C1,
-                        Haziran2023_C2 = employee.Vacation2023.Haziran2023_C2,
-                        Haziran2023_C3 = employee.Vacation2023.Haziran2023_C3,
-                        Haziran2023_C4 = employee.Vacation2023.Haziran2023_C4,
-                        Haziran2023_C5 = employee.Vacation2023.Haziran2023_C5,
-                        Haziran2023_C6 = employee.Vacation2023.Haziran2023_C6,
-
-                        Temmuz2023_C1 = employee.Vacation2023.Temmuz2023_C1,
-                        Temmuz2023_C2 = employee.Vacation2023.Temmuz2023_C2,
-                        Temmuz2023_C3 = employee.Vacation2023.Temmuz2023_C3,
-                        Temmuz2023_C4 = employee.Vacation2023.Temmuz2023_C4,
-                        Temmuz2023_C5 = employee.Vacation2023.Temmuz2023_C5,
-                        Temmuz2023_C6 = employee.Vacation2023.Temmuz2023_C6,
-
-                        Agustos2023_C1 = employee.Vacation2023.Agustos2023_C1,
-                        Agustos2023_C2 = employee.Vacation2023.Agustos2023_C2,
-                        Agustos2023_C3 = employee.Vacation2023.Agustos2023_C3,
-                        Agustos2023_C4 = employee.Vacation2023.Agustos2023_C4,
-                        Agustos2023_C5 = employee.Vacation2023.Agustos2023_C5,
-                        Agustos2023_C6 = employee.Vacation2023.Agustos2023_C6,
-
-                        Eylul2023_C1 = employee.Vacation2023.Eylul2023_C1,
-                        Eylul2023_C2 = employee.Vacation2023.Eylul2023_C2,
-                        Eylul2023_C3 = employee.Vacation2023.Eylul2023_C3,
-                        Eylul2023_C4 = employee.Vacation2023.Eylul2023_C4,
-                        Eylul2023_C5 = employee.Vacation2023.Eylul2023_C5,
-                        Eylul2023_C6 = employee.Vacation2023.Eylul2023_C6,
-
-                        Ekim2023_C1 = employee.Vacation2023.Ekim2023_C1,
-                        Ekim2023_C2 = employee.Vacation2023.Ekim2023_C2,
-                        Ekim2023_C3 = employee.Vacation2023.Ekim2023_C3,
-                        Ekim2023_C4 = employee.Vacation2023.Ekim2023_C4,
-                        Ekim2023_C5 = employee.Vacation2023.Ekim2023_C5,
-                        Ekim2023_C6 = employee.Vacation2023.Ekim2023_C6,
-
-                        Kasim2023_C1 = employee.Vacation2023.Kasim2023_C1,
-                        Kasim2023_C2 = employee.Vacation2023.Kasim2023_C2,
-                        Kasim2023_C3 = employee.Vacation2023.Kasim2023_C3,
-                        Kasim2023_C4 = employee.Vacation2023.Kasim2023_C4,
-                        Kasim2023_C5 = employee.Vacation2023.Kasim2023_C5,
-                        Kasim2023_C6 = employee.Vacation2023.Kasim2023_C6,
-
-                        Aralik2023_C1 = employee.Vacation2023.Aralik2023_C1,
-                        Aralik2023_C2 = employee.Vacation2023.Aralik2023_C2,
-                        Aralik2023_C3 = employee.Vacation2023.Aralik2023_C3,
-                        Aralik2023_C4 = employee.Vacation2023.Aralik2023_C4,
-                        Aralik2023_C5 = employee.Vacation2023.Aralik2023_C5,
-                        Aralik2023_C6 = employee.Vacation2023.Aralik2023_C6,
-
-                        CreatedDate = employee.CreatedDate,
-                        UpdatedDate = DateTime.Now
-                    }
-
-
-
-
-                };
-
-                context.Employees.Update(employeeDTOs);
+                var person = await context.Employees.FirstOrDefaultAsync(e => e.Id == employee.Id);
+                var vacation2018 = await context.Vacations2018.FirstOrDefaultAsync(v => v.Id == employee.Id);
+                var vacation2019 = await context.Vacations2019.FirstOrDefaultAsync(v => v.Id == employee.Id);
+                var vacation2020 = await context.Vacations2020.FirstOrDefaultAsync(v => v.Id == employee.Id);
+                var vacation2021 = await context.Vacations2021.FirstOrDefaultAsync(v => v.Id == employee.Id);
+                var vacation2022 = await context.Vacations2022.FirstOrDefaultAsync(v => v.Id == employee.Id);
+                var vacation2023 = await context.Vacations2023.FirstOrDefaultAsync(v => v.Id == employee.Id);
+
+
+                person.Fotograf = employee.Fotograf;
+                person.Isim = employee.Isim;
+                person.Soyisim = employee.Soyisim;
+                person.Durum = employee.Durum;
+                person.TCKimlik = employee.TCKimlik;
+                person.DogumTarihi = employee.DogumTarihi;
+                person.MedeniDurum = employee.MedeniDurum;
+                person.EgitimDurumu = employee.EgitimDurumu;
+                person.Askerlik = employee.Askerlik;
+
+                person.DepartmentDTOId = employee.Departman.Id;
+                person.SectorDTOId = employee.Sector.Id;
+                person.EducationDTOId = employee.Education.Id;
+                person.MilitaryServiceDTOId = employee.Military.Id;
+
+                person.Gorev = employee.Gorev;
+                person.IseGiris = employee.IseGiris;
+                person.IstenCikis = employee.IstenCikis;
+                person.Maas = employee.Maas;
+                person.CepTel = employee.CepTel;
+                person.CalismaSuresi = employee.CalismaSuresi;
+                person.BaslamaTarihi = employee.BaslamaTarihi;
+                person.Adres = employee.Adres;
+                person.EkBilgi = employee.EkBilgi;
+
+                #region VACATION 2018
+                vacation2018.Ocak2018_C1 = employee.Vacation2018.Ocak2018_C1;
+                vacation2018.Ocak2018_C2 = employee.Vacation2018.Ocak2018_C2;
+                vacation2018.Ocak2018_C3 = employee.Vacation2018.Ocak2018_C3;
+                vacation2018.Ocak2018_C4 = employee.Vacation2018.Ocak2018_C4;
+                vacation2018.Ocak2018_C5 = employee.Vacation2018.Ocak2018_C5;
+                vacation2018.Ocak2018_C6 = employee.Vacation2018.Ocak2018_C6;
+
+                vacation2018.Subat2018_C1 = employee.Vacation2018.Subat2018_C1;
+                vacation2018.Subat2018_C2 = employee.Vacation2018.Subat2018_C2;
+                vacation2018.Subat2018_C3 = employee.Vacation2018.Subat2018_C3;
+                vacation2018.Subat2018_C4 = employee.Vacation2018.Subat2018_C4;
+                vacation2018.Subat2018_C5 = employee.Vacation2018.Subat2018_C5;
+                vacation2018.Subat2018_C6 = employee.Vacation2018.Subat2018_C6;
+
+                vacation2018.Mart2018_C1 = employee.Vacation2018.Mart2018_C1;
+                vacation2018.Mart2018_C2 = employee.Vacation2018.Mart2018_C2;
+                vacation2018.Mart2018_C3 = employee.Vacation2018.Mart2018_C3;
+                vacation2018.Mart2018_C4 = employee.Vacation2018.Mart2018_C4;
+                vacation2018.Mart2018_C5 = employee.Vacation2018.Mart2018_C5;
+                vacation2018.Mart2018_C6 = employee.Vacation2018.Mart2018_C6;
+
+                vacation2018.Nisan2018_C1 = employee.Vacation2018.Nisan2018_C1;
+                vacation2018.Nisan2018_C2 = employee.Vacation2018.Nisan2018_C2;
+                vacation2018.Nisan2018_C3 = employee.Vacation2018.Nisan2018_C3;
+                vacation2018.Nisan2018_C4 = employee.Vacation2018.Nisan2018_C4;
+                vacation2018.Nisan2018_C5 = employee.Vacation2018.Nisan2018_C5;
+                vacation2018.Nisan2018_C6 = employee.Vacation2018.Nisan2018_C6;
+
+                vacation2018.Mayis2018_C1 = employee.Vacation2018.Mayis2018_C1;
+                vacation2018.Mayis2018_C2 = employee.Vacation2018.Mayis2018_C2;
+                vacation2018.Mayis2018_C3 = employee.Vacation2018.Mayis2018_C3;
+                vacation2018.Mayis2018_C4 = employee.Vacation2018.Mayis2018_C4;
+                vacation2018.Mayis2018_C5 = employee.Vacation2018.Mayis2018_C5;
+                vacation2018.Mayis2018_C6 = employee.Vacation2018.Mayis2018_C6;
+
+                vacation2018.Haziran2018_C1 = employee.Vacation2018.Haziran2018_C1;
+                vacation2018.Haziran2018_C2 = employee.Vacation2018.Haziran2018_C2;
+                vacation2018.Haziran2018_C3 = employee.Vacation2018.Haziran2018_C3;
+                vacation2018.Haziran2018_C4 = employee.Vacation2018.Haziran2018_C4;
+                vacation2018.Haziran2018_C5 = employee.Vacation2018.Haziran2018_C5;
+                vacation2018.Haziran2018_C6 = employee.Vacation2018.Haziran2018_C6;
+
+                vacation2018.Temmuz2018_C1 = employee.Vacation2018.Temmuz2018_C1;
+                vacation2018.Temmuz2018_C2 = employee.Vacation2018.Temmuz2018_C2;
+                vacation2018.Temmuz2018_C3 = employee.Vacation2018.Temmuz2018_C3;
+                vacation2018.Temmuz2018_C4 = employee.Vacation2018.Temmuz2018_C4;
+                vacation2018.Temmuz2018_C5 = employee.Vacation2018.Temmuz2018_C5;
+                vacation2018.Temmuz2018_C6 = employee.Vacation2018.Temmuz2018_C6;
+
+                vacation2018.Agustos2018_C1 = employee.Vacation2018.Agustos2018_C1;
+                vacation2018.Agustos2018_C2 = employee.Vacation2018.Agustos2018_C2;
+                vacation2018.Agustos2018_C3 = employee.Vacation2018.Agustos2018_C3;
+                vacation2018.Agustos2018_C4 = employee.Vacation2018.Agustos2018_C4;
+                vacation2018.Agustos2018_C5 = employee.Vacation2018.Agustos2018_C5;
+                vacation2018.Agustos2018_C6 = employee.Vacation2018.Agustos2018_C6;
+
+                vacation2018.Eylul2018_C1 = employee.Vacation2018.Eylul2018_C1;
+                vacation2018.Eylul2018_C2 = employee.Vacation2018.Eylul2018_C2;
+                vacation2018.Eylul2018_C3 = employee.Vacation2018.Eylul2018_C3;
+                vacation2018.Eylul2018_C4 = employee.Vacation2018.Eylul2018_C4;
+                vacation2018.Eylul2018_C5 = employee.Vacation2018.Eylul2018_C5;
+                vacation2018.Eylul2018_C6 = employee.Vacation2018.Eylul2018_C6;
+
+                vacation2018.Ekim2018_C1 = employee.Vacation2018.Ekim2018_C1;
+                vacation2018.Ekim2018_C2 = employee.Vacation2018.Ekim2018_C2;
+                vacation2018.Ekim2018_C3 = employee.Vacation2018.Ekim2018_C3;
+                vacation2018.Ekim2018_C4 = employee.Vacation2018.Ekim2018_C4;
+                vacation2018.Ekim2018_C5 = employee.Vacation2018.Ekim2018_C5;
+                vacation2018.Ekim2018_C6 = employee.Vacation2018.Ekim2018_C6;
+
+                vacation2018.Kasim2018_C1 = employee.Vacation2018.Kasim2018_C1;
+                vacation2018.Kasim2018_C2 = employee.Vacation2018.Kasim2018_C2;
+                vacation2018.Kasim2018_C3 = employee.Vacation2018.Kasim2018_C3;
+                vacation2018.Kasim2018_C4 = employee.Vacation2018.Kasim2018_C4;
+                vacation2018.Kasim2018_C5 = employee.Vacation2018.Kasim2018_C5;
+                vacation2018.Kasim2018_C6 = employee.Vacation2018.Kasim2018_C6;
+
+                vacation2018.Aralik2018_C1 = employee.Vacation2018.Aralik2018_C1;
+                vacation2018.Aralik2018_C2 = employee.Vacation2018.Aralik2018_C2;
+                vacation2018.Aralik2018_C3 = employee.Vacation2018.Aralik2018_C3;
+                vacation2018.Aralik2018_C4 = employee.Vacation2018.Aralik2018_C4;
+                vacation2018.Aralik2018_C5 = employee.Vacation2018.Aralik2018_C5;
+                vacation2018.Aralik2018_C6 = employee.Vacation2018.Aralik2018_C6;
+                #endregion
+
+                #region VACATION 2019
+                vacation2019.Ocak2019_C1 = employee.Vacation2019.Ocak2019_C1;
+                vacation2019.Ocak2019_C2 = employee.Vacation2019.Ocak2019_C2;
+                vacation2019.Ocak2019_C3 = employee.Vacation2019.Ocak2019_C3;
+                vacation2019.Ocak2019_C4 = employee.Vacation2019.Ocak2019_C4;
+                vacation2019.Ocak2019_C5 = employee.Vacation2019.Ocak2019_C5;
+                vacation2019.Ocak2019_C6 = employee.Vacation2019.Ocak2019_C6;
+
+                vacation2019.Subat2019_C1 = employee.Vacation2019.Subat2019_C1;
+                vacation2019.Subat2019_C2 = employee.Vacation2019.Subat2019_C2;
+                vacation2019.Subat2019_C3 = employee.Vacation2019.Subat2019_C3;
+                vacation2019.Subat2019_C4 = employee.Vacation2019.Subat2019_C4;
+                vacation2019.Subat2019_C5 = employee.Vacation2019.Subat2019_C5;
+                vacation2019.Subat2019_C6 = employee.Vacation2019.Subat2019_C6;
+
+                vacation2019.Mart2019_C1 = employee.Vacation2019.Mart2019_C1;
+                vacation2019.Mart2019_C2 = employee.Vacation2019.Mart2019_C2;
+                vacation2019.Mart2019_C3 = employee.Vacation2019.Mart2019_C3;
+                vacation2019.Mart2019_C4 = employee.Vacation2019.Mart2019_C4;
+                vacation2019.Mart2019_C5 = employee.Vacation2019.Mart2019_C5;
+                vacation2019.Mart2019_C6 = employee.Vacation2019.Mart2019_C6;
+
+                vacation2019.Nisan2019_C1 = employee.Vacation2019.Nisan2019_C1;
+                vacation2019.Nisan2019_C2 = employee.Vacation2019.Nisan2019_C2;
+                vacation2019.Nisan2019_C3 = employee.Vacation2019.Nisan2019_C3;
+                vacation2019.Nisan2019_C4 = employee.Vacation2019.Nisan2019_C4;
+                vacation2019.Nisan2019_C5 = employee.Vacation2019.Nisan2019_C5;
+                vacation2019.Nisan2019_C6 = employee.Vacation2019.Nisan2019_C6;
+
+                vacation2019.Mayis2019_C1 = employee.Vacation2019.Mayis2019_C1;
+                vacation2019.Mayis2019_C2 = employee.Vacation2019.Mayis2019_C2;
+                vacation2019.Mayis2019_C3 = employee.Vacation2019.Mayis2019_C3;
+                vacation2019.Mayis2019_C4 = employee.Vacation2019.Mayis2019_C4;
+                vacation2019.Mayis2019_C5 = employee.Vacation2019.Mayis2019_C5;
+                vacation2019.Mayis2019_C6 = employee.Vacation2019.Mayis2019_C6;
+
+                vacation2019.Haziran2019_C1 = employee.Vacation2019.Haziran2019_C1;
+                vacation2019.Haziran2019_C2 = employee.Vacation2019.Haziran2019_C2;
+                vacation2019.Haziran2019_C3 = employee.Vacation2019.Haziran2019_C3;
+                vacation2019.Haziran2019_C4 = employee.Vacation2019.Haziran2019_C4;
+                vacation2019.Haziran2019_C5 = employee.Vacation2019.Haziran2019_C5;
+                vacation2019.Haziran2019_C6 = employee.Vacation2019.Haziran2019_C6;
+
+                vacation2019.Temmuz2019_C1 = employee.Vacation2019.Temmuz2019_C1;
+                vacation2019.Temmuz2019_C2 = employee.Vacation2019.Temmuz2019_C2;
+                vacation2019.Temmuz2019_C3 = employee.Vacation2019.Temmuz2019_C3;
+                vacation2019.Temmuz2019_C4 = employee.Vacation2019.Temmuz2019_C4;
+                vacation2019.Temmuz2019_C5 = employee.Vacation2019.Temmuz2019_C5;
+                vacation2019.Temmuz2019_C6 = employee.Vacation2019.Temmuz2019_C6;
+
+                vacation2019.Agustos2019_C1 = employee.Vacation2019.Agustos2019_C1;
+                vacation2019.Agustos2019_C2 = employee.Vacation2019.Agustos2019_C2;
+                vacation2019.Agustos2019_C3 = employee.Vacation2019.Agustos2019_C3;
+                vacation2019.Agustos2019_C4 = employee.Vacation2019.Agustos2019_C4;
+                vacation2019.Agustos2019_C5 = employee.Vacation2019.Agustos2019_C5;
+                vacation2019.Agustos2019_C6 = employee.Vacation2019.Agustos2019_C6;
+
+                vacation2019.Eylul2019_C1 = employee.Vacation2019.Eylul2019_C1;
+                vacation2019.Eylul2019_C2 = employee.Vacation2019.Eylul2019_C2;
+                vacation2019.Eylul2019_C3 = employee.Vacation2019.Eylul2019_C3;
+                vacation2019.Eylul2019_C4 = employee.Vacation2019.Eylul2019_C4;
+                vacation2019.Eylul2019_C5 = employee.Vacation2019.Eylul2019_C5;
+                vacation2019.Eylul2019_C6 = employee.Vacation2019.Eylul2019_C6;
+
+                vacation2019.Ekim2019_C1 = employee.Vacation2019.Ekim2019_C1;
+                vacation2019.Ekim2019_C2 = employee.Vacation2019.Ekim2019_C2;
+                vacation2019.Ekim2019_C3 = employee.Vacation2019.Ekim2019_C3;
+                vacation2019.Ekim2019_C4 = employee.Vacation2019.Ekim2019_C4;
+                vacation2019.Ekim2019_C5 = employee.Vacation2019.Ekim2019_C5;
+                vacation2019.Ekim2019_C6 = employee.Vacation2019.Ekim2019_C6;
+
+                vacation2019.Kasim2019_C1 = employee.Vacation2019.Kasim2019_C1;
+                vacation2019.Kasim2019_C2 = employee.Vacation2019.Kasim2019_C2;
+                vacation2019.Kasim2019_C3 = employee.Vacation2019.Kasim2019_C3;
+                vacation2019.Kasim2019_C4 = employee.Vacation2019.Kasim2019_C4;
+                vacation2019.Kasim2019_C5 = employee.Vacation2019.Kasim2019_C5;
+                vacation2019.Kasim2019_C6 = employee.Vacation2019.Kasim2019_C6;
+
+                vacation2019.Aralik2019_C1 = employee.Vacation2019.Aralik2019_C1;
+                vacation2019.Aralik2019_C2 = employee.Vacation2019.Aralik2019_C2;
+                vacation2019.Aralik2019_C3 = employee.Vacation2019.Aralik2019_C3;
+                vacation2019.Aralik2019_C4 = employee.Vacation2019.Aralik2019_C4;
+                vacation2019.Aralik2019_C5 = employee.Vacation2019.Aralik2019_C5;
+                vacation2019.Aralik2019_C6 = employee.Vacation2019.Aralik2019_C6;
+                #endregion
+
+                #region VACATION 2020
+
+                vacation2020.Ocak2020_C1 = employee.Vacation2020.Ocak2020_C1;
+                vacation2020.Ocak2020_C2 = employee.Vacation2020.Ocak2020_C2;
+                vacation2020.Ocak2020_C3 = employee.Vacation2020.Ocak2020_C3;
+                vacation2020.Ocak2020_C4 = employee.Vacation2020.Ocak2020_C4;
+                vacation2020.Ocak2020_C5 = employee.Vacation2020.Ocak2020_C5;
+                vacation2020.Ocak2020_C6 = employee.Vacation2020.Ocak2020_C6;
+
+                vacation2020.Subat2020_C1 = employee.Vacation2020.Subat2020_C1;
+                vacation2020.Subat2020_C2 = employee.Vacation2020.Subat2020_C2;
+                vacation2020.Subat2020_C3 = employee.Vacation2020.Subat2020_C3;
+                vacation2020.Subat2020_C4 = employee.Vacation2020.Subat2020_C4;
+                vacation2020.Subat2020_C5 = employee.Vacation2020.Subat2020_C5;
+                vacation2020.Subat2020_C6 = employee.Vacation2020.Subat2020_C6;
+
+                vacation2020.Mart2020_C1 = employee.Vacation2020.Mart2020_C1;
+                vacation2020.Mart2020_C2 = employee.Vacation2020.Mart2020_C2;
+                vacation2020.Mart2020_C3 = employee.Vacation2020.Mart2020_C3;
+                vacation2020.Mart2020_C4 = employee.Vacation2020.Mart2020_C4;
+                vacation2020.Mart2020_C5 = employee.Vacation2020.Mart2020_C5;
+                vacation2020.Mart2020_C6 = employee.Vacation2020.Mart2020_C6;
+
+                vacation2020.Nisan2020_C1 = employee.Vacation2020.Nisan2020_C1;
+                vacation2020.Nisan2020_C2 = employee.Vacation2020.Nisan2020_C2;
+                vacation2020.Nisan2020_C3 = employee.Vacation2020.Nisan2020_C3;
+                vacation2020.Nisan2020_C4 = employee.Vacation2020.Nisan2020_C4;
+                vacation2020.Nisan2020_C5 = employee.Vacation2020.Nisan2020_C5;
+                vacation2020.Nisan2020_C6 = employee.Vacation2020.Nisan2020_C6;
+
+                vacation2020.Mayis2020_C1 = employee.Vacation2020.Mayis2020_C1;
+                vacation2020.Mayis2020_C2 = employee.Vacation2020.Mayis2020_C2;
+                vacation2020.Mayis2020_C3 = employee.Vacation2020.Mayis2020_C3;
+                vacation2020.Mayis2020_C4 = employee.Vacation2020.Mayis2020_C4;
+                vacation2020.Mayis2020_C5 = employee.Vacation2020.Mayis2020_C5;
+                vacation2020.Mayis2020_C6 = employee.Vacation2020.Mayis2020_C6;
+
+                vacation2020.Haziran2020_C1 = employee.Vacation2020.Haziran2020_C1;
+                vacation2020.Haziran2020_C2 = employee.Vacation2020.Haziran2020_C2;
+                vacation2020.Haziran2020_C3 = employee.Vacation2020.Haziran2020_C3;
+                vacation2020.Haziran2020_C4 = employee.Vacation2020.Haziran2020_C4;
+                vacation2020.Haziran2020_C5 = employee.Vacation2020.Haziran2020_C5;
+                vacation2020.Haziran2020_C6 = employee.Vacation2020.Haziran2020_C6;
+
+                vacation2020.Temmuz2020_C1 = employee.Vacation2020.Temmuz2020_C1;
+                vacation2020.Temmuz2020_C2 = employee.Vacation2020.Temmuz2020_C2;
+                vacation2020.Temmuz2020_C3 = employee.Vacation2020.Temmuz2020_C3;
+                vacation2020.Temmuz2020_C4 = employee.Vacation2020.Temmuz2020_C4;
+                vacation2020.Temmuz2020_C5 = employee.Vacation2020.Temmuz2020_C5;
+                vacation2020.Temmuz2020_C6 = employee.Vacation2020.Temmuz2020_C6;
+
+                vacation2020.Agustos2020_C1 = employee.Vacation2020.Agustos2020_C1;
+                vacation2020.Agustos2020_C2 = employee.Vacation2020.Agustos2020_C2;
+                vacation2020.Agustos2020_C3 = employee.Vacation2020.Agustos2020_C3;
+                vacation2020.Agustos2020_C4 = employee.Vacation2020.Agustos2020_C4;
+                vacation2020.Agustos2020_C5 = employee.Vacation2020.Agustos2020_C5;
+                vacation2020.Agustos2020_C6 = employee.Vacation2020.Agustos2020_C6;
+
+                vacation2020.Eylul2020_C1 = employee.Vacation2020.Eylul2020_C1;
+                vacation2020.Eylul2020_C2 = employee.Vacation2020.Eylul2020_C2;
+                vacation2020.Eylul2020_C3 = employee.Vacation2020.Eylul2020_C3;
+                vacation2020.Eylul2020_C4 = employee.Vacation2020.Eylul2020_C4;
+                vacation2020.Eylul2020_C5 = employee.Vacation2020.Eylul2020_C5;
+                vacation2020.Eylul2020_C6 = employee.Vacation2020.Eylul2020_C6;
+
+                vacation2020.Ekim2020_C1 = employee.Vacation2020.Ekim2020_C1;
+                vacation2020.Ekim2020_C2 = employee.Vacation2020.Ekim2020_C2;
+                vacation2020.Ekim2020_C3 = employee.Vacation2020.Ekim2020_C3;
+                vacation2020.Ekim2020_C4 = employee.Vacation2020.Ekim2020_C4;
+                vacation2020.Ekim2020_C5 = employee.Vacation2020.Ekim2020_C5;
+                vacation2020.Ekim2020_C6 = employee.Vacation2020.Ekim2020_C6;
+
+                vacation2020.Kasim2020_C1 = employee.Vacation2020.Kasim2020_C1;
+                vacation2020.Kasim2020_C2 = employee.Vacation2020.Kasim2020_C2;
+                vacation2020.Kasim2020_C3 = employee.Vacation2020.Kasim2020_C3;
+                vacation2020.Kasim2020_C4 = employee.Vacation2020.Kasim2020_C4;
+                vacation2020.Kasim2020_C5 = employee.Vacation2020.Kasim2020_C5;
+                vacation2020.Kasim2020_C6 = employee.Vacation2020.Kasim2020_C6;
+
+                vacation2020.Aralik2020_C1 = employee.Vacation2020.Aralik2020_C1;
+                vacation2020.Aralik2020_C2 = employee.Vacation2020.Aralik2020_C2;
+                vacation2020.Aralik2020_C3 = employee.Vacation2020.Aralik2020_C3;
+                vacation2020.Aralik2020_C4 = employee.Vacation2020.Aralik2020_C4;
+                vacation2020.Aralik2020_C5 = employee.Vacation2020.Aralik2020_C5;
+                vacation2020.Aralik2020_C6 = employee.Vacation2020.Aralik2020_C6;
+                #endregion
+
+                #region VACATION 2021
+
+                vacation2021.Ocak2021_C1 = employee.Vacation2021.Ocak2021_C1;
+                vacation2021.Ocak2021_C2 = employee.Vacation2021.Ocak2021_C2;
+                vacation2021.Ocak2021_C3 = employee.Vacation2021.Ocak2021_C3;
+                vacation2021.Ocak2021_C4 = employee.Vacation2021.Ocak2021_C4;
+                vacation2021.Ocak2021_C5 = employee.Vacation2021.Ocak2021_C5;
+                vacation2021.Ocak2021_C6 = employee.Vacation2021.Ocak2021_C6;
+
+                vacation2021.Subat2021_C1 = employee.Vacation2021.Subat2021_C1;
+                vacation2021.Subat2021_C2 = employee.Vacation2021.Subat2021_C2;
+                vacation2021.Subat2021_C3 = employee.Vacation2021.Subat2021_C3;
+                vacation2021.Subat2021_C4 = employee.Vacation2021.Subat2021_C4;
+                vacation2021.Subat2021_C5 = employee.Vacation2021.Subat2021_C5;
+                vacation2021.Subat2021_C6 = employee.Vacation2021.Subat2021_C6;
+
+                vacation2021.Mart2021_C1 = employee.Vacation2021.Mart2021_C1;
+                vacation2021.Mart2021_C2 = employee.Vacation2021.Mart2021_C2;
+                vacation2021.Mart2021_C3 = employee.Vacation2021.Mart2021_C3;
+                vacation2021.Mart2021_C4 = employee.Vacation2021.Mart2021_C4;
+                vacation2021.Mart2021_C5 = employee.Vacation2021.Mart2021_C5;
+                vacation2021.Mart2021_C6 = employee.Vacation2021.Mart2021_C6;
+
+                vacation2021.Nisan2021_C1 = employee.Vacation2021.Nisan2021_C1;
+                vacation2021.Nisan2021_C2 = employee.Vacation2021.Nisan2021_C2;
+                vacation2021.Nisan2021_C3 = employee.Vacation2021.Nisan2021_C3;
+                vacation2021.Nisan2021_C4 = employee.Vacation2021.Nisan2021_C4;
+                vacation2021.Nisan2021_C5 = employee.Vacation2021.Nisan2021_C5;
+                vacation2021.Nisan2021_C6 = employee.Vacation2021.Nisan2021_C6;
+
+                vacation2021.Mayis2021_C1 = employee.Vacation2021.Mayis2021_C1;
+                vacation2021.Mayis2021_C2 = employee.Vacation2021.Mayis2021_C2;
+                vacation2021.Mayis2021_C3 = employee.Vacation2021.Mayis2021_C3;
+                vacation2021.Mayis2021_C4 = employee.Vacation2021.Mayis2021_C4;
+                vacation2021.Mayis2021_C5 = employee.Vacation2021.Mayis2021_C5;
+                vacation2021.Mayis2021_C6 = employee.Vacation2021.Mayis2021_C6;
+
+                vacation2021.Haziran2021_C1 = employee.Vacation2021.Haziran2021_C1;
+                vacation2021.Haziran2021_C2 = employee.Vacation2021.Haziran2021_C2;
+                vacation2021.Haziran2021_C3 = employee.Vacation2021.Haziran2021_C3;
+                vacation2021.Haziran2021_C4 = employee.Vacation2021.Haziran2021_C4;
+                vacation2021.Haziran2021_C5 = employee.Vacation2021.Haziran2021_C5;
+                vacation2021.Haziran2021_C6 = employee.Vacation2021.Haziran2021_C6;
+
+                vacation2021.Temmuz2021_C1 = employee.Vacation2021.Temmuz2021_C1;
+                vacation2021.Temmuz2021_C2 = employee.Vacation2021.Temmuz2021_C2;
+                vacation2021.Temmuz2021_C3 = employee.Vacation2021.Temmuz2021_C3;
+                vacation2021.Temmuz2021_C4 = employee.Vacation2021.Temmuz2021_C4;
+                vacation2021.Temmuz2021_C5 = employee.Vacation2021.Temmuz2021_C5;
+                vacation2021.Temmuz2021_C6 = employee.Vacation2021.Temmuz2021_C6;
+
+                vacation2021.Agustos2021_C1 = employee.Vacation2021.Agustos2021_C1;
+                vacation2021.Agustos2021_C2 = employee.Vacation2021.Agustos2021_C2;
+                vacation2021.Agustos2021_C3 = employee.Vacation2021.Agustos2021_C3;
+                vacation2021.Agustos2021_C4 = employee.Vacation2021.Agustos2021_C4;
+                vacation2021.Agustos2021_C5 = employee.Vacation2021.Agustos2021_C5;
+                vacation2021.Agustos2021_C6 = employee.Vacation2021.Agustos2021_C6;
+
+                vacation2021.Eylul2021_C1 = employee.Vacation2021.Eylul2021_C1;
+                vacation2021.Eylul2021_C2 = employee.Vacation2021.Eylul2021_C2;
+                vacation2021.Eylul2021_C3 = employee.Vacation2021.Eylul2021_C3;
+                vacation2021.Eylul2021_C4 = employee.Vacation2021.Eylul2021_C4;
+                vacation2021.Eylul2021_C5 = employee.Vacation2021.Eylul2021_C5;
+                vacation2021.Eylul2021_C6 = employee.Vacation2021.Eylul2021_C6;
+
+                vacation2021.Ekim2021_C1 = employee.Vacation2021.Ekim2021_C1;
+                vacation2021.Ekim2021_C2 = employee.Vacation2021.Ekim2021_C2;
+                vacation2021.Ekim2021_C3 = employee.Vacation2021.Ekim2021_C3;
+                vacation2021.Ekim2021_C4 = employee.Vacation2021.Ekim2021_C4;
+                vacation2021.Ekim2021_C5 = employee.Vacation2021.Ekim2021_C5;
+                vacation2021.Ekim2021_C6 = employee.Vacation2021.Ekim2021_C6;
+
+                vacation2021.Kasim2021_C1 = employee.Vacation2021.Kasim2021_C1;
+                vacation2021.Kasim2021_C2 = employee.Vacation2021.Kasim2021_C2;
+                vacation2021.Kasim2021_C3 = employee.Vacation2021.Kasim2021_C3;
+                vacation2021.Kasim2021_C4 = employee.Vacation2021.Kasim2021_C4;
+                vacation2021.Kasim2021_C5 = employee.Vacation2021.Kasim2021_C5;
+                vacation2021.Kasim2021_C6 = employee.Vacation2021.Kasim2021_C6;
+
+                vacation2021.Aralik2021_C1 = employee.Vacation2021.Aralik2021_C1;
+                vacation2021.Aralik2021_C2 = employee.Vacation2021.Aralik2021_C2;
+                vacation2021.Aralik2021_C3 = employee.Vacation2021.Aralik2021_C3;
+                vacation2021.Aralik2021_C4 = employee.Vacation2021.Aralik2021_C4;
+                vacation2021.Aralik2021_C5 = employee.Vacation2021.Aralik2021_C5;
+                vacation2021.Aralik2021_C6 = employee.Vacation2021.Aralik2021_C6;
+                #endregion
+
+                #region VACATION 2022
+
+                vacation2022.Ocak2022_C1 = employee.Vacation2022.Ocak2022_C1;
+                vacation2022.Ocak2022_C2 = employee.Vacation2022.Ocak2022_C2;
+                vacation2022.Ocak2022_C3 = employee.Vacation2022.Ocak2022_C3;
+                vacation2022.Ocak2022_C4 = employee.Vacation2022.Ocak2022_C4;
+                vacation2022.Ocak2022_C5 = employee.Vacation2022.Ocak2022_C5;
+                vacation2022.Ocak2022_C6 = employee.Vacation2022.Ocak2022_C6;
+
+                vacation2022.Subat2022_C1 = employee.Vacation2022.Subat2022_C1;
+                vacation2022.Subat2022_C2 = employee.Vacation2022.Subat2022_C2;
+                vacation2022.Subat2022_C3 = employee.Vacation2022.Subat2022_C3;
+                vacation2022.Subat2022_C4 = employee.Vacation2022.Subat2022_C4;
+                vacation2022.Subat2022_C5 = employee.Vacation2022.Subat2022_C5;
+                vacation2022.Subat2022_C6 = employee.Vacation2022.Subat2022_C6;
+
+                vacation2022.Mart2022_C1 = employee.Vacation2022.Mart2022_C1;
+                vacation2022.Mart2022_C2 = employee.Vacation2022.Mart2022_C2;
+                vacation2022.Mart2022_C3 = employee.Vacation2022.Mart2022_C3;
+                vacation2022.Mart2022_C4 = employee.Vacation2022.Mart2022_C4;
+                vacation2022.Mart2022_C5 = employee.Vacation2022.Mart2022_C5;
+                vacation2022.Mart2022_C6 = employee.Vacation2022.Mart2022_C6;
+
+                vacation2022.Nisan2022_C1 = employee.Vacation2022.Nisan2022_C1;
+                vacation2022.Nisan2022_C2 = employee.Vacation2022.Nisan2022_C2;
+                vacation2022.Nisan2022_C3 = employee.Vacation2022.Nisan2022_C3;
+                vacation2022.Nisan2022_C4 = employee.Vacation2022.Nisan2022_C4;
+                vacation2022.Nisan2022_C5 = employee.Vacation2022.Nisan2022_C5;
+                vacation2022.Nisan2022_C6 = employee.Vacation2022.Nisan2022_C6;
+
+                vacation2022.Mayis2022_C1 = employee.Vacation2022.Mayis2022_C1;
+                vacation2022.Mayis2022_C2 = employee.Vacation2022.Mayis2022_C2;
+                vacation2022.Mayis2022_C3 = employee.Vacation2022.Mayis2022_C3;
+                vacation2022.Mayis2022_C4 = employee.Vacation2022.Mayis2022_C4;
+                vacation2022.Mayis2022_C5 = employee.Vacation2022.Mayis2022_C5;
+                vacation2022.Mayis2022_C6 = employee.Vacation2022.Mayis2022_C6;
+
+                vacation2022.Haziran2022_C1 = employee.Vacation2022.Haziran2022_C1;
+                vacation2022.Haziran2022_C2 = employee.Vacation2022.Haziran2022_C2;
+                vacation2022.Haziran2022_C3 = employee.Vacation2022.Haziran2022_C3;
+                vacation2022.Haziran2022_C4 = employee.Vacation2022.Haziran2022_C4;
+                vacation2022.Haziran2022_C5 = employee.Vacation2022.Haziran2022_C5;
+                vacation2022.Haziran2022_C6 = employee.Vacation2022.Haziran2022_C6;
+
+                vacation2022.Temmuz2022_C1 = employee.Vacation2022.Temmuz2022_C1;
+                vacation2022.Temmuz2022_C2 = employee.Vacation2022.Temmuz2022_C2;
+                vacation2022.Temmuz2022_C3 = employee.Vacation2022.Temmuz2022_C3;
+                vacation2022.Temmuz2022_C4 = employee.Vacation2022.Temmuz2022_C4;
+                vacation2022.Temmuz2022_C5 = employee.Vacation2022.Temmuz2022_C5;
+                vacation2022.Temmuz2022_C6 = employee.Vacation2022.Temmuz2022_C6;
+
+                vacation2022.Agustos2022_C1 = employee.Vacation2022.Agustos2022_C1;
+                vacation2022.Agustos2022_C2 = employee.Vacation2022.Agustos2022_C2;
+                vacation2022.Agustos2022_C3 = employee.Vacation2022.Agustos2022_C3;
+                vacation2022.Agustos2022_C4 = employee.Vacation2022.Agustos2022_C4;
+                vacation2022.Agustos2022_C5 = employee.Vacation2022.Agustos2022_C5;
+                vacation2022.Agustos2022_C6 = employee.Vacation2022.Agustos2022_C6;
+
+                vacation2022.Eylul2022_C1 = employee.Vacation2022.Eylul2022_C1;
+                vacation2022.Eylul2022_C2 = employee.Vacation2022.Eylul2022_C2;
+                vacation2022.Eylul2022_C3 = employee.Vacation2022.Eylul2022_C3;
+                vacation2022.Eylul2022_C4 = employee.Vacation2022.Eylul2022_C4;
+                vacation2022.Eylul2022_C5 = employee.Vacation2022.Eylul2022_C5;
+                vacation2022.Eylul2022_C6 = employee.Vacation2022.Eylul2022_C6;
+
+                vacation2022.Ekim2022_C1 = employee.Vacation2022.Ekim2022_C1;
+                vacation2022.Ekim2022_C2 = employee.Vacation2022.Ekim2022_C2;
+                vacation2022.Ekim2022_C3 = employee.Vacation2022.Ekim2022_C3;
+                vacation2022.Ekim2022_C4 = employee.Vacation2022.Ekim2022_C4;
+                vacation2022.Ekim2022_C5 = employee.Vacation2022.Ekim2022_C5;
+                vacation2022.Ekim2022_C6 = employee.Vacation2022.Ekim2022_C6;
+
+                vacation2022.Kasim2022_C1 = employee.Vacation2022.Kasim2022_C1;
+                vacation2022.Kasim2022_C2 = employee.Vacation2022.Kasim2022_C2;
+                vacation2022.Kasim2022_C3 = employee.Vacation2022.Kasim2022_C3;
+                vacation2022.Kasim2022_C4 = employee.Vacation2022.Kasim2022_C4;
+                vacation2022.Kasim2022_C5 = employee.Vacation2022.Kasim2022_C5;
+                vacation2022.Kasim2022_C6 = employee.Vacation2022.Kasim2022_C6;
+
+                vacation2022.Aralik2022_C1 = employee.Vacation2022.Aralik2022_C1;
+                vacation2022.Aralik2022_C2 = employee.Vacation2022.Aralik2022_C2;
+                vacation2022.Aralik2022_C3 = employee.Vacation2022.Aralik2022_C3;
+                vacation2022.Aralik2022_C4 = employee.Vacation2022.Aralik2022_C4;
+                vacation2022.Aralik2022_C5 = employee.Vacation2022.Aralik2022_C5;
+                vacation2022.Aralik2022_C6 = employee.Vacation2022.Aralik2022_C6;
+                #endregion
+
+                #region VACATION 2023
+
+                vacation2023.Ocak2023_C1 = employee.Vacation2023.Ocak2023_C1;
+                vacation2023.Ocak2023_C2 = employee.Vacation2023.Ocak2023_C2;
+                vacation2023.Ocak2023_C3 = employee.Vacation2023.Ocak2023_C3;
+                vacation2023.Ocak2023_C4 = employee.Vacation2023.Ocak2023_C4;
+                vacation2023.Ocak2023_C5 = employee.Vacation2023.Ocak2023_C5;
+                vacation2023.Ocak2023_C6 = employee.Vacation2023.Ocak2023_C6;
+
+                vacation2023.Subat2023_C1 = employee.Vacation2023.Subat2023_C1;
+                vacation2023.Subat2023_C2 = employee.Vacation2023.Subat2023_C2;
+                vacation2023.Subat2023_C3 = employee.Vacation2023.Subat2023_C3;
+                vacation2023.Subat2023_C4 = employee.Vacation2023.Subat2023_C4;
+                vacation2023.Subat2023_C5 = employee.Vacation2023.Subat2023_C5;
+                vacation2023.Subat2023_C6 = employee.Vacation2023.Subat2023_C6;
+
+                vacation2023.Mart2023_C1 = employee.Vacation2023.Mart2023_C1;
+                vacation2023.Mart2023_C2 = employee.Vacation2023.Mart2023_C2;
+                vacation2023.Mart2023_C3 = employee.Vacation2023.Mart2023_C3;
+                vacation2023.Mart2023_C4 = employee.Vacation2023.Mart2023_C4;
+                vacation2023.Mart2023_C5 = employee.Vacation2023.Mart2023_C5;
+                vacation2023.Mart2023_C6 = employee.Vacation2023.Mart2023_C6;
+
+                vacation2023.Nisan2023_C1 = employee.Vacation2023.Nisan2023_C1;
+                vacation2023.Nisan2023_C2 = employee.Vacation2023.Nisan2023_C2;
+                vacation2023.Nisan2023_C3 = employee.Vacation2023.Nisan2023_C3;
+                vacation2023.Nisan2023_C4 = employee.Vacation2023.Nisan2023_C4;
+                vacation2023.Nisan2023_C5 = employee.Vacation2023.Nisan2023_C5;
+                vacation2023.Nisan2023_C6 = employee.Vacation2023.Nisan2023_C6;
+
+                vacation2023.Mayis2023_C1 = employee.Vacation2023.Mayis2023_C1;
+                vacation2023.Mayis2023_C2 = employee.Vacation2023.Mayis2023_C2;
+                vacation2023.Mayis2023_C3 = employee.Vacation2023.Mayis2023_C3;
+                vacation2023.Mayis2023_C4 = employee.Vacation2023.Mayis2023_C4;
+                vacation2023.Mayis2023_C5 = employee.Vacation2023.Mayis2023_C5;
+                vacation2023.Mayis2023_C6 = employee.Vacation2023.Mayis2023_C6;
+
+                vacation2023.Haziran2023_C1 = employee.Vacation2023.Haziran2023_C1;
+                vacation2023.Haziran2023_C2 = employee.Vacation2023.Haziran2023_C2;
+                vacation2023.Haziran2023_C3 = employee.Vacation2023.Haziran2023_C3;
+                vacation2023.Haziran2023_C4 = employee.Vacation2023.Haziran2023_C4;
+                vacation2023.Haziran2023_C5 = employee.Vacation2023.Haziran2023_C5;
+                vacation2023.Haziran2023_C6 = employee.Vacation2023.Haziran2023_C6;
+
+                vacation2023.Temmuz2023_C1 = employee.Vacation2023.Temmuz2023_C1;
+                vacation2023.Temmuz2023_C2 = employee.Vacation2023.Temmuz2023_C2;
+                vacation2023.Temmuz2023_C3 = employee.Vacation2023.Temmuz2023_C3;
+                vacation2023.Temmuz2023_C4 = employee.Vacation2023.Temmuz2023_C4;
+                vacation2023.Temmuz2023_C5 = employee.Vacation2023.Temmuz2023_C5;
+                vacation2023.Temmuz2023_C6 = employee.Vacation2023.Temmuz2023_C6;
+
+                vacation2023.Agustos2023_C1 = employee.Vacation2023.Agustos2023_C1;
+                vacation2023.Agustos2023_C2 = employee.Vacation2023.Agustos2023_C2;
+                vacation2023.Agustos2023_C3 = employee.Vacation2023.Agustos2023_C3;
+                vacation2023.Agustos2023_C4 = employee.Vacation2023.Agustos2023_C4;
+                vacation2023.Agustos2023_C5 = employee.Vacation2023.Agustos2023_C5;
+                vacation2023.Agustos2023_C6 = employee.Vacation2023.Agustos2023_C6;
+
+                vacation2023.Eylul2023_C1 = employee.Vacation2023.Eylul2023_C1;
+                vacation2023.Eylul2023_C2 = employee.Vacation2023.Eylul2023_C2;
+                vacation2023.Eylul2023_C3 = employee.Vacation2023.Eylul2023_C3;
+                vacation2023.Eylul2023_C4 = employee.Vacation2023.Eylul2023_C4;
+                vacation2023.Eylul2023_C5 = employee.Vacation2023.Eylul2023_C5;
+                vacation2023.Eylul2023_C6 = employee.Vacation2023.Eylul2023_C6;
+
+                vacation2023.Ekim2023_C1 = employee.Vacation2023.Ekim2023_C1;
+                vacation2023.Ekim2023_C2 = employee.Vacation2023.Ekim2023_C2;
+                vacation2023.Ekim2023_C3 = employee.Vacation2023.Ekim2023_C3;
+                vacation2023.Ekim2023_C4 = employee.Vacation2023.Ekim2023_C4;
+                vacation2023.Ekim2023_C5 = employee.Vacation2023.Ekim2023_C5;
+                vacation2023.Ekim2023_C6 = employee.Vacation2023.Ekim2023_C6;
+
+                vacation2023.Kasim2023_C1 = employee.Vacation2023.Kasim2023_C1;
+                vacation2023.Kasim2023_C2 = employee.Vacation2023.Kasim2023_C2;
+                vacation2023.Kasim2023_C3 = employee.Vacation2023.Kasim2023_C3;
+                vacation2023.Kasim2023_C4 = employee.Vacation2023.Kasim2023_C4;
+                vacation2023.Kasim2023_C5 = employee.Vacation2023.Kasim2023_C5;
+                vacation2023.Kasim2023_C6 = employee.Vacation2023.Kasim2023_C6;
+
+                vacation2023.Aralik2023_C1 = employee.Vacation2023.Aralik2023_C1;
+                vacation2023.Aralik2023_C2 = employee.Vacation2023.Aralik2023_C2;
+                vacation2023.Aralik2023_C3 = employee.Vacation2023.Aralik2023_C3;
+                vacation2023.Aralik2023_C4 = employee.Vacation2023.Aralik2023_C4;
+                vacation2023.Aralik2023_C5 = employee.Vacation2023.Aralik2023_C5;
+                vacation2023.Aralik2023_C6 = employee.Vacation2023.Aralik2023_C6;
+                #endregion
+
                 await context.SaveChangesAsync();
-            }
         }
     }
+}
 }

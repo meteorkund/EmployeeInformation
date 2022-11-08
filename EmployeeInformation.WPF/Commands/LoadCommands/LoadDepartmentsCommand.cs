@@ -1,6 +1,6 @@
 ﻿using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
-using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Departments;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace EmployeeInformation.WPF.Commands
+namespace EmployeeInformation.WPF.Commands.LoadCommands
 {
     public class LoadDepartmentsCommand : CommandBase
     {

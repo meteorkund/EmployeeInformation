@@ -29,12 +29,14 @@ public class EmployeeDetailsViewModel : ViewModelBase
     public bool DurumDisplay => (bool)(SelectedEmployee?.Durum);
     public string KimlikDisplay => SelectedEmployee?.TCKimlik;
     public string DogumTarihiDisplay => SelectedEmployee?.DogumTarihi;
-    public string MedeniDurumDisplay => SelectedEmployee?.MedeniDurum;
-    public string EgitimDurumuDisplay => SelectedEmployee?.EgitimDurumu;
-    public string AskerlikDisplay => SelectedEmployee?.Askerlik;
+
 
     public string DepartmanDisplay => SelectedEmployee?.Departman.DepartmentName;
     public string GorevDisplay => SelectedEmployee?.Sector.SectorName;
+    public string MedeniDurumDisplay => SelectedEmployee?.Maritial.MaritialStatus;
+    public string EgitimDurumuDisplay => SelectedEmployee?.Education.EducationDegree;
+    public string AskerlikDisplay => SelectedEmployee?.Military.MilitaryStatus;
+
 
 
     public string IseGirisDisplay => SelectedEmployee?.IseGiris;

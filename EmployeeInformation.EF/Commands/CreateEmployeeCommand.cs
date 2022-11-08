@@ -35,8 +35,14 @@ namespace EmployeeInformation.EF.Commands
                     MedeniDurum = employee.MedeniDurum,
                     EgitimDurumu = employee.EgitimDurumu,
                     Askerlik = employee.Askerlik,
+
                     DepartmentDTOId = employee.Departman.Id,
                     SectorDTOId = employee.Sector.Id,
+                    EducationDTOId = employee.Education.Id,
+                    MilitaryServiceDTOId =employee.Military.Id,
+                    MaritialDTOId = employee.Maritial.Id,
+
+
                     Gorev = employee.Gorev,
                     IseGiris = employee.IseGiris,
                     IstenCikis = employee.IstenCikis,
@@ -46,6 +52,7 @@ namespace EmployeeInformation.EF.Commands
                     BaslamaTarihi = employee.BaslamaTarihi,
                     Adres = employee.Adres,
                     EkBilgi = employee.EkBilgi,                   
+
 
 
                     Vacation2018DTO = new Vacation2018DTO()

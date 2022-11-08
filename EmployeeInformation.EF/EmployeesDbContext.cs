@@ -27,6 +27,9 @@ namespace EmployeeInformation.EF
 
         public DbSet<DepartmentDTO> Departments { get; set; }
         public DbSet<SectorDTO> Sectors { get; set; }
+        public DbSet<EducationDTO> Educations { get; set; }
+        public DbSet<MilitaryServiceDTO> MilitaryServices { get; set; }
+        public DbSet<MaritialDTO> Maritials { get; set; }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

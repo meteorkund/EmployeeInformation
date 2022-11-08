@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EmployeeInformation.WPF.Commands;
 
@@ -41,12 +42,11 @@ public class EditEmployeeCommand : AsyncCommandBase
             Durum = formViewModel.Durum,
             TCKimlik = formViewModel.TCKimlik,
             DogumTarihi = formViewModel.DogumTarihi,
-            MedeniDurum = formViewModel.MedeniDurum,
-            EgitimDurumu = formViewModel.EgitimDurumu,
-            Askerlik = formViewModel.Askerlik,
 
             Departman = new Department(formViewModel.SelectedDepartmentItem.DepartmentId, formViewModel.SelectedDepartmentItem.DepartmentName),
             Sector = new Sector(formViewModel.SelectedSectorItem.SectorId, formViewModel.SelectedSectorItem.SectorName),
+            Education = new Education(formViewModel.SelectedEducationItem.EducationId, formViewModel.SelectedEducationItem.EducationDegree),
+            Military = new MilitaryServiceStatus(formViewModel.SelectedMilitaryServiceItem.MilitaryServiceId, formViewModel.SelectedMilitaryServiceItem.MilitaryStatus),
 
 
             Gorev = formViewModel.Gorev,
@@ -585,14 +585,17 @@ public class EditEmployeeCommand : AsyncCommandBase
             formViewModel.SaveStatus = "GÜNCELLEME BAŞARILI!";
 
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            MessageBox.Show(ex.ToString());
             formViewModel.IsSaved = false;
             formViewModel.ErrorMessage = "Personel güncelleme sırasında hata oluştu. Daha sonra tekrar deneyiniz.";
         }
         finally
         {
             formViewModel.IsSubmitting = false;
+            await Task.Delay(1000);
+            formViewModel.SaveStatus = string.Empty;
         }
     }
 }

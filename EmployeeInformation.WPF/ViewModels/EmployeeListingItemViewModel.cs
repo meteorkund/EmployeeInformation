@@ -33,10 +33,10 @@ public class EmployeeListingItemViewModel : ViewModelBase
 
 
 
-    public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, SectorStore sectorStore, DepartmentStore departmentStore)
+    public EmployeeListingItemViewModel(Employee employee, EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)
     {
         Employee = employee;
-        EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore, sectorStore, departmentStore);
+        EditCommand = new OpenEditEmployeeCommand(this, employeeStore, modalNavigationStore, sectorStore, departmentStore, educationStore, militaryStore, maritialStore);
         DeleteCommand = new DeleteEmployeeCommand(this, employeeStore);
     }
 

@@ -12,6 +12,8 @@ namespace EmployeeInformation.Domain.Models
 
         public int Id { get; set; }
         public int DepartmentId { get; set; }
+
+
         public string Fotograf { get; set;  }
         public string Isim { get; set;  }
         public string Soyisim { get; set; }
@@ -40,6 +42,9 @@ namespace EmployeeInformation.Domain.Models
 
         public Department Departman { get; set; }
         public Sector Sector { get; set; }
+        public Education Education { get; set; }
+        public MilitaryServiceStatus Military { get; set; }
+        public Maritial Maritial { get; set; }
 
     }
 }

@@ -369,12 +369,20 @@
                         FontWeight="Bold"
                         Text="MEDENİ HAL" VerticalAlignment="Center"/>
 
-                            <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="4"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding MedeniDurum, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <ComboBox 
+                                KeyboardNavigation.TabIndex="5"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                VerticalContentAlignment="Center"
+                                
+                                SelectedItem="{Binding SelectedMaritialStatusItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedIndex="{Binding SelectedMaritialStatusIndex}"
+                                
+                                ItemsSource="{Binding MaritialStatusListingItemViewModels}"
+                                
+                                DisplayMemberPath="MaritialStatusName">
+                                
+                            </ComboBox>
                         </Grid>
 
                         <Grid Grid.Row="6" Margin="0 10 0 0" Grid.Column="1">
@@ -388,12 +396,19 @@
                         FontWeight="Bold"
                         Text="EĞİTİM DURUMU" VerticalAlignment="Center"/>
 
-                            <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="5"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding EgitimDurumu, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <ComboBox 
+                                KeyboardNavigation.TabIndex="5"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                VerticalContentAlignment="Center"
+                                
+                                SelectedItem="{Binding SelectedEducationItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedIndex="{Binding SelectedEducationIndex}"
+                                
+                                ItemsSource="{Binding EducationListingItemViewModels}"
+                                
+                                DisplayMemberPath="EducationDegree">
+                            </ComboBox>
                         </Grid>
 
                         <Grid Grid.Row="7" Margin="0 10 0 0" Grid.Column="1">
@@ -407,12 +422,20 @@
                         FontWeight="Bold"
                         Text="ASKERLİK DURUMU" VerticalAlignment="Center"/>
 
-                            <TextBox
-                        Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="6"
-                        Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="{Binding Askerlik, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <ComboBox 
+                                KeyboardNavigation.TabIndex="6"
+                                Grid.Column="1"
+                                Margin="20 0 0 0"
+                                Height="30"
+                                VerticalContentAlignment="Center"
+                                
+                                SelectedItem="{Binding SelectedMilitaryServiceItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedIndex="{Binding SelectedMilitaryServiceIndex}"
+                                
+                                ItemsSource="{Binding MilitaryListingItemViewModels}"
+                                
+                                DisplayMemberPath="MilitaryStatus">
+                            </ComboBox>
                         </Grid>
 
                         <Grid Grid.Row="8" Margin="0 10 0 0" Grid.Column="1">

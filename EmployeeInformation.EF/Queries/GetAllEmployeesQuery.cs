@@ -28,6 +28,9 @@ namespace EmployeeInformation.EF.Queries
                 IEnumerable<EmployeeDTO> employeeDTOs = await context.Employees
                     .Include(d => d.DepartmentDTO)
                     .Include(s => s.SectorDTO)
+                    .Include(e => e.EducationDTO)
+                    .Include(m => m.MilitaryServiceDTO)
+                    .Include(m => m.MaritialDTO)
                     .Include(v => v.Vacation2018DTO)
                     .Include(v => v.Vacation2019DTO)
                     .Include(v => v.Vacation2020DTO)
@@ -63,6 +66,11 @@ namespace EmployeeInformation.EF.Queries
 
                     Departman = new Department(e.DepartmentDTO.Id, e.DepartmentDTO.DepartmentName),
                     Sector = new Sector(e.SectorDTO.Id, e.SectorDTO.SectorName),
+                    Education = new Education(e.EducationDTO.Id, e.EducationDTO.EducationStatus),
+                    Military = new MilitaryServiceStatus(e.MilitaryServiceDTO.Id, e.MilitaryServiceDTO.MilitaryStatus),
+                    Maritial = new Maritial(e.MaritialDTO.Id, e.MaritialDTO.MaritialStatus),
+
+
 
                     Vacation2018 = new Vacation2018
                     {

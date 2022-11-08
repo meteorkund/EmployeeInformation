@@ -1,6 +1,6 @@
 ﻿using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
-using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace EmployeeInformation.WPF.Commands
+namespace EmployeeInformation.WPF.Commands.LoadCommands
 {
     public class LoadSectorsCommand : CommandBase
     {
@@ -26,7 +26,7 @@ namespace EmployeeInformation.WPF.Commands
             {
                 await _sectorStore.LoadSectors();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("SEKTÖRLER YÜKLENİRKEN HATAYLA KARŞILAŞILDI!");
             }

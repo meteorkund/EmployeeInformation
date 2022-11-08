@@ -6,7 +6,10 @@ using EmployeeInformation.EF.Queries;
 using EmployeeInformation.WPF.HostBuilders;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
-using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Departments;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.EducationDegrees;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.MilitaryServices;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -26,29 +29,19 @@ namespace EmployeeInformation.WPF
         {
             _host = Host.CreateDefaultBuilder()
                .AddDbContext()
+               .AddStores()
+               .AddQueries()
+               .AddCommands()
                .ConfigureServices((context, services) =>
                {
-
-                   services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
-                   services.AddSingleton<IGetAllDepartmentsQuery, GetAllDepartmentsQuery>();
-                   services.AddSingleton<IGetAllSectorsQuery, GetAllSectorsQuery>();
-
-                   services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
-                   services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
-                   services.AddSingleton<IDeleteEmployeeCommand, DeleteEmployeeCommand>();
-
-                   services.AddSingleton<ModalNavigationStore>();
-                   services.AddSingleton<EmployeeStore>();
-                   services.AddSingleton<DepartmentStore>();
-                   services.AddSingleton<SectorStore>();
-
-                   services.AddSingleton<SelectedEmployeeStore>();
-
                    services.AddTransient<EmployeesViewModel>();
 
                    services.AddTransient<EmployeeListingViewModel>(CreateEmployeeListingViewModel);
                    services.AddTransient<DepartmentListingViewModel>(CreateDepartmentListingViewModel);
                    services.AddTransient<SectorListingViewModel>(CreateSectorListingViewModel);
+                   services.AddTransient<EducationListingViewModel>(CreateEducationListingViewModel);
+                   services.AddTransient<EducationListingViewModel>(CreateEducationListingViewModel);
+                   services.AddTransient<MilitaryListingViewModel>(CreateMilitaryListingViewModel);
 
                    services.AddSingleton<MainViewModel>();
 
@@ -58,6 +51,22 @@ namespace EmployeeInformation.WPF
                    });
                })
                .Build();
+        }
+
+        private MilitaryListingViewModel CreateMilitaryListingViewModel(IServiceProvider services)
+        {
+            return MilitaryListingViewModel.LoadMilitaryServices
+                (
+                services.GetRequiredService<MilitaryStore>()
+                );
+        }
+
+        private EducationListingViewModel CreateEducationListingViewModel(IServiceProvider services)
+        {
+            return EducationListingViewModel.LoadEducations
+                (
+                services.GetRequiredService<EducationStore>()
+                );
         }
 
         private SectorListingViewModel CreateSectorListingViewModel(IServiceProvider services)
@@ -84,7 +93,10 @@ namespace EmployeeInformation.WPF
                 services.GetRequiredService<ModalNavigationStore>(),
                 services.GetRequiredService<EmployeesDbContextFactory>(),
                 services.GetRequiredService<SectorStore>(),
-                services.GetRequiredService<DepartmentStore>()
+                services.GetRequiredService<DepartmentStore>(),
+                services.GetRequiredService<EducationStore>(),
+                services.GetRequiredService<MilitaryStore>(),
+                services.GetRequiredService<MaritialStore>()
                 );
         }
 

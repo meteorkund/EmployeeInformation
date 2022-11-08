@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace EmployeeInformation.WPF.Commands
+namespace EmployeeInformation.WPF.Commands.LoadCommands
 {
     public class LoadEmployeesCommand : CommandBase
     {

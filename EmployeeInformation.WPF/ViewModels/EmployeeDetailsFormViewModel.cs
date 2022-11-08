@@ -1,5 +1,9 @@
 ﻿using EmployeeInformation.WPF.Stores;
-using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Departments;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.EducationDegrees;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.MaritialStat;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.MilitaryServices;
+using EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors;
 using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Win32;
 using System;
@@ -13,20 +17,33 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
 
     readonly SectorListingViewModel _sectorListingViewModel;
     readonly DepartmentListingViewModel _departmentListingViewModel;
+    readonly EducationListingViewModel _educationListingViewModel;
+    readonly MilitaryListingViewModel _militaryListingViewModel;
+    readonly MaritialStatusListingViewModel _maritialStatusListingViewModel;
 
     public IEnumerable<SectorListingItemViewModel> SectorListingItemViewModels => _sectorListingViewModel.SectorListingItemViewModels;
     public IEnumerable<DepartmentListingItemViewModel> DepartmentListingItemViewModels => _departmentListingViewModel.DepartmentListingItemViewModels;
+    public IEnumerable<EducationListingItemViewModel> EducationListingItemViewModels => _educationListingViewModel.EducationListingItemViewModels;
+    public IEnumerable<MilitaryListingItemViewModel> MilitaryListingItemViewModels => _militaryListingViewModel.MilitaryListingItemViewModels;
+    public IEnumerable<MaritialStatusListingItemViewModel> MaritialStatusListingItemViewModels => _maritialStatusListingViewModel.MaritialStatusListingItemViewModels;
 
-    public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand, SectorStore sectorStore, DepartmentStore departmentStore)
+
+    public EmployeeDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)
     {
         SubmitCommand = submitCommand;
         CancelCommand = cancelCommand;
 
         SectorListingViewModel = SectorListingViewModel.LoadSectors(sectorStore);
         DepartmentListingViewModel = DepartmentListingViewModel.LoadDepartments(departmentStore);
+        EducationListingViewModel = EducationListingViewModel.LoadEducations(educationStore);
+        MilitaryListingViewModel = MilitaryListingViewModel.LoadMilitaryServices(militaryStore);
+        MaritialStatusListingViewModel = MaritialStatusListingViewModel.LoadMaritialStatus(maritialStore);
 
         _sectorListingViewModel = new SectorListingViewModel(sectorStore);
         _departmentListingViewModel = new DepartmentListingViewModel(departmentStore);
+        _educationListingViewModel = new EducationListingViewModel(educationStore);
+        _militaryListingViewModel = new MilitaryListingViewModel(militaryStore);
+        _maritialStatusListingViewModel = new MaritialStatusListingViewModel(maritialStore);
 
 
         RegisterCommands();
@@ -35,6 +52,9 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
 
     public SectorListingViewModel SectorListingViewModel { get; }
     public DepartmentListingViewModel DepartmentListingViewModel { get; }
+    public EducationListingViewModel EducationListingViewModel { get; }
+    public MilitaryListingViewModel MilitaryListingViewModel { get; }
+    public MaritialStatusListingViewModel MaritialStatusListingViewModel { get; }
 
     public ICommand SubmitCommand { get; }
     public ICommand CancelCommand { get; }
@@ -88,6 +108,44 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         }
     }
 
+    private EducationListingItemViewModel _selectedEducationItem;
+
+    public EducationListingItemViewModel SelectedEducationItem
+    {
+        get { return _selectedEducationItem; }
+        set
+        {
+            _selectedEducationItem = value;
+            OnPropertyChanged(nameof(SelectedEducationItem));
+        }
+    }
+
+    private MilitaryListingItemViewModel _selectedMilitaryServiceItem;
+
+    public MilitaryListingItemViewModel SelectedMilitaryServiceItem
+    {
+        get { return _selectedMilitaryServiceItem; }
+        set
+        {
+            _selectedMilitaryServiceItem = value;
+            OnPropertyChanged(nameof(SelectedMilitaryServiceItem));
+        }
+    }
+
+    private MaritialStatusListingItemViewModel _selectedMaritialStatusItem;
+
+    public MaritialStatusListingItemViewModel SelectedMaritialStatusItem
+    {
+        get { return _selectedMaritialStatusItem; }
+        set
+        {
+            _selectedMaritialStatusItem = value;
+            OnPropertyChanged(nameof(SelectedMaritialStatusItem));
+        }
+    }
+
+
+
 
     private int _selectedDepartmentIndex;
     public int SelectedDepartmentIndex
@@ -104,6 +162,31 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         get { return _selectedSectorIndex; }
         set { _selectedSectorIndex = value; }
     }
+
+    private int _selectedEducationIndex;
+
+    public int SelectedEducationIndex
+    {
+        get { return _selectedEducationIndex; }
+        set { _selectedEducationIndex = value; }
+    }
+
+    private int _selectedMilitaryServiceIndex;
+
+    public int SelectedMilitaryServiceIndex
+    {
+        get { return _selectedMilitaryServiceIndex; }
+        set { _selectedMilitaryServiceIndex = value; }
+    }
+
+    private int _selectedMaritialStatusIndex;
+
+    public int SelectedMaritialStatusIndex
+    {
+        get { return _selectedMaritialStatusIndex; }
+        set { _selectedMaritialStatusIndex = value; }
+    }
+
 
     #endregion
 

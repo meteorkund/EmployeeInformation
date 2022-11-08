@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace EmployeeInformation.Domain.Models.Common
 {
-    public class Sector
+    public class Education
     {
-        public Sector(int id, string sectorName)
+        public Education(int id, string educationDegree)
         {
+            EducationDegree = educationDegree;
             Id = id;
-            SectorName = sectorName;
         }
 
         public int Id { get; }
-        public string SectorName { get; }
-
-
+        public string EducationDegree { get; }
     }
 }

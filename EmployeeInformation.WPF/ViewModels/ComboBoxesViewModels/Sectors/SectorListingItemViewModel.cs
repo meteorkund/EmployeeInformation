@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels;
+namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors;
 
 public class SectorListingItemViewModel : ViewModelBase
 {
