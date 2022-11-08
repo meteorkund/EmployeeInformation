@@ -78,7 +78,9 @@ namespace EmployeeInformation.WPF.Commands
                     formViewModel.SelectedMilitaryServiceItem.MilitaryServiceId,
                     formViewModel.SelectedMilitaryServiceItem.MilitaryStatus),
 
-                Maritial = new Maritial(1, "BEKAR"),
+                Maritial = new Maritial(
+                    formViewModel.SelectedMaritialStatusItem.MaritialStatusId,
+                    formViewModel.SelectedMaritialStatusItem.MaritialStatusName),
 
                 Gorev = formViewModel.Gorev,
                 IseGiris = formViewModel.IseGiris,

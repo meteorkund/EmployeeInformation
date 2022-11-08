@@ -47,6 +47,7 @@ public class EditEmployeeCommand : AsyncCommandBase
             Sector = new Sector(formViewModel.SelectedSectorItem.SectorId, formViewModel.SelectedSectorItem.SectorName),
             Education = new Education(formViewModel.SelectedEducationItem.EducationId, formViewModel.SelectedEducationItem.EducationDegree),
             Military = new MilitaryServiceStatus(formViewModel.SelectedMilitaryServiceItem.MilitaryServiceId, formViewModel.SelectedMilitaryServiceItem.MilitaryStatus),
+            Maritial = new Maritial(formViewModel.SelectedMaritialStatusItem.MaritialStatusId, formViewModel.SelectedMaritialStatusItem.MaritialStatusName),
 
 
             Gorev = formViewModel.Gorev,

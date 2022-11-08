@@ -46,6 +46,7 @@ namespace EmployeeInformation.EF.Commands
                 person.SectorDTOId = employee.Sector.Id;
                 person.EducationDTOId = employee.Education.Id;
                 person.MilitaryServiceDTOId = employee.Military.Id;
+                person.MaritialDTOId = employee.Maritial.Id;
 
                 person.Gorev = employee.Gorev;
                 person.IseGiris = employee.IseGiris;
