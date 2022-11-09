@@ -3,22 +3,21 @@ using EmployeeInformation.WPF.Commands;
 using EmployeeInformation.WPF.Stores;
 using System.Windows.Input;
 
-namespace EmployeeInformation.WPF.ViewModels
+namespace EmployeeInformation.WPF.ViewModels;
+
+public class AddEmployeeViewModel : ViewModelBase
 {
-    public class AddEmployeeViewModel : ViewModelBase
+    public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get;  }
+
+    public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)
     {
-        public EmployeeDetailsFormViewModel EmployeeDetailsFormViewModel { get;  }
+        ICommand submitCommand = new AddEmployeeCommand(this, employeeStore, modalNavigationStore, contextFactory) ;
+        ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
 
-        public AddEmployeeViewModel(EmployeeStore employeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)
+
+        EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand, sectorStore, departmentStore, educationStore, militaryStore, maritialStore)
         {
-            ICommand submitCommand = new AddEmployeeCommand(this, employeeStore, modalNavigationStore, contextFactory) ;
-            ICommand cancelCommand = new CloseModalCommand(modalNavigationStore);
-
-
-            EmployeeDetailsFormViewModel = new EmployeeDetailsFormViewModel(submitCommand, cancelCommand, sectorStore, departmentStore, educationStore, militaryStore, maritialStore)
-            {
-                IsAdding = true,                
-            };
-        }
+            IsAdding = true,                
+        };
     }
 }

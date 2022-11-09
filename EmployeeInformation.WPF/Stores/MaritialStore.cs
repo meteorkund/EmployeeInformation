@@ -2,34 +2,31 @@
 using EmployeeInformation.Domain.Queries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeInformation.WPF.Stores
+namespace EmployeeInformation.WPF.Stores;
+
+public class MaritialStore
 {
-    public class MaritialStore
+    readonly IGetAllMaritialStatusQuery _getAllMaritialStatus;
+    readonly List<Maritial> _maritialStatus;
+
+    public IEnumerable<Maritial> MaritialStatus => _maritialStatus;
+    public event Action MaritialStatusLoaded;
+
+    public MaritialStore(IGetAllMaritialStatusQuery getAllMaritialStatus)
     {
-        readonly IGetAllMaritialStatusQuery _getAllMaritialStatus;
-        readonly List<Maritial> _maritialStatus;
+        _getAllMaritialStatus = getAllMaritialStatus;
+        _maritialStatus = new List<Maritial>();
+    }
 
-        public IEnumerable<Maritial> MaritialStatus => _maritialStatus;
-        public event Action MaritialStatusLoaded;
+    public async Task LoadMaritialStatus()
+    {
+        IEnumerable<Maritial> maritialStatuses = await _getAllMaritialStatus.GetAllMaritalStatus();
 
-        public MaritialStore(IGetAllMaritialStatusQuery getAllMaritialStatus)
-        {
-            _getAllMaritialStatus = getAllMaritialStatus;
-            _maritialStatus = new List<Maritial>();
-        }
+        _maritialStatus.Clear();
+        _maritialStatus.AddRange(maritialStatuses);
 
-        public async Task LoadMaritialStatus()
-        {
-            IEnumerable<Maritial> maritialStatuses = await _getAllMaritialStatus.GetAllMaritalStatus();
-
-            _maritialStatus.Clear();
-            _maritialStatus.AddRange(maritialStatuses);
-
-            MaritialStatusLoaded?.Invoke();
-        }
+        MaritialStatusLoaded?.Invoke();
     }
 }

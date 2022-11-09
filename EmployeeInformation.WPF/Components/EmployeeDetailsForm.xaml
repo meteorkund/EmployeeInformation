@@ -381,7 +381,7 @@
                                 ItemsSource="{Binding MaritialStatusListingItemViewModels}"
                                 
                                 DisplayMemberPath="MaritialStatusName">
-                                
+
                             </ComboBox>
                         </Grid>
 

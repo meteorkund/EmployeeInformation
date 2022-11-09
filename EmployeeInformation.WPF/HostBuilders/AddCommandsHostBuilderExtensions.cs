@@ -10,21 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeInformation.WPF.HostBuilders
+namespace EmployeeInformation.WPF.HostBuilders;
+
+public static class AddCommandsHostBuilderExtensions
 {
-    public static class AddCommandsHostBuilderExtensions
+    public static IHostBuilder AddCommands(this IHostBuilder hostBuilder)
     {
-        public static IHostBuilder AddCommands(this IHostBuilder hostBuilder)
+        hostBuilder.ConfigureServices((context, services) =>
         {
-            hostBuilder.ConfigureServices((context, services) =>
-            {
-                services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
-                services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
-                services.AddSingleton<IDeleteEmployeeCommand, DeleteEmployeeCommand>();
+            services.AddSingleton<ICreateEmployeeCommand, CreateEmployeeCommand>();
+            services.AddSingleton<IUpdateEmployeeCommand, UpdateEmployeeCommand>();
+            services.AddSingleton<IDeleteEmployeeCommand, DeleteEmployeeCommand>();
 
-            });
+        });
 
-            return hostBuilder;
-        }
+        return hostBuilder;
     }
 }

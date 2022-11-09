@@ -2,32 +2,26 @@
 using EmployeeInformation.EF.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EmployeeInformation.WPF.HostBuilders
+namespace EmployeeInformation.WPF.HostBuilders;
+
+public static class AddQueriesHostBuilderExtensions
 {
-    public static class AddQueriesHostBuilderExtensions
+    public static IHostBuilder AddQueries(this IHostBuilder hostBuilder)
     {
-        public static IHostBuilder AddQueries(this IHostBuilder hostBuilder)
+        hostBuilder.ConfigureServices((context, services) =>
         {
-            hostBuilder.ConfigureServices((context, services) =>
-            {
 
-                services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
+            services.AddSingleton<IGetAllEmployeesQuery, GetAllEmployeesQuery>();
 
-                services.AddSingleton<IGetAllDepartmentsQuery, GetAllDepartmentsQuery>();
-                services.AddSingleton<IGetAllSectorsQuery, GetAllSectorsQuery>();
-                services.AddSingleton<IGetAllEducationsQuery, GetAllEducationsQuery>();
-                services.AddSingleton<IGetAllMilitaryServicesQuery, GetAllMilitaryServicesQuery>();
-                services.AddSingleton<IGetAllMaritialStatusQuery, GetAllMaritialStatusQuery>();
+            services.AddSingleton<IGetAllDepartmentsQuery, GetAllDepartmentsQuery>();
+            services.AddSingleton<IGetAllSectorsQuery, GetAllSectorsQuery>();
+            services.AddSingleton<IGetAllEducationsQuery, GetAllEducationsQuery>();
+            services.AddSingleton<IGetAllMilitaryServicesQuery, GetAllMilitaryServicesQuery>();
+            services.AddSingleton<IGetAllMaritialStatusQuery, GetAllMaritialStatusQuery>();
 
-            });
+        });
 
-            return hostBuilder;
-        }
+        return hostBuilder;
     }
 }
