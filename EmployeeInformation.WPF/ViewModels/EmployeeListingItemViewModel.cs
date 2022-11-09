@@ -44,6 +44,7 @@ public class EmployeeListingItemViewModel : ViewModelBase
     public void Update(Employee employee)
     {
         Employee = employee;
+        OnPropertyChanged(nameof(Durum));
         OnPropertyChanged(nameof(Isim));
         OnPropertyChanged(nameof(Soyisim));
         OnPropertyChanged(nameof(Departman));
