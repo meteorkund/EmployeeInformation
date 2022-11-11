@@ -8,6 +8,8 @@ using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace EmployeeInformation.WPF.ViewModels;
@@ -83,6 +85,7 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         }
     }
 
+
     #region CHECKBOX SELECTED ITEMS
 
     private DepartmentListingItemViewModel _selectedDepartmentItem;
@@ -147,45 +150,54 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
 
 
 
-    private int _selectedDepartmentIndex;
-    public int SelectedDepartmentIndex
+    private int _selectedDepartmentValue;
+    public int SelectedDepartmentValue
     {
-        get { return _selectedDepartmentIndex; }
-        set { _selectedDepartmentIndex = value; }
+        get { return _selectedDepartmentValue; }
+        set { _selectedDepartmentValue = value; }
     }
 
 
-    private int _selectedSectorIndex;
+    private int _selectedSectorValue;
 
-    public int SelectedSectorIndex
+    public int SelectedSectorValue
     {
-        get { return _selectedSectorIndex; }
-        set { _selectedSectorIndex = value; }
+        get { return _selectedSectorValue; }
+        set { _selectedSectorValue = value; }
     }
 
-    private int _selectedEducationIndex;
+    private int _selectedEducationValue;
 
-    public int SelectedEducationIndex
+    public int SelectedEducationValue
     {
-        get { return _selectedEducationIndex; }
-        set { _selectedEducationIndex = value; }
+        get { return _selectedEducationValue; }
+        set { _selectedEducationValue = value; }
     }
 
-    private int _selectedMilitaryServiceIndex;
+    private int _selectedMilitaryServiceValue;
 
-    public int SelectedMilitaryServiceIndex
+    public int SelectedMilitaryServiceValue
     {
-        get { return _selectedMilitaryServiceIndex; }
-        set { _selectedMilitaryServiceIndex = value; }
+        get { return _selectedMilitaryServiceValue; }
+        set { _selectedMilitaryServiceValue = value; }
     }
 
-    private int _selectedMaritialStatusIndex;
+    private int _selectedMaritialStatusValue;
 
-    public int SelectedMaritialStatusIndex
+    public int SelectedMaritialStatusValue
     {
-        get { return _selectedMaritialStatusIndex; }
-        set { _selectedMaritialStatusIndex = value; }
+        get { return _selectedMaritialStatusValue; }
+        set { _selectedMaritialStatusValue = value; }
     }
+
+    private int _selectedIndexCommon;
+
+    public int SelectedIndexCommon
+    {
+        get { return _selectedIndexCommon; }
+        set { _selectedIndexCommon = value; }
+    }
+
 
 
     #endregion

@@ -173,12 +173,16 @@
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 
-                                SelectedItem="{Binding SelectedDepartmentItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectedIndex="{Binding SelectedDepartmentIndex}"
                                 
                                 ItemsSource="{Binding DepartmentListingItemViewModels}"
+                                SelectedItem="{Binding SelectedDepartmentItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedValue="{Binding SelectedDepartmentValue}"
+                                SelectedIndex="{Binding SelectedIndexCommon}"
+
                                 
-                                DisplayMemberPath="DepartmentName">
+                                SelectedValuePath="DepartmentId"
+                                DisplayMemberPath="DepartmentName"
+                                IsSynchronizedWithCurrentItem="True">
                             </ComboBox>
 
                         </Grid>
@@ -199,12 +203,15 @@
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 
-                                SelectedItem="{Binding SelectedSectorItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectedIndex="{Binding SelectedSectorIndex}"
-                                
                                 ItemsSource="{Binding SectorListingItemViewModels}"
+                                SelectedItem="{Binding SelectedSectorItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedValue="{Binding SelectedSectorValue}"
+                                SelectedIndex="{Binding SelectedIndexCommon}"
+
                                 
-                                DisplayMemberPath="SectorName">
+                                SelectedValuePath="SectorId"                             
+                                DisplayMemberPath="SectorName"
+                                IsSynchronizedWithCurrentItem="True">
 
                             </ComboBox>
                         </Grid>
@@ -375,12 +382,15 @@
                                 Margin="20 0 0 0"
                                 VerticalContentAlignment="Center"
                                 
-                                SelectedItem="{Binding SelectedMaritialStatusItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectedIndex="{Binding SelectedMaritialStatusIndex}"
-                                
                                 ItemsSource="{Binding MaritialStatusListingItemViewModels}"
-                                
-                                DisplayMemberPath="MaritialStatusName">
+                                SelectedItem="{Binding SelectedMaritialStatusItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedValue="{Binding SelectedMaritialStatusValue}"
+                                SelectedIndex="{Binding SelectedIndexCommon}"
+
+                                                                
+                                DisplayMemberPath="MaritialStatusName"
+                                SelectedValuePath="MaritialStatusId"
+                                IsSynchronizedWithCurrentItem="True">
 
                             </ComboBox>
                         </Grid>
@@ -402,12 +412,15 @@
                                 Margin="20 0 0 0"
                                 VerticalContentAlignment="Center"
                                 
-                                SelectedItem="{Binding SelectedEducationItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectedIndex="{Binding SelectedEducationIndex}"
-                                
                                 ItemsSource="{Binding EducationListingItemViewModels}"
-                                
-                                DisplayMemberPath="EducationDegree">
+                                SelectedItem="{Binding SelectedEducationItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedValue="{Binding SelectedEducationValue}"
+                                SelectedIndex="{Binding SelectedIndexCommon}"
+
+                                                                
+                                DisplayMemberPath="EducationDegree"
+                                SelectedValuePath="EducationId"
+                                IsSynchronizedWithCurrentItem="True">
                             </ComboBox>
                         </Grid>
 
@@ -429,12 +442,14 @@
                                 Height="30"
                                 VerticalContentAlignment="Center"
                                 
-                                SelectedItem="{Binding SelectedMilitaryServiceItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectedIndex="{Binding SelectedMilitaryServiceIndex}"
-                                
                                 ItemsSource="{Binding MilitaryListingItemViewModels}"
-                                
-                                DisplayMemberPath="MilitaryStatus">
+                                SelectedItem="{Binding SelectedMilitaryServiceItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                SelectedValue="{Binding SelectedMilitaryServiceValue}"
+                                SelectedIndex="{Binding SelectedIndexCommon}"
+                                                                
+                                DisplayMemberPath="MilitaryStatus"
+                                SelectedValuePath="MilitaryServiceId"
+                                IsSynchronizedWithCurrentItem="True">
                             </ComboBox>
                         </Grid>
 

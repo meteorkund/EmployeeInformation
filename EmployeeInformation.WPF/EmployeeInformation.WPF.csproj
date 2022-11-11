@@ -7,12 +7,19 @@
     <UseWPF>true</UseWPF>
     <Product>$(AssemblyName)</Product>
     <AssemblyName>EmployeeInformation</AssemblyName>
+    <ApplicationIcon>exeiconmemet.ico</ApplicationIcon>
+    <Company>MemetYazilim</Company>
+    <Authors>Orkun</Authors>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\backimage.jpg" />
     <None Remove="Assets\MemetAvatar.jpg" />
     <None Remove="Assets\smile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="exeiconmemet.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -31,7 +31,10 @@ namespace EmployeeInformation.WPF.Stores
             IEnumerable<Department> departments = await _getAllDepartments.GetAllDepartments();
 
             _departments.Clear();
-            _departments.AddRange(departments);
+
+            IEnumerable<Department> sortedDepartments = departments.OrderBy(d=> d.DepartmentName).ToList();
+
+            _departments.AddRange(sortedDepartments);
 
             DepartmentsLoaded?.Invoke();
         }

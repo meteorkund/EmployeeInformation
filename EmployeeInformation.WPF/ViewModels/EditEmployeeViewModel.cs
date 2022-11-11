@@ -38,11 +38,11 @@ public class EditEmployeeViewModel : ViewModelBase
             Soyisim = employee.Soyisim,
             TCKimlik = employee.TCKimlik,
 
-            SelectedDepartmentIndex = employee.Departman.Id - 1,
-            SelectedSectorIndex = employee.Sector.Id - 1,
-            SelectedEducationIndex = employee.Education.Id - 1,
-            SelectedMilitaryServiceIndex = employee.Military.Id - 1,
-            SelectedMaritialStatusIndex = employee.Maritial.Id - 1,
+            SelectedDepartmentValue = employee.Departman.Id,
+            SelectedSectorValue = employee.Sector.Id,
+            SelectedEducationValue = employee.Education.Id,
+            SelectedMilitaryServiceValue = employee.Military.Id,
+            SelectedMaritialStatusValue = employee.Maritial.Id,
 
             DogumTarihi = employee.DogumTarihi,
             Maas = employee.Maas,
