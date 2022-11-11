@@ -41,6 +41,8 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         MilitaryListingViewModel = MilitaryListingViewModel.LoadMilitaryServices(militaryStore);
         MaritialStatusListingViewModel = MaritialStatusListingViewModel.LoadMaritialStatus(maritialStore);
 
+
+
         _sectorListingViewModel = new SectorListingViewModel(sectorStore);
         _departmentListingViewModel = new DepartmentListingViewModel(departmentStore);
         _educationListingViewModel = new EducationListingViewModel(educationStore);
