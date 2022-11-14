@@ -40,13 +40,27 @@ public class EmployeeDetailsViewModel : ViewModelBase
 
 
     public string IseGirisDisplay => SelectedEmployee?.IseGiris;
-    public string IstenCikisDisplay => (string.IsNullOrEmpty(SelectedEmployee?.IstenCikis) ? "-" : SelectedEmployee?.IstenCikis);
+    public string IstenCikisDisplay => SelectedEmployee?.IstenCikis;
     public string MaasDisplay => SelectedEmployee?.Maas;
     public string CepTelDisplay => SelectedEmployee?.CepTel;
-    public string CalismaSuresiDisplay => ($"{days} gün, {months} ay, {years} yıl.");
+    public string CalismaSuresiDisplay => CalismaSuresiCalculated;
     public string BaslamaTarihiDisplay => SelectedEmployee?.BaslamaTarihi;
     public string AdresDisplay => SelectedEmployee?.Adres;
     public string EkBilgiDisplay => SelectedEmployee?.EkBilgi;
+
+
+    private bool _showButton;
+
+    public bool ShowButton
+    {
+        get { return _showButton; }
+        set
+        {
+            _showButton = value;
+            OnPropertyChanged(nameof(ShowButton));
+        }
+    }
+
 
     public RelayCommand OpenWappCommand { get; set; }
 
@@ -144,9 +158,45 @@ public class EmployeeDetailsViewModel : ViewModelBase
     #endregion
 
     int years, months, days;
+    string CalismaSuresiCalculated;
     public void DateTimeCalculate()
     {
-        if (BaslamaTarihiDisplay is not null)
+        if (string.IsNullOrEmpty(IstenCikisDisplay))
+        {
+            if (!string.IsNullOrEmpty(BaslamaTarihiDisplay))
+            {
+                string date = BaslamaTarihiDisplay;
+                string year = date.Substring(6, 4);
+                string month = date.Substring(3, 2);
+                string day = date.Substring(0, 2);
+
+                int x_year = Int32.Parse(year);
+                int x_month = Int32.Parse(month);
+                int x_day = Int32.Parse(day);
+
+                DateTime dt2 = DateTime.Now;
+                DateTime dt1 = new DateTime(x_year, x_month, x_day);
+
+                years = 0;
+                while (dt1.AddYears(1) < dt2)
+                {
+                    years++;
+                    dt1 = dt1.AddYears(1);
+                }
+
+                months = 0;
+                while (dt1.AddMonths(1) < dt2)
+                {
+                    months++;
+                    dt1 = dt1.AddMonths(1);
+                }
+
+                days = (int)Math.Floor(dt2.Subtract(dt1).TotalDays);
+                CalismaSuresiCalculated = ($"{days} gün, {months} ay, {years} yıl.");
+            }
+            else { CalismaSuresiCalculated = string.Empty; }
+        }
+        else
         {
             string date = BaslamaTarihiDisplay;
             string year = date.Substring(6, 4);
@@ -157,25 +207,46 @@ public class EmployeeDetailsViewModel : ViewModelBase
             int x_month = Int32.Parse(month);
             int x_day = Int32.Parse(day);
 
-            DateTime dt2 = DateTime.Now;
-            DateTime dt1 = new DateTime(x_year, x_month, x_day);
+
+            string dateCikis = IstenCikisDisplay;
+            string yearCikis = dateCikis.Substring(6, 4);
+            string monthCikis = dateCikis.Substring(3, 2);
+            string dayCikis = dateCikis.Substring(0, 2);
+
+            int y_year = Int32.Parse(yearCikis);
+            int y_month = Int32.Parse(monthCikis);
+            int y_day = Int32.Parse(dayCikis);
+
+            DateTime date2 = new DateTime(y_year, y_month, y_day);
+            DateTime date1 = new DateTime(x_year, x_month, x_day);
 
             years = 0;
-            while (dt1.AddYears(1) < dt2)
+            while (date1.AddYears(1) < date2)
             {
                 years++;
-                dt1 = dt1.AddYears(1);
+                date1 = date1.AddYears(1);
             }
 
             months = 0;
-            while (dt1.AddMonths(1) < dt2)
+            while (date1.AddMonths(1) < date2)
             {
                 months++;
-                dt1 = dt1.AddMonths(1);
+                date1 = date1.AddMonths(1);
             }
 
-            days = (int)Math.Floor(dt2.Subtract(dt1).TotalDays);
+            days = (int)Math.Floor(date2.Subtract(date1).TotalDays);
+            CalismaSuresiCalculated = ($"{days} gün, {months} ay, {years} yıl.");
         }
+
+
+    }
+
+    public void IsNumberEmpty()
+    {
+        if (!string.IsNullOrEmpty(CepTelDisplay))
+            ShowButton = true;
+        else
+            ShowButton = false;
     }
 
     protected override void Dispose()
@@ -187,6 +258,7 @@ public class EmployeeDetailsViewModel : ViewModelBase
     private void SelectedEmployeeStore_SelectedEmployeeChanged()
     {
         DateTimeCalculate();
+        IsNumberEmpty();
 
         OnPropertyChanged(nameof(HasSelectedEmployee));
         OnPropertyChanged(nameof(FotografDisplay));
@@ -208,6 +280,7 @@ public class EmployeeDetailsViewModel : ViewModelBase
         OnPropertyChanged(nameof(BaslamaTarihiDisplay));
         OnPropertyChanged(nameof(AdresDisplay));
         OnPropertyChanged(nameof(EkBilgiDisplay));
+
 
     }
 }

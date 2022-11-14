@@ -106,7 +106,7 @@
         <Style TargetType="Button" x:Key="wAppButton">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#FF3AA90A"/>
-            <Setter Property="Padding" Value="20 8"/>
+            <Setter Property="Padding" Value="8 8"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>

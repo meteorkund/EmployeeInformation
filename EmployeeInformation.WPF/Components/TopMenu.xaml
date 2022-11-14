@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EmployeeInformation.WPF.Components"
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:viewmodels="clr-namespace:EmployeeInformation.WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="900">
     <UserControl.Resources>
@@ -80,10 +81,11 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <ComboBox Width="150" Height="30" Grid.Row="0" Margin="20 0 0 0"           
+            <ComboBox Width="170" Height="30" Grid.Row="0" Margin="20 0 0 0"           
                   FontSize="15"
                   FontWeight="SemiBold"
                   FontFamily="Segoe UI"
+                  IsEnabled="{Binding IsVisibleCBox}"
                   Text="{Binding SelectedDepartmentName, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                                             
                   ItemsSource="{Binding DepartmentListingItemViewModels}"
@@ -93,7 +95,7 @@
                   IsSynchronizedWithCurrentItem="True">
             </ComboBox>
 
-            <CheckBox Grid.Row="1" IsChecked="{Binding IsCheckedAllDepartment,UpdateSourceTrigger=PropertyChanged}" Content="Tümü" Margin="20 10 0 0" FontSize="15" FontFamily="Segoe UI" FontWeight="SemiBold"/>
+            <CheckBox Grid.Row="1" IsChecked="{Binding IsCheckedAllDepartment,UpdateSourceTrigger=PropertyChanged}" Content="TÜM DEPARTMANLAR" Margin="20 10 0 0" FontSize="15" FontFamily="Segoe UI" FontWeight="SemiBold"/>
 
         </Grid>
 

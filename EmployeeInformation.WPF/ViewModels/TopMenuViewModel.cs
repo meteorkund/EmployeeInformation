@@ -22,7 +22,7 @@ public class TopMenuViewModel : ViewModelBase
 
     public EmployeeListingViewModel EmployeeListingViewModel { get; set; }
     public IEnumerable<DepartmentListingItemViewModel> DepartmentListingItemViewModels => _departmentListingViewModel.DepartmentListingItemViewModels;
- 
+
 
     public TopMenuViewModel(
         EmployeeListingViewModel employeeListingViewModel,
@@ -46,7 +46,7 @@ public class TopMenuViewModel : ViewModelBase
     }
 
 
-    private string _textToFilter;
+    private string _textToFilter = string.Empty;
     public string TextToFilter
     {
         get { return _textToFilter; }
@@ -55,7 +55,7 @@ public class TopMenuViewModel : ViewModelBase
             _textToFilter = value;
             OnPropertyChanged(nameof(TextToFilter));
 
-            _employeeListingViewModel.EmployeeCollection.Filter = FilterByName;
+            _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
 
         }
     }
@@ -69,12 +69,11 @@ public class TopMenuViewModel : ViewModelBase
         {
             _isCheckedRadioActive = value;
             OnPropertyChanged(nameof(IsCheckedRadioActive));
-            TextToFilter = string.Empty;
-            _employeeListingViewModel.EmployeeCollection.Filter = FilterByStatus;
+            _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
         }
     }
 
-    private bool _isCheckedRadioDeactive =true;
+    private bool _isCheckedRadioDeactive = true;
     public bool IsCheckedRadioDeactive
     {
         get { return _isCheckedRadioDeactive; }
@@ -82,10 +81,21 @@ public class TopMenuViewModel : ViewModelBase
         {
             _isCheckedRadioDeactive = value;
             OnPropertyChanged(nameof(IsCheckedRadioDeactive));
-            TextToFilter = string.Empty;
-            _employeeListingViewModel.EmployeeCollection.Filter = FilterByStatus;
+            _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
         }
     }
+
+    private bool _isVisibleCBox;
+    public bool IsVisibleCBox
+    {
+        get { return !_isCheckedAllDepartment; }
+        set
+        {
+            _isVisibleCBox = value;
+            OnPropertyChanged(nameof(IsVisibleCBox));
+        }
+    }
+
 
     private bool _isCheckedAllDepartment = true;
     public bool IsCheckedAllDepartment
@@ -95,10 +105,10 @@ public class TopMenuViewModel : ViewModelBase
         {
             _isCheckedAllDepartment = value;
             OnPropertyChanged(nameof(IsCheckedAllDepartment));
-            TextToFilter = string.Empty;
+            OnPropertyChanged(nameof(IsVisibleCBox));
             if (_isCheckedAllDepartment == true)
-                SelectedDepartmentName = null;
-            _employeeListingViewModel.EmployeeCollection.Filter = FilterByStatus;
+                SelectedDepartmentName = string.Empty;
+            _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
         }
     }
 
@@ -110,11 +120,9 @@ public class TopMenuViewModel : ViewModelBase
         {
             _selectedDepartment = value;
 
-            TextToFilter = string.Empty;
             SelectedDepartmentName = _selectedDepartment.DepartmentName;
-            IsCheckedAllDepartment = false;
 
-            _employeeListingViewModel.EmployeeCollection.Filter = FilterByDepartment;
+            _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
 
             OnPropertyChanged(nameof(SelectedDepartment));
         }
@@ -133,101 +141,61 @@ public class TopMenuViewModel : ViewModelBase
     }
 
 
-    private bool FilterByName(object emp)
+    private bool FilterEmployee(object emp)
     {
         var empDetail = emp as EmployeeListingItemViewModel;
 
-            if (IsCheckedRadioActive)
+        if (IsCheckedAllDepartment == true)
+        {
+            if (IsCheckedRadioActive == true && IsCheckedRadioDeactive == false)
             {
+                return empDetail.Durum.Equals(true) && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
+            }
 
-                if (string.IsNullOrEmpty(SelectedDepartmentName))
-                {
-                    return empDetail.Durum.Equals(true)
-                           && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
-                }
+            if (IsCheckedRadioDeactive == true && IsCheckedRadioActive == false)
+            {
+                return empDetail.Durum.Equals(false) && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
+            }
+
+            if (IsCheckedRadioActive == true && IsCheckedRadioDeactive == true)
+            {
+                return (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
+            }
+
+            if (IsCheckedRadioActive == false && IsCheckedRadioDeactive == false)
+            {
+                return false;
+            }
+        }
+
+        if (IsCheckedAllDepartment == false)
+        {
+            if (IsCheckedRadioActive == true && IsCheckedRadioDeactive == false)
+            {
                 return empDetail.Durum.Equals(true)
-                       && empDetail.Departman.Contains(SelectedDepartmentName)
-                       && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
-
+                    && empDetail.Departman.Contains(SelectedDepartmentName)
+                    && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
             }
 
-            if (IsCheckedRadioDeactive)
+            if (IsCheckedRadioDeactive == true && IsCheckedRadioActive == false)
             {
-
-                if (string.IsNullOrEmpty(SelectedDepartmentName))
-                {
-                    return empDetail.Durum.Equals(false)
-                       && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
-                }
                 return empDetail.Durum.Equals(false)
-                       && empDetail.Departman.Contains(SelectedDepartmentName)
-                       && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
-
+                    && empDetail.Departman.Contains(SelectedDepartmentName)
+                    && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
             }
 
-            if (IsCheckedRadioActive && IsCheckedRadioDeactive)
+            if (IsCheckedRadioActive == true && IsCheckedRadioDeactive == true)
             {
                 return empDetail.Departman.Contains(SelectedDepartmentName)
-                       && empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter);
-            }    
+                    && (empDetail.Isim.Contains(TextToFilter) || empDetail.Soyisim.Contains(TextToFilter));
+            }
 
+            if (IsCheckedRadioActive == false && IsCheckedRadioDeactive == false)
+            {
+                return false;
+            }
+        }
 
         return true;
     }
-
-    private bool FilterByStatus(object emp)
-    {
-        var empDetail = emp as EmployeeListingItemViewModel;
-
-        if (IsCheckedRadioActive)
-        {
-            if (string.IsNullOrEmpty(SelectedDepartmentName))
-                return empDetail.Durum.Equals(true);
-
-            return empDetail.Durum.Equals(true) && empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-
-        if (IsCheckedRadioDeactive)
-        {
-            if (string.IsNullOrEmpty(SelectedDepartmentName))
-                return empDetail.Durum.Equals(false);
-
-            return empDetail.Durum.Equals(false) && empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-
-        if (IsCheckedRadioActive && IsCheckedRadioDeactive)
-        {
-            if (string.IsNullOrEmpty(SelectedDepartmentName))
-                return empDetail != null;
-            return empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-        return true;
-
-    }
-
-    private bool FilterByDepartment(object emp)
-    {
-        if (IsCheckedRadioActive)
-        {
-            var empDetail = emp as EmployeeListingItemViewModel;
-            return empDetail.Durum.Equals(true) && empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-
-        if (IsCheckedRadioDeactive)
-        {
-            var empDetail = emp as EmployeeListingItemViewModel;
-            return empDetail.Durum.Equals(false) && empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-
-        if (IsCheckedAllDepartment)
-        {
-            var empDetail = emp as EmployeeListingItemViewModel;
-            return empDetail != null && empDetail.Departman.Contains(SelectedDepartmentName);
-        }
-        return true;
-
-    }
-
-
-
 }
