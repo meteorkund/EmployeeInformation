@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
 {
@@ -22,120 +23,201 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
         }
 
         #region OCAK
-        public int Ocak2021_C1_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C1;
-        public int Ocak2021_C2_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C2;
-        public int Ocak2021_C3_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C3;
-        public int Ocak2021_C4_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C4;
-        public int Ocak2021_C5_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C5;
-        public int Ocak2021_C6_Display => (int)SelectedEmployee?.Vacation2021.Ocak2021_C6;
+        public string Ocak2021_C1_Display => SelectedEmployee?.Vacation2021.Ocak2021_C1.ToString();
+        public string Ocak2021_C2_Display => SelectedEmployee?.Vacation2021.Ocak2021_C2.ToString();
+        public string Ocak2021_C3_Display => SelectedEmployee?.Vacation2021.Ocak2021_C3.ToString();
+        public string Ocak2021_C4_Display => SelectedEmployee?.Vacation2021.Ocak2021_C4.ToString();
+        public string Ocak2021_C5_Display => SelectedEmployee?.Vacation2021.Ocak2021_C5.ToString();
+        public string Ocak2021_C6_Display => SelectedEmployee?.Vacation2021.Ocak2021_C6.ToString();
         #endregion
 
         #region ŞUBAT
-        public int Subat2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C1);
-        public int Subat2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C2);
-        public int Subat2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C3);
-        public int Subat2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C4);
-        public int Subat2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C5);
-        public int Subat2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Subat2021_C6);
+        public string Subat2021_C1_Display => SelectedEmployee?.Vacation2021.Subat2021_C1.ToString();
+        public string Subat2021_C2_Display => SelectedEmployee?.Vacation2021.Subat2021_C2.ToString();
+        public string Subat2021_C3_Display => SelectedEmployee?.Vacation2021.Subat2021_C3.ToString();
+        public string Subat2021_C4_Display => SelectedEmployee?.Vacation2021.Subat2021_C4.ToString();
+        public string Subat2021_C5_Display => SelectedEmployee?.Vacation2021.Subat2021_C5.ToString();
+        public string Subat2021_C6_Display => SelectedEmployee?.Vacation2021.Subat2021_C6.ToString();
         #endregion
 
         #region MART
-        public int Mart2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C1);
-        public int Mart2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C2);
-        public int Mart2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C3);
-        public int Mart2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C4);
-        public int Mart2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C5);
-        public int Mart2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Mart2021_C6);
+        public string Mart2021_C1_Display => SelectedEmployee?.Vacation2021.Mart2021_C1.ToString();
+        public string Mart2021_C2_Display => SelectedEmployee?.Vacation2021.Mart2021_C2.ToString();
+        public string Mart2021_C3_Display => SelectedEmployee?.Vacation2021.Mart2021_C3.ToString();
+        public string Mart2021_C4_Display => SelectedEmployee?.Vacation2021.Mart2021_C4.ToString();
+        public string Mart2021_C5_Display => SelectedEmployee?.Vacation2021.Mart2021_C5.ToString();
+        public string Mart2021_C6_Display => SelectedEmployee?.Vacation2021.Mart2021_C6.ToString();
         #endregion
 
         #region NİSAN
-        public int Nisan2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C1);
-        public int Nisan2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C2);
-        public int Nisan2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C3);
-        public int Nisan2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C4);
-        public int Nisan2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C5);
-        public int Nisan2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Nisan2021_C6);
+        public string Nisan2021_C1_Display => SelectedEmployee?.Vacation2021.Nisan2021_C1.ToString();
+        public string Nisan2021_C2_Display => SelectedEmployee?.Vacation2021.Nisan2021_C2.ToString();
+        public string Nisan2021_C3_Display => SelectedEmployee?.Vacation2021.Nisan2021_C3.ToString();
+        public string Nisan2021_C4_Display => SelectedEmployee?.Vacation2021.Nisan2021_C4.ToString();
+        public string Nisan2021_C5_Display => SelectedEmployee?.Vacation2021.Nisan2021_C5.ToString();
+        public string Nisan2021_C6_Display => SelectedEmployee?.Vacation2021.Nisan2021_C6.ToString();
         #endregion
 
         #region MAYIS
-        public int Mayis2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C1);
-        public int Mayis2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C2);
-        public int Mayis2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C3);
-        public int Mayis2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C4);
-        public int Mayis2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C5);
-        public int Mayis2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Mayis2021_C6);
+        public string Mayis2021_C1_Display => SelectedEmployee?.Vacation2021.Mayis2021_C1.ToString();
+        public string Mayis2021_C2_Display => SelectedEmployee?.Vacation2021.Mayis2021_C2.ToString();
+        public string Mayis2021_C3_Display => SelectedEmployee?.Vacation2021.Mayis2021_C3.ToString();
+        public string Mayis2021_C4_Display => SelectedEmployee?.Vacation2021.Mayis2021_C4.ToString();
+        public string Mayis2021_C5_Display => SelectedEmployee?.Vacation2021.Mayis2021_C5.ToString();
+        public string Mayis2021_C6_Display => SelectedEmployee?.Vacation2021.Mayis2021_C6.ToString();
         #endregion
 
         #region HAZİRAN
-        public int Haziran2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C1);
-        public int Haziran2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C2);
-        public int Haziran2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C3);
-        public int Haziran2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C4);
-        public int Haziran2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C5);
-        public int Haziran2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Haziran2021_C6);
+        public string Haziran2021_C1_Display => SelectedEmployee?.Vacation2021.Haziran2021_C1.ToString();
+        public string Haziran2021_C2_Display => SelectedEmployee?.Vacation2021.Haziran2021_C2.ToString();
+        public string Haziran2021_C3_Display => SelectedEmployee?.Vacation2021.Haziran2021_C3.ToString();
+        public string Haziran2021_C4_Display => SelectedEmployee?.Vacation2021.Haziran2021_C4.ToString();
+        public string Haziran2021_C5_Display => SelectedEmployee?.Vacation2021.Haziran2021_C5.ToString();
+        public string Haziran2021_C6_Display => SelectedEmployee?.Vacation2021.Haziran2021_C6.ToString();
         #endregion
 
         #region TEMMUZ
-        public int Temmuz2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C1);
-        public int Temmuz2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C2);
-        public int Temmuz2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C3);
-        public int Temmuz2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C4);
-        public int Temmuz2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C5);
-        public int Temmuz2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Temmuz2021_C6);
+        public string Temmuz2021_C1_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C1.ToString();
+        public string Temmuz2021_C2_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C2.ToString();
+        public string Temmuz2021_C3_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C3.ToString();
+        public string Temmuz2021_C4_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C4.ToString();
+        public string Temmuz2021_C5_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C5.ToString();
+        public string Temmuz2021_C6_Display => SelectedEmployee?.Vacation2021.Temmuz2021_C6.ToString();
         #endregion
 
         #region AĞUSTOS
-        public int Agustos2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C1);
-        public int Agustos2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C2);
-        public int Agustos2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C3);
-        public int Agustos2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C4);
-        public int Agustos2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C5);
-        public int Agustos2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Agustos2021_C6);
+        public string Agustos2021_C1_Display => SelectedEmployee?.Vacation2021.Agustos2021_C1.ToString();
+        public string Agustos2021_C2_Display => SelectedEmployee?.Vacation2021.Agustos2021_C2.ToString();
+        public string Agustos2021_C3_Display => SelectedEmployee?.Vacation2021.Agustos2021_C3.ToString();
+        public string Agustos2021_C4_Display => SelectedEmployee?.Vacation2021.Agustos2021_C4.ToString();
+        public string Agustos2021_C5_Display => SelectedEmployee?.Vacation2021.Agustos2021_C5.ToString();
+        public string Agustos2021_C6_Display => SelectedEmployee?.Vacation2021.Agustos2021_C6.ToString();
         #endregion
 
         #region EYLÜL
-        public int Eylul2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C1);
-        public int Eylul2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C2);
-        public int Eylul2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C3);
-        public int Eylul2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C4);
-        public int Eylul2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C5);
-        public int Eylul2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Eylul2021_C6);
+        public string Eylul2021_C1_Display => SelectedEmployee?.Vacation2021.Eylul2021_C1.ToString();
+        public string Eylul2021_C2_Display => SelectedEmployee?.Vacation2021.Eylul2021_C2.ToString();
+        public string Eylul2021_C3_Display => SelectedEmployee?.Vacation2021.Eylul2021_C3.ToString();
+        public string Eylul2021_C4_Display => SelectedEmployee?.Vacation2021.Eylul2021_C4.ToString();
+        public string Eylul2021_C5_Display => SelectedEmployee?.Vacation2021.Eylul2021_C5.ToString();
+        public string Eylul2021_C6_Display => SelectedEmployee?.Vacation2021.Eylul2021_C6.ToString();
         #endregion
 
         #region EKİM
-        public int Ekim2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C1);
-        public int Ekim2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C2);
-        public int Ekim2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C3);
-        public int Ekim2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C4);
-        public int Ekim2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C5);
-        public int Ekim2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Ekim2021_C6);
+        public string Ekim2021_C1_Display => SelectedEmployee?.Vacation2021.Ekim2021_C1.ToString();
+        public string Ekim2021_C2_Display => SelectedEmployee?.Vacation2021.Ekim2021_C2.ToString();
+        public string Ekim2021_C3_Display => SelectedEmployee?.Vacation2021.Ekim2021_C3.ToString();
+        public string Ekim2021_C4_Display => SelectedEmployee?.Vacation2021.Ekim2021_C4.ToString();
+        public string Ekim2021_C5_Display => SelectedEmployee?.Vacation2021.Ekim2021_C5.ToString();
+        public string Ekim2021_C6_Display => SelectedEmployee?.Vacation2021.Ekim2021_C6.ToString();
         #endregion
 
         #region KASIM
-        public int Kasim2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C1);
-        public int Kasim2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C2);
-        public int Kasim2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C3);
-        public int Kasim2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C4);
-        public int Kasim2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C5);
-        public int Kasim2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Kasim2021_C6);
+        public string Kasim2021_C1_Display => SelectedEmployee?.Vacation2021.Kasim2021_C1.ToString();
+        public string Kasim2021_C2_Display => SelectedEmployee?.Vacation2021.Kasim2021_C2.ToString();
+        public string Kasim2021_C3_Display => SelectedEmployee?.Vacation2021.Kasim2021_C3.ToString();
+        public string Kasim2021_C4_Display => SelectedEmployee?.Vacation2021.Kasim2021_C4.ToString();
+        public string Kasim2021_C5_Display => SelectedEmployee?.Vacation2021.Kasim2021_C5.ToString();
+        public string Kasim2021_C6_Display => SelectedEmployee?.Vacation2021.Kasim2021_C6.ToString();
         #endregion
 
         #region ARALIK
-        public int Aralik2021_C1_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C1);
-        public int Aralik2021_C2_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C2);
-        public int Aralik2021_C3_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C3);
-        public int Aralik2021_C4_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C4);
-        public int Aralik2021_C5_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C5);
-        public int Aralik2021_C6_Display => (int)(SelectedEmployee?.Vacation2021.Aralik2021_C6);
+        public string Aralik2021_C1_Display => SelectedEmployee?.Vacation2021.Aralik2021_C1.ToString();
+        public string Aralik2021_C2_Display => SelectedEmployee?.Vacation2021.Aralik2021_C2.ToString();
+        public string Aralik2021_C3_Display => SelectedEmployee?.Vacation2021.Aralik2021_C3.ToString();
+        public string Aralik2021_C4_Display => SelectedEmployee?.Vacation2021.Aralik2021_C4.ToString();
+        public string Aralik2021_C5_Display => SelectedEmployee?.Vacation2021.Aralik2021_C5.ToString();
+        public string Aralik2021_C6_Display => SelectedEmployee?.Vacation2021.Aralik2021_C6.ToString();
         #endregion
 
         #region TOPLAM
-        public int Toplam2021_C1_Display => Ocak2021_C1_Display + Subat2021_C1_Display + Mart2021_C1_Display + Nisan2021_C1_Display + Mayis2021_C1_Display + Haziran2021_C1_Display + Temmuz2021_C1_Display + Agustos2021_C1_Display + Eylul2021_C1_Display + Ekim2021_C1_Display + Kasim2021_C1_Display + Aralik2021_C1_Display;
-        public int Toplam2021_C2_Display => Ocak2021_C2_Display + Subat2021_C2_Display + Mart2021_C2_Display + Nisan2021_C2_Display + Mayis2021_C2_Display + Haziran2021_C2_Display + Temmuz2021_C2_Display + Agustos2021_C2_Display + Eylul2021_C2_Display + Ekim2021_C2_Display + Kasim2021_C2_Display + Aralik2021_C2_Display;
-        public int Toplam2021_C3_Display => Ocak2021_C3_Display + Subat2021_C3_Display + Mart2021_C3_Display + Nisan2021_C3_Display + Mayis2021_C3_Display + Haziran2021_C3_Display + Temmuz2021_C3_Display + Agustos2021_C3_Display + Eylul2021_C3_Display + Ekim2021_C3_Display + Kasim2021_C3_Display + Aralik2021_C3_Display;
-        public int Toplam2021_C4_Display => Ocak2021_C4_Display + Subat2021_C4_Display + Mart2021_C4_Display + Nisan2021_C4_Display + Mayis2021_C4_Display + Haziran2021_C4_Display + Temmuz2021_C4_Display + Agustos2021_C4_Display + Eylul2021_C4_Display + Ekim2021_C4_Display + Kasim2021_C4_Display + Aralik2021_C4_Display;
-        public int Toplam2021_C5_Display => Ocak2021_C5_Display + Subat2021_C5_Display + Mart2021_C5_Display + Nisan2021_C5_Display + Mayis2021_C5_Display + Haziran2021_C5_Display + Temmuz2021_C5_Display + Agustos2021_C5_Display + Eylul2021_C5_Display + Ekim2021_C5_Display + Kasim2021_C5_Display + Aralik2021_C5_Display;
-        public int Toplam2021_C6_Display => Ocak2021_C6_Display + Subat2021_C6_Display + Mart2021_C6_Display + Nisan2021_C6_Display + Mayis2021_C6_Display + Haziran2021_C6_Display + Temmuz2021_C6_Display + Agustos2021_C6_Display + Eylul2021_C6_Display + Ekim2021_C6_Display + Kasim2021_C6_Display + Aralik2021_C6_Display;
+        public string Toplam2021_C1_Display => Toplam2021_C1.ToString();
+        public string Toplam2021_C2_Display => Toplam2021_C2.ToString();
+        public string Toplam2021_C3_Display => Toplam2021_C3.ToString();
+        public string Toplam2021_C4_Display => Toplam2021_C4.ToString();
+        public string Toplam2021_C5_Display => Toplam2021_C5.ToString();
+        public string Toplam2021_C6_Display => Toplam2021_C6.ToString();
+
+        public int Toplam2021_C1 =>
+            Int32.Parse(Ocak2021_C1_Display) +
+            Int32.Parse(Subat2021_C1_Display) +
+            Int32.Parse(Mart2021_C1_Display) +
+            Int32.Parse(Nisan2021_C1_Display) +
+            Int32.Parse(Mayis2021_C1_Display) +
+            Int32.Parse(Haziran2021_C1_Display) +
+            Int32.Parse(Temmuz2021_C1_Display) +
+            Int32.Parse(Agustos2021_C1_Display) +
+            Int32.Parse(Eylul2021_C1_Display) +
+            Int32.Parse(Ekim2021_C1_Display) +
+            Int32.Parse(Kasim2021_C1_Display) +
+            Int32.Parse(Aralik2021_C1_Display);
+
+        public int Toplam2021_C2 =>
+            Int32.Parse(Ocak2021_C2_Display) +
+            Int32.Parse(Subat2021_C2_Display) +
+            Int32.Parse(Mart2021_C2_Display) +
+            Int32.Parse(Nisan2021_C2_Display) +
+            Int32.Parse(Mayis2021_C2_Display) +
+            Int32.Parse(Haziran2021_C2_Display) +
+            Int32.Parse(Temmuz2021_C2_Display) +
+            Int32.Parse(Agustos2021_C2_Display) +
+            Int32.Parse(Eylul2021_C2_Display) +
+            Int32.Parse(Ekim2021_C2_Display) +
+            Int32.Parse(Kasim2021_C2_Display) +
+            Int32.Parse(Aralik2021_C2_Display);
+        public int Toplam2021_C3 =>
+            Int32.Parse(Ocak2021_C3_Display) +
+            Int32.Parse(Subat2021_C3_Display) +
+            Int32.Parse(Mart2021_C3_Display) +
+            Int32.Parse(Nisan2021_C3_Display) +
+            Int32.Parse(Mayis2021_C3_Display) +
+            Int32.Parse(Haziran2021_C3_Display) +
+            Int32.Parse(Temmuz2021_C3_Display) +
+            Int32.Parse(Agustos2021_C3_Display) +
+            Int32.Parse(Eylul2021_C3_Display) +
+            Int32.Parse(Ekim2021_C3_Display) +
+            Int32.Parse(Kasim2021_C3_Display) +
+            Int32.Parse(Aralik2021_C3_Display);
+        public int Toplam2021_C4 =>
+            Int32.Parse(Ocak2021_C4_Display) +
+            Int32.Parse(Subat2021_C4_Display) +
+            Int32.Parse(Mart2021_C4_Display) +
+            Int32.Parse(Nisan2021_C4_Display) +
+            Int32.Parse(Mayis2021_C4_Display) +
+            Int32.Parse(Haziran2021_C4_Display) +
+            Int32.Parse(Temmuz2021_C4_Display) +
+            Int32.Parse(Agustos2021_C4_Display) +
+            Int32.Parse(Eylul2021_C4_Display) +
+            Int32.Parse(Ekim2021_C4_Display) +
+            Int32.Parse(Kasim2021_C4_Display) +
+            Int32.Parse(Aralik2021_C4_Display);
+
+        public int Toplam2021_C5 =>
+            Int32.Parse(Ocak2021_C5_Display) +
+            Int32.Parse(Subat2021_C5_Display) +
+            Int32.Parse(Mart2021_C5_Display) +
+            Int32.Parse(Nisan2021_C5_Display) +
+            Int32.Parse(Mayis2021_C5_Display) +
+            Int32.Parse(Haziran2021_C5_Display) +
+            Int32.Parse(Temmuz2021_C5_Display) +
+            Int32.Parse(Agustos2021_C5_Display) +
+            Int32.Parse(Eylul2021_C5_Display) +
+            Int32.Parse(Ekim2021_C5_Display) +
+            Int32.Parse(Kasim2021_C5_Display) +
+            Int32.Parse(Aralik2021_C5_Display);
+        public int Toplam2021_C6 =>
+            Int32.Parse(Ocak2021_C6_Display) +
+            Int32.Parse(Subat2021_C6_Display) +
+            Int32.Parse(Mart2021_C6_Display) +
+            Int32.Parse(Nisan2021_C6_Display) +
+            Int32.Parse(Mayis2021_C6_Display) +
+            Int32.Parse(Haziran2021_C6_Display) +
+            Int32.Parse(Temmuz2021_C6_Display) +
+            Int32.Parse(Agustos2021_C6_Display) +
+            Int32.Parse(Eylul2021_C6_Display) +
+            Int32.Parse(Ekim2021_C6_Display) +
+            Int32.Parse(Kasim2021_C6_Display) +
+            Int32.Parse(Aralik2021_C6_Display);
 
         #endregion
 
@@ -241,5 +323,6 @@ namespace EmployeeInformation.WPF.ViewModels.VacationViewModels
             OnPropertyChanged(nameof(Toplam2021_C6_Display));
 
         }
+
     }
 }
