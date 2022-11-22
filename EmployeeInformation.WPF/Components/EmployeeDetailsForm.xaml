@@ -177,7 +177,6 @@
                                 ItemsSource="{Binding DepartmentListingItemViewModels}"
                                 SelectedItem="{Binding SelectedDepartmentItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectedValue="{Binding SelectedDepartmentValue}"
-                                SelectedIndex="{Binding SelectedIndexCommon}"
 
                                 
                                 SelectedValuePath="DepartmentId"
@@ -206,7 +205,6 @@
                                 ItemsSource="{Binding SectorListingItemViewModels}"
                                 SelectedItem="{Binding SelectedSectorItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectedValue="{Binding SelectedSectorValue}"
-                                SelectedIndex="{Binding SelectedIndexCommon}"
 
                                 
                                 SelectedValuePath="SectorId"                             
@@ -385,7 +383,6 @@
                                 ItemsSource="{Binding MaritialStatusListingItemViewModels}"
                                 SelectedItem="{Binding SelectedMaritialStatusItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectedValue="{Binding SelectedMaritialStatusValue}"
-                                SelectedIndex="{Binding SelectedIndexCommon}"
 
                                                                 
                                 DisplayMemberPath="MaritialStatusName"
@@ -415,7 +412,6 @@
                                 ItemsSource="{Binding EducationListingItemViewModels}"
                                 SelectedItem="{Binding SelectedEducationItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectedValue="{Binding SelectedEducationValue}"
-                                SelectedIndex="{Binding SelectedIndexCommon}"
 
                                                                 
                                 DisplayMemberPath="EducationDegree"
@@ -445,7 +441,6 @@
                                 ItemsSource="{Binding MilitaryListingItemViewModels}"
                                 SelectedItem="{Binding SelectedMilitaryServiceItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 SelectedValue="{Binding SelectedMilitaryServiceValue}"
-                                SelectedIndex="{Binding SelectedIndexCommon}"
                                                                 
                                 DisplayMemberPath="MilitaryStatus"
                                 SelectedValuePath="MilitaryServiceId"
