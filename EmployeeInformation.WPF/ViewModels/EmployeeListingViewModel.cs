@@ -83,6 +83,7 @@ namespace EmployeeInformation.WPF.ViewModels
         public TopMenuViewModel TopMenuViewModel { get; set; }
 
         public ICommand LoadEmployeesCommand { get; }
+        public ICommand LoadComboBoxItemsCommand { get; }
 
         public EmployeeListingViewModel(EmployeeStore employeeStore, SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)
         {
@@ -104,8 +105,7 @@ namespace EmployeeInformation.WPF.ViewModels
             EmployeeCollection = CollectionViewSource.GetDefaultView(_employeeListingItemViewModels);
 
             LoadEmployeesCommand = new LoadEmployeesCommand(this, employeeStore);
-
-            TopMenuViewModel = new TopMenuViewModel(this, employeeStore, modalNavigationStore, contextFactory, sectorStore, departmentStore, educationStore, militaryStore, maritialStore);
+            LoadComboBoxItemsCommand = new LoadComboBoxItemsCommand(departmentStore, educationStore, maritialStore, militaryStore, sectorStore);
 
             _employeeStore.EmployeesLoaded += EmployeeStore_EmployeesLoaded;
             _employeeStore.EmployeeAdded += EmployeeStore_EmployeeAdded;
@@ -120,6 +120,7 @@ namespace EmployeeInformation.WPF.ViewModels
         {
             EmployeeListingViewModel viewModel = new EmployeeListingViewModel(employeeStore, selectedEmployeeStore, modalNavigationStore, contextFactory, sectorStore, departmentStore, educationStore, militaryStore, maritialStore);
             viewModel.LoadEmployeesCommand.Execute(null);
+            viewModel.LoadComboBoxItemsCommand.Execute(null);
             return viewModel;
         }
 
@@ -170,7 +171,7 @@ namespace EmployeeInformation.WPF.ViewModels
 
         private void AddEmployee(Employee employee)
         {
-            EmployeeListingItemViewModel itemViewModel = new EmployeeListingItemViewModel(employee, _employeeStore, _modalNavigationStore, _sectorStore, _departmentStore, _educationStore,_militaryStore, _maritialStore);
+            EmployeeListingItemViewModel itemViewModel = new EmployeeListingItemViewModel(employee, _employeeStore, _modalNavigationStore, _sectorStore, _departmentStore, _educationStore, _militaryStore, _maritialStore);
             _employeeListingItemViewModels.Add(itemViewModel);
         }
 

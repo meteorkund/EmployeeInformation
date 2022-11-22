@@ -21,12 +21,7 @@ public static class AddViewModelsHostBuilderExtensions
             services.AddSingleton<MainViewModel>();
             services.AddTransient<EmployeesViewModel>();
 
-            services.AddTransient<EmployeeListingViewModel>(CreateEmployeeListingViewModel);
-            services.AddTransient<DepartmentListingViewModel>(CreateDepartmentListingViewModel);
-            services.AddTransient<SectorListingViewModel>(CreateSectorListingViewModel);
-            services.AddTransient<EducationListingViewModel>(CreateEducationListingViewModel);
-            services.AddTransient<EducationListingViewModel>(CreateEducationListingViewModel);
-            services.AddTransient<MilitaryListingViewModel>(CreateMilitaryListingViewModel);
+            services.AddSingleton<EmployeeListingViewModel>(CreateEmployeeListingViewModel);
 
 
         });
@@ -34,36 +29,6 @@ public static class AddViewModelsHostBuilderExtensions
         return hostBuilder;
     }
 
-    private static MilitaryListingViewModel CreateMilitaryListingViewModel(IServiceProvider services)
-    {
-        return MilitaryListingViewModel.LoadMilitaryServices
-            (
-            services.GetRequiredService<MilitaryStore>()
-            );
-    }
-
-    private static EducationListingViewModel CreateEducationListingViewModel(IServiceProvider services)
-    {
-        return EducationListingViewModel.LoadEducations
-            (
-            services.GetRequiredService<EducationStore>()
-            );
-    }
-
-    private static SectorListingViewModel CreateSectorListingViewModel(IServiceProvider services)
-    {
-        return SectorListingViewModel.LoadSectors
-            (
-            services.GetRequiredService<SectorStore>()
-            );
-    }
-    private static DepartmentListingViewModel CreateDepartmentListingViewModel(IServiceProvider services)
-    {
-        return DepartmentListingViewModel.LoadDepartments
-            (
-            services.GetRequiredService<DepartmentStore>()
-            );
-    }
 
     private static EmployeeListingViewModel CreateEmployeeListingViewModel(IServiceProvider services)
     {

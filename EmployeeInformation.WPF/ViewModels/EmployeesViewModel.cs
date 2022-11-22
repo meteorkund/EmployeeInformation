@@ -13,8 +13,6 @@ public class EmployeesViewModel : ViewModelBase
     readonly EmployeesDbContextFactory _contextFactory;
 
 
-    public ICommand LoadEmployeesCommand { get; }
-
     public TopMenuViewModel TopMenuViewModel { get; }
     public LeftMenuViewModel LeftMenuViewModel { get; }
     public EmployeesViewModel(EmployeeStore employeeStore, SelectedEmployeeStore selectedEmployeeStore, ModalNavigationStore modalNavigationStore, EmployeesDbContextFactory contextFactory, SectorStore sectorStore, DepartmentStore departmentStore, EducationStore educationStore, MilitaryStore militaryStore, MaritialStore maritialStore)

@@ -18,10 +18,8 @@ public class TopMenuViewModel : ViewModelBase
     readonly EmployeeListingViewModel _employeeListingViewModel;
     readonly DepartmentListingViewModel _departmentListingViewModel;
 
-    public DepartmentListingViewModel DepartmentListingViewModels { get; set; }
-
-    public EmployeeListingViewModel EmployeeListingViewModel { get; set; }
-    public IEnumerable<DepartmentListingItemViewModel> DepartmentListingItemViewModels => _departmentListingViewModel.DepartmentListingItemViewModels;
+    readonly DepartmentStore _departmentStore;
+    public IEnumerable<DepartmentListingItemViewModel> DepartmentListingItemViewModels => _departmentStore._departmentListingItemViewModels;
 
 
     public TopMenuViewModel(
@@ -36,11 +34,9 @@ public class TopMenuViewModel : ViewModelBase
         MaritialStore maritialStore)
 
     {
-        _employeeListingViewModel = employeeListingViewModel;
         _contextFactory = contextFactory;
-
-        DepartmentListingViewModels = DepartmentListingViewModel.LoadDepartments(departmentStore);
-        _departmentListingViewModel = new DepartmentListingViewModel(departmentStore);
+        _departmentStore= departmentStore;
+        _employeeListingViewModel = employeeListingViewModel;
 
         AddEmployeeCommand = new OpenAddEmployeeCommand(employeeStore, modalNavigationStore, contextFactory, sectorStore, departmentStore, educationStore, militaryStore, maritialStore);
     }
@@ -120,7 +116,7 @@ public class TopMenuViewModel : ViewModelBase
         {
             _selectedDepartment = value;
 
-            SelectedDepartmentName = _selectedDepartment.DepartmentName;
+            SelectedDepartmentName = _selectedDepartment?.DepartmentName;
 
             _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
 

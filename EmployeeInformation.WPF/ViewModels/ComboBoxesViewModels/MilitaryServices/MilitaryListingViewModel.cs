@@ -14,48 +14,16 @@ namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.MilitaryServic
 {
     public class MilitaryListingViewModel : ViewModelBase
     {
-        readonly ObservableCollection<MilitaryListingItemViewModel> _militaryListingItemViewModels;
         readonly MilitaryStore _militaryStore;
 
-        public IEnumerable<MilitaryListingItemViewModel> MilitaryListingItemViewModels => _militaryListingItemViewModels;
+        public IEnumerable<MilitaryListingItemViewModel> MilitaryListingItemViewModels =>_militaryStore._militaryListingItemViewModels;
 
-        public ICommand LoadMilitaryServicesCommand { get; }
 
-        public MilitaryListingViewModel(MilitaryStore militaryStore)
+        public MilitaryListingViewModel(EmployeeDetailsFormViewModel employeeDetailsFormViewModel, MilitaryStore militaryStore)
         {
             _militaryStore = militaryStore;
-            _militaryListingItemViewModels = new ObservableCollection<MilitaryListingItemViewModel>();
-
-            LoadMilitaryServicesCommand = new LoadMilitaryServicesCommand(this, militaryStore);
-
-            _militaryStore.MilitaryServicesLoaded += MilitaryStore_MilitaryServicesLoaded;
         }
 
-        public static MilitaryListingViewModel LoadMilitaryServices(MilitaryStore militaryStore)
-        {
-            MilitaryListingViewModel viewModel = new MilitaryListingViewModel(militaryStore);
-            viewModel.LoadMilitaryServicesCommand.Execute(null);
-            return viewModel;
-        }
 
-        private void MilitaryStore_MilitaryServicesLoaded()
-        {
-            _militaryListingItemViewModels.Clear();
-            foreach (MilitaryServiceStatus military in _militaryStore.Militaries)
-            {
-                AddMilitaryService(military);
-            }
-        }
-
-        private void AddMilitaryService(MilitaryServiceStatus military)
-        {
-            MilitaryListingItemViewModel itemViewModel = new MilitaryListingItemViewModel(military);
-            _militaryListingItemViewModels.Add(itemViewModel);
-        }
-        protected override void Dispose()
-        {
-            _militaryStore.MilitaryServicesLoaded += MilitaryStore_MilitaryServicesLoaded;
-            base.Dispose();
-        }
     }
 }

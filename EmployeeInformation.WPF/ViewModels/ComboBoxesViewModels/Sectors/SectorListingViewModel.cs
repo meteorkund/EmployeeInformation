@@ -9,46 +9,14 @@ namespace EmployeeInformation.WPF.ViewModels.ComboBoxesViewModels.Sectors;
 
 public class SectorListingViewModel : ViewModelBase
 {
-    readonly ObservableCollection<SectorListingItemViewModel> _sectorListingItemViewModels;
     readonly SectorStore _sectorStore;
-    public IEnumerable<SectorListingItemViewModel> SectorListingItemViewModels => _sectorListingItemViewModels;
+    public IEnumerable<SectorListingItemViewModel> SectorListingItemViewModels => _sectorStore._sectorListingItemViewModels;
 
-    public ICommand LoadSectorsCommand { get; }
 
-    public SectorListingViewModel(SectorStore sectorStore)
+    public SectorListingViewModel(EmployeeDetailsFormViewModel employeeDetailsFormViewModel, SectorStore sectorStore)
     {
         _sectorStore = sectorStore;
-        _sectorListingItemViewModels = new ObservableCollection<SectorListingItemViewModel>();
-        LoadSectorsCommand = new LoadSectorsCommand(this, sectorStore);
-        _sectorStore.SectorsLoaded += SectorStore_SectorsLoaded;
+
     }
 
-    public static SectorListingViewModel LoadSectors(SectorStore sectorStore)
-    {
-        SectorListingViewModel viewModel = new SectorListingViewModel(sectorStore);
-        viewModel.LoadSectorsCommand.Execute(null);
-        return viewModel;
-    }
-
-    private void SectorStore_SectorsLoaded()
-    {
-        _sectorListingItemViewModels.Clear();
-        foreach (Sector sector in _sectorStore.Sectors)
-        {
-            AddSector(sector);
-        }
-    }
-
-    private void AddSector(Sector sector)
-    {
-        SectorListingItemViewModel itemViewModel = new SectorListingItemViewModel(sector);
-
-        _sectorListingItemViewModels.Add(itemViewModel);
-    }
-
-    protected override void Dispose()
-    {
-        _sectorStore.SectorsLoaded -= SectorStore_SectorsLoaded;
-        base.Dispose();
-    }
 }

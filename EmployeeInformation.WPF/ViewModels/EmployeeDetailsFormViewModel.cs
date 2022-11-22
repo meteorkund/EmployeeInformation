@@ -17,6 +17,12 @@ namespace EmployeeInformation.WPF.ViewModels;
 public class EmployeeDetailsFormViewModel : ViewModelBase
 {
 
+    readonly SectorStore _sectorStore;
+    readonly DepartmentStore _departmentStore;
+    readonly EducationStore _educationStore;
+    readonly MilitaryStore _militaryStore;
+    readonly MaritialStore _maritialStore;
+
     readonly SectorListingViewModel _sectorListingViewModel;
     readonly DepartmentListingViewModel _departmentListingViewModel;
     readonly EducationListingViewModel _educationListingViewModel;
@@ -35,19 +41,19 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         SubmitCommand = submitCommand;
         CancelCommand = cancelCommand;
 
-        SectorListingViewModel = SectorListingViewModel.LoadSectors(sectorStore);
-        DepartmentListingViewModel = DepartmentListingViewModel.LoadDepartments(departmentStore);
-        EducationListingViewModel = EducationListingViewModel.LoadEducations(educationStore);
-        MilitaryListingViewModel = MilitaryListingViewModel.LoadMilitaryServices(militaryStore);
-        MaritialStatusListingViewModel = MaritialStatusListingViewModel.LoadMaritialStatus(maritialStore);
+        _sectorStore = sectorStore;
+        _departmentStore = departmentStore;
+        _educationStore = educationStore;
+        _militaryStore = militaryStore;
+        _maritialStore = maritialStore;
+        
 
 
-
-        _sectorListingViewModel = new SectorListingViewModel(sectorStore);
-        _departmentListingViewModel = new DepartmentListingViewModel(departmentStore);
-        _educationListingViewModel = new EducationListingViewModel(educationStore);
-        _militaryListingViewModel = new MilitaryListingViewModel(militaryStore);
-        _maritialStatusListingViewModel = new MaritialStatusListingViewModel(maritialStore);
+        _sectorListingViewModel = new SectorListingViewModel(this, sectorStore);
+        _departmentListingViewModel = new DepartmentListingViewModel(this, departmentStore);
+        _educationListingViewModel = new EducationListingViewModel(this, educationStore);
+        _militaryListingViewModel = new MilitaryListingViewModel(this, militaryStore);
+        _maritialStatusListingViewModel = new MaritialStatusListingViewModel(this, maritialStore);
 
 
         RegisterCommands();
