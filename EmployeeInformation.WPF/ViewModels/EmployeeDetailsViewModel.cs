@@ -249,11 +249,7 @@ public class EmployeeDetailsViewModel : ViewModelBase
             ShowButton = false;
     }
 
-    protected override void Dispose()
-    {
-        _selectedEmployeeStore.SelectedEmployeeChanged -= SelectedEmployeeStore_SelectedEmployeeChanged;
-        base.Dispose();
-    }
+
 
     private void SelectedEmployeeStore_SelectedEmployeeChanged()
     {
@@ -280,7 +276,11 @@ public class EmployeeDetailsViewModel : ViewModelBase
         OnPropertyChanged(nameof(BaslamaTarihiDisplay));
         OnPropertyChanged(nameof(AdresDisplay));
         OnPropertyChanged(nameof(EkBilgiDisplay));
+    }
 
-
+    protected override void Dispose()
+    {
+        _selectedEmployeeStore.SelectedEmployeeChanged -= SelectedEmployeeStore_SelectedEmployeeChanged;
+        base.Dispose();
     }
 }

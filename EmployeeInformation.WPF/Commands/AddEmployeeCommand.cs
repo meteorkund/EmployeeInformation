@@ -47,10 +47,30 @@ public class AddEmployeeCommand : AsyncCommandBase
         formViewModel.ErrorMessage = null;
         formViewModel.IsSubmitting = true;
 
+        string dateTime = DateTime.Now.ToString("G");
+        string dateTimeFile = dateTime
+            .Replace(".", string.Empty)
+            .Replace(":", string.Empty)
+            .Replace(" ", "-");
+
+        string secilenDosya = formViewModel.PhotoSource;
+
+        string fileExtension = System.IO.Path.GetExtension(secilenDosya);
+
+        string fileName = System.IO.Path.GetFileName(secilenDosya);
+
+        string splittedName = formViewModel.Isim.Replace(" ", string.Empty);
+
+        string newFileName = $"{splittedName}-{dateTimeFile}{fileExtension}";
+        string sourceFile = secilenDosya;
+        string targetPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelFoto"; //TODO KONUM DEĞİŞTİR MASTER'A AL.
+        string destFile = System.IO.Path.Combine(targetPath, newFileName);
+
+
         Employee employee = new Employee
         {
             Id = sonDosyaNo + 1,
-            Fotograf = formViewModel.PhotoSource,
+            Fotograf = destFile,
             Isim = formViewModel.Isim,
             Soyisim = formViewModel.Soyisim,
             Durum = formViewModel.Durum,
@@ -98,24 +118,6 @@ public class AddEmployeeCommand : AsyncCommandBase
             Vacation2023 = new Vacation2023 { Id = sonDosyaNo + 1, }
         };
 
-        string dateTime = DateTime.Now.ToString("G");
-        string dateTimeFile = dateTime
-            .Replace(".", string.Empty)
-            .Replace(":", string.Empty)
-            .Replace(" ", "-");
-
-        string secilenDosya = formViewModel.PhotoSource;
-
-        string fileExtension = System.IO.Path.GetExtension(secilenDosya);
-
-        string fileName = System.IO.Path.GetFileName(secilenDosya);
-
-        string splittedName = formViewModel.Isim.Replace(" ", string.Empty);
-
-        string newFileName = $"{splittedName}-{dateTimeFile}{fileExtension}";
-        string sourceFile = secilenDosya;
-        string targetPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelFoto"; //TODO KONUM DEĞİŞTİR MASTER'A AL.
-        string destFile = System.IO.Path.Combine(targetPath, newFileName);
 
         try
         {

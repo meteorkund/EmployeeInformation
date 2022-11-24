@@ -12,8 +12,10 @@ namespace EmployeeInformation.EF
     {
         public EmployeesDbContext CreateDbContext(string[] args)
         {
+            var connectionString = $"DataSource={Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelData.db;";
+
             return new EmployeesDbContext(new DbContextOptionsBuilder()
-                .UseSqlServer("Server=localhost\\SQLEXPRESS;Database=EmployeeInformationDB;Trusted_Connection=True;")
+                .UseSqlite(connectionString)
                 .Options);
         }
     }

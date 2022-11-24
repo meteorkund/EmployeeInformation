@@ -180,8 +180,7 @@
 
                                 
                                 SelectedValuePath="DepartmentId"
-                                DisplayMemberPath="DepartmentName"
-                                IsSynchronizedWithCurrentItem="True">
+                                DisplayMemberPath="DepartmentName">
                             </ComboBox>
 
                         </Grid>

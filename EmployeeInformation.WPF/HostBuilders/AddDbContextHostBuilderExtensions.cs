@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace EmployeeInformation.WPF.HostBuilders;
 
@@ -11,9 +12,10 @@ public static class AddDbContextHostBuilderExtensions
     {
         hostBuilder.ConfigureServices((context, services) =>
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=EmployeeInformationDB;Trusted_Connection=True;";
+            var connectionString = $"DataSource={Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelData.db;";
 
-            services.AddSingleton<DbContextOptions>(new DbContextOptionsBuilder().UseSqlServer(connectionString).Options);
+
+            services.AddSingleton<DbContextOptions>(new DbContextOptionsBuilder().UseSqlite(connectionString).Options);
             services.AddSingleton<EmployeesDbContextFactory>();
         });
 

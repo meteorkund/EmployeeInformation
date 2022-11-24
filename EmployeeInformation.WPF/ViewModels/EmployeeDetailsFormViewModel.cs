@@ -81,6 +81,7 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         UploadPhotoCommand = new RelayCommand(ExecuteOpenFileDialog);
     }
 
+   public bool isPhotoSelected = false;
     private void ExecuteOpenFileDialog()
     {
         var dialog = new OpenFileDialog();
@@ -90,6 +91,7 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
         if (dialog.ShowDialog() == true)
         {
             PhotoSource = dialog.FileName;
+            isPhotoSelected = true;
         }
     }
 

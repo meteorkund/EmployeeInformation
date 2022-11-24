@@ -3,6 +3,8 @@ using EmployeeInformation.Domain.Models.Common;
 using EmployeeInformation.WPF.Stores;
 using EmployeeInformation.WPF.ViewModels;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -30,10 +32,39 @@ public class EditEmployeeCommand : AsyncCommandBase
         formViewModel.IsSaved = true;
         formViewModel.SaveStatus = "GÜNCELLENİYOR...";
 
+        string dateTime = DateTime.Now.ToString("G");
+        string dateTimeFile = dateTime
+            .Replace(".", string.Empty)
+            .Replace(":", string.Empty)
+            .Replace(" ", "-");
+
+        string secilenDosya = formViewModel.PhotoSource;
+
+        string fileExtension = System.IO.Path.GetExtension(secilenDosya);
+
+        string fileName = System.IO.Path.GetFileName(secilenDosya);
+
+        string splittedName = formViewModel.Isim.Replace(" ", string.Empty);
+
+        string newFileName = $"{splittedName}-{dateTimeFile}{fileExtension}";
+        string sourceFile = secilenDosya;
+        string targetPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\PERSONEL_DB\\personelFoto"; //TODO KONUM DEĞİŞTİR MASTER'A AL.
+        string destFile = System.IO.Path.Combine(targetPath, newFileName);
+
+
+        bool isSelectedPhoto = _editEmployeeViewModel.EmployeeDetailsFormViewModel.isPhotoSelected;
+        string photoPath;
+        if (isSelectedPhoto == true)
+            photoPath = destFile;
+        else
+            photoPath = secilenDosya;
+
+            
+
         Employee employee = new Employee
         {
             Id = _editEmployeeViewModel.EmployeeId,
-            Fotograf = formViewModel.PhotoSource,
+            Fotograf = photoPath,
             Isim = formViewModel.Isim,
             Soyisim = formViewModel.Soyisim,
             Durum = formViewModel.Durum,
@@ -578,7 +609,26 @@ public class EditEmployeeCommand : AsyncCommandBase
 
         try
         {
+
+            if (secilenDosya != "/Assets/MemetAvatar.jpg" && _editEmployeeViewModel.EmployeeDetailsFormViewModel.isPhotoSelected == true)
+            {
+                try
+                {
+                    if (!Directory.Exists(targetPath))
+                        Directory.CreateDirectory(targetPath);
+
+                    File.Copy(sourceFile, destFile, true);
+
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Fotoğraf yüklenirken bir hatayla karşılaşıldı", "Yükleme Hatası!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+
             await _employeeStore.Update(employee);
+
             formViewModel.IsSaved = true;
             formViewModel.SaveStatus = "GÜNCELLEME BAŞARILI!";
 

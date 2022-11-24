@@ -117,6 +117,8 @@ public class TopMenuViewModel : ViewModelBase
             _selectedDepartment = value;
 
             SelectedDepartmentName = _selectedDepartment?.DepartmentName;
+            if(IsCheckedAllDepartment == true)
+            IsCheckedAllDepartment = false;
 
             _employeeListingViewModel.EmployeeCollection.Filter = FilterEmployee;
 
