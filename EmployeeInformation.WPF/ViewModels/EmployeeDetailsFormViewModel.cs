@@ -253,8 +253,7 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
     }
 
 
-    private string _tcKimlik;
-
+    private string _tcKimlik; 
     public string TCKimlik
     {
         get { return _tcKimlik; }
@@ -264,6 +263,7 @@ public class EmployeeDetailsFormViewModel : ViewModelBase
             OnPropertyChanged(nameof(TCKimlik));
         }
     }
+
 
 
     private string _dogumTarihi;
