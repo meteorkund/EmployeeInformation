@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeInformation.EF", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeInformation.Domain", "EmployeeInformation.Domain\EmployeeInformation.Domain.csproj", "{8695109E-7C3D-4A15-8077-9CA0A6C10DC7}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EmployeeInformationSetup", "EmployeeInformationSetup\EmployeeInformationSetup.vdproj", "{D3F8CDBB-1A17-42EF-9854-89DB17D73AB6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EmployeeInformationSetup", "EmployeeInformationSetup\EmployeeInformationSetup.vdproj", "{C8346BE3-7B69-420F-969B-36041D34C750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +29,8 @@ Global
 		{8695109E-7C3D-4A15-8077-9CA0A6C10DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8695109E-7C3D-4A15-8077-9CA0A6C10DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8695109E-7C3D-4A15-8077-9CA0A6C10DC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3F8CDBB-1A17-42EF-9854-89DB17D73AB6}.Debug|Any CPU.ActiveCfg = Debug
-		{D3F8CDBB-1A17-42EF-9854-89DB17D73AB6}.Release|Any CPU.ActiveCfg = Release
+		{C8346BE3-7B69-420F-969B-36041D34C750}.Debug|Any CPU.ActiveCfg = Debug
+		{C8346BE3-7B69-420F-969B-36041D34C750}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
