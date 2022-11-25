@@ -176,7 +176,8 @@
                             <TextBox
                             Style="{StaticResource TextBoxStyle1}"
                             KeyboardNavigation.TabIndex="2"
-                                MaxLength="11"
+                            PreviewTextInput="NumericOnly"
+                            MaxLength="11"
                             Grid.Column="1"
                             Margin="20 0 0 0"
                             Text="{Binding TCKimlik, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
@@ -199,6 +200,7 @@
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                                 KeyboardNavigation.TabIndex="4"
+                                PreviewTextInput="NumericOnly"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 MaxLength="10"
@@ -305,7 +307,7 @@
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                                 KeyboardNavigation.TabIndex="12"
-
+                                PreviewTextInput="NumericOnly"
                                 MaxLength="10"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
@@ -327,6 +329,7 @@
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                                 KeyboardNavigation.TabIndex="14"
+                                PreviewTextInput="NumericOnly"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 MaxLength="10"
@@ -425,7 +428,8 @@
 
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
-                        KeyboardNavigation.TabIndex="7"
+                                KeyboardNavigation.TabIndex="7"
+                                PreviewTextInput="NumericOnly"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
                                 Text="{Binding Maas, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
@@ -446,6 +450,7 @@
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                                 KeyboardNavigation.TabIndex="9"
+                                PreviewTextInput="NumericOnly"
                                 MaxLength="14"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
@@ -471,6 +476,7 @@
                             <TextBox
                                 Style="{StaticResource TextBoxStyle1}"
                                 KeyboardNavigation.TabIndex="11"
+                                PreviewTextInput="NumericOnly"
                                 MaxLength="10"
                                 Grid.Column="1"
                                 Margin="20 0 0 0"
