@@ -1,4 +1,8 @@
-﻿using System.Threading;
+﻿using System.Globalization;
+using System.IO;
+using System.Net.Sockets;
+using System;
+using System.Threading;
 
 namespace EmployeeInformation.WPF.HostBuilders;
 
@@ -18,5 +22,24 @@ public class AppControl
             mtx.Close();
             return false;
         }
+    }
+
+    public static bool DateTimeResponse(string dateTime)
+    {
+        var client = new TcpClient("time.nist.gov", 13);
+        using (var streamReader = new StreamReader(client.GetStream()))
+        {
+            var response = streamReader.ReadToEnd();
+            var utcDateTimeString = response.Substring(7, 17);
+            var localDateTime = DateTime.ParseExact(utcDateTimeString, "yy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal);
+
+            string onlyDate = localDateTime.ToString().Substring(0, 10);
+
+            if (dateTime == onlyDate)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

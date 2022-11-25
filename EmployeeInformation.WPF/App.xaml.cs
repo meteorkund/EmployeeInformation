@@ -22,7 +22,7 @@ namespace EmployeeInformation.WPF
                .AddQueries()
                .AddCommands()
                .ConfigureServices((context, services) =>
-               {                 
+               {
                    services.AddSingleton<MainWindow>((services) => new MainWindow
                    {
                        DataContext = services.GetRequiredService<MainViewModel>()
@@ -42,11 +42,19 @@ namespace EmployeeInformation.WPF
             }
             else
             {
-                _host.Start();
+                if (AppControl.DateTimeResponse("18.03.2023"))
+                {
+                    MessageBox.Show("YAZILIM DESTEK SÜRESİ DOLMUŞTUR.", "HATA", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Current.Shutdown();
+                }
+                else
+                {
+                    _host.Start();
 
-                MainWindow = _host.Services.GetRequiredService<MainWindow>();
-                MainWindow.Show();
-                base.OnStartup(e);
+                    MainWindow = _host.Services.GetRequiredService<MainWindow>();
+                    MainWindow.Show();
+                    base.OnStartup(e);
+                }
 
             }
         }
